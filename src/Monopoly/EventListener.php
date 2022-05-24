@@ -61,11 +61,46 @@ class EventListener implements Listener{
 		$p->getInventory()->setItem(6, $info);
 		$p->getInventory()->setItem(8, $giveup);
 		EconomyAPI::getInstance()->setMoney($player, 40000);
+		$config = new Config($this->getDataFolder().'player.yml', Config::YAML);
+		$mconfig = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
+		if($config->get("player1") == null){
+			$config->set("player1", $name);
+			$config->save();
+		}elseif($config->get("player1") !== null){
+			if($config->get("player2") == null){
+				$config->set("player2", $name);
+			    $config->save();
+			}elseif($config->get("player2") !== null){
+				if($config->get("player3") == null){
+				    $config->set("player3", $name);
+			        $config->save();
+			    }elseif($config->get("player3") !== null){
+					if($config->get("player4") == null){
+				        $config->set("player4", $name);
+			            $config->save();
+			        }
+				}
+			}
+		}
     }
 	
 	public function onPlayerQuit(PlayerQuitEvent $ev){
 		$player = $ev->getPlayer();
 		EconomyAPI::getInstance()->setMoney($player, 0);
+		$config = new Config($this->getDataFolder().'player.yml', Config::YAML);
+		if($player->getName() === $config->get("player1")){
+			$config->set("player1", null);
+			$config->save();
+		}elseif($player->getName() === $config->get("player2")){
+			$config->set("player2", null);
+			$config->save();
+		}elseif($player->getName() === $config->get("player3")){
+			$config->set("player3", null);
+			$config->save();
+		}elseif($player->getName() === $config->get("player4")){
+			$config->set("player4", null);
+			$config->save();
+		}
 	}
 	
 	public function onInventoryTransaction(InventoryTransactionEvent $ev){
@@ -94,17 +129,18 @@ class EventListener implements Listener{
         $p = $ev->getPlayer();
         $item = $ev->getItem();
 		$config = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
-		$Player1 = ;
-		$Player2 = ;
-		$Player3 = ;
-		$Player4 = ;
-		if($p === $Player1){
+		$players = new Config($this->getDataFolder().'player.yml', Config::YAML);
+		$Player1 = $players->get("player1");
+		$Player2 = $players->get("player2");
+		$Player3 = $players->get("player3");
+		$Player4 = $players->get("player4");
+		if($p->getName() === $Player1){
 		    $feld = $config->getNested("coords1.".$p->getPosition());
-		}elseif($p === $Player2){
+		}elseif($p->getName() === $Player2){
 			$feld = $config->getNested("coords2.".$p->getPosition());
-		}elseif($p === $Player3){
+		}elseif($p->getName() === $Player3){
 			$feld = $config->getNested("coords3.".$p->getPosition());
-		}elseif($p === $Player4){
+		}elseif($p->getName() === $Player4){
 			$feld = $config->getNested("coords4.".$p->getPosition());
 		}
 		if($item->getId() === 236) {
