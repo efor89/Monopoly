@@ -3,7 +3,7 @@ maxturntime: 4800 #in ticks
 minplayer: 2 #minimale spielerzahl
 maxplayer: 4 #maximale spielerzahl
 starttime: 1200 #in ticks
-coords1: #spieler 1 positionen
+coords1: #spieler 1 figur positionen
   253;5;248: 1 #strassen nummer 1
   255;5;254: 2 #strassen nummer 2
   255;5;259: 3 #usw.
@@ -44,7 +44,7 @@ coords1: #spieler 1 positionen
   235;5;245: 38
   240;5;245: 39
   245;5;245: 40
-coords2: #spieler 2 positionen
+coords2: #spieler 2 figur positionen
   252;5;248: 1
   254;5;254: 2
   254;5;259: 3
@@ -85,7 +85,7 @@ coords2: #spieler 2 positionen
   235;5;246: 38
   240;5;246: 39
   245;5;246: 40
-coords3: #spieler 3 positionen
+coords3: #spieler 3 figur positionen
   251;5;248: 1
   253;5;254: 2
   253;5;259: 3
@@ -126,10 +126,10 @@ coords3: #spieler 3 positionen
   235;5;247: 38
   240;5;247: 39
   245;5;247: 40
-coords4: #spieler 4 positionen
-  252;5;249: 1 #strassen nummer 1
-  252;5;254: 2 #strassen nummer 2
-  252;5;259: 3 #usw.
+coords4: #spieler 4 figur positionen
+  252;5;249: 1
+  252;5;254: 2
+  252;5;259: 3
   252;5;264: 4
   252;5;269: 5 
   252;5;274: 6
