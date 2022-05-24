@@ -21,6 +21,7 @@ use pocketmine\event\{
 	inventory\InventoryTransactionEvent
 };
 use pocketmine\Player;
+use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\item\Item;
 use Monopoly\Main;
@@ -148,11 +149,10 @@ class EventListener implements Listener{
             if($item->getName() === "§aWürfeln") {
                 $point1 = $this->getZufall1();
 				$point2 = $this->getZufall2();
-				$p->sendMessage("würfel: ".$point1 + $point2);
 			    if($point1 == $point2){
-				    $p->sendMessage("true");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kann §d".$p->getName()." nochmal.");
 				}else{
-				    $p->sendMessage("false");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt.");
 				}
             }
         }
