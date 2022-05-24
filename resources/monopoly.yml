@@ -3,13 +3,173 @@ maxturntime: 4800 #in ticks
 minplayer: 2 #minimale spielerzahl
 maxplayer: 4 #maximale spielerzahl
 starttime: 1200 #in ticks
+coords1: #spieler 1 positionen
+  x;y;z: 1 #strassen nummer 1
+  x;y;z: 2 #strassen nummer 2
+  x;y;z: 3 #usw.
+  x;y;z: 4
+  x;y;z: 5 
+  x;y;z: 6
+  x;y;z: 7 
+  x;y;z: 8
+  x;y;z: 9 
+  x;y;z: 10
+  x;y;z: 11 
+  x;y;z: 12
+  x;y;z: 13 
+  x;y;z: 14
+  x;y;z: 15 
+  x;y;z: 16
+  x;y;z: 17 
+  x;y;z: 18
+  x;y;z: 19
+  x;y;z: 20
+  x;y;z: 21 
+  x;y;z: 22
+  x;y;z: 23 
+  x;y;z: 24
+  x;y;z: 25
+  x;y;z: 26
+  x;y;z: 27
+  x;y;z: 28
+  x;y;z: 29
+  x;y;z: 30
+  x;y;z: 31 
+  x;y;z: 32
+  x;y;z: 33 
+  x;y;z: 34
+  x;y;z: 35
+  x;y;z: 36
+  x;y;z: 37
+  x;y;z: 38
+  x;y;z: 39
+  x;y;z: 40
+coords2: #spieler 2 positionen
+  x;y;z: 1 
+  x;y;z: 2
+  x;y;z: 3 
+  x;y;z: 4
+  x;y;z: 5 
+  x;y;z: 6
+  x;y;z: 7 
+  x;y;z: 8
+  x;y;z: 9 
+  x;y;z: 10
+  x;y;z: 11 
+  x;y;z: 12
+  x;y;z: 13 
+  x;y;z: 14
+  x;y;z: 15 
+  x;y;z: 16
+  x;y;z: 17 
+  x;y;z: 18
+  x;y;z: 19
+  x;y;z: 20
+  x;y;z: 21 
+  x;y;z: 22
+  x;y;z: 23 
+  x;y;z: 24
+  x;y;z: 25
+  x;y;z: 26
+  x;y;z: 27
+  x;y;z: 28
+  x;y;z: 29
+  x;y;z: 30
+  x;y;z: 31 
+  x;y;z: 32
+  x;y;z: 33 
+  x;y;z: 34
+  x;y;z: 35
+  x;y;z: 36
+  x;y;z: 37
+  x;y;z: 38
+  x;y;z: 39
+  x;y;z: 40
+coords3: #spieler 3 positionen
+  x;y;z: 1 
+  x;y;z: 2
+  x;y;z: 3 
+  x;y;z: 4
+  x;y;z: 5 
+  x;y;z: 6
+  x;y;z: 7 
+  x;y;z: 8
+  x;y;z: 9 
+  x;y;z: 10
+  x;y;z: 11 
+  x;y;z: 12
+  x;y;z: 13 
+  x;y;z: 14
+  x;y;z: 15 
+  x;y;z: 16
+  x;y;z: 17 
+  x;y;z: 18
+  x;y;z: 19
+  x;y;z: 20
+  x;y;z: 21 
+  x;y;z: 22
+  x;y;z: 23 
+  x;y;z: 24
+  x;y;z: 25
+  x;y;z: 26
+  x;y;z: 27
+  x;y;z: 28
+  x;y;z: 29
+  x;y;z: 30
+  x;y;z: 31 
+  x;y;z: 32
+  x;y;z: 33 
+  x;y;z: 34
+  x;y;z: 35
+  x;y;z: 36
+  x;y;z: 37
+  x;y;z: 38
+  x;y;z: 39
+  x;y;z: 40
+coords4: #spieler 4 positionen
+  x;y;z: 1 
+  x;y;z: 2
+  x;y;z: 3 
+  x;y;z: 4
+  x;y;z: 5 
+  x;y;z: 6
+  x;y;z: 7 
+  x;y;z: 8
+  x;y;z: 9 
+  x;y;z: 10
+  x;y;z: 11 
+  x;y;z: 12
+  x;y;z: 13 
+  x;y;z: 14
+  x;y;z: 15 
+  x;y;z: 16
+  x;y;z: 17 
+  x;y;z: 18
+  x;y;z: 19
+  x;y;z: 20
+  x;y;z: 21 
+  x;y;z: 22
+  x;y;z: 23 
+  x;y;z: 24
+  x;y;z: 25
+  x;y;z: 26
+  x;y;z: 27
+  x;y;z: 28
+  x;y;z: 29
+  x;y;z: 30
+  x;y;z: 31 
+  x;y;z: 32
+  x;y;z: 33 
+  x;y;z: 34
+  x;y;z: 35
+  x;y;z: 36
+  x;y;z: 37
+  x;y;z: 38
+  x;y;z: 39
+  x;y;z: 40
 1:
   name: Los
   money: 4000 #bekommt der spieler
-  coords1: #spieler 1 position
-  coords2: #spieler 2 position
-  coords3: #spieler 3 position
-  coords4: #spieler 4 position
 2:
   name: Badstrasse
   buy: 1200 #kaufpreis
@@ -23,16 +183,13 @@ starttime: 1200 #in ticks
   3: 1800 #miete mit 3 häusern
   4: 3200 #miete mit 4 häusern
   5: 5000 #miete mit 1 hotel
-  coords1:
-  coords2:
-  coords3:
-  coords4:
+  coords1: #haus 1 coords
+  coords2: #haus 2 coords
+  coords3: #haus 3 coords
+  coords4: #haus 4 coords
+  coords5: #hotel coords
 3:
   name: Gemeinschaftsfeld
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 4:
   name: Turmstrasse
   buy: 1200
@@ -50,13 +207,10 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 5:
   name: Einkommensteuer
   pay: 4000 #kommt zu frei parken hinzu
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 6:
   name: Südbahnhof
   buy: 4000
@@ -65,10 +219,6 @@ starttime: 1200 #in ticks
   2: 1000
   3: 2000
   4: 4000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 7:
   name: Chausseestrasse
   buy: 2000
@@ -86,12 +236,9 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 8:
   name: Ereignisfeld
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 9:
   name: Elisenstrasse
   buy: 2000
@@ -109,6 +256,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 10:
   name: Poststrasse
   buy: 2400
@@ -126,12 +274,9 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 11:
   name: Nur zu Besuch / Gefängnis
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 12:
   name: Seestrasse
   buy: 2800
@@ -149,16 +294,13 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 13:
   name: Elektrizitäts-Werk
   buy: 3000
   hypo: 1500
   1: 80 #80 * würfelaugen
   2: 200 #200 * würfelaugen
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 14:
   name: Hafenstrasse
   buy: 2800
@@ -176,6 +318,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 15:
   name: Neue Strasse
   buy: 3200
@@ -193,6 +336,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 16:
   name: Westbahnhof
   buy: 4000
@@ -201,10 +345,6 @@ starttime: 1200 #in ticks
   2: 1000
   3: 2000
   4: 4000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 17:
   name: Münchener Strasse
   buy: 3600
@@ -222,12 +362,9 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 18:
   name: Gemeinschaftsfeld
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 19:
   name: Wiener Straße
   buy: 3600
@@ -245,6 +382,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 20:
   name: Berliner Strasse
   buy: 4000
@@ -262,6 +400,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 21:
   name: Frei Parken #alle straffen die bezahlt wurden bekommt der spieler(wird wieder auf 0 gesetzt)
 22:
@@ -281,12 +420,9 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 23:
   name: Ereignisfeld
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 24:
   name: MuseumStrasse
   buy: 4400
@@ -304,6 +440,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 25:
   name: Opernplatz
   buy: 4800
@@ -321,6 +458,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 26:
   name: Nordbahnhof
   buy: 4000
@@ -329,10 +467,6 @@ starttime: 1200 #in ticks
   2: 1000
   3: 2000
   4: 4000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 27:
   name: Lessingstrasse
   buy: 5200
@@ -350,6 +484,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 28:
   name: Schillerstrasse
   buy: 5200
@@ -367,16 +502,13 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 29:
   name: Elektrizitäts-Werk
   buy: 3000
   hypo: 1500
   1: 80
   2: 200
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 30:
   name: Goethestrasse
   buy: 5600
@@ -394,6 +526,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 31:
   name: Gehe direckt in das Gefängnis #der spieler muss in das gefängnis(feld 11)
   free: 1000 #muss ein pasch gewürfelt werden um frei zukommen oder 1000$ bezahlen vor dem würfeln, nach dem 3 würfeln 1000$ müssen gezahlt werden
@@ -414,6 +547,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 33:
   name: Hauptstrasse
   buy: 6000
@@ -431,12 +565,9 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 34:
   name: Gemeinschaftsfeld
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 35:
   name: Bahnhofstrasse
   buy: 6400
@@ -454,6 +585,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 36:
   name: Hauptbahnhof
   buy: 4000
@@ -462,16 +594,8 @@ starttime: 1200 #in ticks
   2: 1000
   3: 2000
   4: 4000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 37:
   name: Ereignisfeld
-  coords1:
-  coords2:
-  coords3:
-  coords4:
 38:
   name: Parkstrasse
   buy: 7000
@@ -489,6 +613,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 39:
   name: Zusatzsteuer
   pay: 2000 #kommt zu frei parken hinzu
@@ -509,6 +634,7 @@ starttime: 1200 #in ticks
   coords2:
   coords3:
   coords4:
+  coords5:
 Ereignisfeld:
   1:
     text: Rücke vor bis zum Opernplatz. Wenn du dabei über Los kommst, ziehe 4000$ ein.
