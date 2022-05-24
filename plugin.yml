@@ -2,7 +2,7 @@
 name: Monopoly
 version: 0.0.1
 main: Monopoly\Main
-api: 4.0.0
+api: 3.0.0
 author: efor89
 permissions:
   bypass.op:

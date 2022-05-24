@@ -635,103 +635,101 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
-Ereignisfeld:
-  1:
-    text: Rücke vor bis zum Opernplatz. Wenn du dabei über Los kommst, ziehe 4000$ ein.
-    extra: 25 #openerplatz nummer
-  2:
-    text: Strafe für zu schnelles fahren: 300$
-    extra: 300 #300$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
-  3:
-    text: Zahle eine strafe von 200$ oder nimm eine Gemeinschaftskarte.
-    extra1: 200 #200$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
-    extra2: Gemeinschaftskarte
-  4:
-    text: Rücke vor bis zu Schlossallee.
-    extra: 40 #schlossallee nummer
-  5:
-    text: Rücke vor bis zur Seestrasse. Wenn du über Los kommst, ziehe 4000$ ein.
-    extra: 12 #seestrasse nummer
-  6:
-    text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.
-  7:
-    text: Lasse alle deine Häuser Renovieren! Zahle an die Bank: 500$ für jedes Haus, 2000$ für jedes Hotel
-    extra1: 500 #500$ pro haus 
-    extra2: 2000 #2000$ pro hotel
-  8:
-    text: Du bist zum Vorstand gewählt worden. Zahle jedem Spieler 1000$.
-    extra: 1000 #1000$ müssen vom spieler an jeden spieler gezahlt werden
-  9:
-    text: Mache ein Ausflug zum Südbahnhof. Wenn du über Los kommst ziehe 4000$ ein.
-    extra: 6 #südbahnhof nummer
-  10:
-    text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
-    extra: 11 #nur zu besuch / gefängnis nummer
-  11:
-    text: Gehe 3 Felder zurück.
-    extra: 3 #felder zurück
-  12:
-    text: Rücke vor bis auf Los.
-    extra: 1 #los nummer
-  13:
-    text: Gehe zurück zur Badstrasse.
-    extra: 2 #badstrasse nummer
-  14:
-    text: Miete und Anleihzinsen werden fällig. Die Bank zahlt dir 3000$.
-    extra: 3000 #3000$ bekommt der spieler von der bank
-  15:
-    text: Die Bank zahlt dir eine Dividende: 1000$
-    extra: 1000 #1000$ bekommt der spieler von der bank
-  16:
-    text: Rücke vor bis zum nächsten Bahnhof. Der Eigentümer erhält das doppelte der Normalen Miete. Hat noch kein Spieler den Bahnhof, kannst du ihn kaufen.
-    extra: 2 #2 * kosten
-Gemeinschaftsfeld:
-  1:
-    text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
-    extra: 11 #nur zu besuch / gefängnis nummer
-  2:
-    text: Zahle an das Krankenhaus: 2000$
-    extra: 2000 #2000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
-  3:
-    text: Aus Lagerverkäufen erhälst du: 500$
-    extra: 500 #500$ bekommt der spieler von der bank
-  4:
-    text: Zahle Schulgeld: 3000$
-    extra: 3000 #3000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
-  5:
-    text: Du wirst zu Strassenausbesserungsarbeiten herangezogen! Zahle an die Bank: 800$ für jedes Haus, 2300$ für jedes Hotel
-    extra1: 800 #800$ pro haus 
-    extra2: 2300 #2300$ pro hotel
-  6:
-    text: Die Jahresrente wird fällig ziehe 2000$ ein.
-    extra: 2000 #2000$ bekommt der spieler von der bank
-  7:
-    text: Du hast den 2. Preis in einer Schönheitskonkurrenz gewonnen. Ziehe 200$ ein.
-    extra: 200 #200$ bekommt der spieler von der bank
-  8:
-    text: Du erhälst auf Vorzugs-Aktien 7 Prozent Dividende: 900$  
-    extra: 900 #900$ bekommt der Spieler von der bank
-  9:
-    text: Du hast in einem Kreutzworträtzelwettbewerb gewonnen. Ziehe 2000$ ein.
-    extra: 2000 #2000$ bekommt der spieler von der bank
-  10:
-    text: Einkommensteuer-Rückzahlung. Ziehe 4000$ ein.
-    extra: 4000 #4000$ bekommt der spieler von der bank
-  11:
-    text: Rücke vor bis auf Los.
-    extra: 1 #los nummer 
-  12:
-    text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.    
-  13:
-    text: Es ist dein Geburtstag. Ziehe von jedem Spieler 1000$ ein.
-    extra: 1000 #der spieler bekommt von jedem anderen spieler 1000$
-  14:
-    text: Arzt-Kosten zahle: 1000$
-    extra: 1000 #1000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
-  15:
-    text: Bank-Irrtum zu deinen Gunsten. Ziehe 4000$ ein.
-    extra: 4000 #4000$ bekommt der spieler von der bank
-  16:
-    text:  Du Erbst: 2000$
-    extra: 2000 #2000$ bekommt der spieler von der bank
+Ereignisfeld1:
+  text: Rücke vor bis zum Opernplatz. Wenn du dabei über Los kommst, ziehe 4000$ ein.
+  extra: 25 #openerplatz nummer
+Ereignisfeld2:
+  text: Strafe für zu schnelles fahren: 300$
+  extra: 300 #300$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+Ereignisfeld3:
+  text: Zahle eine strafe von 200$ oder nimm eine Gemeinschaftskarte.
+  extra1: 200 #200$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+  extra2: Gemeinschaftskarte
+Ereignisfeld4:
+  text: Rücke vor bis zu Schlossallee.
+  extra: 40 #schlossallee nummer
+Ereignisfeld5:
+  text: Rücke vor bis zur Seestrasse. Wenn du über Los kommst, ziehe 4000$ ein.
+  extra: 12 #seestrasse nummer
+Ereignisfeld6:
+  text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.
+Ereignisfeld7:
+  text: Lasse alle deine Häuser Renovieren! Zahle an die Bank: 500$ für jedes Haus, 2000$ für jedes Hotel
+  extra1: 500 #500$ pro haus 
+  extra2: 2000 #2000$ pro hotel
+Ereignisfeld8:
+  text: Du bist zum Vorstand gewählt worden. Zahle jedem Spieler 1000$.
+  extra: 1000 #1000$ müssen vom spieler an jeden spieler gezahlt werden
+Ereignisfeld9:
+  text: Mache ein Ausflug zum Südbahnhof. Wenn du über Los kommst ziehe 4000$ ein.
+  extra: 6 #südbahnhof nummer
+Ereignisfeld10:
+  text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
+  extra: 11 #nur zu besuch / gefängnis nummer
+Ereignisfeld11:
+  text: Gehe 3 Felder zurück.
+  extra: 3 #felder zurück
+Ereignisfeld12:
+  text: Rücke vor bis auf Los.
+  extra: 1 #los nummer
+Ereignisfeld13:
+  text: Gehe zurück zur Badstrasse.
+  extra: 2 #badstrasse nummer
+Ereignisfeld14:
+  text: Miete und Anleihzinsen werden fällig. Die Bank zahlt dir 3000$.
+  extra: 3000 #3000$ bekommt der spieler von der bank
+Ereignisfeld15:
+  text: Die Bank zahlt dir eine Dividende: 1000$
+  extra: 1000 #1000$ bekommt der spieler von der bank
+Ereignisfeld16:
+  text: Rücke vor bis zum nächsten Bahnhof. Der Eigentümer erhält das doppelte der Normalen Miete. Hat noch kein Spieler den Bahnhof, kannst du ihn kaufen.
+  extra: 2 #2 * kosten
+Gemeinschaftsfeld1:
+  text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
+  extra: 11 #nur zu besuch / gefängnis nummer
+Gemeinschaftsfeld2:
+  text: Zahle an das Krankenhaus: 2000$
+  extra: 2000 #2000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+Gemeinschaftsfeld3:
+  text: Aus Lagerverkäufen erhälst du: 500$
+  extra: 500 #500$ bekommt der spieler von der bank
+Gemeinschaftsfeld4:
+  text: Zahle Schulgeld: 3000$
+  extra: 3000 #3000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+Gemeinschaftsfeld5:
+  text: Du wirst zu Strassenausbesserungsarbeiten herangezogen! Zahle an die Bank: 800$ für jedes Haus, 2300$ für jedes Hotel
+  extra1: 800 #800$ pro haus 
+  extra2: 2300 #2300$ pro hotel
+Gemeinschaftsfeld6:
+  text: Die Jahresrente wird fällig ziehe 2000$ ein.
+  extra: 2000 #2000$ bekommt der spieler von der bank
+Gemeinschaftsfeld7:
+  text: Du hast den 2. Preis in einer Schönheitskonkurrenz gewonnen. Ziehe 200$ ein.
+  extra: 200 #200$ bekommt der spieler von der bank
+Gemeinschaftsfeld8:
+  text: Du erhälst auf Vorzugs-Aktien 7 Prozent Dividende: 900$  
+  extra: 900 #900$ bekommt der Spieler von der bank
+Gemeinschaftsfeld9:
+  text: Du hast in einem Kreutzworträtzelwettbewerb gewonnen. Ziehe 2000$ ein.
+  extra: 2000 #2000$ bekommt der spieler von der bank
+Gemeinschaftsfeld10:
+  text: Einkommensteuer-Rückzahlung. Ziehe 4000$ ein.
+  extra: 4000 #4000$ bekommt der spieler von der bank
+Gemeinschaftsfeld11:
+  text: Rücke vor bis auf Los.
+  extra: 1 #los nummer 
+Gemeinschaftsfeld12:
+  text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.    
+Gemeinschaftsfeld13:
+  text: Es ist dein Geburtstag. Ziehe von jedem Spieler 1000$ ein.
+  extra: 1000 #der spieler bekommt von jedem anderen spieler 1000$
+Gemeinschaftsfeld14:
+  text: Arzt-Kosten zahle: 1000$
+  extra: 1000 #1000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+Gemeinschaftsfeld15:
+  text: Bank-Irrtum zu deinen Gunsten. Ziehe 4000$ ein.
+  extra: 4000 #4000$ bekommt der spieler von der bank
+Gemeinschaftsfeld16:
+  text:  Du Erbst: 2000$
+  extra: 2000 #2000$ bekommt der spieler von der bank
 ...

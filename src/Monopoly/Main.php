@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Monopoly;
 
-use pocketmine\player\Player;
+use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 

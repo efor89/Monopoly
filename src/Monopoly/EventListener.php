@@ -7,6 +7,7 @@ use pocketmine\event\{
 	block\BlockPlaceEvent,
 	block\BlockBreakEvent,
 	player\PlayerLoginEvent,
+	player\PlayerQuitEvent,
 	player\PlayerMoveEvent,
 	player\PlayerJumpEvent,
 	player\PlayerDeathEvent,
@@ -19,9 +20,12 @@ use pocketmine\event\{
 	entity\EntityDamageEvent,
 	inventory\InventoryTransactionEvent
 };
-use pocketmine\player\Player;
+use pocketmine\Player;
 use pocketmine\utils\Config;
 use Monopoly\Main;
+use onebone\economyapi\EconomyAPI;
+use jojoe77777\FormAPI\SimpleForm;
+use jojoe77777\FormAPI\CustomForm;
 
 class EventListener implements Listener{
 
@@ -56,7 +60,13 @@ class EventListener implements Listener{
         $p->getInventory()->setItem(4, $handeln);
 		$p->getInventory()->setItem(6, $info);
 		$p->getInventory()->setItem(8, $giveup);
+		EconomyAPI::getInstance()->setMoney($player, 40000);
     }
+	
+	public function onPlayerQuit(PlayerQuitEvent $ev){
+		$player = $ev->getPlayer();
+		EconomyAPI::getInstance()->setMoney($player, 0);
+	}
 	
 	public function onInventoryTransaction(InventoryTransactionEvent $ev){
         $int = $ev->getTransaction()->getInventories();
@@ -71,18 +81,32 @@ class EventListener implements Listener{
         }
     }
 	
-	public function Hunger(PlayerExhaustEvent $event){
-        $event->setCancelled(true);
+	public function Hunger(PlayerExhaustEvent $ev){
+        $ev->setCancelled(true);
     }
 	
 	
-    public function onFallDamage(EntityDamageEvent $event){
-        $event->setCancelled(true);
+    public function onFallDamage(EntityDamageEvent $ev){
+        $ev->setCancelled(true);
     }
   
     public function onInteract(PlayerInteractEvent $ev){
         $p = $ev->getPlayer();
         $item = $ev->getItem();
+		$config = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
+		$Player1 = ;
+		$Player2 = ;
+		$Player3 = ;
+		$Player4 = ;
+		if($p === $Player1){
+		    $feld = $config->getNested("coords1.".$p->getPosition());
+		}elseif($p === $Player2){
+			$feld = $config->getNested("coords2.".$p->getPosition());
+		}elseif($p === $Player3){
+			$feld = $config->getNested("coords3.".$p->getPosition());
+		}elseif($p === $Player4){
+			$feld = $config->getNested("coords4.".$p->getPosition());
+		}
 		if($item->getId() === 236) {
             if($item->getName() === "§aWürfeln") {
                 $wurf = Main::getInstance()->getZufall1() + Main::getInstance()->getZufall2();
@@ -91,32 +115,36 @@ class EventListener implements Listener{
         }
 		if($item->getId() === 266) {
             if($item->getName() === "§6Kaufen") {
-                    
+                $playerMoney = EconomyAPI::getInstance()->myMoney($p);
+				$buy = $config->getNested($feld".buy");
+				if($playerMoney > $buy){
+					
+				}
             }
         }
 		if($item->getId() === 277) {
             if($item->getName() === "§bBauen") {
-                    
+                
             }
         }
 		if($item->getId() === 46) {
             if($item->getName() === "§eHypothek") {
-                    
+                
             }
         }
 		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
-                    
+                
             }
         }
 		if($item->getId() === 340) {
             if($item->getName() === "§7Infos") {
-                    
+                
             }
         }
 		if($item->getId() === 355) {
             if($item->getName() === "§cAufgeben/Bankrott") {
-                    
+                
             }
         }
 	}
