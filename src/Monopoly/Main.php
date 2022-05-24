@@ -16,6 +16,7 @@ class Main extends PluginBase{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
         if(!file_exists($this->getDataFolder() . "monopoly.yml")){
             $this->saveResource('monopoly.yml');
+			$this->saveResource('player.yml');
         }
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     }
@@ -25,21 +26,19 @@ class Main extends PluginBase{
     }
 	
 	public function getZufall1(){
-		$zufall1 = mt_rand(2, 6)
-		return $zufall1;
+		return mt_rand(1, 6);
 	}
 	
 	public function getZufall2(){
-		$zufall2 = mt_rand(2, 6)
-		return $zufall2;
+		return mt_rand(1, 6);
 	}
 	
 	public function isPasch(){
-		if($this->getZufall1() = $this->getZufall2()){
+		if($this->getZufall1() == $this->getZufall2()){
 			$pasch = true;
 		}else{
 			$pasch = false;
 		}
-		return $pasch
+		return $pasch;
 	}
 }

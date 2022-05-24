@@ -6,7 +6,7 @@ use pocketmine\event\{
 	Listener,
 	block\BlockPlaceEvent,
 	block\BlockBreakEvent,
-	player\PlayerLoginEvent,
+	player\PlayerJoinEvent,
 	player\PlayerQuitEvent,
 	player\PlayerMoveEvent,
 	player\PlayerJumpEvent,
@@ -147,40 +147,46 @@ class EventListener implements Listener{
             if($item->getName() === "§aWürfeln") {
                 $wurf = Main::getInstance()->getZufall1() + Main::getInstance()->getZufall2();
 				$isPasch = Main::getInstance()->isPasch();
+				$p->sendMessage($wurf);
+				if($isPasch == true){
+				    $p->sendMessage("true");
+				}else{
+				    $p->sendMessage("false");
+				}
             }
         }
 		if($item->getId() === 266) {
             if($item->getName() === "§6Kaufen") {
                 $playerMoney = EconomyAPI::getInstance()->myMoney($p);
-				$buy = $config->getNested($feld".buy");
+				$buy = $config->getNested($feld.".buy");
 				if($playerMoney > $buy){
-					
+					$p->sendMessage("kaufen");
 				}
             }
         }
 		if($item->getId() === 277) {
             if($item->getName() === "§bBauen") {
-                
+                $p->sendMessage("bauen");
             }
         }
 		if($item->getId() === 46) {
             if($item->getName() === "§eHypothek") {
-                
+                $p->sendMessage("hypo");
             }
         }
 		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
-                
+                $p->sendMessage("handeln");
             }
         }
 		if($item->getId() === 340) {
             if($item->getName() === "§7Infos") {
-                
+                $p->sendMessage("info");
             }
         }
 		if($item->getId() === 355) {
             if($item->getName() === "§cAufgeben/Bankrott") {
-                
+                $p->sendMessage("Aufgeben/Bankrott");
             }
         }
 	}
