@@ -6,10 +6,10 @@ starttime: 1200 #in ticks
 1:
   name: Los
   money: 4000 #bekommt der spieler
-  coords1:
-  coords2:
-  coords3:
-  coords4:
+  coords1: #spieler 1 position
+  coords2: #spieler 2 position
+  coords3: #spieler 3 position
+  coords4: #spieler 4 position
 2:
   name: Badstrasse
   buy: 1200 #kaufpreis
