@@ -22,6 +22,7 @@ use pocketmine\event\{
 };
 use pocketmine\Player;
 use pocketmine\utils\Config;
+use pocketmine\item\Item;
 use Monopoly\Main;
 use onebone\economyapi\EconomyAPI;
 use jojoe77777\FormAPI\SimpleForm;
@@ -60,9 +61,9 @@ class EventListener implements Listener{
         $p->getInventory()->setItem(4, $handeln);
 		$p->getInventory()->setItem(6, $info);
 		$p->getInventory()->setItem(8, $giveup);
-		EconomyAPI::getInstance()->setMoney($player, 40000);
-		$config = new Config($this->getDataFolder().'player.yml', Config::YAML);
-		$mconfig = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
+		EconomyAPI::getInstance()->setMoney($p, 40000);
+		$config = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
+		$mconfig = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
 		if($config->get("player1") == null){
 			$config->set("player1", $name);
 			$config->save();
@@ -87,17 +88,17 @@ class EventListener implements Listener{
 	public function onPlayerQuit(PlayerQuitEvent $ev){
 		$player = $ev->getPlayer();
 		EconomyAPI::getInstance()->setMoney($player, 0);
-		$config = new Config($this->getDataFolder().'player.yml', Config::YAML);
-		if($player->getName() === $config->get("player1")){
+		$config = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
+		if($player->getName() == $config->get("player1")){
 			$config->set("player1", null);
 			$config->save();
-		}elseif($player->getName() === $config->get("player2")){
+		}elseif($player->getName() == $config->get("player2")){
 			$config->set("player2", null);
 			$config->save();
-		}elseif($player->getName() === $config->get("player3")){
+		}elseif($player->getName() == $config->get("player3")){
 			$config->set("player3", null);
 			$config->save();
-		}elseif($player->getName() === $config->get("player4")){
+		}elseif($player->getName() == $config->get("player4")){
 			$config->set("player4", null);
 			$config->save();
 		}
@@ -128,8 +129,8 @@ class EventListener implements Listener{
     public function onInteract(PlayerInteractEvent $ev){
         $p = $ev->getPlayer();
         $item = $ev->getItem();
-		$config = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
-		$players = new Config($this->getDataFolder().'player.yml', Config::YAML);
+		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		$players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
 		$Player1 = $players->get("player1");
 		$Player2 = $players->get("player2");
 		$Player3 = $players->get("player3");
@@ -145,10 +146,10 @@ class EventListener implements Listener{
 		}
 		if($item->getId() === 236) {
             if($item->getName() === "§aWürfeln") {
-                $wurf = Main::getInstance()->getZufall1() + Main::getInstance()->getZufall2();
-				$isPasch = Main::getInstance()->isPasch();
-				$p->sendMessage($wurf);
-				if($isPasch == true){
+                $point1 = $this->getZufall1();
+				$point2 = $this->getZufall2();
+				$p->sendMessage("würfel: ".$point1 + $point2);
+			    if($point1 == $point2){
 				    $p->sendMessage("true");
 				}else{
 				    $p->sendMessage("false");
@@ -189,5 +190,13 @@ class EventListener implements Listener{
                 $p->sendMessage("Aufgeben/Bankrott");
             }
         }
+	}
+	
+	public function getZufall1(){
+		return mt_rand(1, 6);
+	}
+	
+	public function getZufall2(){
+		return mt_rand(1, 6);
 	}
 }

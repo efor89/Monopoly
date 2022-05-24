@@ -24,21 +24,4 @@ class Main extends PluginBase{
 	public static function getInstance(){
         return self::$instance;
     }
-	
-	public function getZufall1(){
-		return mt_rand(1, 6);
-	}
-	
-	public function getZufall2(){
-		return mt_rand(1, 6);
-	}
-	
-	public function isPasch(){
-		if($this->getZufall1() == $this->getZufall2()){
-			$pasch = true;
-		}else{
-			$pasch = false;
-		}
-		return $pasch;
-	}
 }
