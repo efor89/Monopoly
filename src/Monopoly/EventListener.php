@@ -19,7 +19,7 @@ use pocketmine\event\{
 	entity\EntityDamageEvent,
 	inventory\InventoryTransactionEvent
 };
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use Monopoly\Main;
 
