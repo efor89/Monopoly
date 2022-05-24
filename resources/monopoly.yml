@@ -1,0 +1,611 @@
+---
+maxturntime: 4800 #in ticks
+minplayer: 2 #minimale spielerzahl
+maxplayer: 4 #maximale spielerzahl
+starttime: 1200 #in ticks
+1:
+  name: Los
+  money: 4000 #bekommt der spieler
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+2:
+  name: Badstrasse
+  buy: 1200 #kaufpreis
+  hypo: 600 #hypotek
+  house: 1000 #kosten für 1 haus
+  hotel: 1000 # kosten für 1 hotel (vorher müssen 4 häuser gebaut sein)
+  miete: 40 #miete normal
+  mieteall: 80 #mite normal mit kompletter straße
+  1: 200 #miete mit 1 haus
+  2: 600 #miete mit 2 häusern
+  3: 1800 #miete mit 3 häusern
+  4: 3200 #miete mit 4 häusern
+  5: 5000 #miete mit 1 hotel
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+3:
+  name: Gemeinschaftsfeld
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+4:
+  name: Turmstrasse
+  buy: 1200
+  hypo: 600
+  house: 1000
+  hotel: 1000
+  miete: 80
+  mieteall: 160
+  1: 400
+  2: 1200
+  3: 3600
+  4: 6400
+  5: 9000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+5:
+  name: Einkommensteuer
+  pay: 4000 #kommt zu frei parken hinzu
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+6:
+  name: Südbahnhof
+  buy: 4000
+  hypo: 2000
+  miete: 500
+  2: 1000
+  3: 2000
+  4: 4000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+7:
+  name: Chausseestrasse
+  buy: 2000
+  hypo: 1000
+  house: 1000
+  hotel: 1000
+  miete: 120
+  mieteall: 240
+  1: 600
+  2: 1800
+  3: 5400
+  4: 8000
+  5: 11000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+8:
+  name: Ereignisfeld
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+9:
+  name: Elisenstrasse
+  buy: 2000
+  hypo: 1000
+  house: 1000
+  hotel: 1000
+  miete: 120
+  mieteall: 240
+  1: 600
+  2: 1800
+  3: 5400
+  4: 8000
+  5: 11000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+10:
+  name: Poststrasse
+  buy: 2400
+  hypo: 1200
+  house: 1000
+  hotel: 1000
+  miete: 160
+  mieteall: 320
+  1: 800
+  2: 2000
+  3: 6000
+  4: 9000
+  5: 12000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+11:
+  name: Nur zu Besuch / Gefängnis
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+12:
+  name: Seestrasse
+  buy: 2800
+  hypo: 1400
+  house: 2000
+  hotel: 2000
+  miete: 200
+  mieteall: 400
+  1: 1000
+  2: 3000
+  3: 9000
+  4: 12500
+  5: 15000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+13:
+  name: Elektrizitäts-Werk
+  buy: 3000
+  hypo: 1500
+  1: 80 #80 * würfelaugen
+  2: 200 #200 * würfelaugen
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+14:
+  name: Hafenstrasse
+  buy: 2800
+  hypo: 1400
+  house: 2000
+  hotel: 2000
+  miete: 200
+  mieteall: 400
+  1: 1000
+  2: 3000
+  3: 9000
+  4: 12500
+  5: 15000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+15:
+  name: Neue Strasse
+  buy: 3200
+  hypo: 1600
+  house: 2000
+  hotel: 2000
+  miete: 240
+  mieteall: 480
+  1: 1200
+  2: 3600
+  3: 10000
+  4: 14000
+  5: 18000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+16:
+  name: Westbahnhof
+  buy: 4000
+  hypo: 2000
+  miete: 500
+  2: 1000
+  3: 2000
+  4: 4000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+17:
+  name: Münchener Strasse
+  buy: 3600
+  hypo: 1800
+  house: 2000
+  hotel: 2000
+  miete: 280
+  mieteall: 560
+  1: 1400
+  2: 4000
+  3: 11000
+  4: 15000
+  5: 19000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+18:
+  name: Gemeinschaftsfeld
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+19:
+  name: Wiener Straße
+  buy: 3600
+  hypo: 1800
+  house: 2000
+  hotel: 2000
+  miete: 280
+  mieteall: 560
+  1: 1400
+  2: 4000
+  3: 11000
+  4: 15000
+  5: 19000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+20:
+  name: Berliner Strasse
+  buy: 4000
+  hypo: 2000
+  house: 2000
+  hotel: 2000
+  miete: 320
+  mieteall: 640
+  1: 1600
+  2: 4400
+  3: 12000
+  4: 16000
+  5: 20000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+21:
+  name: Frei Parken #alle straffen die bezahlt wurden bekommt der spieler(wird wieder auf 0 gesetzt)
+22:
+  name: TheaterStrasse
+  buy: 4400
+  hypo: 2200
+  house: 3000
+  hotel: 3000
+  miete: 360
+  mieteall: 720
+  1: 1800
+  2: 5000
+  3: 14000
+  4: 17500
+  5: 21000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+23:
+  name: Ereignisfeld
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+24:
+  name: MuseumStrasse
+  buy: 4400
+  hypo: 2200
+  house: 3000
+  hotel: 3000
+  miete: 360
+  mieteall: 720
+  1: 1800
+  2: 5000
+  3: 14000
+  4: 17500
+  5: 21000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+25:
+  name: Opernplatz
+  buy: 4800
+  hypo: 2400
+  house: 3000
+  hotel: 3000
+  miete: 400
+  mieteall: 800
+  1: 2000
+  2: 6000
+  3: 15000
+  4: 18500
+  5: 22000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+26:
+  name: Nordbahnhof
+  buy: 4000
+  hypo: 2000
+  miete: 500
+  2: 1000
+  3: 2000
+  4: 4000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+27:
+  name: Lessingstrasse
+  buy: 5200
+  hypo: 2600
+  house: 3000
+  hotel: 3000
+  miete: 440
+  mieteall: 880
+  1: 2200
+  2: 6600
+  3: 16000
+  4: 19500
+  5: 23000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+28:
+  name: Schillerstrasse
+  buy: 5200
+  hypo: 2600
+  house: 3000
+  hotel: 3000
+  miete: 440
+  mieteall: 880
+  1: 2200
+  2: 6600
+  3: 16000
+  4: 19500
+  5: 23000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+29:
+  name: Elektrizitäts-Werk
+  buy: 3000
+  hypo: 1500
+  1: 80
+  2: 200
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+30:
+  name: Goethestrasse
+  buy: 5600
+  hypo: 2800
+  house: 3000
+  hotel: 3000
+  miete: 480
+  mieteall: 960
+  1: 2400
+  2: 7200
+  3: 17000
+  4: 20500
+  5: 24000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+31:
+  name: Gehe direckt in das Gefängnis #der spieler muss in das gefängnis(feld 11)
+  free: 1000 #muss ein pasch gewürfelt werden um frei zukommen oder 1000$ bezahlen vor dem würfeln, nach dem 3 würfeln 1000$ müssen gezahlt werden
+32:
+  name: Rathausplatz
+  buy: 6000
+  hypo: 3000
+  house: 4000
+  hotel: 4000
+  miete: 520
+  mieteall: 1040
+  1: 2600
+  2: 7800
+  3: 18000
+  4: 22000
+  5: 25500
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+33:
+  name: Hauptstrasse
+  buy: 6000
+  hypo: 3000
+  house: 4000
+  hotel: 4000
+  miete: 520
+  mieteall: 1040
+  1: 2600
+  2: 7800
+  3: 18000
+  4: 22000
+  5: 25500
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+34:
+  name: Gemeinschaftsfeld
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+35:
+  name: Bahnhofstrasse
+  buy: 6400
+  hypo: 3200
+  house: 4000
+  hotel: 4000
+  miete: 560
+  mieteall: 1120
+  1: 3000
+  2: 9000
+  3: 20000
+  4: 24000
+  5: 28000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+36:
+  name: Hauptbahnhof
+  buy: 4000
+  hypo: 2000
+  miete: 500
+  2: 1000
+  3: 2000
+  4: 4000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+37:
+  name: Ereignisfeld
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+38:
+  name: Parkstrasse
+  buy: 7000
+  hypo: 3500
+  house: 4000
+  hotel: 4000
+  miete: 700
+  mieteall: 1400
+  1: 3500
+  2: 10000
+  3: 22000
+  4: 26000
+  5: 30000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+39:
+  name: Zusatzsteuer
+  pay: 2000 #kommt zu frei parken hinzu
+40:
+  name: Schlossallee
+  buy: 8000
+  hypo: 4000
+  house: 4000
+  hotel: 4000
+  miete: 1000
+  mieteall: 2000
+  1: 4000
+  2: 12000
+  3: 28000
+  4: 34000
+  5: 40000
+  coords1:
+  coords2:
+  coords3:
+  coords4:
+Ereignisfeld:
+  1:
+    text: Rücke vor bis zum Opernplatz. Wenn du dabei über Los kommst, ziehe 4000$ ein.
+    extra: 25 #openerplatz nummer
+  2:
+    text: Strafe für zu schnelles fahren: 300$
+    extra: 300 #300$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+  3:
+    text: Zahle eine strafe von 200$ oder nimm eine Gemeinschaftskarte.
+    extra1: 200 #200$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+    extra2: Gemeinschaftskarte
+  4:
+    text: Rücke vor bis zu Schlossallee.
+    extra: 40 #schlossallee nummer
+  5:
+    text: Rücke vor bis zur Seestrasse. Wenn du über Los kommst, ziehe 4000$ ein.
+    extra: 12 #seestrasse nummer
+  6:
+    text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.
+  7:
+    text: Lasse alle deine Häuser Renovieren! Zahle an die Bank: 500$ für jedes Haus, 2000$ für jedes Hotel
+    extra1: 500 #500$ pro haus 
+    extra2: 2000 #2000$ pro hotel
+  8:
+    text: Du bist zum Vorstand gewählt worden. Zahle jedem Spieler 1000$.
+    extra: 1000 #1000$ müssen vom spieler an jeden spieler gezahlt werden
+  9:
+    text: Mache ein Ausflug zum Südbahnhof. Wenn du über Los kommst ziehe 4000$ ein.
+    extra: 6 #südbahnhof nummer
+  10:
+    text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
+    extra: 11 #nur zu besuch / gefängnis nummer
+  11:
+    text: Gehe 3 Felder zurück.
+    extra: 3 #felder zurück
+  12:
+    text: Rücke vor bis auf Los.
+    extra: 1 #los nummer
+  13:
+    text: Gehe zurück zur Badstrasse.
+    extra: 2 #badstrasse nummer
+  14:
+    text: Miete und Anleihzinsen werden fällig. Die Bank zahlt dir 3000$.
+    extra: 3000 #3000$ bekommt der spieler von der bank
+  15:
+    text: Die Bank zahlt dir eine Dividende: 1000$
+    extra: 1000 #1000$ bekommt der spieler von der bank
+  16:
+    text: Rücke vor bis zum nächsten Bahnhof. Der Eigentümer erhält das doppelte der Normalen Miete. Hat noch kein Spieler den Bahnhof, kannst du ihn kaufen.
+    extra: 2 #2 * kosten
+Gemeinschaftsfeld:
+  1:
+    text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
+    extra: 11 #nur zu besuch / gefängnis nummer
+  2:
+    text: Zahle an das Krankenhaus: 2000$
+    extra: 2000 #2000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+  3:
+    text: Aus Lagerverkäufen erhälst du: 500$
+    extra: 500 #500$ bekommt der spieler von der bank
+  4:
+    text: Zahle Schulgeld: 3000$
+    extra: 3000 #3000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+  5:
+    text: Du wirst zu Strassenausbesserungsarbeiten herangezogen! Zahle an die Bank: 800$ für jedes Haus, 2300$ für jedes Hotel
+    extra1: 800 #800$ pro haus 
+    extra2: 2300 #2300$ pro hotel
+  6:
+    text: Die Jahresrente wird fällig ziehe 2000$ ein.
+    extra: 2000 #2000$ bekommt der spieler von der bank
+  7:
+    text: Du hast den 2. Preis in einer Schönheitskonkurrenz gewonnen. Ziehe 200$ ein.
+    extra: 200 #200$ bekommt der spieler von der bank
+  8:
+    text: Du erhälst auf Vorzugs-Aktien 7 Prozent Dividende: 900$  
+    extra: 900 #900$ bekommt der Spieler von der bank
+  9:
+    text: Du hast in einem Kreutzworträtzelwettbewerb gewonnen. Ziehe 2000$ ein.
+    extra: 2000 #2000$ bekommt der spieler von der bank
+  10:
+    text: Einkommensteuer-Rückzahlung. Ziehe 4000$ ein.
+    extra: 4000 #4000$ bekommt der spieler von der bank
+  11:
+    text: Rücke vor bis auf Los.
+    extra: 1 #los nummer 
+  12:
+    text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.    
+  13:
+    text: Es ist dein Geburtstag. Ziehe von jedem Spieler 1000$ ein.
+    extra: 1000 #der spieler bekommt von jedem anderen spieler 1000$
+  14:
+    text: Arzt-Kosten zahle: 1000$
+    extra: 1000 #1000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
+  15:
+    text: Bank-Irrtum zu deinen Gunsten. Ziehe 4000$ ein.
+    extra: 4000 #4000$ bekommt der spieler von der bank
+  16:
+    text:  Du Erbst: 2000$
+    extra: 2000 #2000$ bekommt der spieler von der bank
+...
