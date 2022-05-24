@@ -167,9 +167,11 @@ coords4: #spieler 4 positionen
   x;y;z: 38
   x;y;z: 39
   x;y;z: 40
+Los: 1
 1:
   name: Los
   money: 4000 #bekommt der spieler
+Badstrasse: 2
 2:
   name: Badstrasse
   buy: 1200 #kaufpreis
@@ -188,8 +190,10 @@ coords4: #spieler 4 positionen
   coords3: #haus 3 coords
   coords4: #haus 4 coords
   coords5: #hotel coords
+Gemeinschaftsfeld-1: 3
 3:
   name: Gemeinschaftsfeld
+Turmstrasse: 4
 4:
   name: Turmstrasse
   buy: 1200
@@ -208,9 +212,11 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Einkommensteuer: 5
 5:
   name: Einkommensteuer
   pay: 4000 #kommt zu frei parken hinzu
+Südbahnhof: 6
 6:
   name: Südbahnhof
   buy: 4000
@@ -219,6 +225,7 @@ coords4: #spieler 4 positionen
   2: 1000
   3: 2000
   4: 4000
+Chausseestrasse: 7
 7:
   name: Chausseestrasse
   buy: 2000
@@ -237,8 +244,10 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Ereignisfeld-1: 8
 8:
-  name: Ereignisfeld
+  name: Ereignisfeld-1
+Elisenstrasse: 9
 9:
   name: Elisenstrasse
   buy: 2000
@@ -257,6 +266,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Poststrasse: 10
 10:
   name: Poststrasse
   buy: 2400
@@ -275,8 +285,11 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Nur zu Besuch: 11
+Gefängnis: 11
 11:
   name: Nur zu Besuch / Gefängnis
+Seestrasse: 12
 12:
   name: Seestrasse
   buy: 2800
@@ -295,12 +308,14 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Elektrizitäts-Werk: 13
 13:
   name: Elektrizitäts-Werk
   buy: 3000
   hypo: 1500
   1: 80 #80 * würfelaugen
   2: 200 #200 * würfelaugen
+Hafenstrasse: 14
 14:
   name: Hafenstrasse
   buy: 2800
@@ -319,6 +334,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Neue Strasse: 15
 15:
   name: Neue Strasse
   buy: 3200
@@ -337,6 +353,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Westbahnhof: 16
 16:
   name: Westbahnhof
   buy: 4000
@@ -345,6 +362,7 @@ coords4: #spieler 4 positionen
   2: 1000
   3: 2000
   4: 4000
+Münchener Strasse: 17
 17:
   name: Münchener Strasse
   buy: 3600
@@ -363,8 +381,10 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Gemeinschaftsfeld-2: 18
 18:
   name: Gemeinschaftsfeld
+Wiener Strasse: 19
 19:
   name: Wiener Straße
   buy: 3600
@@ -383,6 +403,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Berliner Strasse: 20
 20:
   name: Berliner Strasse
   buy: 4000
@@ -401,8 +422,10 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Frei Parken: 21
 21:
   name: Frei Parken #alle straffen die bezahlt wurden bekommt der spieler(wird wieder auf 0 gesetzt)
+TheaterStrasse: 22
 22:
   name: TheaterStrasse
   buy: 4400
@@ -421,8 +444,10 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Ereignisfeld-2: 23
 23:
   name: Ereignisfeld
+MuseumStrasse: 24
 24:
   name: MuseumStrasse
   buy: 4400
@@ -441,6 +466,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Opernplatz: 25
 25:
   name: Opernplatz
   buy: 4800
@@ -459,6 +485,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Nordbahnhof: 26
 26:
   name: Nordbahnhof
   buy: 4000
@@ -467,6 +494,7 @@ coords4: #spieler 4 positionen
   2: 1000
   3: 2000
   4: 4000
+Lessingstrasse: 27
 27:
   name: Lessingstrasse
   buy: 5200
@@ -485,6 +513,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Schillerstrasse: 28
 28:
   name: Schillerstrasse
   buy: 5200
@@ -503,12 +532,14 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Wasser-Werk: 29
 29:
-  name: Elektrizitäts-Werk
+  name: Wasser-Werk
   buy: 3000
   hypo: 1500
   1: 80
   2: 200
+Goethestrasse: 30
 30:
   name: Goethestrasse
   buy: 5600
@@ -527,9 +558,11 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Gehe direckt in das Gefängnis: 31
 31:
   name: Gehe direckt in das Gefängnis #der spieler muss in das gefängnis(feld 11)
   free: 1000 #muss ein pasch gewürfelt werden um frei zukommen oder 1000$ bezahlen vor dem würfeln, nach dem 3 würfeln 1000$ müssen gezahlt werden
+Rathausplatz: 32
 32:
   name: Rathausplatz
   buy: 6000
@@ -548,6 +581,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Hauptstrasse: 33
 33:
   name: Hauptstrasse
   buy: 6000
@@ -566,8 +600,10 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Gemeinschaftsfeld-3: 34
 34:
   name: Gemeinschaftsfeld
+Bahnhofstrasse: 35
 35:
   name: Bahnhofstrasse
   buy: 6400
@@ -586,6 +622,7 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Hauptbahnhof: 36
 36:
   name: Hauptbahnhof
   buy: 4000
@@ -594,8 +631,10 @@ coords4: #spieler 4 positionen
   2: 1000
   3: 2000
   4: 4000
+Ereignisfeld-3: 37
 37:
   name: Ereignisfeld
+Parkstrasse: 38
 38:
   name: Parkstrasse
   buy: 7000
@@ -614,9 +653,11 @@ coords4: #spieler 4 positionen
   coords3:
   coords4:
   coords5:
+Zusatzsteuer: 39
 39:
   name: Zusatzsteuer
   pay: 2000 #kommt zu frei parken hinzu
+Schlossallee: 40
 40:
   name: Schlossallee
   buy: 8000
