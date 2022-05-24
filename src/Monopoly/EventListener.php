@@ -47,20 +47,20 @@ class EventListener implements Listener{
         $bauen->setCustomName("§bBauen");       
         $hypo = Item::get(46, 0, 1);
         $hypo->setCustomName("§eHypothek");
-	$handeln = Item::get(54, 0, 1);
+		$handeln = Item::get(54, 0, 1);
         $handeln->setCustomName("§dHandeln");
-	$info = Item::get(340, 0, 1);
+		$info = Item::get(340, 0, 1);
         $info->setCustomName("§7Infos");
-	$giveup = Item::get(355, 14, 1);
+		$giveup = Item::get(355, 14, 1);
         $giveup->setCustomName("§cAufgeben/Bankrott");
         $p->getInventory()->setItem(0, $wuerfeln);
         $p->getInventory()->setItem(1, $kaufen);
         $p->getInventory()->setItem(2, $bauen);
-	$p->getInventory()->setItem(3, $hypo);
+		$p->getInventory()->setItem(3, $hypo);
         $p->getInventory()->setItem(4, $handeln);
-	$p->getInventory()->setItem(6, $info);
-	$p->getInventory()->setItem(8, $giveup);
-	EconomyAPI::getInstance()->setMoney($player, 40000);
+		$p->getInventory()->setItem(6, $info);
+		$p->getInventory()->setItem(8, $giveup);
+		EconomyAPI::getInstance()->setMoney($player, 40000);
     }
 	
 	public function onPlayerQuit(PlayerQuitEvent $ev){
@@ -93,59 +93,59 @@ class EventListener implements Listener{
     public function onInteract(PlayerInteractEvent $ev){
         $p = $ev->getPlayer();
         $item = $ev->getItem();
-	$config = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
-	$Player1 = ;
-	$Player2 = ;
-	$Player3 = ;
-	$Player4 = ;
-	if($p === $Player1){
-		$feld = $config->getNested("coords1.".$p->getPosition());
-	}elseif($p === $Player2){
-		$feld = $config->getNested("coords2.".$p->getPosition());
-	}elseif($p === $Player3){
-		$feld = $config->getNested("coords3.".$p->getPosition());
-	}elseif($p === $Player4){
-		$feld = $config->getNested("coords4.".$p->getPosition());
-	}
-	if($item->getId() === 236) {
+		$config = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
+		$Player1 = ;
+		$Player2 = ;
+		$Player3 = ;
+		$Player4 = ;
+		if($p === $Player1){
+		    $feld = $config->getNested("coords1.".$p->getPosition());
+		}elseif($p === $Player2){
+			$feld = $config->getNested("coords2.".$p->getPosition());
+		}elseif($p === $Player3){
+			$feld = $config->getNested("coords3.".$p->getPosition());
+		}elseif($p === $Player4){
+			$feld = $config->getNested("coords4.".$p->getPosition());
+		}
+		if($item->getId() === 236) {
             if($item->getName() === "§aWürfeln") {
                 $wurf = Main::getInstance()->getZufall1() + Main::getInstance()->getZufall2();
 				$isPasch = Main::getInstance()->isPasch();
             }
         }
-	if($item->getId() === 266) {
+		if($item->getId() === 266) {
             if($item->getName() === "§6Kaufen") {
                 $playerMoney = EconomyAPI::getInstance()->myMoney($p);
-		$buy = $config->getNested($feld".buy");
-		if($playerMoney > $buy){
-			
-		}
+				$buy = $config->getNested($feld".buy");
+				if($playerMoney > $buy){
+					
+				}
             }
         }
-	if($item->getId() === 277) {
+		if($item->getId() === 277) {
             if($item->getName() === "§bBauen") {
                 
             }
         }
-	if($item->getId() === 46) {
+		if($item->getId() === 46) {
             if($item->getName() === "§eHypothek") {
                 
             }
         }
-	if($item->getId() === 54) {
+		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
                 
             }
         }
-	if($item->getId() === 340) {
+		if($item->getId() === 340) {
             if($item->getName() === "§7Infos") {
                 
             }
         }
-	if($item->getId() === 355) {
+		if($item->getId() === 355) {
             if($item->getName() === "§cAufgeben/Bankrott") {
                 
             }
         }
-    }
+	}
 }
