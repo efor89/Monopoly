@@ -16,7 +16,12 @@ class Main extends PluginBase{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
         if(!file_exists($this->getDataFolder() . "monopoly.yml")){
             $this->saveResource('monopoly.yml');
+        }
+		if(!file_exists($this->getDataFolder() . "player.yml")){
 			$this->saveResource('player.yml');
+        }
+		if(!file_exists($this->getDataFolder() . "game.yml")){
+            $this->saveResource('game.yml');
         }
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     }

@@ -41,27 +41,9 @@ class EventListener implements Listener{
         $p = $ev->getPlayer();
         $name = $p->getName();
         $p->getInventory()->clearAll();
-        $wuerfeln = Item::get(236, 0, 1);
-        $wuerfeln->setCustomName("§aWürfeln");
-        $kaufen = Item::get(266, 0, 1);
-        $kaufen->setCustomName("§6Kaufen");
-        $bauen = Item::get(277, 0, 1);
-        $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
-        $hypo = Item::get(46, 0, 1);
-        $hypo->setCustomName("§eHypothek");
-		$handeln = Item::get(54, 0, 1);
-        $handeln->setCustomName("§dHandeln");
-		$info = Item::get(340, 0, 1);
-        $info->setCustomName("§7Infos");
-		$giveup = Item::get(355, 14, 1);
-        $giveup->setCustomName("§cAufgeben/Bankrott");
-        $p->getInventory()->setItem(0, $wuerfeln);
-        $p->getInventory()->setItem(1, $kaufen);
-        $p->getInventory()->setItem(2, $bauen);
-		$p->getInventory()->setItem(3, $hypo);
-        $p->getInventory()->setItem(4, $handeln);
-		$p->getInventory()->setItem(6, $info);
-		$p->getInventory()->setItem(8, $giveup);
+        $start = Item::get(236, 0, 1);
+        $start->setCustomName("§aSpiel Starten");
+        $p->getInventory()->setItem(0, $start);
 		EconomyAPI::getInstance()->setMoney($p, 40000);
 		$config = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
 		$mconfig = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
@@ -144,6 +126,7 @@ class EventListener implements Listener{
         $p = $ev->getPlayer();
         $item = $ev->getItem();
 		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 		$players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
 		$Player1 = $players->get("player1");
 		$Player2 = $players->get("player2");
@@ -158,6 +141,82 @@ class EventListener implements Listener{
 		}elseif($p->getName() === $Player4){
 			$feld = $config->getNested("coords4.".$p->getPosition());
 		}
+		if($item->getId() === 236) {
+            if($item->getName() === "§aSpiel Starten") {
+				if($gamecfg->get("start") !== true){
+			        if(count(Server::getInstance()->getOnlinePlayers()) > 1){
+					    $player1 = Server::getInstance()->getPlayer($Player1);
+					    $player1->getInventory()->clearAll();
+				    	$player2 = Server::getInstance()->getPlayer($Player2);
+					    $player2->getInventory()->clearAll();
+					    if($Player3 !== null){
+					        $player3 = Server::getInstance()->getPlayer($Player3);
+					        $player3->getInventory()->clearAll();
+					    }
+					    if($Player4 !== null){
+					        $player4 = Server::getInstance()->getPlayer($Player4);
+					        $player4->getInventory()->clearAll();
+					    }
+					    $gamecfg->set("start", true);
+					    $gamecfg->save();
+                        $wuerfeln = Item::get(236, 0, 1);
+                        $wuerfeln->setCustomName("§aWürfeln");
+                        $kaufen = Item::get(266, 0, 1);
+                        $kaufen->setCustomName("§6Kaufen");
+                        $bauen = Item::get(277, 0, 1);
+                        $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
+                        $hypo = Item::get(46, 0, 1);
+                        $hypo->setCustomName("§eHypothek");
+		                $handeln = Item::get(54, 0, 1);
+                        $handeln->setCustomName("§dHandeln");
+		                $info = Item::get(340, 0, 1);
+                        $info->setCustomName("§7Infos");
+		                $giveup = Item::get(355, 14, 1);
+                        $giveup->setCustomName("§cAufgeben/Bankrott");
+					    #player1
+                        $player1->getInventory()->setItem(0, $wuerfeln);
+                        $player1->getInventory()->setItem(1, $kaufen);
+                        $player1->getInventory()->setItem(2, $bauen);
+		                $player1->getInventory()->setItem(3, $hypo);
+                        $player1->getInventory()->setItem(4, $handeln);
+		                $player1->getInventory()->setItem(6, $info);
+		                $player1->getInventory()->setItem(8, $giveup);
+					    #player2
+					    $player2->getInventory()->setItem(0, $wuerfeln);
+                        $player2->getInventory()->setItem(1, $kaufen);
+                        $player2->getInventory()->setItem(2, $bauen);
+		                $player2->getInventory()->setItem(3, $hypo);
+                        $player2->getInventory()->setItem(4, $handeln);
+		                $player2->getInventory()->setItem(6, $info);
+		                $player2->getInventory()->setItem(8, $giveup);
+					    #player3
+					    if($Player3 !== null){
+						    $player3->getInventory()->setItem(0, $wuerfeln);
+                            $player3->getInventory()->setItem(1, $kaufen);
+                            $player3->getInventory()->setItem(2, $bauen);
+		                    $player3->getInventory()->setItem(3, $hypo);
+                            $player3->getInventory()->setItem(4, $handeln);
+		                    $player3->getInventory()->setItem(6, $info);
+		                    $player3->getInventory()->setItem(8, $giveup);
+					    }
+					    #player4
+					    if($Player4 !== null){
+						    $player4->getInventory()->setItem(0, $wuerfeln);
+                            $player4->getInventory()->setItem(1, $kaufen);
+                            $player4->getInventory()->setItem(2, $bauen);
+		                    $player4->getInventory()->setItem(3, $hypo);
+                            $player4->getInventory()->setItem(4, $handeln);
+		                    $player4->getInventory()->setItem(6, $info);
+		                    $player4->getInventory()->setItem(8, $giveup);
+						}
+					}else{
+						$p->sendMessage("§bMono§6poly: §cEs fehlen noch Spieler um ein Spiel zu Starten!");
+					}
+				}else{
+					$p->sendMessage("§bMono§6poly: §cEs läuft grade ein Spiel, du kannst aber gern zuschauen!");
+				}
+            }
+        }
 		if($item->getId() === 236) {
             if($item->getName() === "§aWürfeln") {
                 $point1 = $this->getZufall1();
@@ -212,8 +271,71 @@ class EventListener implements Listener{
         }
 		if($item->getId() === 355) {
             if($item->getName() === "§cAufgeben/Bankrott") {
-                $p->sendMessage("Aufgeben/Bankrott");
-				EconomyAPI::getInstance()->setMoney($player, 0);
+				$p->getInventory()->clearAll();
+                $ja = Item::get(355, 14, 1);
+                $ja->setCustomName("§aJa Aufgeben");
+				$nein = Item::get(450, 0, 1);
+                $nein->setCustomName("§cNein nicht Aufgeben");
+                $p->getInventory()->setItem(3, $ja);
+				$p->getInventory()->setItem(5, $nein);
+            }
+        }
+		if($item->getId() === 355) {
+            if($item->getName() === "§aJa Aufgeben") {
+                EconomyAPI::getInstance()->setMoney($player, 0);
+				if($player->getName() == $players->get("player1")){
+			        $players->set("player1", null);
+			        $players->save();
+		        }elseif($player->getName() == $players->get("player2")){
+			        $players->set("player2", null);
+			        $players->save();
+		        }elseif($player->getName() == $players->get("player3")){
+			        $players->set("player3", null);
+			        $players->save();
+		        }elseif($player->getName() == $players->get("player4")){
+			        $players->set("player4", null);
+			        $players->save();
+		        }
+				
+				if($players->get("player1") == null and $players->get("player2") == null){
+					
+				}elseif($players->get("player1") == null and $players->get("player3") == null){
+					
+				}elseif($players->get("player1") == null and $players->get("player4") == null){
+					
+				}elseif($players->get("player2") == null and $players->get("player3") == null){
+					
+				}elseif($players->get("player2") == null and $players->get("player4") == null){
+					
+				}elseif($players->get("player3") == null and $players->get("player4") == null){
+					
+				}
+            }
+        }
+		if($item->getId() === 450) {
+            if($item->getName() === "§cNein nicht Aufgeben") {
+                $p->getInventory()->clearAll();
+                $wuerfeln = Item::get(236, 0, 1);
+                $wuerfeln->setCustomName("§aWürfeln");
+                $kaufen = Item::get(266, 0, 1);
+                $kaufen->setCustomName("§6Kaufen");
+                $bauen = Item::get(277, 0, 1);
+                $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
+                $hypo = Item::get(46, 0, 1);
+                $hypo->setCustomName("§eHypothek");
+		        $handeln = Item::get(54, 0, 1);
+                $handeln->setCustomName("§dHandeln");
+		        $info = Item::get(340, 0, 1);
+                $info->setCustomName("§7Infos");
+		        $giveup = Item::get(355, 14, 1);
+                $giveup->setCustomName("§cAufgeben/Bankrott");
+                $p->getInventory()->setItem(0, $wuerfeln);
+                $p->getInventory()->setItem(1, $kaufen);
+                $p->getInventory()->setItem(2, $bauen);
+		        $p->getInventory()->setItem(3, $hypo);
+                $p->getInventory()->setItem(4, $handeln);
+		        $p->getInventory()->setItem(6, $info);
+		        $p->getInventory()->setItem(8, $giveup);
             }
         }
 		if($item->getId() === 331) {
@@ -242,7 +364,7 @@ class EventListener implements Listener{
 		        $p->getInventory()->setItem(8, $giveup);
             }
         }
-		if(!$player->isOP()){
+		if(!$p->isOP()){
             $ev->setCancelled(true);
 		}
 	}

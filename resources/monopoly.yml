@@ -1,8 +1,4 @@
 ---
-maxturntime: 4800 #in ticks
-minplayer: 2 #minimale spielerzahl
-maxplayer: 4 #maximale spielerzahl
-starttime: 1200 #in ticks
 coords1: #spieler 1 positionen
   253;5;248: 1 #strassen nummer 1
   255;5;254: 2 #strassen nummer 2
