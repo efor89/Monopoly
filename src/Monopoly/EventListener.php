@@ -110,15 +110,6 @@ class EventListener implements Listener{
 		$Player2 = $players->get("player2");
 		$Player3 = $players->get("player3");
 		$Player4 = $players->get("player4");
-		if($p->getName() === $Player1){
-		    $feld = $config->getNested("coords1.".$p->getPosition());
-		}elseif($p->getName() === $Player2){
-			$feld = $config->getNested("coords2.".$p->getPosition());
-		}elseif($p->getName() === $Player3){
-			$feld = $config->getNested("coords3.".$p->getPosition());
-		}elseif($p->getName() === $Player4){
-			$feld = $config->getNested("coords4.".$p->getPosition());
-		}
 		if($item->getId() === 421) {
             if($item->getName() === "§aAls Spieler Anmelden") {
 				if($gamecfg->get("start") !== true){
@@ -186,8 +177,8 @@ class EventListener implements Listener{
 					        $player4->getInventory()->clearAll();
 					    }
 					    $gamecfg->set("start", true);
-					    $gamecfg->save();
-                        $wuerfeln = Item::get(236, 0, 1);
+						$gamecfg->save();
+						$wuerfeln = Item::get(236, 0, 1);
                         $wuerfeln->setCustomName("§aWürfeln");
                         $kaufen = Item::get(266, 0, 1);
                         $kaufen->setCustomName("§6Kaufen");
@@ -197,46 +188,84 @@ class EventListener implements Listener{
                         $hypo->setCustomName("§eHypothek");
 		                $handeln = Item::get(54, 0, 1);
                         $handeln->setCustomName("§dHandeln");
+						$endturn = Item::get(208, 0, 1);
+                        $endturn->setCustomName("§3Zug Beenden");
 		                $info = Item::get(340, 0, 1);
                         $info->setCustomName("§7Infos");
 		                $giveup = Item::get(355, 14, 1);
                         $giveup->setCustomName("§cAufgeben/Bankrott");
-					    #player1
-                        $player1->getInventory()->setItem(0, $wuerfeln);
-                        $player1->getInventory()->setItem(1, $kaufen);
-                        $player1->getInventory()->setItem(2, $bauen);
-		                $player1->getInventory()->setItem(3, $hypo);
-                        $player1->getInventory()->setItem(4, $handeln);
-		                $player1->getInventory()->setItem(6, $info);
-		                $player1->getInventory()->setItem(8, $giveup);
-					    #player2
-					    $player2->getInventory()->setItem(0, $wuerfeln);
-                        $player2->getInventory()->setItem(1, $kaufen);
-                        $player2->getInventory()->setItem(2, $bauen);
-		                $player2->getInventory()->setItem(3, $hypo);
-                        $player2->getInventory()->setItem(4, $handeln);
-		                $player2->getInventory()->setItem(6, $info);
-		                $player2->getInventory()->setItem(8, $giveup);
-					    #player3
-					    if($Player3 !== null){
-						    $player3->getInventory()->setItem(0, $wuerfeln);
+						if($Player1 !== null and $Player2 !== null and $Player3 !== null and $Player4 !== null){
+						    $zufallplayer = mt_rand(1, 4);
+						}elseif($Player1 !== null and $Player2 !== null and $Player3 == null and $Player4 == null){{
+							$zufallplayer = mt_rand(1, 2);
+						}elseif($Player1 !== null and $Player2 == null and $Player3 !== null and $Player4 == null){{
+							$zufallplayer = mt_rand(1, 2);
+						}elseif($Player1 !== null and $Player2 == null and $Player3 == null and $Player4 !== null){{
+							$zufallplayer = mt_rand(1, 2);
+						}elseif($Player1 !== null and $Player2 !== null and $Player3 !== null and $Player4 == null){{
+							$zufallplayer = mt_rand(1, 3);
+						}elseif($Player1 !== null and $Player2 !== null and $Player3 == null and $Player4 !== null){{
+							$zufallplayer = mt_rand(1, 3);
+						}elseif($Player1 !== null and $Player2 == null and $Player3 !== null and $Player4 !== null){{
+							$zufallplayer = mt_rand(1, 3);
+						}elseif($Player1 == null and $Player2 !== null and $Player3 !== null and $Player4 == null){{
+							$zufallplayer = mt_rand(1, 2);
+						}elseif($Player1 == null and $Player2 !== null and $Player3 == null and $Player4 !== null){{
+							$zufallplayer = mt_rand(1, 2);
+						}elseif($Player1 == null and $Player2 !== null and $Player3 !== null and $Player4 !== null){{
+							$zufallplayer = mt_rand(1, 3);
+						}elseif($Player1 == null and $Player2 == null and $Player3 !== null and $Player4 !== null){{
+							$zufallplayer = mt_rand(1, 2);
+						}
+						if($zufallplayer < 2){
+						    $gamecfg->set("turn", $Player1);
+							$gamecfg->save();
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player1." §aist als erster mit Würfeln dran.");
+							$player1->getInventory()->setItem(0, $wuerfeln);
+                            $player1->getInventory()->setItem(1, $kaufen);
+                            $player1->getInventory()->setItem(2, $bauen);
+		                    $player1->getInventory()->setItem(3, $hypo);
+                            $player1->getInventory()->setItem(4, $handeln);
+						    $player1->getInventory()->setItem(6, $endturn);	                    
+						}elseif($zufallplayer < 3){
+							$gamecfg->set("turn", $Player2);
+							$gamecfg->save();
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player2." §aist als erster mit Würfeln dran.");
+							$player2->getInventory()->setItem(0, $wuerfeln);
+                            $player2->getInventory()->setItem(1, $kaufen);
+                            $player2->getInventory()->setItem(2, $bauen);
+		                    $player2->getInventory()->setItem(3, $hypo);
+                            $player2->getInventory()->setItem(4, $handeln);
+		                    $player2->getInventory()->setItem(6, $endturn);	                    
+						}elseif($zufallplayer < 4){
+							$gamecfg->set("turn", $Player3);
+							$gamecfg->save();
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player3." §aist als erster mit Würfeln dran.");
+							$player3->getInventory()->setItem(0, $wuerfeln);
                             $player3->getInventory()->setItem(1, $kaufen);
                             $player3->getInventory()->setItem(2, $bauen);
 		                    $player3->getInventory()->setItem(3, $hypo);
                             $player3->getInventory()->setItem(4, $handeln);
-		                    $player3->getInventory()->setItem(6, $info);
-		                    $player3->getInventory()->setItem(8, $giveup);
-					    }
-					    #player4
-					    if($Player4 !== null){
-						    $player4->getInventory()->setItem(0, $wuerfeln);
+		                    $player3->getInventory()->setItem(6, $endturn);   
+						}elseif($zufallplayer > 3){
+							$gamecfg->set("turn", $Player4);
+							$gamecfg->save();
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player4." §aist als erster mit Würfeln dran.");
+							$player4->getInventory()->setItem(0, $wuerfeln);
                             $player4->getInventory()->setItem(1, $kaufen);
                             $player4->getInventory()->setItem(2, $bauen);
 		                    $player4->getInventory()->setItem(3, $hypo);
                             $player4->getInventory()->setItem(4, $handeln);
-		                    $player4->getInventory()->setItem(6, $info);
-		                    $player4->getInventory()->setItem(8, $giveup);
+		                    $player4->getInventory()->setItem(6, $endturn);
 						}
+						$player1->getInventory()->setItem(7, $info);
+						$player2->getInventory()->setItem(7, $info);
+						$player3->getInventory()->setItem(7, $info);
+						$player4->getInventory()->setItem(7, $info);
+						$player1->getInventory()->setItem(8, $giveup);
+						$player2->getInventory()->setItem(8, $giveup);
+						$player3->getInventory()->setItem(8, $giveup);
+						$player4->getInventory()->setItem(8, $giveup);
 					}else{
 						$p->sendMessage("§bMono§6poly: §cEs fehlen noch Spieler um ein Spiel zu Starten!");
 					}
@@ -251,7 +280,9 @@ class EventListener implements Listener{
 				$point2 = $this->getZufall2();
 			    if($point1 == $point2){
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kann §d".$p->getName()." §anochmal.");
+					
 				}else{
+					
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt.");
 				}
             }
@@ -290,6 +321,80 @@ class EventListener implements Listener{
 		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
                 $p->sendMessage("handeln");
+            }
+        }
+		if($item->getId() === 208) {
+            if($item->getName() === "§3Zug Beenden") {
+                $p->getInventory()->clearAll();
+				$wuerfeln = Item::get(236, 0, 1);
+                $wuerfeln->setCustomName("§aWürfeln");
+                $kaufen = Item::get(266, 0, 1);
+                $kaufen->setCustomName("§6Kaufen");
+                $bauen = Item::get(277, 0, 1);
+                $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
+                $hypo = Item::get(46, 0, 1);
+                $hypo->setCustomName("§eHypothek");
+		        $handeln = Item::get(54, 0, 1);
+                $handeln->setCustomName("§dHandeln");
+				$endturn = Item::get(208, 0, 1);
+                $endturn->setCustomName("§3Zug Beenden");
+		        $info = Item::get(340, 0, 1);
+                $info->setCustomName("§7Infos");
+		        $giveup = Item::get(355, 14, 1);
+                $giveup->setCustomName("§cAufgeben/Bankrott");
+				if($p->getName() === $Player1){
+		            $gamecfg->set("turn", $Player2);
+				    $gamecfg->save();
+					$player2->getInventory()->setItem(0, $wuerfeln);
+                    $player2->getInventory()->setItem(1, $kaufen);
+                    $player2->getInventory()->setItem(2, $bauen);
+                    $player2->getInventory()->setItem(3, $hypo);
+                    $player2->getInventory()->setItem(4, $handeln);
+                    $player2->getInventory()->setItem(6, $endturn);
+					$player2->getInventory()->setItem(7, $info);
+                    $player2->getInventory()->setItem(8, $giveup);
+					$p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup); 
+		        }elseif($p->getName() === $Player2){
+			        $gamecfg->set("turn", $Player3);
+				    $gamecfg->save();
+					$player3->getInventory()->setItem(0, $wuerfeln);
+                    $player3->getInventory()->setItem(1, $kaufen);
+                    $player3->getInventory()->setItem(2, $bauen);
+                    $player3->getInventory()->setItem(3, $hypo);
+                    $player3->getInventory()->setItem(4, $handeln);
+                    $player3->getInventory()->setItem(6, $endturn);
+					$player3->getInventory()->setItem(7, $info);
+                    $player3->getInventory()->setItem(8, $giveup);
+                    $p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup); 					
+		        }elseif($p->getName() === $Player3){
+			        $gamecfg->set("turn", $Player4);
+				    $gamecfg->save();
+					$player4->getInventory()->setItem(0, $wuerfeln);
+                    $player4->getInventory()->setItem(1, $kaufen);
+                    $player4->getInventory()->setItem(2, $bauen);
+                    $player4->getInventory()->setItem(3, $hypo);
+                    $player4->getInventory()->setItem(4, $handeln);
+                    $player4->getInventory()->setItem(6, $endturn);
+					$player4->getInventory()->setItem(7, $info);
+                    $player4->getInventory()->setItem(8, $giveup);
+                    $p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup);
+		        }elseif($p->getName() === $Player4){
+			        $gamecfg->set("turn", $Player1);
+				    $gamecfg->save();
+					$player1->getInventory()->setItem(0, $wuerfeln);
+                    $player1->getInventory()->setItem(1, $kaufen);
+                    $player1->getInventory()->setItem(2, $bauen);
+                    $player1->getInventory()->setItem(3, $hypo);
+                    $player1->getInventory()->setItem(4, $handeln);
+                    $player1->getInventory()->setItem(6, $endturn);
+					$player1->getInventory()->setItem(7, $info);
+                    $player1->getInventory()->setItem(8, $giveup);
+  					$p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup);
+		        }
             }
         }
 		if($item->getId() === 340) {
@@ -417,10 +522,9 @@ class EventListener implements Listener{
 				}
             }
         }
-		if($item->getId() === 450) {
-            if($item->getName() === "§cNein nicht Aufgeben") {
-                $p->getInventory()->clearAll();
-                $wuerfeln = Item::get(236, 0, 1);
+		if($item->getId() === 450){
+            if($item->getName() === "§cNein nicht Aufgeben"){
+				$wuerfeln = Item::get(236, 0, 1);
                 $wuerfeln->setCustomName("§aWürfeln");
                 $kaufen = Item::get(266, 0, 1);
                 $kaufen->setCustomName("§6Kaufen");
@@ -430,17 +534,23 @@ class EventListener implements Listener{
                 $hypo->setCustomName("§eHypothek");
 		        $handeln = Item::get(54, 0, 1);
                 $handeln->setCustomName("§dHandeln");
+				$endturn = Item::get(208, 0, 1);
+                $endturn->setCustomName("§3Zug Beenden");
 		        $info = Item::get(340, 0, 1);
                 $info->setCustomName("§7Infos");
 		        $giveup = Item::get(355, 14, 1);
                 $giveup->setCustomName("§cAufgeben/Bankrott");
-                $p->getInventory()->setItem(0, $wuerfeln);
-                $p->getInventory()->setItem(1, $kaufen);
-                $p->getInventory()->setItem(2, $bauen);
-		        $p->getInventory()->setItem(3, $hypo);
-                $p->getInventory()->setItem(4, $handeln);
-		        $p->getInventory()->setItem(6, $info);
-		        $p->getInventory()->setItem(8, $giveup);
+				if($p->getName() === $gamecfg->get("turn")){	            
+					$p->getInventory()->setItem(0, $wuerfeln);
+                    $p->getInventory()->setItem(1, $kaufen);
+                    $p->getInventory()->setItem(2, $bauen);
+                    $p->getInventory()->setItem(3, $hypo);
+                    $p->getInventory()->setItem(4, $handeln);
+                    $p->getInventory()->setItem(6, $endturn);
+		        }else{			
+				    $p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup);
+				}
             }
         }
 		if($item->getId() === 331) {
@@ -456,17 +566,23 @@ class EventListener implements Listener{
                 $hypo->setCustomName("§eHypothek");
 		        $handeln = Item::get(54, 0, 1);
                 $handeln->setCustomName("§dHandeln");
+				$endturn = Item::get(208, 0, 1);
+                $endturn->setCustomName("§3Zug Beenden");
 		        $info = Item::get(340, 0, 1);
                 $info->setCustomName("§7Infos");
 		        $giveup = Item::get(355, 14, 1);
                 $giveup->setCustomName("§cAufgeben/Bankrott");
-                $p->getInventory()->setItem(0, $wuerfeln);
-                $p->getInventory()->setItem(1, $kaufen);
-                $p->getInventory()->setItem(2, $bauen);
-		        $p->getInventory()->setItem(3, $hypo);
-                $p->getInventory()->setItem(4, $handeln);
-		        $p->getInventory()->setItem(6, $info);
-		        $p->getInventory()->setItem(8, $giveup);
+                if($p->getName() === $gamecfg->get("turn")){	            
+					$p->getInventory()->setItem(0, $wuerfeln);
+                    $p->getInventory()->setItem(1, $kaufen);
+                    $p->getInventory()->setItem(2, $bauen);
+                    $p->getInventory()->setItem(3, $hypo);
+                    $p->getInventory()->setItem(4, $handeln);
+                    $p->getInventory()->setItem(6, $endturn);
+		        }else{			
+				    $p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup);
+				}
             }
         }
 		if(!$p->isOP()){
