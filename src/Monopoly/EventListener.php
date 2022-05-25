@@ -42,7 +42,7 @@ class EventListener implements Listener{
         $p->getInventory()->clearAll();
         $anmelden = Item::get(421, 0, 1);
         $anmelden->setCustomName("§aAls Spieler Anmelden");
-        $p->getInventory()->setItem(0, $anmelden);
+        $p->getInventory()->setItem(4, $anmelden);
     }
 	
 	public function onPlayerQuit(PlayerQuitEvent $ev){
@@ -121,50 +121,58 @@ class EventListener implements Listener{
 		}
 		if($item->getId() === 421) {
             if($item->getName() === "§aAls Spieler Anmelden") {
-		        EconomyAPI::getInstance()->setMoney($p, 40000);
-		        if($players->get("player1") == null){
-			        $players->set("player1", $name);
-			        $players->save();
-					$p->getInventory()->clearAll();
-                    $anmelden = Item::get(399, 0, 1);
-                    $anmelden->setCustomName("§aSpiel Starten");
-                    $p->getInventory()->setItem(0, $anmelden);
-		        }elseif($players->get("player1") !== null){
-			        if($players->get("player2") == null){
-				        $players->set("player2", $name);
+				if($gamecfg->get("start") !== true){
+		            EconomyAPI::getInstance()->setMoney($p, 40000);
+		            if($players->get("player1") == null){
+			            $players->set("player1", $name);
 			            $players->save();
-						$p->getInventory()->clearAll();
+					    $p->getInventory()->clearAll();
                         $anmelden = Item::get(399, 0, 1);
                         $anmelden->setCustomName("§aSpiel Starten");
                         $p->getInventory()->setItem(0, $anmelden);
-			        }elseif($players->get("player2") !== null){
-				        if($players->get("player3") == null){
-				            $players->set("player3", $name);
+		            }elseif($players->get("player1") !== null){
+			            if($players->get("player2") == null){
+				            $players->set("player2", $name);
 			                $players->save();
-							$p->getInventory()->clearAll();
+						    $p->getInventory()->clearAll();
                             $anmelden = Item::get(399, 0, 1);
                             $anmelden->setCustomName("§aSpiel Starten");
                             $p->getInventory()->setItem(0, $anmelden);
-			            }elseif($players->get("player3") !== null){
-					        if($players->get("player4") == null){
-				                $players->set("player4", $name);
+			            }elseif($players->get("player2") !== null){
+				            if($players->get("player3") == null){
+				                $players->set("player3", $name);
 			                    $players->save();
-								$p->getInventory()->clearAll();
+							    $p->getInventory()->clearAll();
                                 $anmelden = Item::get(399, 0, 1);
                                 $anmelden->setCustomName("§aSpiel Starten");
                                 $p->getInventory()->setItem(0, $anmelden);
-			                }else{
-						        $p->sendMessage("§bMono§6poly: §cEs sind Schon 4 Spieler angemeldet. Du kannst aber gern zuschauen.");
-					        }
+			                }elseif($players->get("player3") !== null){
+					            if($players->get("player4") == null){
+				                    $players->set("player4", $name);
+			                        $players->save();
+							    	$p->getInventory()->clearAll();
+                                    $anmelden = Item::get(399, 0, 1);
+                                    $anmelden->setCustomName("§aSpiel Starten");
+                                    $p->getInventory()->setItem(0, $anmelden);
+			                    }else{
+						            $p->sendMessage("§bMono§6poly: §cEs sind Schon 4 Spieler angemeldet. Du kannst aber gern zuschauen.");
+					            }
+							}
 				        }
 			        }
-		        }
+		        }else{
+					$p->sendMessage("§bMono§6poly: §cEs läuft grade ein Spiel, du kannst aber gern zuschauen!");
+				}
 			}
 		}
 		if($item->getId() === 399) {
             if($item->getName() === "§aSpiel Starten") {
 				if($gamecfg->get("start") !== true){
 			        if(count(Server::getInstance()->getOnlinePlayers()) > 1){
+						if(($Player1 == null and $Player2 == null and $Player3 == null and $Player4 == null) or ($Player1 == null and $Player2 == null and $Player3 == null) or ($Player1 == null and $Player2 == null and $Player4 == null) or ($Player1 == null and $Player3 == null and $Player4 == null) or ($Player2 == null and $Player3 == null and $Player4 == null)){
+							$p->sendMessage("§bMono§6poly: §cEs sind zu wenige Spieler Angemeldet um ein Spiel zu starten.");
+							return;
+						}
 					    $player1 = Server::getInstance()->getPlayer($Player1);
 					    $player1->getInventory()->clearAll();
 				    	$player2 = Server::getInstance()->getPlayer($Player2);
@@ -332,7 +340,7 @@ class EventListener implements Listener{
                     $anmelden->setCustomName("§aAls Spieler Anmelden");
                     $p->getInventory()->setItem(0, $anmelden);
 		        }
-				foreach(Server->getInstance()->getOnlinePlayers as $player){
+				foreach(Server::getInstance()->getOnlinePlayers() as $player){
 				    if($players->get("player1") == null and $players->get("player2") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -342,7 +350,9 @@ class EventListener implements Listener{
 					    $player->getInventory()->clearAll();
                         $anmelden = Item::get(421, 0, 1);
                         $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(0, $anmelden);
+                        $player->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+					    $gamecfg->save();
 				    }elseif($players->get("player1") == null and $players->get("player3") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -352,7 +362,9 @@ class EventListener implements Listener{
 					    $player->getInventory()->clearAll();
                         $anmelden = Item::get(421, 0, 1);
                         $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(0, $anmelden);
+                        $player->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+					    $gamecfg->save();
 				    }elseif($players->get("player1") == null and $players->get("player4") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -362,7 +374,9 @@ class EventListener implements Listener{
 					    $player->getInventory()->clearAll();
                         $anmelden = Item::get(421, 0, 1);
                         $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(0, $anmelden);
+                        $player->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+					    $gamecfg->save();
 				    }elseif($players->get("player2") == null and $players->get("player3") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -372,7 +386,9 @@ class EventListener implements Listener{
 					    $player->getInventory()->clearAll();
                         $anmelden = Item::get(421, 0, 1);
                         $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(0, $anmelden);
+                        $player->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+					    $gamecfg->save();
 				    }elseif($players->get("player2") == null and $players->get("player4") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -382,7 +398,9 @@ class EventListener implements Listener{
 					    $player->getInventory()->clearAll();
                         $anmelden = Item::get(421, 0, 1);
                         $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(0, $anmelden);
+                        $player->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+					    $gamecfg->save();
 				    }elseif($players->get("player3") == null and $players->get("player4") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -392,7 +410,9 @@ class EventListener implements Listener{
 					    $player->getInventory()->clearAll();
                         $anmelden = Item::get(421, 0, 1);
                         $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(0, $anmelden);
+                        $player->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+					    $gamecfg->save();
 				    }
 				}
             }

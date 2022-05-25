@@ -26,6 +26,18 @@ class Main extends PluginBase{
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     }
 	
+	public function onDisable(): Void{
+		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
+		$players = new Config($this->getDataFolder().'player.yml', Config::YAML);
+		$players->set("player1", null);
+	    $players->set("player2", null);
+	    $players->set("player3", null);
+	    $players->set("player4", null);
+	    $players->save();
+		$gamecfg->set("start", false);
+		$gamecfg->save();
+	}
+	
 	public static function getInstance(){
         return self::$instance;
     }
