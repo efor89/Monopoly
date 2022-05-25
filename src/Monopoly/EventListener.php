@@ -142,7 +142,7 @@ class EventListener implements Listener{
 			$players->set("player1", null);
 			$players->set("player2", null);
 			$players->save();
-			if($p->getName() === $Player1){
+			if($p->getName() === $player1->getName()){
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player2." §ahat das Spiel Gewonnen.");
 			}else{
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player1." §ahat das Spiel Gewonnen.");
@@ -153,7 +153,7 @@ class EventListener implements Listener{
 			$players->set("player1", null);
 			$players->set("player3", null);
 			$players->save();
-			if($p->getName() === $Player1){
+			if($p->getName() === $player1->getName()){
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player3." §ahat das Spiel Gewonnen.");
 			}else{
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player1." §ahat das Spiel Gewonnen.");
@@ -164,7 +164,7 @@ class EventListener implements Listener{
 			$players->set("player1", null);
 			$players->set("player4", null);
 			$players->save();
-			if($p->getName() === $Player1){
+			if($p->getName() === $player1->getName()){
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player4." §ahat das Spiel Gewonnen.");
 			}else{
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player1." §ahat das Spiel Gewonnen.");
@@ -175,7 +175,7 @@ class EventListener implements Listener{
 			$players->set("player2", null);
 			$players->set("player3", null);
 			$players->save();
-			if($p->getName() === $Player2){
+			if($p->getName() === $player2->getName()){
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player3." §ahat das Spiel Gewonnen.");
 			}else{
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player2." §ahat das Spiel Gewonnen.");
@@ -186,7 +186,7 @@ class EventListener implements Listener{
 			$players->set("player2", null);
 			$players->set("player4", null);
 			$players->save();
-			if($p->getName() === $Player2){
+			if($p->getName() === $player2->getName()){
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player4." §ahat das Spiel Gewonnen.");
 			}else{
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player2." §ahat das Spiel Gewonnen.");
@@ -197,7 +197,7 @@ class EventListener implements Listener{
 			$players->set("player3", null);
 			$players->set("player4", null);
 			$players->save();
-			if($p->getName() === $Player3){
+			if($p->getName() === $player3->getName()){
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player4." §ahat das Spiel Gewonnen.");
 			}else{
 				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$Player3." §ahat das Spiel Gewonnen.");
@@ -633,6 +633,11 @@ class EventListener implements Listener{
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
 					    $gamecfg->save();
+						if($p->getName() === $player3->getName()){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
+			            }
 				    }elseif($players->get("player1") == null and $players->get("player3") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -646,6 +651,11 @@ class EventListener implements Listener{
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
 					    $gamecfg->save();
+						if($p->getName() === $player4->getName()){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
+			            }
 				    }elseif($players->get("player1") == null and $players->get("player4") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -659,6 +669,11 @@ class EventListener implements Listener{
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
 					    $gamecfg->save();
+						if($p->getName() === $player3->getName()){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
+			            }
 				    }elseif($players->get("player2") == null and $players->get("player3") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -672,6 +687,11 @@ class EventListener implements Listener{
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
 					    $gamecfg->save();
+						if($p->getName() === $player1->getName()){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
+			            }
 				    }elseif($players->get("player2") == null and $players->get("player4") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -685,6 +705,11 @@ class EventListener implements Listener{
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
 					    $gamecfg->save();
+						if($p->getName() === $player1->getName()){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
+			            }
 				    }elseif($players->get("player3") == null and $players->get("player4") == null){
 					    $players->set("player1", null);
 					    $players->set("player2", null);
@@ -698,6 +723,11 @@ class EventListener implements Listener{
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
 					    $gamecfg->save();
+						if($p->getName() === $player1->getName()){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
+			            }
 				    }
 				}
             }
