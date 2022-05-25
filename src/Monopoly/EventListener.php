@@ -46,7 +46,7 @@ class EventListener implements Listener{
         $kaufen = Item::get(266, 0, 1);
         $kaufen->setCustomName("§6Kaufen");
         $bauen = Item::get(277, 0, 1);
-        $bauen->setCustomName("§bBauen");       
+        $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
         $hypo = Item::get(46, 0, 1);
         $hypo->setCustomName("§eHypothek");
 		$handeln = Item::get(54, 0, 1);
@@ -126,6 +126,19 @@ class EventListener implements Listener{
     public function onFallDamage(EntityDamageEvent $ev){
         $ev->setCancelled(true);
     }
+	
+	public function onBlockPlace(BlockPlaceEvent $ev){
+        if(!$player->isOP()){
+            $ev->setCancelled(true);
+		}
+    }
+	
+	public function onBlockBreak(BlockBreakEvent $ev){
+		$player = $ev->getPlayer();
+		if(!$player->isOP()){
+            $ev->setCancelled(true);
+		}
+    }
   
     public function onInteract(PlayerInteractEvent $ev){
         $p = $ev->getPlayer();
@@ -150,7 +163,7 @@ class EventListener implements Listener{
                 $point1 = $this->getZufall1();
 				$point2 = $this->getZufall2();
 			    if($point1 == $point2){
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kann §d".$p->getName()." nochmal.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kann §d".$p->getName()." §anochmal.");
 				}else{
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt.");
 				}
@@ -166,8 +179,20 @@ class EventListener implements Listener{
             }
         }
 		if($item->getId() === 277) {
-            if($item->getName() === "§bBauen") {
-                $p->sendMessage("bauen");
+            if($item->getName() === "§bHaus/Hotel Bauen/Abbauen") {
+				$p->getInventory()->clearAll();
+                $haus = Item::get(236, 5, 64);
+                $haus->setCustomName("§aHaus Bauen");
+				$hotel = Item::get(236, 14, 64);
+                $hotel->setCustomName("§aHotel Bauen");
+		        $abbauen = Item::get(278, 0, 1);
+                $abbauen->setCustomName("§6Abbauen");
+				$exit = Item::get(331, 14, 1);
+                $exit->setCustomName("§cZurück");
+                $p->getInventory()->setItem(0, $haus);
+				$p->getInventory()->setItem(1, $hotel);
+                $p->getInventory()->setItem(4, $abbauen);
+                $p->getInventory()->setItem(8, $exit);
             }
         }
 		if($item->getId() === 46) {
@@ -188,8 +213,38 @@ class EventListener implements Listener{
 		if($item->getId() === 355) {
             if($item->getName() === "§cAufgeben/Bankrott") {
                 $p->sendMessage("Aufgeben/Bankrott");
+				EconomyAPI::getInstance()->setMoney($player, 0);
             }
         }
+		if($item->getId() === 331) {
+            if($item->getName() === "§cZurück") {
+                $p->getInventory()->clearAll();
+                $wuerfeln = Item::get(236, 0, 1);
+                $wuerfeln->setCustomName("§aWürfeln");
+                $kaufen = Item::get(266, 0, 1);
+                $kaufen->setCustomName("§6Kaufen");
+                $bauen = Item::get(277, 0, 1);
+                $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
+                $hypo = Item::get(46, 0, 1);
+                $hypo->setCustomName("§eHypothek");
+		        $handeln = Item::get(54, 0, 1);
+                $handeln->setCustomName("§dHandeln");
+		        $info = Item::get(340, 0, 1);
+                $info->setCustomName("§7Infos");
+		        $giveup = Item::get(355, 14, 1);
+                $giveup->setCustomName("§cAufgeben/Bankrott");
+                $p->getInventory()->setItem(0, $wuerfeln);
+                $p->getInventory()->setItem(1, $kaufen);
+                $p->getInventory()->setItem(2, $bauen);
+		        $p->getInventory()->setItem(3, $hypo);
+                $p->getInventory()->setItem(4, $handeln);
+		        $p->getInventory()->setItem(6, $info);
+		        $p->getInventory()->setItem(8, $giveup);
+            }
+        }
+		if(!$player->isOP()){
+            $ev->setCancelled(true);
+		}
 	}
 	
 	public function getZufall1(){
