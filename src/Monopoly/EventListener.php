@@ -654,6 +654,8 @@ class EventListener implements Listener{
 						$gamecfg->save();
 					    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt.");
 					}
+				}else{
+					$p->sendMessage("§bMono§6poly: §cDu hast schon gewürfelt.");
 				}
             }
         }
@@ -806,7 +808,136 @@ class EventListener implements Listener{
 		if($item->getId() === 355) {
             if($item->getName() === "§aJa Aufgeben") {
                 EconomyAPI::getInstance()->setMoney($p, 0);
-				if($p->getName() == $players->get("player1")){
+				foreach(Server::getInstance()->getOnlinePlayers() as $player){
+				    if($players->get("player1") == null and $players->get("player2") == null and $players->get("player3") !== null and $players->get("player4") !== null){
+					    $player4->getInventory()->clearAll();
+						$player3->getInventory()->clearAll();
+                        $anmelden = Item::get(421, 0, 1);
+                        $anmelden->setCustomName("§aAls Spieler Anmelden");
+                        $player4->getInventory()->setItem(4, $anmelden);
+						$player3->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+						$gamecfg->set("turn", null);
+					    $gamecfg->save();
+						if($p->getName() !== $Player4){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
+			            }
+						$players->set("player1", null);
+					    $players->set("player2", null);
+					    $players->set("player3", null);
+					    $players->set("player4", null);
+						$players->save();
+						return;
+				    }elseif($players->get("player1") == null and $players->get("player3") == null and $players->get("player2") !== null and $players->get("player4") !== null){
+					    $player2->getInventory()->clearAll();
+						$player4->getInventory()->clearAll();
+                        $anmelden = Item::get(421, 0, 1);
+                        $anmelden->setCustomName("§aAls Spieler Anmelden");
+                        $player2->getInventory()->setItem(4, $anmelden);
+						$player4->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+						$gamecfg->set("turn", null);
+					    $gamecfg->save();
+						if($p->getName() !== $Player2){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
+			            }
+						$players->set("player1", null);
+					    $players->set("player2", null);
+					    $players->set("player3", null);
+					    $players->set("player4", null);
+						$players->save();
+						return;
+				    }elseif($players->get("player1") == null and $players->get("player4") == null and $players->get("player3") !== null and $players->get("player2") !== null){
+					    $player2->getInventory()->clearAll();
+						$player3->getInventory()->clearAll();
+                        $anmelden = Item::get(421, 0, 1);
+                        $anmelden->setCustomName("§aAls Spieler Anmelden");
+                        $player2->getInventory()->setItem(4, $anmelden);
+						$player3->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+						$gamecfg->set("turn", null);
+					    $gamecfg->save();
+						if($p->getName() !== $Player2){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
+			            }
+						$players->set("player1", null);
+					    $players->set("player2", null);
+					    $players->set("player3", null);
+					    $players->set("player4", null);
+					    $players->save();
+						return;
+				    }elseif($players->get("player2") == null and $players->get("player3") == null and $players->get("player1") !== null and $players->get("player4") !== null){
+					    $player4->getInventory()->clearAll();
+						$player1->getInventory()->clearAll();
+                        $anmelden = Item::get(421, 0, 1);
+                        $anmelden->setCustomName("§aAls Spieler Anmelden");
+                        $player4->getInventory()->setItem(4, $anmelden);
+						$player1->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+						$gamecfg->set("turn", null);
+					    $gamecfg->save();
+						if($p->getName() !== $Player4){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
+			            }
+						$players->set("player1", null);
+					    $players->set("player2", null);
+					    $players->set("player3", null);
+					    $players->set("player4", null);
+						$players->save();
+						return;
+				    }elseif($players->get("player2") == null and $players->get("player4") == null and $players->get("player3") !== null and $players->get("player1") !== null){
+					    $player3->getInventory()->clearAll();
+						$player1->getInventory()->clearAll();
+                        $anmelden = Item::get(421, 0, 1);
+                        $anmelden->setCustomName("§aAls Spieler Anmelden");
+                        $player3->getInventory()->setItem(4, $anmelden);
+						$player1->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+						$gamecfg->set("turn", null);
+					    $gamecfg->save();
+						if($p->getName() !== $Player3){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
+			            }
+						$players->set("player1", null);
+					    $players->set("player2", null);
+					    $players->set("player3", null);
+					    $players->set("player4", null);
+						$players->save();
+						return;
+				    }elseif($players->get("player3") == null and $players->get("player4") == null and $players->get("player1") !== null and $players->get("player2") !== null){
+					    $player2->getInventory()->clearAll();
+						$player1->getInventory()->clearAll();
+                        $anmelden = Item::get(421, 0, 1);
+                        $anmelden->setCustomName("§aAls Spieler Anmelden");
+                        $player2->getInventory()->setItem(4, $anmelden);
+						$player1->getInventory()->setItem(4, $anmelden);
+						$gamecfg->set("start", false);
+						$gamecfg->set("turn", null);
+					    $gamecfg->save();
+						if($p->getName() !== $Player2){
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
+			            }else{
+				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
+			            }
+						$players->set("player1", null);
+					    $players->set("player2", null);
+					    $players->set("player3", null);
+					    $players->set("player4", null);
+						$players->save();
+						return;
+				    }
+				}
+				if($p->getName() == $Player1){
 			        $players->set("player1", null);
 			        $players->save();
 					$p->getInventory()->clearAll();
@@ -820,7 +951,7 @@ class EventListener implements Listener{
 						$gamecfg->set("turn", $player3->getName());
 						$gamecfg->save();
 					}
-		        }elseif($p->getName() == $players->get("player2")){
+		        }elseif($p->getName() == $Player2){
 			        $players->set("player2", null);
 			        $players->save();
 					$p->getInventory()->clearAll();
@@ -836,7 +967,7 @@ class EventListener implements Listener{
 						$gamecfg->set("wurf", false);
 						$gamecfg->save();
 					}
-		        }elseif($p->getName() == $players->get("player3")){
+		        }elseif($p->getName() == $Player3){
 			        $players->set("player3", null);
 			        $players->save();
 					$p->getInventory()->clearAll();
@@ -852,7 +983,7 @@ class EventListener implements Listener{
 						$gamecfg->set("wurf", false);
 						$gamecfg->save();
 					}
-		        }elseif($p->getName() == $players->get("player4")){
+		        }elseif($p->getName() == $Player4){
 			        $players->set("player4", null);
 			        $players->save();
 					$p->getInventory()->clearAll();
@@ -869,117 +1000,6 @@ class EventListener implements Listener{
 						$gamecfg->save();
 					}
 		        }
-				foreach(Server::getInstance()->getOnlinePlayers() as $player){
-				    if($players->get("player1") == null and $players->get("player2") == null){
-					    $players->set("player1", null);
-					    $players->set("player2", null);
-					    $players->set("player3", null);
-					    $players->set("player4", null);
-					    $players->save();
-					    $player->getInventory()->clearAll();
-                        $anmelden = Item::get(421, 0, 1);
-                        $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(4, $anmelden);
-						$gamecfg->set("start", false);
-						$gamecfg->set("turn", null);
-					    $gamecfg->save();
-						if($p->getName() !== $player4->getName()){
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
-			            }else{
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
-			            }
-				    }elseif($players->get("player1") == null and $players->get("player3") == null){
-					    $players->set("player1", null);
-					    $players->set("player2", null);
-					    $players->set("player3", null);
-					    $players->set("player4", null);
-					    $players->save();
-					    $player->getInventory()->clearAll();
-                        $anmelden = Item::get(421, 0, 1);
-                        $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(4, $anmelden);
-						$gamecfg->set("start", false);
-						$gamecfg->set("turn", null);
-					    $gamecfg->save();
-						if($p->getName() !== $player2->getName()){
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
-			            }else{
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
-			            }
-				    }elseif($players->get("player1") == null and $players->get("player4") == null){
-					    $players->set("player1", null);
-					    $players->set("player2", null);
-					    $players->set("player3", null);
-					    $players->set("player4", null);
-					    $players->save();
-					    $player->getInventory()->clearAll();
-                        $anmelden = Item::get(421, 0, 1);
-                        $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(4, $anmelden);
-						$gamecfg->set("start", false);
-						$gamecfg->set("turn", null);
-					    $gamecfg->save();
-						if($p->getName() !== $player2->getName()){
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
-			            }else{
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
-			            }
-				    }elseif($players->get("player2") == null and $players->get("player3") == null){
-					    $players->set("player1", null);
-					    $players->set("player2", null);
-					    $players->set("player3", null);
-					    $players->set("player4", null);
-					    $players->save();
-					    $player->getInventory()->clearAll();
-                        $anmelden = Item::get(421, 0, 1);
-                        $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(4, $anmelden);
-						$gamecfg->set("start", false);
-						$gamecfg->set("turn", null);
-					    $gamecfg->save();
-						if($p->getName() !== $player4->getName()){
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
-			            }else{
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
-			            }
-				    }elseif($players->get("player2") == null and $players->get("player4") == null){
-					    $players->set("player1", null);
-					    $players->set("player2", null);
-					    $players->set("player3", null);
-					    $players->set("player4", null);
-					    $players->save();
-					    $player->getInventory()->clearAll();
-                        $anmelden = Item::get(421, 0, 1);
-                        $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(4, $anmelden);
-						$gamecfg->set("start", false);
-						$gamecfg->set("turn", null);
-					    $gamecfg->save();
-						if($p->getName() !== $player3->getName()){
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
-			            }else{
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
-			            }
-				    }elseif($players->get("player3") == null and $players->get("player4") == null){
-					    $players->set("player1", null);
-					    $players->set("player2", null);
-					    $players->set("player3", null);
-					    $players->set("player4", null);
-					    $players->save();
-					    $player->getInventory()->clearAll();
-                        $anmelden = Item::get(421, 0, 1);
-                        $anmelden->setCustomName("§aAls Spieler Anmelden");
-                        $player->getInventory()->setItem(4, $anmelden);
-						$gamecfg->set("start", false);
-						$gamecfg->set("turn", null);
-					    $gamecfg->save();
-						if($p->getName() !== $player2->getName()){
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
-			            }else{
-				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat das Spiel Gewonnen.");
-			            }
-				    }
-				}
             }
         }
 		if($item->getId() === 450){
@@ -1008,6 +1028,8 @@ class EventListener implements Listener{
                     $p->getInventory()->setItem(3, $hypo);
                     $p->getInventory()->setItem(4, $handeln);
                     $p->getInventory()->setItem(6, $endturn);
+					$p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup);
 		        }else{			
 				    $p->getInventory()->setItem(7, $info);
                     $p->getInventory()->setItem(8, $giveup);
@@ -1040,6 +1062,8 @@ class EventListener implements Listener{
                     $p->getInventory()->setItem(3, $hypo);
                     $p->getInventory()->setItem(4, $handeln);
                     $p->getInventory()->setItem(6, $endturn);
+					$p->getInventory()->setItem(7, $info);
+                    $p->getInventory()->setItem(8, $giveup);
 		        }else{			
 				    $p->getInventory()->setItem(7, $info);
                     $p->getInventory()->setItem(8, $giveup);
