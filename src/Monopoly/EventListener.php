@@ -728,17 +728,23 @@ class EventListener implements Listener{
 							if($p->getName() == $Player1){
 							    if($gamecfg->get("knast1") !== false){
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									$xlast = $config->getNested("coords1.knastx");
+								    $zlast = $config->getNested("coords1.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 								    $gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("wurf", true);
 									$gamecfg->set("pasch", 0);
 									$gamecfg->set("knast1", false);
 								    $gamecfg->save();
+									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kommt er aus dem Gefängnis frei.");
 									return;
 								}else{
 									if($gamecfg->get("player1") + $points <= 40){
 									    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+										$xlast = $config->getNested("coords1.knastx");
+								        $zlast = $config->getNested("coords1.knastz");
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									    $gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -756,16 +762,22 @@ class EventListener implements Listener{
 							}elseif($p->getName() == $Player2){
 							    if($gamecfg->get("knast2") !== false){
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									$xlast = $config->getNested("coords2.knastx");
+								    $zlast = $config->getNested("coords2.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 								    $gamecfg->set("player2", $gamecfg->get("player2") + $points);
 								    $gamecfg->set("wurf", true);
 									$gamecfg->set("knast2", false);
 								    $gamecfg->save();
+									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kommt er aus dem Gefängnis frei.");
 									return;
 								}else{
 									if($gamecfg->get("player2") + $points <= 40){
 									    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+										$xlast = $config->getNested("coords2.knastx");
+								        $zlast = $config->getNested("coords2.knastz");
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									    $gamecfg->set("player2", $gamecfg->get("player2") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -783,16 +795,22 @@ class EventListener implements Listener{
 							}elseif($p->getName() == $Player3){
 							    if($gamecfg->get("knast3") !== false){
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									$xlast = $config->getNested("coords3.knastx");
+								    $zlast = $config->getNested("coords3.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 								    $gamecfg->set("player3", $gamecfg->get("player3") + $points);
 								    $gamecfg->set("wurf", true);
 									$gamecfg->set("knast3", false);
 								    $gamecfg->save();
+									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt da es ein Pasch war kommt er aus dem Gefängnis frei.");
 									return;
 								}else{
 									if($gamecfg->get("player3") + $points <= 40){
 									    $p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+										$xlast = $config->getNested("coords3.knastx");
+								        $zlast = $config->getNested("coords3.knastz");
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									    $gamecfg->set("player3", $gamecfg->get("player3") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -810,7 +828,9 @@ class EventListener implements Listener{
 							}elseif($p->getName() == $Player4){
 							    if($gamecfg->get("knast4") !== false){
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									$xlast = $config->getNested("coords4.knastx");
+								    $zlast = $config->getNested("coords4.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 								    $gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									$gamecfg->set("knast4", false);
 									$gamecfg->set("wurf", true);
@@ -821,6 +841,9 @@ class EventListener implements Listener{
 									if($gamecfg->get("player4") + $points <= 40){
 									    $p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+										$xlast = $config->getNested("coords4.knastx");
+								        $zlast = $config->getNested("coords4.knastz");
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									    $gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -847,6 +870,8 @@ class EventListener implements Listener{
 								$z = $config->getNested("coords1.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+								$gamecfg->set("player4", 11);
+							    $gamecfg->save();
 							}elseif($p->getName() == $Player2){
 							    $gamecfg->set("knast2", true);
 								$gamecfg->save();
@@ -854,6 +879,8 @@ class EventListener implements Listener{
 								$z = $config->getNested("coords2.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+								$gamecfg->set("player4", 11);
+							    $gamecfg->save();
 							}elseif($p->getName() == $Player3){
 							    $gamecfg->set("knast3", true);
 								$gamecfg->save();
@@ -861,6 +888,8 @@ class EventListener implements Listener{
 								$z = $config->getNested("coords3.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+								$gamecfg->set("player4", 11);
+							    $gamecfg->save();
 							}elseif($p->getName() == $Player4){
 							    $gamecfg->set("knast4", true);
 								$gamecfg->save();
@@ -868,6 +897,8 @@ class EventListener implements Listener{
 								$z = $config->getNested("coords4.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+								$gamecfg->set("player4", 11);
+							    $gamecfg->save();
 							}
 							$p->getInventory()->clearAll();
 							$endturn = Item::get(208, 0, 1);
@@ -889,7 +920,9 @@ class EventListener implements Listener{
 								}else{
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									$xlast = $config->getNested("coords1.knastx");
+								    $zlast = $config->getNested("coords1.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									$gamecfg->set("knast-turn1", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -925,7 +958,9 @@ class EventListener implements Listener{
 								}else{
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									$xlast = $config->getNested("coords2.knastx");
+								    $zlast = $config->getNested("coords2.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									$gamecfg->set("knast-turn2", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -961,7 +996,9 @@ class EventListener implements Listener{
 								}else{
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									$xlast = $config->getNested("coords3.knastx");
+								    $zlast = $config->getNested("coords3.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									$gamecfg->set("knast-turn3", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -997,7 +1034,9 @@ class EventListener implements Listener{
 								}else{
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									$xlast = $config->getNested("coords4.knastx");
+								    $zlast = $config->getNested("coords4.knastz");
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
 									$gamecfg->set("knast-turn4", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1032,10 +1071,7 @@ class EventListener implements Listener{
 		if($item->getId() === 266) {
             if($item->getName() === "§6Kaufen") {
                 $playerMoney = EconomyAPI::getInstance()->myMoney($p);
-				$buy = $config->getNested($karte.".buy");
-				if($playerMoney > $buy){
-					$p->sendMessage("kaufen");
-				}
+				$p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 277) {
@@ -1058,27 +1094,27 @@ class EventListener implements Listener{
 		$playerMoney = EconomyAPI::getInstance()->myMoney($p);
 		if($item->getId() === 236) {
             if($item->getName() === "§aHaus Bauen") {
-                
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 236) {
             if($item->getName() === "§aHotel Bauen") {
-                
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 278) {
             if($item->getName() === "§6Abbauen") {
-                
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 46) {
             if($item->getName() === "§eHypothek") {
-                
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
-                
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 208) {
@@ -1244,7 +1280,7 @@ class EventListener implements Listener{
         }
 		if($item->getId() === 340) {
             if($item->getName() === "§7Infos") {
-                $p->sendMessage("info");
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if($item->getId() === 355) {

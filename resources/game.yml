@@ -1,5 +1,18 @@
 ---
 start: false
 turn: ~
+pasch: 0
 wurf: false
+player1: 1
+player2: 1
+player3: 1
+player4: 1
+knast-turn1: 0
+knast-turn2: 0
+knast-turn3: 0
+knast-turn4: 0
+knast1: false
+knast2: false
+knast3: false
+knast4: false
 ...
