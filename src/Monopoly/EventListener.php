@@ -730,7 +730,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
 								    $zlast = $config->getNested("coords1.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 								    $gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("wurf", true);
 									$gamecfg->set("pasch", 0);
@@ -744,7 +744,7 @@ class EventListener implements Listener{
 											$x = $config->getNested("coords1.knastx");
 											$z = $config->getNested("coords1.knastz");
 											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-									        $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									        $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 											$gamecfg->set("player1", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
@@ -776,10 +776,10 @@ class EventListener implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 									    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 										$xlast = $config->getNested("coords1.knastx");
 								        $zlast = $config->getNested("coords1.knastz");
-									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									    $gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -794,7 +794,7 @@ class EventListener implements Listener{
 										$x = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."x");
 			                            $z = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 										$gamecfg->set("player1", ($gamecfg->get("player1") + $points) - 40);
 										$gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 										$gamecfg->save();
@@ -806,7 +806,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$xlast = $config->getNested("coords2.knastx");
 								    $zlast = $config->getNested("coords2.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 								    $gamecfg->set("player2", $gamecfg->get("player2") + $points);
 								    $gamecfg->set("wurf", true);
 									$gamecfg->set("knast2", false);
@@ -819,7 +819,7 @@ class EventListener implements Listener{
 											$x = $config->getNested("coords2.knastx");
 											$z = $config->getNested("coords2.knastz");
 											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-									        $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									        $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 											$gamecfg->set("player2", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
@@ -851,10 +851,10 @@ class EventListener implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 									    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 										$xlast = $config->getNested("coords2.knastx");
 								        $zlast = $config->getNested("coords2.knastz");
-									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									    $gamecfg->set("player2", $gamecfg->get("player2") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -869,7 +869,7 @@ class EventListener implements Listener{
 										$x = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."x");
 			                            $z = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 										$gamecfg->set("player2", ($gamecfg->get("player2") + $points) - 40);
 										$gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 										$gamecfg->save();
@@ -881,7 +881,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$xlast = $config->getNested("coords3.knastx");
 								    $zlast = $config->getNested("coords3.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 								    $gamecfg->set("player3", $gamecfg->get("player3") + $points);
 								    $gamecfg->set("wurf", true);
 									$gamecfg->set("knast3", false);
@@ -894,7 +894,7 @@ class EventListener implements Listener{
 											$x = $config->getNested("coords3.knastx");
 											$z = $config->getNested("coords3.knastz");
 											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-									        $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									        $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 											$gamecfg->set("player3", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
@@ -926,10 +926,10 @@ class EventListener implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 									    $p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 										$xlast = $config->getNested("coords3.knastx");
 								        $zlast = $config->getNested("coords3.knastz");
-									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									    $gamecfg->set("player3", $gamecfg->get("player3") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -944,7 +944,7 @@ class EventListener implements Listener{
 										$x = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."x");
 			                            $z = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 										$gamecfg->set("player3", ($gamecfg->get("player3") + $points) - 40);
 										$gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 										$gamecfg->save();
@@ -956,7 +956,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$xlast = $config->getNested("coords4.knastx");
 								    $zlast = $config->getNested("coords4.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 								    $gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									$gamecfg->set("knast4", false);
 									$gamecfg->set("wurf", true);
@@ -969,7 +969,7 @@ class EventListener implements Listener{
 											$x = $config->getNested("coords4.knastx");
 											$z = $config->getNested("coords4.knastz");
 											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-									        $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									        $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 											$gamecfg->set("player4", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
@@ -1001,10 +1001,10 @@ class EventListener implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 									    $p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 										$xlast = $config->getNested("coords4.knastx");
 								        $zlast = $config->getNested("coords4.knastz");
-									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									    $gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
@@ -1019,7 +1019,7 @@ class EventListener implements Listener{
 										$x = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."x");
 			                            $z = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
-									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 										$gamecfg->set("player4", ($gamecfg->get("player4") + $points) - 40);
 										$gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 										$gamecfg->save();
@@ -1037,7 +1037,7 @@ class EventListener implements Listener{
 								$x = $config->getNested("coords1.knastx");
 								$z = $config->getNested("coords1.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-								$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+								$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 								$gamecfg->set("player4", 11);
 							    $gamecfg->save();
 							}elseif($p->getName() == $Player2){
@@ -1046,7 +1046,7 @@ class EventListener implements Listener{
 								$x = $config->getNested("coords2.knastx");
 								$z = $config->getNested("coords2.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
-								$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+								$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 								$gamecfg->set("player4", 11);
 							    $gamecfg->save();
 							}elseif($p->getName() == $Player3){
@@ -1055,7 +1055,7 @@ class EventListener implements Listener{
 								$x = $config->getNested("coords3.knastx");
 								$z = $config->getNested("coords3.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
-								$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+								$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 								$gamecfg->set("player4", 11);
 							    $gamecfg->save();
 							}elseif($p->getName() == $Player4){
@@ -1064,7 +1064,7 @@ class EventListener implements Listener{
 								$x = $config->getNested("coords4.knastx");
 								$z = $config->getNested("coords4.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
-								$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+								$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 								$gamecfg->set("player4", 11);
 							    $gamecfg->save();
 							}
@@ -1090,7 +1090,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
 								    $zlast = $config->getNested("coords1.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn1", 0);
@@ -1105,7 +1105,7 @@ class EventListener implements Listener{
 										$x = $config->getNested("coords1.knastx");
 										$z = $config->getNested("coords1.knastz");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-								        $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+								        $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 										$gamecfg->set("player1", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
@@ -1137,7 +1137,7 @@ class EventListener implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 									$gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1152,7 +1152,7 @@ class EventListener implements Listener{
 									$x = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."x");
 			                        $z = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 									$gamecfg->set("player1", ($gamecfg->get("player1") + $points) - 40);
 									$gamecfg->set("wurf", true);
 							 	    $gamecfg->save();
@@ -1172,7 +1172,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$xlast = $config->getNested("coords2.knastx");
 								    $zlast = $config->getNested("coords2.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn2", 0);
@@ -1186,8 +1186,8 @@ class EventListener implements Listener{
 									if($gamecfg->get("player2") + $points == 31){
 										$x = $config->getNested("coords2.knastx");
 										$z = $config->getNested("coords2.knastz");
-										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-								        $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
+								        $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 										$gamecfg->set("player2", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
@@ -1219,7 +1219,7 @@ class EventListener implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 									$gamecfg->set("player2", $gamecfg->get("player2") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1234,7 +1234,7 @@ class EventListener implements Listener{
 									$x = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."x");
 			                        $z = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 									$gamecfg->set("player2", ($gamecfg->get("player2") + $points) - 40);
 									$gamecfg->set("wurf", true);
 							 	    $gamecfg->save();
@@ -1254,7 +1254,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$xlast = $config->getNested("coords3.knastx");
 								    $zlast = $config->getNested("coords3.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn3", 0);
@@ -1269,7 +1269,7 @@ class EventListener implements Listener{
 										$x = $config->getNested("coords3.knastx");
 										$z = $config->getNested("coords3.knastz");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-								        $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+								        $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 										$gamecfg->set("player3", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
@@ -1301,7 +1301,7 @@ class EventListener implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 									$gamecfg->set("player3", $gamecfg->get("player3") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1316,7 +1316,7 @@ class EventListener implements Listener{
 									$x = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."x");
 			                        $z = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 									$gamecfg->set("player3", ($gamecfg->get("player3") + $points) - 40);
 									$gamecfg->set("wurf", true);
 							 	    $gamecfg->save();
@@ -1336,7 +1336,7 @@ class EventListener implements Listener{
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$xlast = $config->getNested("coords4.knastx");
 								    $zlast = $config->getNested("coords4.knastz");
-									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn4", 0);
@@ -1350,8 +1350,8 @@ class EventListener implements Listener{
 									if($gamecfg->get("player4") + $points == 31){
 										$x = $config->getNested("coords4.knastx");
 										$z = $config->getNested("coords4.knastz");
-										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
-								        $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
+								        $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 										$gamecfg->set("player4", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
@@ -1383,7 +1383,7 @@ class EventListener implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 									$gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1398,7 +1398,7 @@ class EventListener implements Listener{
 									$x = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."x");
 			                        $z = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
-									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
+									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 									$gamecfg->set("player4", ($gamecfg->get("player4") + $points) - 40);
 									$gamecfg->set("wurf", true);
 							 	    $gamecfg->save();
@@ -1483,100 +1483,288 @@ class EventListener implements Listener{
 		        $giveup = Item::get(355, 14, 1);
                 $giveup->setCustomName("§cAufgeben/Bankrott");
 				if($p->getName() === $Player1){
-		            $gamecfg->set("turn", $Player2);
 					$gamecfg->set("wurf", false);
 					$gamecfg->set("pasch", 0);
 				    $gamecfg->save();
-					if($gamecfg->get("knast2") !== true){
-					    $player2->getInventory()->setItem(0, $wuerfeln);
-                        $player2->getInventory()->setItem(1, $kaufen);
-                        $player2->getInventory()->setItem(2, $bauen);
-                        $player2->getInventory()->setItem(3, $hypo);
-                        $player2->getInventory()->setItem(4, $handeln);
-                        $player2->getInventory()->setItem(6, $endturn);
-					    $player2->getInventory()->setItem(7, $info);
-                        $player2->getInventory()->setItem(8, $giveup);
-					    $p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup); 
-					}else{
-						$player2->getInventory()->setItem(0, $wuerfeln);
-						$player2->getInventory()->setItem(2, $freikaufen);
-						$player2->getInventory()->setItem(6, $endturn);
-                        $player2->getInventory()->setItem(8, $giveup);
-						$p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
+		            if($Player2 != null){
+						$gamecfg->set("turn", $Player2);
+						$gamecfg->save();
+						if($gamecfg->get("knast2") !== true){
+					        $player2->getInventory()->setItem(0, $wuerfeln);
+                            $player2->getInventory()->setItem(1, $kaufen);
+                            $player2->getInventory()->setItem(2, $bauen);
+                            $player2->getInventory()->setItem(3, $hypo);
+                            $player2->getInventory()->setItem(4, $handeln);
+                            $player2->getInventory()->setItem(6, $endturn);
+					        $player2->getInventory()->setItem(7, $info);
+                            $player2->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player2->getInventory()->setItem(0, $wuerfeln);
+						    $player2->getInventory()->setItem(2, $freikaufen);
+						    $player2->getInventory()->setItem(6, $endturn);
+                            $player2->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player2 == null and $Player3 != null){
+			            $gamecfg->set("turn", $Player3);
+						$gamecfg->save();
+						if($gamecfg->get("knast3") !== true){
+					        $player3->getInventory()->setItem(0, $wuerfeln);
+                            $player3->getInventory()->setItem(1, $kaufen);
+                            $player3->getInventory()->setItem(2, $bauen);
+                            $player3->getInventory()->setItem(3, $hypo);
+                            $player3->getInventory()->setItem(4, $handeln);
+                            $player3->getInventory()->setItem(6, $endturn);
+					        $player3->getInventory()->setItem(7, $info);
+                            $player3->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player3->getInventory()->setItem(0, $wuerfeln);
+						    $player3->getInventory()->setItem(2, $freikaufen);
+						    $player3->getInventory()->setItem(6, $endturn);
+                            $player3->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player2 == null and $Player3 == null){
+			            $gamecfg->set("turn", $Player4);
+						$gamecfg->save();
+						if($gamecfg->get("knast4") !== true){
+					        $player4->getInventory()->setItem(0, $wuerfeln);
+                            $player4->getInventory()->setItem(1, $kaufen);
+                            $player4->getInventory()->setItem(2, $bauen);
+                            $player4->getInventory()->setItem(3, $hypo);
+                            $player4->getInventory()->setItem(4, $handeln);
+                            $player4->getInventory()->setItem(6, $endturn);
+					        $player4->getInventory()->setItem(7, $info);
+                            $player4->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player4->getInventory()->setItem(0, $wuerfeln);
+						    $player4->getInventory()->setItem(2, $freikaufen);
+						    $player4->getInventory()->setItem(6, $endturn);
+                            $player4->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
 					}
 		        }elseif($p->getName() === $Player2){
-			        $gamecfg->set("turn", $Player3);
 					$gamecfg->set("wurf", false);
 					$gamecfg->set("pasch", 0);
-				    $gamecfg->save();
-					if($gamecfg->get("knast3") !== true){
-					    $player3->getInventory()->setItem(0, $wuerfeln);
-                        $player3->getInventory()->setItem(1, $kaufen);
-                        $player3->getInventory()->setItem(2, $bauen);
-                        $player3->getInventory()->setItem(3, $hypo);
-                        $player3->getInventory()->setItem(4, $handeln);
-                        $player3->getInventory()->setItem(6, $endturn);
-					    $player3->getInventory()->setItem(7, $info);
-                        $player3->getInventory()->setItem(8, $giveup);
-                        $p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
-					}else{
-						$player3->getInventory()->setItem(0, $wuerfeln);
-						$player3->getInventory()->setItem(2, $freikaufen);
-						$player3->getInventory()->setItem(6, $endturn);
-                        $player3->getInventory()->setItem(8, $giveup);
-						$p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
-					}					
+				    $gamecfg->save();	
+					if($Player3 != null){
+						$gamecfg->set("turn", $Player3);
+						$gamecfg->save();
+						if($gamecfg->get("knast3") !== true){
+					        $player3->getInventory()->setItem(0, $wuerfeln);
+                            $player3->getInventory()->setItem(1, $kaufen);
+                            $player3->getInventory()->setItem(2, $bauen);
+                            $player3->getInventory()->setItem(3, $hypo);
+                            $player3->getInventory()->setItem(4, $handeln);
+                            $player3->getInventory()->setItem(6, $endturn);
+					        $player3->getInventory()->setItem(7, $info);
+                            $player3->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player3->getInventory()->setItem(0, $wuerfeln);
+						    $player3->getInventory()->setItem(2, $freikaufen);
+						    $player3->getInventory()->setItem(6, $endturn);
+                            $player3->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player3 == null and $Player4 != null){
+			            $gamecfg->set("turn", $Player4);
+						$gamecfg->save();
+						if($gamecfg->get("knast4") !== true){
+					        $player4->getInventory()->setItem(0, $wuerfeln);
+                            $player4->getInventory()->setItem(1, $kaufen);
+                            $player4->getInventory()->setItem(2, $bauen);
+                            $player4->getInventory()->setItem(3, $hypo);
+                            $player4->getInventory()->setItem(4, $handeln);
+                            $player4->getInventory()->setItem(6, $endturn);
+					        $player4->getInventory()->setItem(7, $info);
+                            $player4->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player4->getInventory()->setItem(0, $wuerfeln);
+						    $player4->getInventory()->setItem(2, $freikaufen);
+						    $player4->getInventory()->setItem(6, $endturn);
+                            $player4->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player3 == null and $Player4 == null){
+			            $gamecfg->set("turn", $Player1);
+						$gamecfg->save();
+						if($gamecfg->get("knast1") !== true){
+					        $player1->getInventory()->setItem(0, $wuerfeln);
+                            $player1->getInventory()->setItem(1, $kaufen);
+                            $player1->getInventory()->setItem(2, $bauen);
+                            $player1->getInventory()->setItem(3, $hypo);
+                            $player1->getInventory()->setItem(4, $handeln);
+                            $player1->getInventory()->setItem(6, $endturn);
+					        $player1->getInventory()->setItem(7, $info);
+                            $player1->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player1->getInventory()->setItem(0, $wuerfeln);
+						    $player1->getInventory()->setItem(2, $freikaufen);
+						    $player1->getInventory()->setItem(6, $endturn);
+                            $player1->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}						
 		        }elseif($p->getName() === $Player3){
-			        $gamecfg->set("turn", $Player4);
 					$gamecfg->set("wurf", false);
 					$gamecfg->set("pasch", 0);
 				    $gamecfg->save();
-					if($gamecfg->get("knast4") !== true){
-					    $player4->getInventory()->setItem(0, $wuerfeln);
-                        $player4->getInventory()->setItem(1, $kaufen);
-                        $player4->getInventory()->setItem(2, $bauen);
-                        $player4->getInventory()->setItem(3, $hypo);
-                        $player4->getInventory()->setItem(4, $handeln);
-                        $player4->getInventory()->setItem(6, $endturn);
-					    $player4->getInventory()->setItem(7, $info);
-                        $player4->getInventory()->setItem(8, $giveup);
-                        $p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
-					}else{
-						$player4->getInventory()->setItem(0, $wuerfeln);
-						$player4->getInventory()->setItem(2, $freikaufen);
-						$player4->getInventory()->setItem(6, $endturn);
-                        $player4->getInventory()->setItem(8, $giveup);
-						$p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
+					if($Player4 != null){
+						$gamecfg->set("turn", $Player4);
+						$gamecfg->save();
+						if($gamecfg->get("knast4") !== true){
+					        $player4->getInventory()->setItem(0, $wuerfeln);
+                            $player4->getInventory()->setItem(1, $kaufen);
+                            $player4->getInventory()->setItem(2, $bauen);
+                            $player4->getInventory()->setItem(3, $hypo);
+                            $player4->getInventory()->setItem(4, $handeln);
+                            $player4->getInventory()->setItem(6, $endturn);
+					        $player4->getInventory()->setItem(7, $info);
+                            $player4->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player4->getInventory()->setItem(0, $wuerfeln);
+						    $player4->getInventory()->setItem(2, $freikaufen);
+						    $player4->getInventory()->setItem(6, $endturn);
+                            $player4->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player4 == null and $Player1 != null){
+			            $gamecfg->set("turn", $Player1);
+						$gamecfg->save();
+						if($gamecfg->get("knast1") !== true){
+					        $player1->getInventory()->setItem(0, $wuerfeln);
+                            $player1->getInventory()->setItem(1, $kaufen);
+                            $player1->getInventory()->setItem(2, $bauen);
+                            $player1->getInventory()->setItem(3, $hypo);
+                            $player1->getInventory()->setItem(4, $handeln);
+                            $player1->getInventory()->setItem(6, $endturn);
+					        $player1->getInventory()->setItem(7, $info);
+                            $player1->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player1->getInventory()->setItem(0, $wuerfeln);
+						    $player1->getInventory()->setItem(2, $freikaufen);
+						    $player1->getInventory()->setItem(6, $endturn);
+                            $player1->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player4 == null and $Player1 == null){
+			            $gamecfg->set("turn", $Player2);
+						$gamecfg->save();
+						if($gamecfg->get("knast2") !== true){
+					        $player2->getInventory()->setItem(0, $wuerfeln);
+                            $player2->getInventory()->setItem(1, $kaufen);
+                            $player2->getInventory()->setItem(2, $bauen);
+                            $player2->getInventory()->setItem(3, $hypo);
+                            $player2->getInventory()->setItem(4, $handeln);
+                            $player2->getInventory()->setItem(6, $endturn);
+					        $player2->getInventory()->setItem(7, $info);
+                            $player2->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player2->getInventory()->setItem(0, $wuerfeln);
+						    $player2->getInventory()->setItem(2, $freikaufen);
+						    $player2->getInventory()->setItem(6, $endturn);
+                            $player2->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
 					}
 		        }elseif($p->getName() === $Player4){
-			        $gamecfg->set("turn", $Player1);
 					$gamecfg->set("wurf", false);
 					$gamecfg->set("pasch", 0);
 				    $gamecfg->save();
-					if($gamecfg->get("knast1") !== true){
-					    $player1->getInventory()->setItem(0, $wuerfeln);
-                        $player1->getInventory()->setItem(1, $kaufen);
-                        $player1->getInventory()->setItem(2, $bauen);
-                        $player1->getInventory()->setItem(3, $hypo);
-                        $player1->getInventory()->setItem(4, $handeln);
-                        $player1->getInventory()->setItem(6, $endturn);
-					    $player1->getInventory()->setItem(7, $info);
-                        $player1->getInventory()->setItem(8, $giveup);
-  					    $p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
-					}else{
-						$player1->getInventory()->setItem(0, $wuerfeln);
-						$player1->getInventory()->setItem(2, $freikaufen);
-						$player1->getInventory()->setItem(6, $endturn);
-                        $player1->getInventory()->setItem(8, $giveup);
-						$p->getInventory()->setItem(7, $info);
-                        $p->getInventory()->setItem(8, $giveup);
+					if($Player1 != null){
+						$gamecfg->set("turn", $Player1);
+						$gamecfg->save();
+						if($gamecfg->get("knast1") !== true){
+					        $player1->getInventory()->setItem(0, $wuerfeln);
+                            $player1->getInventory()->setItem(1, $kaufen);
+                            $player1->getInventory()->setItem(2, $bauen);
+                            $player1->getInventory()->setItem(3, $hypo);
+                            $player1->getInventory()->setItem(4, $handeln);
+                            $player1->getInventory()->setItem(6, $endturn);
+					        $player1->getInventory()->setItem(7, $info);
+                            $player1->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player1->getInventory()->setItem(0, $wuerfeln);
+						    $player1->getInventory()->setItem(2, $freikaufen);
+						    $player1->getInventory()->setItem(6, $endturn);
+                            $player1->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player1 == null and $Player2 != null){
+			            $gamecfg->set("turn", $Player2);
+						$gamecfg->save();
+						if($gamecfg->get("knast2") !== true){
+					        $player2->getInventory()->setItem(0, $wuerfeln);
+                            $player2->getInventory()->setItem(1, $kaufen);
+                            $player2->getInventory()->setItem(2, $bauen);
+                            $player2->getInventory()->setItem(3, $hypo);
+                            $player2->getInventory()->setItem(4, $handeln);
+                            $player2->getInventory()->setItem(6, $endturn);
+					        $player2->getInventory()->setItem(7, $info);
+                            $player2->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player2->getInventory()->setItem(0, $wuerfeln);
+						    $player2->getInventory()->setItem(2, $freikaufen);
+						    $player2->getInventory()->setItem(6, $endturn);
+                            $player2->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
+					}elseif($Player1 == null and $Player2 == null){
+			            $gamecfg->set("turn", $Player3);
+						$gamecfg->save();
+						if($gamecfg->get("knast3") !== true){
+					        $player3->getInventory()->setItem(0, $wuerfeln);
+                            $player3->getInventory()->setItem(1, $kaufen);
+                            $player3->getInventory()->setItem(2, $bauen);
+                            $player3->getInventory()->setItem(3, $hypo);
+                            $player3->getInventory()->setItem(4, $handeln);
+                            $player3->getInventory()->setItem(6, $endturn);
+					        $player3->getInventory()->setItem(7, $info);
+                            $player3->getInventory()->setItem(8, $giveup);
+					        $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup); 
+					    }else{
+						    $player3->getInventory()->setItem(0, $wuerfeln);
+						    $player3->getInventory()->setItem(2, $freikaufen);
+						    $player3->getInventory()->setItem(6, $endturn);
+                            $player3->getInventory()->setItem(8, $giveup);
+						    $p->getInventory()->setItem(7, $info);
+                            $p->getInventory()->setItem(8, $giveup);
+					    }
 					}
 		        }
             }

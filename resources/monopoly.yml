@@ -167,7 +167,7 @@ coords2: #spieler 2 figur positionen
   39z: 246
   40x: 245 
   40z: 246
-coords3: #spieler 3 positionen
+coords3: #spieler 3 figur positionen
   y: 5
   knastx: 250
   knastz: 300
@@ -251,7 +251,7 @@ coords3: #spieler 3 positionen
   39z: 247
   40x: 245 
   40z: 247
-coords4: #spieler 4 positionen
+coords4: #spieler 4 figur positionen
   y: 5
   knastx: 251
   knastz: 301
