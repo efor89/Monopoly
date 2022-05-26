@@ -748,6 +748,7 @@ class EventListener implements Listener{
 											$gamecfg->set("player1", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
+											$gamecfg->set("knast1", true);
 									        $gamecfg->save();
 											$p->getInventory()->clearAll();
 							                $endturn = Item::get(208, 0, 1);
@@ -797,6 +798,7 @@ class EventListener implements Listener{
 											$gamecfg->set("player2", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
+											$gamecfg->set("knast2", true);
 									        $gamecfg->save();
 											$p->getInventory()->clearAll();
 							                $endturn = Item::get(208, 0, 1);
@@ -846,6 +848,7 @@ class EventListener implements Listener{
 											$gamecfg->set("player3", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
+											$gamecfg->set("knast3", true);
 									        $gamecfg->save();
 											$p->getInventory()->clearAll();
 							                $endturn = Item::get(208, 0, 1);
@@ -895,6 +898,7 @@ class EventListener implements Listener{
 											$gamecfg->set("player4", 11);
 											$gamecfg->set("pasch", 0);
 											$gamecfg->set("wurf", true);
+											$gamecfg->set("knast4", true);
 									        $gamecfg->save();
 											$p->getInventory()->clearAll();
 							                $endturn = Item::get(208, 0, 1);
@@ -1003,6 +1007,7 @@ class EventListener implements Listener{
 										$gamecfg->set("player1", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
+										$gamecfg->set("knast1", true);
 								        $gamecfg->save();
 										$p->getInventory()->clearAll();
 							            $endturn = Item::get(208, 0, 1);
@@ -1057,6 +1062,7 @@ class EventListener implements Listener{
 										$gamecfg->set("player2", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
+										$gamecfg->set("knast2", true);
 								        $gamecfg->save();
 										$p->getInventory()->clearAll();
 							            $endturn = Item::get(208, 0, 1);
@@ -1111,6 +1117,7 @@ class EventListener implements Listener{
 										$gamecfg->set("player3", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
+										$gamecfg->set("knast3", true);
 								        $gamecfg->save();
 										$p->getInventory()->clearAll();
 							            $endturn = Item::get(208, 0, 1);
@@ -1165,6 +1172,7 @@ class EventListener implements Listener{
 										$gamecfg->set("player4", 11);
 										$gamecfg->set("pasch", 0);
 										$gamecfg->set("wurf", true);
+										$gamecfg->set("knast4", true);
 								        $gamecfg->save();
 										$p->getInventory()->clearAll();
 							            $endturn = Item::get(208, 0, 1);
