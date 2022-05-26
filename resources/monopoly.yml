@@ -1,6 +1,8 @@
 ---
 coords1: #spieler 1 figur positionen
   y: 5 #strassen nummer 1: coord y
+  knastx: 252 #gefängnis coord x
+  knastz: 300 #gefängnis coord z
   1x: 253 #strassen nummer 1: coord x
   1z: 248 #strassen nummer 1: coord z
   2x: 255
@@ -83,6 +85,8 @@ coords1: #spieler 1 figur positionen
   40z: 245
 coords2: #spieler 2 figur positionen
   y: 5
+  knastx: 251
+  knastz: 299
   1x: 252
   1z: 248
   2x: 254 
@@ -165,6 +169,8 @@ coords2: #spieler 2 figur positionen
   40z: 246
 coords3: #spieler 3 positionen
   y: 5
+  knastx: 250
+  knastz: 300
   1x: 251
   1z: 248
   2x: 253 
@@ -247,6 +253,8 @@ coords3: #spieler 3 positionen
   40z: 247
 coords4: #spieler 4 positionen
   y: 5
+  knastx: 251
+  knastz: 301
   1x: 252
   1z: 249
   2x: 252
