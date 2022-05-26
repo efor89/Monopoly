@@ -2255,6 +2255,7 @@ class EventListener implements Listener{
 				    }
 				}
 				if($p->getName() == $Player1){
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords1.knastx");
 					$zlast = $config->getNested("coords1.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
@@ -2299,6 +2300,7 @@ class EventListener implements Listener{
 						}
 					}
 		        }elseif($p->getName() == $Player2){
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords2.knastx");
 					$zlast = $config->getNested("coords2.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
@@ -2343,6 +2345,7 @@ class EventListener implements Listener{
 						}
 					}
 		        }elseif($p->getName() == $Player3){
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords3.knastx");
 					$zlast = $config->getNested("coords3.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
@@ -2387,6 +2390,7 @@ class EventListener implements Listener{
 						}
 					}
 		        }elseif($p->getName() == $Player4){
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords4.knastx");
 					$zlast = $config->getNested("coords4.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
@@ -2511,6 +2515,8 @@ class EventListener implements Listener{
 		$form = $api->createSimpleForm(function (Player $player, int $data = null) {
 			$result = $data;
 			if ($result === null) {
+				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." §ahat 2000$ Strafe gezahlt und keine Gemeinschaftskarte gezogen.");
+				EconomyAPI::getInstance()->reduceMoney($player, 2000);
 				return true;
 			}
 			switch ($result) {
@@ -2520,7 +2526,8 @@ class EventListener implements Listener{
 			}
 			switch ($result) {
 				case 1:
-					
+				    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." §ahat 2000$ Strafe gezahlt und keine Gemeinschaftskarte gezogen.");
+					EconomyAPI::getInstance()->reduceMoney($player, 2000);
 				break;
 			}
 		});
@@ -2538,6 +2545,8 @@ class EventListener implements Listener{
 		$form = $api->createSimpleForm(function (Player $player, int $data = null) {
 			$result = $data;
 			if ($result === null) {
+				Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." §ahat 2000$ Strafe gezahlt und keine Ereigniskarte gezogen.");
+				EconomyAPI::getInstance()->reduceMoney($player, 2000);
 				return true;
 			}
 			switch ($result) {
@@ -2547,7 +2556,8 @@ class EventListener implements Listener{
 			}
 			switch ($result) {
 				case 1:
-					
+				    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." §ahat 2000$ Strafe gezahlt und keine Ereigniskarte gezogen.");
+					EconomyAPI::getInstance()->reduceMoney($player, 2000);
 				break;
 			}
 		});
