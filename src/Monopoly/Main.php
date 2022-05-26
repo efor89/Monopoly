@@ -38,6 +38,7 @@ class Main extends PluginBase{
 		$gamecfg->set("turn", null);
 		$gamecfg->set("pasch", 0);
 		$gamecfg->set("wurf", false);
+		$gamecfg->set("freiparken", 0);
 		$gamecfg->set("knast-turn1", 0);
 		$gamecfg->set("knast-turn2", 0);
 		$gamecfg->set("knast-turn3", 0);

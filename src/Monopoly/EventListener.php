@@ -757,6 +757,12 @@ class EventListener implements Listener{
 											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 											return;
 										}
+										if($gamecfg->get("player1") + $points = 21){
+										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										    $gamecfg->set("freiparken", 0);
+										    $gamecfg->save();
+										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
 										$xlast = $config->getNested("coords1.knastx");
@@ -766,6 +772,7 @@ class EventListener implements Listener{
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
 									}else{
+										EconomyAPI::getInstance()->addMoney($p, 4000);
 										$x = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."x");
 			                            $z = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
@@ -807,6 +814,12 @@ class EventListener implements Listener{
 											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 											return;
 										}
+										if($gamecfg->get("player2") + $points = 21){
+										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										    $gamecfg->set("freiparken", 0);
+										    $gamecfg->save();
+										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
 										$xlast = $config->getNested("coords2.knastx");
@@ -816,6 +829,7 @@ class EventListener implements Listener{
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
 									}else{
+										EconomyAPI::getInstance()->addMoney($p, 4000);
 										$x = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."x");
 			                            $z = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
@@ -857,6 +871,12 @@ class EventListener implements Listener{
 											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 											return;
 										}
+										if($gamecfg->get("player3") + $points = 21){
+										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										    $gamecfg->set("freiparken", 0);
+										    $gamecfg->save();
+										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
 										$xlast = $config->getNested("coords3.knastx");
@@ -866,6 +886,7 @@ class EventListener implements Listener{
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
 									}else{
+										EconomyAPI::getInstance()->addMoney($p, 4000);
 										$x = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."x");
 			                            $z = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
@@ -907,6 +928,12 @@ class EventListener implements Listener{
 											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 											return;
 										}
+										if($gamecfg->get("player4") + $points = 21){
+										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										    $gamecfg->set("freiparken", 0);
+										    $gamecfg->save();
+										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
 										$xlast = $config->getNested("coords4.knastx");
@@ -916,6 +943,7 @@ class EventListener implements Listener{
 									    $gamecfg->set("pasch", $gamecfg->get("pasch") + 1);
 									    $gamecfg->save();
 									}else{
+										EconomyAPI::getInstance()->addMoney($p, 4000);
 										$x = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."x");
 			                            $z = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."z");
 										$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
@@ -991,6 +1019,8 @@ class EventListener implements Listener{
 									$xlast = $config->getNested("coords1.knastx");
 								    $zlast = $config->getNested("coords1.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn1", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1016,12 +1046,19 @@ class EventListener implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 										return;
 									}
+									if($gamecfg->get("player1") + $points = 21){
+										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										$gamecfg->set("freiparken", 0);
+										$gamecfg->save();
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(1, 0));
 									$gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
 								}else{
+									EconomyAPI::getInstance()->addMoney($p, 4000);
 									$x = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."x");
 			                        $z = $config->getNested("coords1.".(($gamecfg->get("player1") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
@@ -1046,6 +1083,8 @@ class EventListener implements Listener{
 									$xlast = $config->getNested("coords2.knastx");
 								    $zlast = $config->getNested("coords2.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn2", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1071,12 +1110,19 @@ class EventListener implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 										return;
 									}
+									if($gamecfg->get("player2") + $points = 21){
+										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										$gamecfg->set("freiparken", 0);
+										$gamecfg->save();
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(1, 0));
 									$gamecfg->set("player2", $gamecfg->get("player2") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
 								}else{
+									EconomyAPI::getInstance()->addMoney($p, 4000);
 									$x = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."x");
 			                        $z = $config->getNested("coords2.".(($gamecfg->get("player2") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
@@ -1101,6 +1147,8 @@ class EventListener implements Listener{
 									$xlast = $config->getNested("coords3.knastx");
 								    $zlast = $config->getNested("coords3.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn3", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1126,12 +1174,19 @@ class EventListener implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 										return;
 									}
+									if($gamecfg->get("player3") + $points = 21){
+										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										$gamecfg->set("freiparken", 0);
+										$gamecfg->save();
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(1, 0));
 									$gamecfg->set("player3", $gamecfg->get("player3") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
 								}else{
+									EconomyAPI::getInstance()->addMoney($p, 4000);
 									$x = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."x");
 			                        $z = $config->getNested("coords3.".(($gamecfg->get("player3") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
@@ -1156,6 +1211,8 @@ class EventListener implements Listener{
 									$xlast = $config->getNested("coords4.knastx");
 								    $zlast = $config->getNested("coords4.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(1, 0));
+									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn4", 0);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1181,12 +1238,19 @@ class EventListener implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
 										return;
 									}
+									if($gamecfg->get("player4") + $points = 21){
+										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+										$gamecfg->set("freiparken", 0);
+										$gamecfg->save();
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(1, 0));
 									$gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
 								}else{
+									EconomyAPI::getInstance()->addMoney($p, 4000);
 									$x = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."x");
 			                        $z = $config->getNested("coords4.".(($gamecfg->get("player4") + $points) - 40)."z");
 									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
@@ -1376,6 +1440,8 @@ class EventListener implements Listener{
 		if($item->getId() === 266) {
             if($item->getName() === "§6Frei Kaufen") {
 				EconomyAPI::getInstance()->reduceMoney($p, 1000);
+				$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+				$gamecfg->save();
 				if($p->getName() === $Player1){
 				    $gamecfg->set("knast1", false);
 				}elseif($p->getName() === $Player2){

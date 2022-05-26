@@ -3,6 +3,7 @@ start: false
 turn: ~
 pasch: 0
 wurf: false
+freiparken: 0
 player1: 1
 player2: 1
 player3: 1
