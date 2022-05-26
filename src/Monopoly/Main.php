@@ -36,6 +36,8 @@ class Main extends PluginBase{
 	    $players->save();
 		$gamecfg->set("start", false);
 		$gamecfg->set("turn", null);
+		$gamecfg->set("pasch", 0);
+		$gamecfg->set("wurf", false);
 		$gamecfg->save();
 	}
 	
