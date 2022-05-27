@@ -44,6 +44,10 @@ class ZugBeenden implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
+		if($gamecfg->get("wurf") !== true){
+			$p->sendMessage("§bMono§6poly: §cDu musst noch würfeln bevor du deinen zug beenden kannst!");
+			return;
+		}
 		if($item->getId() === 208) {
             if($item->getName() === "§3Zug Beenden") {
                 $p->getInventory()->clearAll();
