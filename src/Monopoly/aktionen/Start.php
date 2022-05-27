@@ -92,6 +92,8 @@ class Start implements Listener{
                         $info->setCustomName("§7Infos");
 		                $giveup = Item::get(355, 14, 1);
                         $giveup->setCustomName("§cAufgeben/Bankrott");
+						$pay = Item::get(371, 0, 1);
+                        $pay->setCustomName("§6Miete Bezahlen");
 						if($Player1 != null and $Player2 != null and $Player3 != null and $Player4 != null){
 						    $zufallplayer = mt_rand(1, 4);
 						}elseif($Player1 != null and $Player2 != null and $Player3 == null and $Player4 == null){
@@ -124,6 +126,7 @@ class Start implements Listener{
                             $player1->getInventory()->setItem(2, $bauen);
 		                    $player1->getInventory()->setItem(3, $hypo);
                             $player1->getInventory()->setItem(4, $handeln);
+							$player1->getInventory()->setItem(5, $pay);
 						    $player1->getInventory()->setItem(6, $endturn);	                    
 						}elseif($zufallplayer < 3){
 							$gamecfg->set("turn", $player2->getName());
@@ -134,6 +137,7 @@ class Start implements Listener{
                             $player2->getInventory()->setItem(2, $bauen);
 		                    $player2->getInventory()->setItem(3, $hypo);
                             $player2->getInventory()->setItem(4, $handeln);
+							$player2->getInventory()->setItem(5, $pay);
 		                    $player2->getInventory()->setItem(6, $endturn);	                    
 						}elseif($zufallplayer < 4){
 							$gamecfg->set("turn", $player3->getName());
@@ -144,6 +148,7 @@ class Start implements Listener{
                             $player3->getInventory()->setItem(2, $bauen);
 		                    $player3->getInventory()->setItem(3, $hypo);
                             $player3->getInventory()->setItem(4, $handeln);
+							$player3->getInventory()->setItem(5, $pay);
 		                    $player3->getInventory()->setItem(6, $endturn);   
 						}elseif($zufallplayer > 3){
 							$gamecfg->set("turn", $player4->getName());
@@ -154,6 +159,7 @@ class Start implements Listener{
                             $player4->getInventory()->setItem(2, $bauen);
 		                    $player4->getInventory()->setItem(3, $hypo);
                             $player4->getInventory()->setItem(4, $handeln);
+							$player4->getInventory()->setItem(5, $pay);
 		                    $player4->getInventory()->setItem(6, $endturn);
 						}
 						$player1->getInventory()->setItem(7, $info);

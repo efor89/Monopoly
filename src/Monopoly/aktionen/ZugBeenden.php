@@ -73,6 +73,8 @@ class ZugBeenden implements Listener{
                 $info->setCustomName("§7Infos");
 		        $giveup = Item::get(355, 14, 1);
                 $giveup->setCustomName("§cAufgeben/Bankrott");
+				$pay = Item::get(371, 0, 1);
+                $pay->setCustomName("§6Miete Bezahlen");
 				if($p->getName() === $Player1){
 					$gamecfg->set("wurf", false);
 					$gamecfg->set("pasch", 0);
@@ -86,6 +88,7 @@ class ZugBeenden implements Listener{
                             $player2->getInventory()->setItem(2, $bauen);
                             $player2->getInventory()->setItem(3, $hypo);
                             $player2->getInventory()->setItem(4, $handeln);
+							$player2->getInventory()->setItem(5, $pay);
                             $player2->getInventory()->setItem(6, $endturn);
 					        $player2->getInventory()->setItem(7, $info);
                             $player2->getInventory()->setItem(8, $giveup);
@@ -108,6 +111,7 @@ class ZugBeenden implements Listener{
                             $player3->getInventory()->setItem(2, $bauen);
                             $player3->getInventory()->setItem(3, $hypo);
                             $player3->getInventory()->setItem(4, $handeln);
+							$player3->getInventory()->setItem(5, $pay);
                             $player3->getInventory()->setItem(6, $endturn);
 					        $player3->getInventory()->setItem(7, $info);
                             $player3->getInventory()->setItem(8, $giveup);
@@ -130,6 +134,7 @@ class ZugBeenden implements Listener{
                             $player4->getInventory()->setItem(2, $bauen);
                             $player4->getInventory()->setItem(3, $hypo);
                             $player4->getInventory()->setItem(4, $handeln);
+							$player4->getInventory()->setItem(5, $pay);
                             $player4->getInventory()->setItem(6, $endturn);
 					        $player4->getInventory()->setItem(7, $info);
                             $player4->getInventory()->setItem(8, $giveup);
@@ -157,6 +162,7 @@ class ZugBeenden implements Listener{
                             $player3->getInventory()->setItem(2, $bauen);
                             $player3->getInventory()->setItem(3, $hypo);
                             $player3->getInventory()->setItem(4, $handeln);
+							$player3->getInventory()->setItem(5, $pay);
                             $player3->getInventory()->setItem(6, $endturn);
 					        $player3->getInventory()->setItem(7, $info);
                             $player3->getInventory()->setItem(8, $giveup);
@@ -179,6 +185,7 @@ class ZugBeenden implements Listener{
                             $player4->getInventory()->setItem(2, $bauen);
                             $player4->getInventory()->setItem(3, $hypo);
                             $player4->getInventory()->setItem(4, $handeln);
+							$player4->getInventory()->setItem(5, $pay);
                             $player4->getInventory()->setItem(6, $endturn);
 					        $player4->getInventory()->setItem(7, $info);
                             $player4->getInventory()->setItem(8, $giveup);
@@ -201,6 +208,7 @@ class ZugBeenden implements Listener{
                             $player1->getInventory()->setItem(2, $bauen);
                             $player1->getInventory()->setItem(3, $hypo);
                             $player1->getInventory()->setItem(4, $handeln);
+							$player1->getInventory()->setItem(5, $pay);
                             $player1->getInventory()->setItem(6, $endturn);
 					        $player1->getInventory()->setItem(7, $info);
                             $player1->getInventory()->setItem(8, $giveup);
@@ -228,6 +236,7 @@ class ZugBeenden implements Listener{
                             $player4->getInventory()->setItem(2, $bauen);
                             $player4->getInventory()->setItem(3, $hypo);
                             $player4->getInventory()->setItem(4, $handeln);
+							$player4->getInventory()->setItem(5, $pay);
                             $player4->getInventory()->setItem(6, $endturn);
 					        $player4->getInventory()->setItem(7, $info);
                             $player4->getInventory()->setItem(8, $giveup);
@@ -250,6 +259,7 @@ class ZugBeenden implements Listener{
                             $player1->getInventory()->setItem(2, $bauen);
                             $player1->getInventory()->setItem(3, $hypo);
                             $player1->getInventory()->setItem(4, $handeln);
+							$player1->getInventory()->setItem(5, $pay);
                             $player1->getInventory()->setItem(6, $endturn);
 					        $player1->getInventory()->setItem(7, $info);
                             $player1->getInventory()->setItem(8, $giveup);
@@ -272,6 +282,7 @@ class ZugBeenden implements Listener{
                             $player2->getInventory()->setItem(2, $bauen);
                             $player2->getInventory()->setItem(3, $hypo);
                             $player2->getInventory()->setItem(4, $handeln);
+							$player2->getInventory()->setItem(5, $pay);
                             $player2->getInventory()->setItem(6, $endturn);
 					        $player2->getInventory()->setItem(7, $info);
                             $player2->getInventory()->setItem(8, $giveup);
@@ -299,6 +310,7 @@ class ZugBeenden implements Listener{
                             $player1->getInventory()->setItem(2, $bauen);
                             $player1->getInventory()->setItem(3, $hypo);
                             $player1->getInventory()->setItem(4, $handeln);
+							$player1->getInventory()->setItem(5, $pay);
                             $player1->getInventory()->setItem(6, $endturn);
 					        $player1->getInventory()->setItem(7, $info);
                             $player1->getInventory()->setItem(8, $giveup);
@@ -321,6 +333,7 @@ class ZugBeenden implements Listener{
                             $player2->getInventory()->setItem(2, $bauen);
                             $player2->getInventory()->setItem(3, $hypo);
                             $player2->getInventory()->setItem(4, $handeln);
+							$player2->getInventory()->setItem(5, $pay);
                             $player2->getInventory()->setItem(6, $endturn);
 					        $player2->getInventory()->setItem(7, $info);
                             $player2->getInventory()->setItem(8, $giveup);
@@ -343,6 +356,7 @@ class ZugBeenden implements Listener{
                             $player3->getInventory()->setItem(2, $bauen);
                             $player3->getInventory()->setItem(3, $hypo);
                             $player3->getInventory()->setItem(4, $handeln);
+							$player3->getInventory()->setItem(5, $pay);
                             $player3->getInventory()->setItem(6, $endturn);
 					        $player3->getInventory()->setItem(7, $info);
                             $player3->getInventory()->setItem(8, $giveup);

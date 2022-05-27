@@ -17,6 +17,7 @@ use Monopoly\aktionen\FreiKaufen;
 use Monopoly\aktionen\Handeln;
 use Monopoly\aktionen\HausBauen;
 use Monopoly\aktionen\HotelBauen;
+use Monopoly\aktionen\Hypothek;
 use Monopoly\aktionen\Infos;
 use Monopoly\aktionen\Kaufen;
 use Monopoly\aktionen\MieteBezahlen;
@@ -26,6 +27,7 @@ use Monopoly\aktionen\ZugBeenden;
 use Monopoly\aktionen\Zurueck;
 use Monopoly\ui\Ereigniskarte;
 use Monopoly\ui\Gemeinschaftskarte;
+use Monopoly\ui\Hypothek;
 
 class Main extends PluginBase{
 	
@@ -34,6 +36,8 @@ class Main extends PluginBase{
 	protected $ereignis;
 	
 	protected $gemeinschaft;
+	
+	protected $hypothek;
 
     public function onEnable(): void{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
@@ -57,6 +61,7 @@ class Main extends PluginBase{
 		$this->getServer()->getPluginManager()->registerEvents(new Handeln($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new HausBauen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new HotelBauen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Hypothek($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Infos($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Kaufen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new MieteBezahlen($this), $this);
@@ -67,6 +72,7 @@ class Main extends PluginBase{
 		
 		$this->ereignis = new Ereigniskarte($this);
 		$this->gemeinschaft = new Gemeinschaftskarte($this);
+		$this->hypothek = new Hypothek($this);
     }
 	
 	public function onDisable(): Void{
@@ -128,6 +134,10 @@ class Main extends PluginBase{
 	
 	function getEreignis() {
         return $this->ereignis;
+    }
+	
+	function getHypothek() {
+        return $this->hypothek;
     }
 	
 	public function getZufall1(){
@@ -306,50 +316,52 @@ class Main extends PluginBase{
 	
 	public function getTrainCount(Player $player, $feld){
 		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 4;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 3;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 3;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 3;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 3;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 1;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 1;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 1;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 1;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 2;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 2;
-		}
-		if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 2;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
-			$zahl = 2;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 2;
-		}
-		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") != $player->getName()){
-			$zahl = 2;
+		if($feld == 6 or $feld == 16 or $feld == 26 or $feld == 36){
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 4;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
+		    	$zahl = 3;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 3;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 3;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
+			    $zahl = 3;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 1;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
+		    	$zahl = 1;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") != $player->getName()){
+			    $zahl = 1;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") != $player->getName()){
+			    $zahl = 1;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 2;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 2;
+		    }
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
+			    $zahl = 2;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
+			    $zahl = 2;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
+			    $zahl = 2;
+		    }
+		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") != $player->getName()){
+		    	$zahl = 2;
+		    }
 		}
 		return $zahl;
 	}

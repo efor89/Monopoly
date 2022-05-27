@@ -77,11 +77,14 @@ class FreiKaufen implements Listener{
                 $info->setCustomName("§7Infos");
 		        $giveup = Item::get(355, 14, 1);
                 $giveup->setCustomName("§cAufgeben/Bankrott");
+				$pay = Item::get(371, 0, 1);
+                $pay->setCustomName("§6Miete Bezahlen");
 				$p->getInventory()->setItem(0, $wuerfeln);
                 $p->getInventory()->setItem(1, $kaufen);
                 $p->getInventory()->setItem(2, $bauen);
                 $p->getInventory()->setItem(3, $hypo);
                 $p->getInventory()->setItem(4, $handeln);
+				$p->getInventory()->setItem(5, $pay);
                 $p->getInventory()->setItem(6, $endturn);
 			    $p->getInventory()->setItem(7, $info);
                 $p->getInventory()->setItem(8, $giveup);

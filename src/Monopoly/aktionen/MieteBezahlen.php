@@ -50,6 +50,14 @@ class MieteBezahlen implements Listener{
 				$feld = $gamecfg->get($p);
 				$target = $gamecfg->get($feld);
 				$player = Server::getInstance()->getPlayer($target);
+			    if($gamecfg->get($feld) === null){
+					$p->sendMessage("§bMono§6poly: §cDu musst hier Keine Miete bezahlen!");
+					return;
+				}
+				if($gamecfg->get($feld) == $p->getName()){
+					$p->sendMessage("§bMono§6poly: §cDu musst hier Keine Miete bezahlen da es deine Strasse ist!");
+					return;
+				}
 				if($this->plugin->isFullStreet($player, $feld) == "yes"){
 				    $kosten = $config->getNested($feld.".miete") * 2;
 				}elseif($this->plugin->isFullStreet($player, $feld) == "no"){
@@ -70,6 +78,7 @@ class MieteBezahlen implements Listener{
 					EconomyAPI::getInstance()->addMoney($player, $kosten);
 					$gamecfg->set("miete", false);
 					$gamecfg->save();
+					
 				}else{
 					$p->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Miete zu bezahlen nimm eine Hypotek auf oder verkauf etwas!");
 				}
