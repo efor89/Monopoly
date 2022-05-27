@@ -27,7 +27,7 @@ use Monopoly\aktionen\ZugBeenden;
 use Monopoly\aktionen\Zurueck;
 use Monopoly\ui\Ereigniskarte;
 use Monopoly\ui\Gemeinschaftskarte;
-use Monopoly\ui\Hypothek;
+use Monopoly\ui\HypothekUI;
 
 class Main extends PluginBase{
 	
@@ -37,7 +37,7 @@ class Main extends PluginBase{
 	
 	protected $gemeinschaft;
 	
-	protected $hypothek;
+	protected $hypothekui;
 
     public function onEnable(): void{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
@@ -72,7 +72,7 @@ class Main extends PluginBase{
 		
 		$this->ereignis = new Ereigniskarte($this);
 		$this->gemeinschaft = new Gemeinschaftskarte($this);
-		$this->hypothek = new Hypothek($this);
+		$this->hypothekui = new HypothekUI($this);
     }
 	
 	public function onDisable(): Void{
@@ -136,8 +136,8 @@ class Main extends PluginBase{
         return $this->ereignis;
     }
 	
-	function getHypothek() {
-        return $this->hypothek;
+	function getHypothekUI() {
+        return $this->hypothekui;
     }
 	
 	public function getZufall1(){
