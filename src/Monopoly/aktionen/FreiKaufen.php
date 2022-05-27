@@ -44,12 +44,7 @@ class FreiKaufen implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
-		if($item->getId() === 54) {
-            if($item->getName() === "§dHandeln") {
-                $p->sendMessage("§cKommt noch!");
-            }
-        }
-		if($item->getId() === 266) {
+		if($item->getId() === 264) {
             if($item->getName() === "§6Frei Kaufen") {
 				EconomyAPI::getInstance()->reduceMoney($p, 1000);
 				$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
@@ -68,7 +63,7 @@ class FreiKaufen implements Listener{
                 $wuerfeln->setCustomName("§aWürfeln");
                 $kaufen = Item::get(266, 0, 1);
                 $kaufen->setCustomName("§6Kaufen");
-				$freikaufen = Item::get(266, 0, 1);
+				$freikaufen = Item::get(264, 0, 1);
                 $freikaufen->setCustomName("§6Frei Kaufen");
                 $bauen = Item::get(277, 0, 1);
                 $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		

@@ -95,6 +95,7 @@ class EventListener implements Listener{
 			$gamecfg->set("start", false);
 			$gamecfg->set("turn", null);
 			$gamecfg->set("wurf", false);
+			$gamecfg->set("miete", false);
 		    $gamecfg->save();
 			$players->set("player1", null);
 			$players->set("player2", null);
@@ -123,6 +124,7 @@ class EventListener implements Listener{
 			$gamecfg->set("start", false);
 			$gamecfg->set("turn", null);
 			$gamecfg->set("wurf", false);
+			$gamecfg->set("miete", false);
 		    $gamecfg->save();
 			$players->set("player1", null);
 			$players->set("player3", null);
@@ -153,6 +155,7 @@ class EventListener implements Listener{
 			$gamecfg->set("start", false);
 			$gamecfg->set("turn", null);
 			$gamecfg->set("wurf", false);
+			$gamecfg->set("miete", false);
 		    $gamecfg->save();
 			$players->set("player1", null);
 			$players->set("player4", null);
@@ -186,6 +189,7 @@ class EventListener implements Listener{
 			$players->set("player2", null);
 			$players->set("player3", null);
 			$gamecfg->set("wurf", false);
+			$gamecfg->set("miete", false);
 			$players->save();
 			if($gamecfg->get("start") !== true){
 				return;
@@ -211,6 +215,7 @@ class EventListener implements Listener{
 			$gamecfg->set("start", false);
 			$gamecfg->set("turn", null);
 			$gamecfg->set("wurf", false);
+			$gamecfg->set("miete", false);
 		    $gamecfg->save();
 			$players->set("player2", null);
 			$players->set("player4", null);
@@ -239,6 +244,7 @@ class EventListener implements Listener{
 			$gamecfg->set("start", false);
 			$gamecfg->set("turn", null);
 			$gamecfg->set("wurf", false);
+			$gamecfg->set("miete", false);
 		    $gamecfg->save();
 			$players->set("player3", null);
 			$players->set("player4", null);
@@ -275,6 +281,7 @@ class EventListener implements Listener{
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
 				    $gamecfg->set("turn", $player2->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player2->getInventory()->clearAll();
@@ -295,6 +302,7 @@ class EventListener implements Listener{
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
 				    $gamecfg->set("turn", $player2->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player3->getInventory()->clearAll();
@@ -315,6 +323,7 @@ class EventListener implements Listener{
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
 				    $gamecfg->set("turn", $player3->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player3->getInventory()->clearAll();
@@ -335,6 +344,7 @@ class EventListener implements Listener{
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
 				    $gamecfg->set("turn", $player2->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player2->getInventory()->clearAll();
@@ -359,6 +369,7 @@ class EventListener implements Listener{
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
 				    $gamecfg->set("turn", $player3->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player3->getInventory()->clearAll();
@@ -379,6 +390,7 @@ class EventListener implements Listener{
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
 				    $gamecfg->set("turn", $player4->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player4->getInventory()->clearAll();
@@ -399,6 +411,7 @@ class EventListener implements Listener{
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
 				    $gamecfg->set("turn", $player3->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player4->getInventory()->clearAll();
@@ -419,6 +432,7 @@ class EventListener implements Listener{
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
 				    $gamecfg->set("turn", $player3->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player4->getInventory()->clearAll();
@@ -443,6 +457,7 @@ class EventListener implements Listener{
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
 				    $gamecfg->set("turn", $player4->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player4->getInventory()->clearAll();
@@ -463,6 +478,7 @@ class EventListener implements Listener{
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
 				    $gamecfg->set("turn", $player4->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player1->getInventory()->clearAll();
@@ -483,6 +499,7 @@ class EventListener implements Listener{
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
 				    $gamecfg->set("turn", $player1->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player1->getInventory()->clearAll();
@@ -503,6 +520,7 @@ class EventListener implements Listener{
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
 				    $gamecfg->set("turn", $player4->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player1->getInventory()->clearAll();
@@ -527,6 +545,7 @@ class EventListener implements Listener{
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
 				    $gamecfg->set("turn", $player1->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player1->getInventory()->clearAll();
@@ -547,6 +566,7 @@ class EventListener implements Listener{
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
 				    $gamecfg->set("turn", $player1->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player2->getInventory()->clearAll();
@@ -567,6 +587,7 @@ class EventListener implements Listener{
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
 				    $gamecfg->set("turn", $player1->getName());
 				    $gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player2->getInventory()->clearAll();
@@ -587,6 +608,7 @@ class EventListener implements Listener{
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
 				    $gamecfg->set("turn", $player2->getName());
 			    	$gamecfg->set("wurf", false);
+					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
 				    $gamecfg->save();
 				    $player2->getInventory()->clearAll();

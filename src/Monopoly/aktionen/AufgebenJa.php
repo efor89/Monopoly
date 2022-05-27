@@ -74,6 +74,8 @@ class AufgebenJa implements Listener{
 						$player3->getInventory()->setItem(4, $anmelden);
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
+						$gamecfg->set("wurf", false);
+					    $gamecfg->set("miete", false);
 					    $gamecfg->save();
 						if($p->getName() !== $Player4){
 				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
@@ -103,6 +105,8 @@ class AufgebenJa implements Listener{
 						$player4->getInventory()->setItem(4, $anmelden);
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
+						$gamecfg->set("wurf", false);
+					    $gamecfg->set("miete", false);
 					    $gamecfg->save();
 						if($p->getName() !== $Player2){
 				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
@@ -132,6 +136,8 @@ class AufgebenJa implements Listener{
 						$player3->getInventory()->setItem(4, $anmelden);
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
+						$gamecfg->set("wurf", false);
+					    $gamecfg->set("miete", false);
 					    $gamecfg->save();
 						if($p->getName() !== $Player2){
 				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
@@ -161,6 +167,8 @@ class AufgebenJa implements Listener{
 						$player1->getInventory()->setItem(4, $anmelden);
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
+						$gamecfg->set("wurf", false);
+					    $gamecfg->set("miete", false);
 					    $gamecfg->save();
 						if($p->getName() !== $Player4){
 				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat das Spiel Gewonnen.");
@@ -190,6 +198,8 @@ class AufgebenJa implements Listener{
 						$player1->getInventory()->setItem(4, $anmelden);
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
+						$gamecfg->set("wurf", false);
+					    $gamecfg->set("miete", false);
 					    $gamecfg->save();
 						if($p->getName() !== $Player3){
 				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat das Spiel Gewonnen.");
@@ -219,6 +229,8 @@ class AufgebenJa implements Listener{
 						$player1->getInventory()->setItem(4, $anmelden);
 						$gamecfg->set("start", false);
 						$gamecfg->set("turn", null);
+						$gamecfg->set("wurf", false);
+					    $gamecfg->set("miete", false);
 					    $gamecfg->save();
 						if($p->getName() !== $Player2){
 				            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat das Spiel Gewonnen.");
@@ -250,6 +262,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player2->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player2->getInventory()->clearAll();
 				            $player2->getInventory()->setItem(0, $wuerfeln);
@@ -266,6 +279,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player3->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player3->getInventory()->clearAll();
 				            $player3->getInventory()->setItem(0, $wuerfeln);
@@ -295,6 +309,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player3->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player3->getInventory()->clearAll();
 				            $player3->getInventory()->setItem(0, $wuerfeln);
@@ -311,6 +326,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player4->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player4->getInventory()->clearAll();
 				            $player4->getInventory()->setItem(0, $wuerfeln);
@@ -340,6 +356,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player4->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player4->getInventory()->clearAll();
 				            $player4->getInventory()->setItem(0, $wuerfeln);
@@ -356,6 +373,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player1->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player1->getInventory()->clearAll();
 				            $player1->getInventory()->setItem(0, $wuerfeln);
@@ -385,6 +403,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player1->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player1->getInventory()->clearAll();
 				            $player1->getInventory()->setItem(0, $wuerfeln);
@@ -401,6 +420,7 @@ class AufgebenJa implements Listener{
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player2->getName());
 						    $gamecfg->set("wurf", false);
+							$gamecfg->set("miete", false);
 						    $gamecfg->save();
 							$player2->getInventory()->clearAll();
 				            $player2->getInventory()->setItem(0, $wuerfeln);

@@ -48,8 +48,8 @@ class Wuerfeln implements Listener{
 		}
 		if($item->getId() === 236) {
             if($item->getName() === "§aWürfeln") {
-                $point1 = $this->getZufall1();
-				$point2 = $this->getZufall2();
+                $point1 = $this->plugin->getZufall1();
+				$point2 = $this->plugin->getZufall2();
 				$points = $point1 + $point2;
 				if($gamecfg->get("wurf") !== true){
 					$y = 5;
@@ -73,6 +73,17 @@ class Wuerfeln implements Listener{
 						if($gamecfg->get("pasch") < 2){
 							if($p->getName() == $Player1){
 							    if($gamecfg->get("knast1") !== false){
+									if($gamecfg->get($gamecfg->get("player1") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player1") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
 								    $zlast = $config->getNested("coords1.knastz");
@@ -163,6 +174,17 @@ class Wuerfeln implements Listener{
 								}
 							}elseif($p->getName() == $Player2){
 							    if($gamecfg->get("knast2") !== false){
+									if($gamecfg->get($gamecfg->get("player2") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player2") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$xlast = $config->getNested("coords2.knastx");
 								    $zlast = $config->getNested("coords2.knastz");
@@ -251,6 +273,17 @@ class Wuerfeln implements Listener{
 								}
 							}elseif($p->getName() == $Player3){
 							    if($gamecfg->get("knast3") !== false){
+									if($gamecfg->get($gamecfg->get("player3") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player3") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$xlast = $config->getNested("coords3.knastx");
 								    $zlast = $config->getNested("coords3.knastz");
@@ -339,6 +372,17 @@ class Wuerfeln implements Listener{
 								}
 							}elseif($p->getName() == $Player4){
 							    if($gamecfg->get("knast4") !== false){
+									if($gamecfg->get($gamecfg->get("player4") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player4") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$xlast = $config->getNested("coords4.knastx");
 								    $zlast = $config->getNested("coords4.knastz");
@@ -485,6 +529,17 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
+									if($gamecfg->get($gamecfg->get("player1") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player1") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
@@ -580,6 +635,17 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
+									if($gamecfg->get($gamecfg->get("player2") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player2") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$xlast = $config->getNested("coords2.knastx");
@@ -675,6 +741,17 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
+									if($gamecfg->get($gamecfg->get("player3") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player3") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$xlast = $config->getNested("coords3.knastx");
@@ -770,6 +847,17 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
+									if($gamecfg->get($gamecfg->get("player4") + $points) === null){
+										$kaufen = Item::get(266, 0, 1);
+                                        $kaufen->setCustomName("§6Kaufen");
+										$p->getInventory()->setItem(1, $kaufen);
+									}elseif($gamecfg->get($gamecfg->get("player4") + $points) != $p->getName()){
+										$pay = Item::get(371, 0, 1);
+                                        $pay->setCustomName("§6Miete Bezahlen");
+										$p->getInventory()->setItem(1, $pay);
+										$gamecfg->set("miete", true);
+										$gamecfg->save();
+									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$xlast = $config->getNested("coords4.knastx");
@@ -866,13 +954,5 @@ class Wuerfeln implements Listener{
 		if(!$p->isOP()){
             $ev->setCancelled(true);
 		}
-	}
-	
-	public function getZufall1(){
-		return mt_rand(1, 6);
-	}
-	
-	public function getZufall2(){
-		return mt_rand(1, 6);
 	}
 }
