@@ -83,6 +83,7 @@ class Main extends PluginBase{
 	    $players->set("player3", null);
 	    $players->set("player4", null);
 	    $players->save();
+		$gamecfg->set("lastpoints", 0);
 		$gamecfg->set("start", false);
 		$gamecfg->set("turn", null);
 		$gamecfg->set("pasch", 0);
@@ -125,6 +126,34 @@ class Main extends PluginBase{
 		$gamecfg->set("36", null);
 		$gamecfg->set("38", null);
 		$gamecfg->set("40", null);
+		$gamecfg->set("2hypo", false);
+		$gamecfg->set("4hypo", false);
+		$gamecfg->set("6hypo", false);
+		$gamecfg->set("7hypo", false);
+		$gamecfg->set("9hypo", false);
+		$gamecfg->set("10hypo", false);
+		$gamecfg->set("12hypo", false);
+		$gamecfg->set("13hypo", false);
+		$gamecfg->set("14hypo", false);
+		$gamecfg->set("15hypo", false);
+		$gamecfg->set("16hypo", false);
+		$gamecfg->set("17hypo", false);
+		$gamecfg->set("19hypo", false);
+		$gamecfg->set("20hypo", false);
+		$gamecfg->set("22hypo", false);
+		$gamecfg->set("24hypo", false);
+		$gamecfg->set("25hypo", false);
+		$gamecfg->set("26hypo", false);
+		$gamecfg->set("27hypo", false);
+		$gamecfg->set("28hypo", false);
+		$gamecfg->set("29hypo", false);
+		$gamecfg->set("30hypo", false);
+		$gamecfg->set("32hypo", false);
+		$gamecfg->set("33hypo", false);
+		$gamecfg->set("35hypo", false);
+		$gamecfg->set("36hypo", false);
+		$gamecfg->set("38hypo", false);
+		$gamecfg->set("40hypo", false);
 		$gamecfg->save();
 	}
 	
@@ -149,7 +178,7 @@ class Main extends PluginBase{
 	}
 	
 	public function removeCarts(Player $player){
-		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
 		if($gamecfg->get("2") == $player->getName()){
 			$gamecfg->set("2", null);
 			$gamecfg->save();
@@ -265,7 +294,7 @@ class Main extends PluginBase{
 	}
 	
 	public function isFullStreet(Player $player, $feld){
-		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
 		if($feld == 2 or $feld == 4){
 		    if($gamecfg->get("2") == $player->getName() and $gamecfg->get("4") == $player->getName()){
 			    return "yes";
@@ -311,11 +340,16 @@ class Main extends PluginBase{
 			    return "yes";
 		    }
 		}
+		if($feld == 13 or $feld == 29){
+		    if($gamecfg->get("13") == $player->getName() and $gamecfg->get("29") == $player->getName()){
+			    return "yes";
+		    }
+		}
 		return "no";
 	}
 	
 	public function getTrainCount(Player $player, $feld){
-		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
 		if($feld == 6 or $feld == 16 or $feld == 26 or $feld == 36){
 		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
 			    $zahl = 4;

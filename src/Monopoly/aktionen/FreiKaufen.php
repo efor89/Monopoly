@@ -51,12 +51,16 @@ class FreiKaufen implements Listener{
 				$gamecfg->save();
 				if($p->getName() === $Player1){
 				    $gamecfg->set("knast1", false);
+					$gamecfg->save();
 				}elseif($p->getName() === $Player2){
 				    $gamecfg->set("knast2", false);
+					$gamecfg->save();
 				}elseif($p->getName() === $Player3){
 				    $gamecfg->set("knast3", false);
+					$gamecfg->save();
 				}elseif($p->getName() === $Player4){
 				    $gamecfg->set("knast4", false);
+					$gamecfg->save();
 				}
 				$p->getInventory()->clearAll();
 				$wuerfeln = Item::get(236, 0, 1);

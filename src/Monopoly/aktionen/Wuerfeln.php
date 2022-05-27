@@ -51,6 +51,8 @@ class Wuerfeln implements Listener{
                 $point1 = $this->plugin->getZufall1();
 				$point2 = $this->plugin->getZufall2();
 				$points = $point1 + $point2;
+				$gamecfg->set("lastpoints", $points);
+				$gamecfg->save();
 				if($gamecfg->get("wurf") !== true){
 					$y = 5;
 			        $x1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."x");
@@ -83,6 +85,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player1") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player1") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player1") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
@@ -133,7 +147,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 										if($gamecfg->get("player1") + $points == 3 or $gamecfg->get("player1") + $points == 18 or $gamecfg->get("player1") + $points == 34){
-											$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+											$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 										}
 										if($gamecfg->get("player1") + $points == 8 or $gamecfg->get("player1") + $points == 23 or $gamecfg->get("player1") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
@@ -154,7 +168,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
 										if((($gamecfg->get("player1") + $points) - 40) == 5){
-										    $this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player1") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
@@ -184,6 +198,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player2") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player2") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player2") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$xlast = $config->getNested("coords2.knastx");
@@ -233,7 +259,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 										if($gamecfg->get("player2") + $points == 3 or $gamecfg->get("player2") + $points == 18 or $gamecfg->get("player2") + $points == 34){
-											$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+											$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 										}
 										if($gamecfg->get("player2") + $points == 8 or $gamecfg->get("player2") + $points == 23 or $gamecfg->get("player2") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
@@ -254,7 +280,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
 										if((($gamecfg->get("player2") + $points) - 40) == 5){
-										    $this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player2") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
@@ -283,6 +309,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player3") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player3") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player3") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$xlast = $config->getNested("coords3.knastx");
@@ -332,7 +370,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 										if($gamecfg->get("player3") + $points == 3 or $gamecfg->get("player3") + $points == 18 or $gamecfg->get("player3") + $points == 34){
-											$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+											$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 										}
 										if($gamecfg->get("player3") + $points == 8 or $gamecfg->get("player3") + $points == 23 or $gamecfg->get("player3") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
@@ -353,7 +391,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
 										if((($gamecfg->get("player3") + $points) - 40) == 5){
-										    $this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player3") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
@@ -382,6 +420,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player4") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player4") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player4") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$xlast = $config->getNested("coords4.knastx");
@@ -431,7 +481,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									    }
 										if($gamecfg->get("player4") + $points == 3 or $gamecfg->get("player4") + $points == 18 or $gamecfg->get("player4") + $points == 34){
-											$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+											$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 										}
 										if($gamecfg->get("player4") + $points == 8 or $gamecfg->get("player4") + $points == 23 or $gamecfg->get("player4") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
@@ -452,7 +502,7 @@ class Wuerfeln implements Listener{
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
 										if((($gamecfg->get("player4") + $points) - 40) == 5){
-										    $this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player4") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
@@ -540,6 +590,18 @@ class Wuerfeln implements Listener{
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
 									}
+									if($gamecfg->get("player1") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player1") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player1") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
@@ -591,7 +653,7 @@ class Wuerfeln implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									if($gamecfg->get("player1") + $points == 3 or $gamecfg->get("player1") + $points == 18 or $gamecfg->get("player1") + $points == 34){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if($gamecfg->get("player1") + $points == 8 or $gamecfg->get("player1") + $points == 23 or $gamecfg->get("player1") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -609,7 +671,7 @@ class Wuerfeln implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
 									if((($gamecfg->get("player1") + $points) - 40) == 5){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player1") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -645,6 +707,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player2") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player2") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player2") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
@@ -697,7 +771,7 @@ class Wuerfeln implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									if($gamecfg->get("player2") + $points == 3 or $gamecfg->get("player2") + $points == 18 or $gamecfg->get("player2") + $points == 34){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if($gamecfg->get("player2") + $points == 8 or $gamecfg->get("player2") + $points == 23 or $gamecfg->get("player2") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -715,7 +789,7 @@ class Wuerfeln implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
 									if((($gamecfg->get("player2") + $points) - 40) == 5){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player2") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -751,6 +825,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player3") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player3") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player3") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
@@ -803,7 +889,7 @@ class Wuerfeln implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									if($gamecfg->get("player3") + $points == 3 or $gamecfg->get("player3") + $points == 18 or $gamecfg->get("player3") + $points == 34){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if($gamecfg->get("player3") + $points == 8 or $gamecfg->get("player3") + $points == 23 or $gamecfg->get("player3") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -821,7 +907,7 @@ class Wuerfeln implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
 									if((($gamecfg->get("player3") + $points) - 40) == 5){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player3") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -857,6 +943,18 @@ class Wuerfeln implements Listener{
 										$p->getInventory()->setItem(1, $pay);
 										$gamecfg->set("miete", true);
 										$gamecfg->save();
+									}
+									if($gamecfg->get("player4") + $points == 21){
+									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
+									    $gamecfg->set("freiparken", 0);
+									    $gamecfg->save();
+							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
+									}
+									if($gamecfg->get("player4") + $points == 18){
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
+									}
+									if($gamecfg->get("player4") + $points == 23){
+										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
@@ -909,7 +1007,7 @@ class Wuerfeln implements Listener{
 									    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Zusatzsteuer gekommen und muss §d2000§a$ bezahlen.");
 									}
 									if($gamecfg->get("player4") + $points == 3 or $gamecfg->get("player4") + $points == 18 or $gamecfg->get("player4") + $points == 34){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if($gamecfg->get("player4") + $points == 8 or $gamecfg->get("player4") + $points == 23 or $gamecfg->get("player4") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
@@ -927,7 +1025,7 @@ class Wuerfeln implements Listener{
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
 									if((($gamecfg->get("player4") + $points) - 40) == 5){
-										$this->plugin->getEreignis()->GemeinschaftsKarte($p);
+										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player4") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);

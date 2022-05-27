@@ -246,6 +246,28 @@ class AufgebenJa implements Listener{
 						return;
 				    }
 				}
+                $anmelden = Item::get(421, 0, 1);
+                $anmelden->setCustomName("§aAls Spieler Anmelden");
+				$wuerfeln = Item::get(236, 0, 1);
+                $wuerfeln->setCustomName("§aWürfeln");
+                $kaufen = Item::get(266, 0, 1);
+                $kaufen->setCustomName("§6Kaufen");
+			    $freikaufen = Item::get(264, 0, 1);
+                $freikaufen->setCustomName("§6Frei Kaufen");
+                $bauen = Item::get(277, 0, 1);
+                $bauen->setCustomName("§bHaus/Hotel Bauen/Abbauen");		
+                $hypo = Item::get(46, 0, 1);
+                $hypo->setCustomName("§eHypothek");
+		        $handeln = Item::get(54, 0, 1);
+                $handeln->setCustomName("§dHandeln");
+			    $endturn = Item::get(208, 0, 1);
+                $endturn->setCustomName("§3Zug Beenden");
+                $info = Item::get(340, 0, 1);
+                $info->setCustomName("§7Infos");
+		        $giveup = Item::get(355, 14, 1);
+                $giveup->setCustomName("§cAufgeben/Bankrott");
+	    	    $pay = Item::get(371, 0, 1);
+                $pay->setCustomName("§6Miete Bezahlen");
 				if($p->getName() == $Player1){
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords1.knastx");
@@ -255,9 +277,7 @@ class AufgebenJa implements Listener{
 			        $players->set("player1", null);
 			        $players->save();
 					$p->getInventory()->clearAll();
-                    $anmelden = Item::get(421, 0, 1);
-                    $anmelden->setCustomName("§aAls Spieler Anmelden");
-                    $p->getInventory()->setItem(4, $anmelden);
+					$p->getInventory()->setItem(4, $anmelden);
 					if($Player2 != null){
 						if($p->getName() == $gamecfg->get("turn")){
 							$gamecfg->set("pasch", 0);

@@ -44,16 +44,17 @@ class ZugBeenden implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
-		if($gamecfg->get("wurf") !== true){
-			$p->sendMessage("§bMono§6poly: §cDu musst noch würfeln bevor du deinen Zug beenden kannst!");
-			return;
-		}
-		if($gamecfg->get("miete") !== true){
-			$p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
-			return;
-		}
+		
 		if($item->getId() === 208) {
             if($item->getName() === "§3Zug Beenden") {
+			    if($gamecfg->get("wurf") !== true){
+			        $p->sendMessage("§bMono§6poly: §cDu musst noch würfeln bevor du deinen Zug beenden kannst!");
+			        return;
+		        }
+		        if($gamecfg->get("miete") === true){
+			        $p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
+			        return;
+		        }
                 $p->getInventory()->clearAll();
 				$wuerfeln = Item::get(236, 0, 1);
                 $wuerfeln->setCustomName("§aWürfeln");

@@ -58,18 +58,31 @@ class Kaufen implements Listener{
 				}
 				$kosten = $config->getNested($feld.".buy");
 				$strassenName = $config->getNested($feld.".name");
-				if($gamecfg->get("player1") == 2 or $gamecfg->get("player1") == 4 or $gamecfg->get("player1") == 6 or $gamecfg->get("player1") == 7 or $gamecfg->get("player1") == 9 or $gamecfg->get("player1") == 10 or $gamecfg->get("player1") == 12 or $gamecfg->get("player1") == 13 or $gamecfg->get("player1") == 14 or $gamecfg->get("player1") == 15 or $gamecfg->get("player1") == 16 or $gamecfg->get("player1") == 17 or $gamecfg->get("player1") == 19 or $gamecfg->get("player1") == 20 or $gamecfg->get("player1") == 22 or $gamecfg->get("player1") == 24 or $gamecfg->get("player1") == 25 or $gamecfg->get("player1") == 26 or $gamecfg->get("player1") == 27 or $gamecfg->get("player1") == 28 or $gamecfg->get("player1") == 29 or $gamecfg->get("player1") == 30 or $gamecfg->get("player1") == 32 or $gamecfg->get("player1") == 33 or $gamecfg->get("player1") == 35 or $gamecfg->get("player1") == 36 or $gamecfg->get("player1") == 38 or $gamecfg->get("player1") == 40){
+				if($p->getName() == $Player1){
+				    $check = $gamecfg->get("player1");
+				}elseif($p->getName() == $Player2){
+				    $check = $gamecfg->get("player2");
+				}elseif($p->getName() == $Player3){
+				    $check = $gamecfg->get("player3");
+				}elseif($p->getName() == $Player4){
+				    $check = $gamecfg->get("player4");
+				}
+				if($check == 2 or $check == 4 or $check == 6 or $check == 7 or $check == 9 or $check == 10 or $check == 12 or $check == 13 or $check == 14 or $check == 15 or $check == 16 or $check == 17 or $check == 19 or $check == 20 or $check == 22 or $check == 24 or $check == 25 or $check == 26 or $check == 27 or $check == 28 or $check == 29 or $check == 30 or $check == 32 or $check == 33 or $check == 35 or $check == 36 or $check == 38 or $check == 40){
 					if($gamecfg->get($feld) == $p->getName()){
 						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört dir bereits!");
 						return;
 					}
-				    if($playerMoney >= $kosten){
-					    EconomyAPI::getInstance()->reduceMoney($p, $kosten);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat die Strasse §d".$strassenName." §agekauft.");
-						$gamecfg->set($feld, $p->getName());
-						$gamecfg->save();
-				    }else{
-					    $p->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Strasse zu kaufen!");
+					if($gamecfg->get($feld) === null){
+				        if($playerMoney >= $kosten){
+					        EconomyAPI::getInstance()->reduceMoney($p, $kosten);
+						    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat die Strasse §d".$strassenName." §agekauft für §d".$kosten."§a$.");
+						    $gamecfg->set($feld, $p->getName());
+						    $gamecfg->save();
+				        }else{
+					        $p->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Strasse zu kaufen!");
+					    }
+					}else{
+						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört bereits einem anderen Spieler!");
 					}
 				}else{
 					$p->sendMessage("§bMono§6poly: §cDu kannst hier nichts kaufen!");
