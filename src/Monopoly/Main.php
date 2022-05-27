@@ -138,10 +138,124 @@ class Main extends PluginBase{
 		return mt_rand(1, 6);
 	}
 	
-	public function isFullStreet(Player $player, $feld){
-		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+	public function removeCarts(Player $player){
 		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
-		$players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
+		if($gamecfg->get("2") == $player->getName()){
+			$gamecfg->set("2", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("4") == $player->getName()){
+			$gamecfg->set("4", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("6") == $player->getName()){
+			$gamecfg->set("6", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("7") == $player->getName()){
+			$gamecfg->set("7", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("9") == $player->getName()){
+			$gamecfg->set("9", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("10") == $player->getName()){
+			$gamecfg->set("10", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("12") == $player->getName()){
+			$gamecfg->set("12", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("13") == $player->getName()){
+			$gamecfg->set("13", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("14") == $player->getName()){
+			$gamecfg->set("14", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("15") == $player->getName()){
+			$gamecfg->set("15", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("16") == $player->getName()){
+			$gamecfg->set("16", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("17") == $player->getName()){
+			$gamecfg->set("17", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("19") == $player->getName()){
+			$gamecfg->set("19", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("20") == $player->getName()){
+			$gamecfg->set("20", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("22") == $player->getName()){
+			$gamecfg->set("22", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("24") == $player->getName()){
+			$gamecfg->set("24", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("25") == $player->getName()){
+			$gamecfg->set("25", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("26") == $player->getName()){
+			$gamecfg->set("26", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("27") == $player->getName()){
+			$gamecfg->set("27", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("28") == $player->getName()){
+			$gamecfg->set("28", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("29") == $player->getName()){
+			$gamecfg->set("29", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("30") == $player->getName()){
+			$gamecfg->set("30", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("32") == $player->getName()){
+			$gamecfg->set("32", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("33") == $player->getName()){
+			$gamecfg->set("33", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("35") == $player->getName()){
+			$gamecfg->set("35", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("36") == $player->getName()){
+			$gamecfg->set("36", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("38") == $player->getName()){
+			$gamecfg->set("38", null);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("40") == $player->getName()){
+			$gamecfg->set("40", null);
+			$gamecfg->save();
+		}
+	}
+	
+	public function isFullStreet(Player $player, $feld){
+		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 		if($feld == 2 or $feld == 4){
 		    if($gamecfg->get("2") == $player->getName() and $gamecfg->get("4") == $player->getName()){
 			    return "yes";
@@ -191,6 +305,7 @@ class Main extends PluginBase{
 	}
 	
 	public function getTrainCount(Player $player, $feld){
+		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 		if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") == $player->getName()){
 			$zahl = 4;
 		}
