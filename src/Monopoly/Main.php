@@ -19,6 +19,7 @@ use Monopoly\aktionen\HausBauen;
 use Monopoly\aktionen\HotelBauen;
 use Monopoly\aktionen\Infos;
 use Monopoly\aktionen\Kaufen;
+use Monopoly\aktionen\MieteBezahlen;
 use Monopoly\aktionen\Start;
 use Monopoly\aktionen\Wuerfeln;
 use Monopoly\aktionen\ZugBeenden;
@@ -58,6 +59,7 @@ class Main extends PluginBase{
 		$this->getServer()->getPluginManager()->registerEvents(new HotelBauen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Infos($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Kaufen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new MieteBezahlen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Start($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Wuerfeln($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new ZugBeenden($this), $this);
