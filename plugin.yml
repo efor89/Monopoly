@@ -4,7 +4,4 @@ version: 0.1.0
 main: Monopoly\Main
 api: 3.0.0
 author: efor89
-permissions:
-  bypass.op:
-    default: op
 ...

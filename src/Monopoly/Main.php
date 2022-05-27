@@ -7,10 +7,32 @@ namespace Monopoly;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
+use Monopoly\aktionen\Abbauen;
+use Monopoly\aktionen\Anmelden;
+use Monopoly\aktionen\AufgebenJa;
+use Monopoly\aktionen\AufgebenMain;
+use Monopoly\aktionen\AufgebenNein;
+use Monopoly\aktionen\BauenMain;
+use Monopoly\aktionen\FreiKaufen;
+use Monopoly\aktionen\Handeln;
+use Monopoly\aktionen\HausBauen;
+use Monopoly\aktionen\HotelBauen;
+use Monopoly\aktionen\Infos;
+use Monopoly\aktionen\Kaufen;
+use Monopoly\aktionen\Start;
+use Monopoly\aktionen\Wuerfeln;
+use Monopoly\aktionen\ZugBeenden;
+use Monopoly\aktionen\Zurueck;
+use Monopoly\ui\Ereigniskarte;
+use Monopoly\ui\Gemeinschaftskarte;
 
 class Main extends PluginBase{
 	
 	public static $instance;
+	
+	protected $ereignis;
+	
+	protected $gemeinschaft;
 
     public function onEnable(): void{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
@@ -24,6 +46,25 @@ class Main extends PluginBase{
             $this->saveResource('game.yml');
         }
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Abbauen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Anmelden($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new AufgebenJa($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new AufgebenMain($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new AufgebenNein($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new BauenMain($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new FreiKaufen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Handeln($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new HausBauen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new HotelBauen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Infos($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Kaufen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Start($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Wuerfeln($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new ZugBeenden($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new Zurueck($this), $this);
+		
+		$this->ereignis = new Ereigniskarte($this);
+		$this->gemeinschaft = new Gemeinschaftskarte($this);
     }
 	
 	public function onDisable(): Void{
@@ -49,6 +90,14 @@ class Main extends PluginBase{
 		$gamecfg->set("knast4", false);
 		$gamecfg->save();
 	}
+	
+	function getGemeinschaft() {
+        return $this->gemeinschaft;
+    }
+	
+	function getEreignis() {
+        return $this->ereignis;
+    }
 	
 	public static function getInstance(){
         return self::$instance;
