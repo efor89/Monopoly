@@ -174,10 +174,16 @@ class Start implements Listener{
 						$gamecfg->set("player2", 1);
 						$gamecfg->set("player3", 1);
 						$gamecfg->set("player4", 1);
+						$gamecfg->set("bieter1", false);
+						$gamecfg->set("bieter2", false);
+						$gamecfg->set("bieter3", false);
+						$gamecfg->set("bieter4", false);
 						$gamecfg->set("pasch", 0);
 						$gamecfg->set("miete", false);
 						$gamecfg->set("wurf", false);
 						$gamecfg->set("freiparken", 0);
+						$gamecfg->set("gebot", 0);
+						$gamecfg->set("lastpoints", 0);
 						$gamecfg->set("knast-turn1", 0);
 						$gamecfg->set("knast-turn2", 0);
 						$gamecfg->set("knast-turn3", 0);

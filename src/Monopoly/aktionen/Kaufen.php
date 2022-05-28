@@ -49,24 +49,19 @@ class Kaufen implements Listener{
                 $playerMoney = EconomyAPI::getInstance()->myMoney($p);
 				if($p->getName() == $Player1){
 				    $feld = $gamecfg->get("player1");
+					$check = $gamecfg->get("player1");
 				}elseif($p->getName() == $Player2){
 				    $feld = $gamecfg->get("player2");
+					$check = $gamecfg->get("player2");
 				}elseif($p->getName() == $Player3){
 				    $feld = $gamecfg->get("player3");
+					$check = $gamecfg->get("player3");
 				}elseif($p->getName() == $Player4){
 				    $feld = $gamecfg->get("player4");
+					$check = $gamecfg->get("player4");
 				}
 				$kosten = $config->getNested($feld.".buy");
 				$strassenName = $config->getNested($feld.".name");
-				if($p->getName() == $Player1){
-				    $check = $gamecfg->get("player1");
-				}elseif($p->getName() == $Player2){
-				    $check = $gamecfg->get("player2");
-				}elseif($p->getName() == $Player3){
-				    $check = $gamecfg->get("player3");
-				}elseif($p->getName() == $Player4){
-				    $check = $gamecfg->get("player4");
-				}
 				if($check == 2 or $check == 4 or $check == 6 or $check == 7 or $check == 9 or $check == 10 or $check == 12 or $check == 13 or $check == 14 or $check == 15 or $check == 16 or $check == 17 or $check == 19 or $check == 20 or $check == 22 or $check == 24 or $check == 25 or $check == 26 or $check == 27 or $check == 28 or $check == 29 or $check == 30 or $check == 32 or $check == 33 or $check == 35 or $check == 36 or $check == 38 or $check == 40){
 					if($gamecfg->get($feld) == $p->getName()){
 						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört dir bereits!");

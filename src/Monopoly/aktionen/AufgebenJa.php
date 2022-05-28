@@ -46,8 +46,8 @@ class AufgebenJa implements Listener{
 		}
 		if($item->getId() === 355) {
             if($item->getName() === "§aJa Aufgeben") {
-				
 				$this->plugin->removeCarts($p);
+				$this->plugin->removeHypo($p);
 				$y = 5;
 				$xlast1 = $config->getNested("coords1.".$gamecfg->get("player1")."x");
 			    $zlast1 = $config->getNested("coords1.".$gamecfg->get("player1")."z");

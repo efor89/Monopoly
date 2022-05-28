@@ -303,6 +303,122 @@ class Main extends PluginBase{
 		}
 	}
 	
+	public function removeHypo(Player $player){
+		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
+		if($gamecfg->get("2") == $player->getName()){
+			$gamecfg->set("2hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("4") == $player->getName()){
+			$gamecfg->set("4hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("6") == $player->getName()){
+			$gamecfg->set("6hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("7") == $player->getName()){
+			$gamecfg->set("7hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("9") == $player->getName()){
+			$gamecfg->set("9hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("10") == $player->getName()){
+			$gamecfg->set("10hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("12") == $player->getName()){
+			$gamecfg->set("12hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("13") == $player->getName()){
+			$gamecfg->set("13hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("14") == $player->getName()){
+			$gamecfg->set("14hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("15") == $player->getName()){
+			$gamecfg->set("15hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("16") == $player->getName()){
+			$gamecfg->set("16hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("17") == $player->getName()){
+			$gamecfg->set("17hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("19") == $player->getName()){
+			$gamecfg->set("19hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("20") == $player->getName()){
+			$gamecfg->set("20hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("22") == $player->getName()){
+			$gamecfg->set("22hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("24") == $player->getName()){
+			$gamecfg->set("24hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("25") == $player->getName()){
+			$gamecfg->set("25hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("26") == $player->getName()){
+			$gamecfg->set("26hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("27") == $player->getName()){
+			$gamecfg->set("27hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("28") == $player->getName()){
+			$gamecfg->set("28hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("29") == $player->getName()){
+			$gamecfg->set("29hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("30") == $player->getName()){
+			$gamecfg->set("30hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("32") == $player->getName()){
+			$gamecfg->set("32hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("33") == $player->getName()){
+			$gamecfg->set("33hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("35") == $player->getName()){
+			$gamecfg->set("35hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("36") == $player->getName()){
+			$gamecfg->set("36hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("38") == $player->getName()){
+			$gamecfg->set("38hypo", false);
+			$gamecfg->save();
+		}
+		if($gamecfg->get("40") == $player->getName()){
+			$gamecfg->set("40hypo", false);
+			$gamecfg->save();
+		}
+	}
+	
 	public function isFullStreet(Player $player, $feld){
 		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
 		if($feld == 2 or $feld == 4){
