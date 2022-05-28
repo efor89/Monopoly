@@ -11,3 +11,5 @@
 - Handeln mit Strassen
 - Spielbrett reset beim Server Neustart und beim Start
 - Alle Bugs fixen
+
+Hat jemand Vorschläge, ein Bug gefunden oder ich hab etwas vergessen öffnet gern ein issue!
