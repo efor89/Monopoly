@@ -9,7 +9,6 @@
 - Häuser und Hotels bauen und abbauen
 - Infos
 - Handeln mit Strassen
-- Bieten auf Strassen
 - Ereigniskarten und Gemeinschaftskarten
 - Spielbrett reset beim Server Neustart und beim Start
 - Alle Bugs fixen
