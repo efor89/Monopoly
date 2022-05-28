@@ -55,6 +55,21 @@ class ZugBeenden implements Listener{
 			        $p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
 			        return;
 		        }
+				if($p->getName() == $Player1){
+				    $feld = $gamecfg->get("player1");
+				}elseif($p->getName() == $Player2){
+				    $feld = $gamecfg->get("player2");
+				}elseif($p->getName() == $Player3){
+				    $feld = $gamecfg->get("player3");
+				}elseif($p->getName() == $Player4){
+				    $feld = $gamecfg->get("player4");
+				}
+				if($gamecfg->get($feld) !== $p->getName()){
+					if($gamecfg->get($feld) == null){
+			            $p->sendMessage("§bMono§6poly: §cDu musst die Strasse noch kaufen bevor du deinen Zug beenden kannst!");
+			            return;
+					}
+		        }
                 $p->getInventory()->clearAll();
 				$wuerfeln = Item::get(236, 0, 1);
                 $wuerfeln->setCustomName("§aWürfeln");

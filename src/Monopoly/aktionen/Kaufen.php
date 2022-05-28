@@ -79,7 +79,49 @@ class Kaufen implements Listener{
 						    $gamecfg->set($feld, $p->getName());
 						    $gamecfg->save();
 				        }else{
-					        $p->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Strasse zu kaufen!");
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat nicht genug Geld um die Strasse zu kaufen, deswegen startet das Bieten!");
+							$b1 = Item::get(1, 0, 1);
+                            $b1->setCustomName("§6Biete 1$");
+							$b100 = Item::get(266, 0, 1);
+                            $b100->setCustomName("§aBiete 100$");
+							$b1000 = Item::get(264, 0, 1);
+                            $b1000->setCustomName("§bBiete 1000$");
+							$giveup = Item::get(355, 14, 1);
+                            $giveup->setCustomName("§cAufgeben/Bankrott");
+							$exit = Item::get(331, 14, 1);
+                            $exit->setCustomName("§cNicht Bieten");
+							$p->getInventory()->clearAll();
+							$p->getInventory()->setItem(0, $b1);
+							$p->getInventory()->setItem(1, $b100);
+							$p->getInventory()->setItem(2, $b1000);
+							if($Player1 != null){
+								$gamecfg->set("bieter1", true);
+								$gamecfg->save();
+								$player1->getInventory()->clearAll();
+								$player1->getInventory()->setItem(7, $exit);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+								$gamecfg->set("bieter2", true);
+								$gamecfg->save();
+								$player2->getInventory()->clearAll();
+								$player3->getInventory()->setItem(7, $exit);
+								$player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+								$gamecfg->set("bieter3", true);
+								$gamecfg->save();
+								$player3->getInventory()->clearAll();
+								$player3->getInventory()->setItem(7, $exit);
+								$player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+								$gamecfg->set("bieter4", true);
+								$gamecfg->save();
+								$player4->getInventory()->clearAll();
+								$player4->getInventory()->setItem(7, $exit);
+								$player4->getInventory()->setItem(8, $giveup);
+							}
 					    }
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört bereits einem anderen Spieler!");

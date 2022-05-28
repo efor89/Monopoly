@@ -65,6 +65,7 @@ class EventListener implements Listener{
 	    if($Player4 != null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
+		
 		$this->plugin->removeCarts($p);
 		$anmelden = Item::get(421, 0, 1);
         $anmelden->setCustomName("§aAls Spieler Anmelden");

@@ -76,7 +76,7 @@ class MieteBezahlen implements Listener{
 					if($feld == 13 or $feld == 29){
 						$kosten = $points * 200;
 					}else{
-					    $kosten = $config->getNested($feld.".miete") * 2;
+				        $kosten = $config->getNested($feld.".miete") * 2;
 					}
 				}elseif($this->plugin->isFullStreet($player, $feld) == "no"){
 					$points = $gamecfg->get("lastpoints");
@@ -90,7 +90,7 @@ class MieteBezahlen implements Listener{
 				        }elseif($this->plugin->getTrainCount($player, $feld) == 3){
 					        $kosten = $config->getNested($feld.".miete") * 2 * 2;
 				        }elseif($this->plugin->getTrainCount($player, $feld) == 4){
-					       $kosten = $config->getNested($feld.".miete") * 2 * 2 * 2;
+					        $kosten = $config->getNested($feld.".miete") * 2 * 2 * 2;
 						}
 					}else{
 						$kosten = $config->getNested($feld.".miete");

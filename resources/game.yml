@@ -6,6 +6,11 @@ wurf: false
 freiparken: 0
 miete: false
 lastpoints: 0
+gebot: 0
+bieter1: false
+bieter2: false
+bieter3: false
+bieter4: false
 player1: 1
 player2: 1
 player3: 1
