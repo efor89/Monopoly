@@ -72,7 +72,7 @@ class Kaufen implements Listener{
 						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört dir bereits!");
 						return;
 					}
-					if($gamecfg->get($feld) === null){
+					if($gamecfg->get($feld) == null){
 				        if($playerMoney >= $kosten){
 					        EconomyAPI::getInstance()->reduceMoney($p, $kosten);
 						    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat die Strasse §d".$strassenName." §agekauft für §d".$kosten."§a$.");

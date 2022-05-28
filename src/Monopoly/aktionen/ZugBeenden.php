@@ -51,7 +51,7 @@ class ZugBeenden implements Listener{
 			        $p->sendMessage("§bMono§6poly: §cDu musst noch würfeln bevor du deinen Zug beenden kannst!");
 			        return;
 		        }
-		        if($gamecfg->get("miete") === true){
+		        if($gamecfg->get("miete") == true){
 			        $p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
 			        return;
 		        }

@@ -24,7 +24,7 @@ class HypothekUI{
 	
 	public function HypothekUI($player){
 		$api = $this->plugin->getServer()->getPluginManager()->getPlugin("FormAPI");
-		$form = $api->createCustomForm(function (Player $player, int $data = null) {
+		$form = $api->createCustomForm(function (Player $player, array $data = null) {
 			$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
 		    $gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 			$result = $data;
@@ -44,25 +44,24 @@ class HypothekUI{
 			}
 			$playerMoney = EconomyAPI::getInstance()->myMoney($player);
 			if($this->isHypothek($data[1]) === "no"){
-				EconomyAPI::getInstance()->addMoney($player, $config->getNestet($data[1].".hypo"));
+				EconomyAPI::getInstance()->addMoney($player, $config->getNested($data[1].".hypo"));
 				$gamecfg->set($data[1]."hypo", true);
 				$gamecfg->save();
-				$player->sendMessage("§bMono§6poly: §aDu hast die Strasse §d".$config->getNestet($data[1].".name")."§a mit einer Hypothek von §d ".$config->getNestet($data[1].".hypo")."§a§ belastet. Das Geld wurde auf dein Konto überwiesen");
+				$player->sendMessage("§bMono§6poly: §aDu hast die Strasse §d".$config->getNested($data[1].".name")."§a mit einer Hypothek von §d ".$config->getNested($data[1].".hypo")."§a$ belastet. Das Geld wurde auf dein Konto überwiesen");
 			}else{
-				if($playerMoney >= $config->getNestet($data[1].".hypo")){
-				    EconomyAPI::getInstance()->addMoney($player, $config->getNestet($data[1].".hypo"));
+				if($playerMoney >= $config->getNested($data[1].".hypo")){
+				    EconomyAPI::getInstance()->addMoney($player, $config->getNested($data[1].".hypo"));
 				    $gamecfg->set($data[1]."hypo", true);
 				    $gamecfg->save();
-					$player->sendMessage("§bMono§6poly: §cDu hast die Hypothek der Strasse §d".$config->getNestet($data[1].".name")."§a beglichen.");
+					$player->sendMessage("§bMono§6poly: §aDu hast die Hypothek der Strasse §d".$config->getNested($data[1].".name")."§a von §d".$config->getNested($data[1].".hypo")."§a$ beglichen.");
 				}else{
 					$player->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Hypothek zu begleichen.");
 				}
 			}
 		});
 		$form->setTitle("§bHypothek");
-		$form->addLabel("§6Nimm eine Hypothek auf oder bezahle eine ab.\n§6Gib dazu einfach die Strassen Nummer an.\n§6Ist auf der Strasse bereits eine Hypothek bezahlst du sie ab.\n\n§6Deine Strassen sind:\n§".$this->getPlayerStreetNames());
+		$form->addLabel("§6Nimm eine Hypothek auf oder bezahle eine ab.\n§6Gib dazu einfach die Strassen Nummer an.\n§6Ist auf der Strasse bereits eine Hypothek bezahlst du sie ab.\n\n§6Deine Strassen sind:\n§f".$this->getPlayerStreetNames($player));
         $form->addInput("§rGib eine Zahl an", "zb. 2");				
-		$form->addButton("§cSchließen");
 		$form->sendToPlayer($player);
 		return true;
 	}
@@ -83,146 +82,146 @@ class HypothekUI{
 		return "no";
 	}
 	
-	public function getPlayerStreetNames(Player $player, $data){
+	public function getPlayerStreetNames(Player $player){
 		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
 		if($gamecfg->get("2") == $player->getName()){
-			$a = $config->getNestet("2.name");
+			$a = $config->getNested("2.name");
 		}else{
 			$a = "";
 		}
 		if($gamecfg->get("4") == $player->getName()){
-			$b = $config->getNestet("4.name");
+			$b = $config->getNested("4.name");
 		}else{
 			$b = "";
 		}
 		if($gamecfg->get("6") == $player->getName()){
-			$c = $config->getNestet("6.name");
+			$c = $config->getNested("6.name");
 		}else{
 			$c = "";
 		}
 		if($gamecfg->get("7") == $player->getName()){
-			$d = $config->getNestet("7.name");
+			$d = $config->getNested("7.name");
 		}else{
 			$d = "";
 		}
 		if($gamecfg->get("9") == $player->getName()){
-			$e = $config->getNestet("9.name");
+			$e = $config->getNested("9.name");
 		}else{
 			$e = "";
 		}
 		if($gamecfg->get("10") == $player->getName()){
-			$f = $config->getNestet("10.name");
+			$f = $config->getNested("10.name");
 		}else{
 			$f = "";
 		}
 		if($gamecfg->get("12") == $player->getName()){
-			$g = $config->getNestet("12.name");
+			$g = $config->getNested("12.name");
 		}else{
 			$g = "";
 		}
 		if($gamecfg->get("13") == $player->getName()){
-			$h = $config->getNestet("13.name");
+			$h = $config->getNested("13.name");
 		}else{
 			$h = "";
 		}
 		if($gamecfg->get("14") == $player->getName()){
-			$i = $config->getNestet("14.name");
+			$i = $config->getNested("14.name");
 		}else{
 			$i = "";
 		}
 		if($gamecfg->get("15") == $player->getName()){
-			$j = $config->getNestet("15.name");
+			$j = $config->getNested("15.name");
 		}else{
 			$j = "";
 		}
 		if($gamecfg->get("16") == $player->getName()){
-			$k = $config->getNestet("16.name");
+			$k = $config->getNested("16.name");
 		}else{
 			$k = "";
 		}
 		if($gamecfg->get("17") == $player->getName()){
-			$l = $config->getNestet("17.name");
+			$l = $config->getNested("17.name");
 		}else{
 			$l = "";
 		}
 		if($gamecfg->get("19") == $player->getName()){
-			$m = $config->getNestet("19.name");
+			$m = $config->getNested("19.name");
 		}else{
 			$m = "";
 		}
 		if($gamecfg->get("20") == $player->getName()){
-			$n = $config->getNestet("20.name");
+			$n = $config->getNested("20.name");
 		}else{
 			$n = "";
 		}
 		if($gamecfg->get("22") == $player->getName()){
-			$o = $config->getNestet("22.name");
+			$o = $config->getNested("22.name");
 		}else{
 			$o = "";
 		}
 		if($gamecfg->get("24") == $player->getName()){
-			$p = $config->getNestet("24.name");
+			$p = $config->getNested("24.name");
 		}else{
 			$p = "";
 		}
 		if($gamecfg->get("25") == $player->getName()){
-			$q = $config->getNestet("25.name");
+			$q = $config->getNested("25.name");
 		}else{
 			$q = "";
 		}
 		if($gamecfg->get("26") == $player->getName()){
-			$v = $config->getNestet("26.name");
+			$v = $config->getNested("26.name");
 		}else{
 			$v = "";
 		}
 		if($gamecfg->get("27") == $player->getName()){
-			$w = $config->getNestet("27.name");
+			$w = $config->getNested("27.name");
 		}else{
 			$w = "";
 		}
 		if($gamecfg->get("28") == $player->getName()){
-			$x = $config->getNestet("28.name");
+			$x = $config->getNested("28.name");
 		}else{
 			$x = "";
 		}
 		if($gamecfg->get("29") == $player->getName()){
-			$y = $config->getNestet("29.name");
+			$y = $config->getNested("29.name");
 		}else{
 			$y = "";
 		}
 		if($gamecfg->get("30") == $player->getName()){
-			$z = $config->getNestet("30.name");
+			$z = $config->getNested("30.name");
 		}else{
 			$z = "";
 		}
 		if($gamecfg->get("32") == $player->getName()){
-			$a1 = $config->getNestet("32.name");
+			$a1 = $config->getNested("32.name");
 		}else{
 			$a1 = "";
 		}
 		if($gamecfg->get("33") == $player->getName()){
-			$b1 = $config->getNestet("33.name");
+			$b1 = $config->getNested("33.name");
 		}else{
 			$b1 = "";
 		}
 		if($gamecfg->get("35") == $player->getName()){
-			$c1 = $config->getNestet("35.name");
+			$c1 = $config->getNested("35.name");
 		}else{
 			$c1 = "";
 		}
 		if($gamecfg->get("36") == $player->getName()){
-			$d1 = $config->getNestet("36.name");
+			$d1 = $config->getNested("36.name");
 		}else{
 			$d1 = "";
 		}
 		if($gamecfg->get("38") == $player->getName()){
-			$e1 = $config->getNestet("38.name");
+			$e1 = $config->getNested("38.name");
 		}else{
 			$e1 = "";
 		}
 		if($gamecfg->get("40") == $player->getName()){
-			$f1 = $config->getNestet("40.name");
+			$f1 = $config->getNested("40.name");
 		}else{
 			$f1 = "";
 		}

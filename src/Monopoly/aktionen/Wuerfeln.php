@@ -75,7 +75,7 @@ class Wuerfeln implements Listener{
 						if($gamecfg->get("pasch") < 2){
 							if($p->getName() == $Player1){
 							    if($gamecfg->get("knast1") !== false){
-									if($gamecfg->get($gamecfg->get("player1") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player1") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
@@ -188,7 +188,7 @@ class Wuerfeln implements Listener{
 								}
 							}elseif($p->getName() == $Player2){
 							    if($gamecfg->get("knast2") !== false){
-									if($gamecfg->get($gamecfg->get("player2") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player2") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
@@ -299,7 +299,7 @@ class Wuerfeln implements Listener{
 								}
 							}elseif($p->getName() == $Player3){
 							    if($gamecfg->get("knast3") !== false){
-									if($gamecfg->get($gamecfg->get("player3") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player3") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
@@ -410,7 +410,7 @@ class Wuerfeln implements Listener{
 								}
 							}elseif($p->getName() == $Player4){
 							    if($gamecfg->get("knast4") !== false){
-									if($gamecfg->get($gamecfg->get("player4") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player4") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
@@ -579,11 +579,12 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
-									if($gamecfg->get($gamecfg->get("player1") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player1") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
-									}elseif($gamecfg->get($gamecfg->get("player1") + $points) != $p->getName()){
+									}elseif($gamecfg->get($gamecfg->get("player1") + $points) !
+									= $p->getName()){
 										$pay = Item::get(371, 0, 1);
                                         $pay->setCustomName("§6Miete Bezahlen");
 										$p->getInventory()->setItem(1, $pay);
@@ -697,7 +698,7 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
-									if($gamecfg->get($gamecfg->get("player2") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player2") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
@@ -815,7 +816,7 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
-									if($gamecfg->get($gamecfg->get("player3") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player3") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
@@ -933,7 +934,7 @@ class Wuerfeln implements Listener{
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat kein Pasch gewürfelt und muss im Gefängnis bleiben!");
 								    return;
 								}else{
-									if($gamecfg->get($gamecfg->get("player4") + $points) === null){
+									if($gamecfg->get($gamecfg->get("player4") + $points) == null){
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
