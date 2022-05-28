@@ -270,7 +270,6 @@ class AufgebenJa implements Listener{
 	    	    $pay = Item::get(371, 0, 1);
                 $pay->setCustomName("§6Miete Bezahlen");
 				if($p->getName() == $Player1){
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords1.knastx");
 					$zlast = $config->getNested("coords1.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
@@ -285,37 +284,100 @@ class AufgebenJa implements Listener{
 						    $gamecfg->set("turn", $player2->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player2->getInventory()->clearAll();
-				            $player2->getInventory()->setItem(0, $wuerfeln);
-                            $player2->getInventory()->setItem(1, $kaufen);
-                            $player2->getInventory()->setItem(2, $bauen);
-                            $player2->getInventory()->setItem(3, $hypo);
-                            $player2->getInventory()->setItem(4, $handeln);
-                            $player2->getInventory()->setItem(6, $endturn);
-			                $player2->getInventory()->setItem(7, $info);
-                            $player2->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter1", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter2") == true){
+						        $player2->getInventory()->clearAll();
+					            $player2->getInventory()->setItem(0, $b1);
+					            $player2->getInventory()->setItem(1, $b100);
+					            $player2->getInventory()->setItem(2, $b1000);
+						        $player2->getInventory()->setItem(7, $exit);
+                                $player2->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter3") == true){
+						        $player3->getInventory()->clearAll();
+					            $player3->getInventory()->setItem(0, $b1);
+					            $player3->getInventory()->setItem(1, $b100);
+					            $player3->getInventory()->setItem(2, $b1000);
+						        $player3->getInventory()->setItem(7, $exit);
+                                $player3->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter4") == true){
+						        $player4->getInventory()->clearAll();
+					            $player4->getInventory()->setItem(0, $b1);
+					            $player4->getInventory()->setItem(1, $b100);
+					            $player4->getInventory()->setItem(2, $b1000);
+						        $player4->getInventory()->setItem(7, $exit);
+                                $player4->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+						        $player2->getInventory()->clearAll();
+				                $player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+                                $player2->getInventory()->setItem(6, $endturn);
+								$player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+					            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords1.knastx");
+			                $z = $config->getNested("coords1.knastz");
+			                $player1->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
+		                    $player1->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter1", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}elseif($Player2 == null){
 						if($p->getName() == $gamecfg->get("turn")){
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player3->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player3->getInventory()->clearAll();
-				            $player3->getInventory()->setItem(0, $wuerfeln);
-                            $player3->getInventory()->setItem(1, $kaufen);
-                            $player3->getInventory()->setItem(2, $bauen);
-                            $player3->getInventory()->setItem(3, $hypo);
-                            $player3->getInventory()->setItem(4, $handeln);
-                            $player3->getInventory()->setItem(6, $endturn);
-			                $player3->getInventory()->setItem(7, $info);
-                            $player3->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter1", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter3") == true){
+						        $player3->getInventory()->clearAll();
+					            $player3->getInventory()->setItem(0, $b1);
+					            $player3->getInventory()->setItem(1, $b100);
+					            $player3->getInventory()->setItem(2, $b1000);
+						        $player3->getInventory()->setItem(7, $exit);
+                                $player3->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter4") == true){
+						        $player4->getInventory()->clearAll();
+					            $player4->getInventory()->setItem(0, $b1);
+					            $player4->getInventory()->setItem(1, $b100);
+					            $player4->getInventory()->setItem(2, $b1000);
+						        $player4->getInventory()->setItem(7, $exit);
+                                $player4->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+						        $player3->getInventory()->clearAll();
+				                $player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+                                $player3->getInventory()->setItem(6, $endturn);
+			                    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords1.knastx");
+			                $z = $config->getNested("coords1.knastz");
+			                $player1->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
+		                    $player1->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter1", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}
 		        }elseif($p->getName() == $Player2){
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords2.knastx");
 					$zlast = $config->getNested("coords2.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
@@ -332,37 +394,100 @@ class AufgebenJa implements Listener{
 						    $gamecfg->set("turn", $player3->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player3->getInventory()->clearAll();
-				            $player3->getInventory()->setItem(0, $wuerfeln);
-                            $player3->getInventory()->setItem(1, $kaufen);
-                            $player3->getInventory()->setItem(2, $bauen);
-                            $player3->getInventory()->setItem(3, $hypo);
-                            $player3->getInventory()->setItem(4, $handeln);
-                            $player3->getInventory()->setItem(6, $endturn);
-			                $player3->getInventory()->setItem(7, $info);
-                            $player3->getInventory()->setItem(8, $giveup);
-						}
+							$gamecfg->set("bieter2", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter3") == true){
+						        $player3->getInventory()->clearAll();
+					            $player3->getInventory()->setItem(0, $b1);
+					            $player3->getInventory()->setItem(1, $b100);
+					            $player3->getInventory()->setItem(2, $b1000);
+						        $player3->getInventory()->setItem(7, $exit);
+                                $player3->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter4") == true){
+						        $player4->getInventory()->clearAll();
+					            $player4->getInventory()->setItem(0, $b1);
+					            $player4->getInventory()->setItem(1, $b100);
+					            $player4->getInventory()->setItem(2, $b1000);
+						        $player4->getInventory()->setItem(7, $exit);
+                                $player4->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter1") == true){
+						        $player1->getInventory()->clearAll();
+					            $player1->getInventory()->setItem(0, $b1);
+					            $player1->getInventory()->setItem(1, $b100);
+					            $player1->getInventory()->setItem(2, $b1000);
+						        $player1->getInventory()->setItem(7, $exit);
+                                $player1->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+						        $player3->getInventory()->clearAll();
+				                $player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+                                $player3->getInventory()->setItem(6, $endturn);
+		                        $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+					            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords2.knastx");
+			                $z = $config->getNested("coords2.knastz");
+			                $player2->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
+		                    $player2->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter2", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}elseif($Player3 == null){
 						if($p->getName() == $gamecfg->get("turn")){
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player4->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player4->getInventory()->clearAll();
-				            $player4->getInventory()->setItem(0, $wuerfeln);
-                            $player4->getInventory()->setItem(1, $kaufen);
-                            $player4->getInventory()->setItem(2, $bauen);
-                            $player4->getInventory()->setItem(3, $hypo);
-                            $player4->getInventory()->setItem(4, $handeln);
-                            $player4->getInventory()->setItem(6, $endturn);
-			                $player4->getInventory()->setItem(7, $info);
-                            $player4->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter2", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter4") == true){
+						        $player4->getInventory()->clearAll();
+					            $player4->getInventory()->setItem(0, $b1);
+					            $player4->getInventory()->setItem(1, $b100);
+					            $player4->getInventory()->setItem(2, $b1000);
+						        $player4->getInventory()->setItem(7, $exit);
+                                $player4->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter1") == true){
+						        $player1->getInventory()->clearAll();
+					            $player1->getInventory()->setItem(0, $b1);
+					            $player1->getInventory()->setItem(1, $b100);
+					            $player1->getInventory()->setItem(2, $b1000);
+						        $player1->getInventory()->setItem(7, $exit);
+                                $player1->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+						        $player4->getInventory()->clearAll();
+				                $player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+                                $player4->getInventory()->setItem(6, $endturn);
+			                    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords2.knastx");
+			                $z = $config->getNested("coords2.knastz");
+			                $player2->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
+		                    $player2->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter2", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}
 		        }elseif($p->getName() == $Player3){
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords3.knastx");
 					$zlast = $config->getNested("coords3.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
@@ -379,37 +504,100 @@ class AufgebenJa implements Listener{
 						    $gamecfg->set("turn", $player4->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player4->getInventory()->clearAll();
-				            $player4->getInventory()->setItem(0, $wuerfeln);
-                            $player4->getInventory()->setItem(1, $kaufen);
-                            $player4->getInventory()->setItem(2, $bauen);
-                            $player4->getInventory()->setItem(3, $hypo);
-                            $player4->getInventory()->setItem(4, $handeln);
-                            $player4->getInventory()->setItem(6, $endturn);
-			                $player4->getInventory()->setItem(7, $info);
-                            $player4->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter3", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter4") == true){
+						        $player4->getInventory()->clearAll();
+					            $player4->getInventory()->setItem(0, $b1);
+					            $player4->getInventory()->setItem(1, $b100);
+					            $player4->getInventory()->setItem(2, $b1000);
+						        $player4->getInventory()->setItem(7, $exit);
+                                $player4->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter1") == true){
+						        $player1->getInventory()->clearAll();
+					            $player1->getInventory()->setItem(0, $b1);
+					            $player1->getInventory()->setItem(1, $b100);
+					            $player1->getInventory()->setItem(2, $b1000);
+						        $player1->getInventory()->setItem(7, $exit);
+                                $player1->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter2") == true){
+						        $player2->getInventory()->clearAll();
+					            $player2->getInventory()->setItem(0, $b1);
+					            $player2->getInventory()->setItem(1, $b100);
+					            $player2->getInventory()->setItem(2, $b1000);
+						        $player2->getInventory()->setItem(7, $exit);
+                                $player2->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+						        $player4->getInventory()->clearAll();
+				                $player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+                                $player4->getInventory()->setItem(6, $endturn);
+		                        $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+					            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords3.knastx");
+			                $z = $config->getNested("coords3.knastz");
+			                $player3->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
+		                    $player3->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter3", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}elseif($Player4 == null){
 						if($p->getName() == $gamecfg->get("turn")){
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player1->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player1->getInventory()->clearAll();
-				            $player1->getInventory()->setItem(0, $wuerfeln);
-                            $player1->getInventory()->setItem(1, $kaufen);
-                            $player1->getInventory()->setItem(2, $bauen);
-                            $player1->getInventory()->setItem(3, $hypo);
-                            $player1->getInventory()->setItem(4, $handeln);
-                            $player1->getInventory()->setItem(6, $endturn);
-			                $player1->getInventory()->setItem(7, $info);
-                            $player1->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter3", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter1") == true){
+						        $player1->getInventory()->clearAll();
+					            $player1->getInventory()->setItem(0, $b1);
+					            $player1->getInventory()->setItem(1, $b100);
+					            $player1->getInventory()->setItem(2, $b1000);
+						        $player1->getInventory()->setItem(7, $exit);
+                                $player1->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter2") == true){
+						        $player2->getInventory()->clearAll();
+					            $player2->getInventory()->setItem(0, $b1);
+					            $player2->getInventory()->setItem(1, $b100);
+					            $player2->getInventory()->setItem(2, $b1000);
+						        $player2->getInventory()->setItem(7, $exit);
+                                $player2->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+								$player1->getInventory()->clearAll();
+				                $player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+                                $player1->getInventory()->setItem(6, $endturn);
+		                        $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+					            Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords3.knastx");
+			                $z = $config->getNested("coords3.knastz");
+			                $player3->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
+		                    $player3->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter3", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}
 		        }elseif($p->getName() == $Player4){
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat aufgegeben.");
 					$xlast = $config->getNested("coords4.knastx");
 					$zlast = $config->getNested("coords4.knastz");
 					$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
@@ -426,34 +614,98 @@ class AufgebenJa implements Listener{
 						    $gamecfg->set("turn", $player1->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player1->getInventory()->clearAll();
-				            $player1->getInventory()->setItem(0, $wuerfeln);
-                            $player1->getInventory()->setItem(1, $kaufen);
-                            $player1->getInventory()->setItem(2, $bauen);
-                            $player1->getInventory()->setItem(3, $hypo);
-                            $player1->getInventory()->setItem(4, $handeln);
-                            $player1->getInventory()->setItem(6, $endturn);
-			                $player1->getInventory()->setItem(7, $info);
-                            $player1->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter4", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter1") == true){
+						        $player1->getInventory()->clearAll();
+					            $player1->getInventory()->setItem(0, $b1);
+					            $player1->getInventory()->setItem(1, $b100);
+					            $player1->getInventory()->setItem(2, $b1000);
+						        $player1->getInventory()->setItem(7, $exit);
+                                $player1->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter2") == true){
+						        $player2->getInventory()->clearAll();
+					            $player2->getInventory()->setItem(0, $b1);
+					            $player2->getInventory()->setItem(1, $b100);
+					            $player2->getInventory()->setItem(2, $b1000);
+						        $player2->getInventory()->setItem(7, $exit);
+                                $player2->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter3") == true){
+						        $player3->getInventory()->clearAll();
+					            $player3->getInventory()->setItem(0, $b1);
+					            $player3->getInventory()->setItem(1, $b100);
+					            $player3->getInventory()->setItem(2, $b1000);
+						        $player3->getInventory()->setItem(7, $exit);
+                                $player3->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+						        $player1->getInventory()->clearAll();
+				                $player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+                                $player1->getInventory()->setItem(6, $endturn);
+    	                        $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords4.knastx");
+			                $z = $config->getNested("coords4.knastz");
+			                $player4->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
+		                    $player4->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter4", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}elseif($Player1 == null){
 						if($p->getName() == $gamecfg->get("turn")){
 							$gamecfg->set("pasch", 0);
 						    $gamecfg->set("turn", $player2->getName());
 						    $gamecfg->set("wurf", false);
 							$gamecfg->set("miete", false);
-						    $gamecfg->save();
-							$player2->getInventory()->clearAll();
-				            $player2->getInventory()->setItem(0, $wuerfeln);
-                            $player2->getInventory()->setItem(1, $kaufen);
-                            $player2->getInventory()->setItem(2, $bauen);
-                            $player2->getInventory()->setItem(3, $hypo);
-                            $player2->getInventory()->setItem(4, $handeln);
-                            $player2->getInventory()->setItem(6, $endturn);
-			                $player2->getInventory()->setItem(7, $info);
-                            $player2->getInventory()->setItem(8, $giveup);
-						}
+						    $gamecfg->set("bieter4", false);
+				            $gamecfg->save();
+                            if($gamecfg->get("bieter2") == true){
+						        $player2->getInventory()->clearAll();
+					            $player2->getInventory()->setItem(0, $b1);
+					            $player2->getInventory()->setItem(1, $b100);
+					            $player2->getInventory()->setItem(2, $b1000);
+						        $player2->getInventory()->setItem(7, $exit);
+                                $player2->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }elseif($gamecfg->get("bieter3") == true){
+						        $player3->getInventory()->clearAll();
+					            $player3->getInventory()->setItem(0, $b1);
+					            $player3->getInventory()->setItem(1, $b100);
+					            $player3->getInventory()->setItem(2, $b1000);
+						        $player3->getInventory()->setItem(7, $exit);
+                                $player3->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er aufgegeben hat.");
+					        }else{
+								$player2->getInventory()->clearAll();
+			                    $player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+                                $player2->getInventory()->setItem(6, $endturn);
+			                    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+						        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cSpielt nicht mehr mit da er aufgegeben hat.");
+					        }
+						}else{
+					        $x = $config->getNested("coords4.knastx");
+			                $z = $config->getNested("coords4.knastz");
+			                $player4->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
+		                    $player4->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+				            $gamecfg->set("bieter4", false);
+				            $gamecfg->save();
+					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat aufgegeben.");
+				        }
 					}
 		        }
             }

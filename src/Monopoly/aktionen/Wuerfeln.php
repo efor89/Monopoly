@@ -583,8 +583,7 @@ class Wuerfeln implements Listener{
 										$kaufen = Item::get(266, 0, 1);
                                         $kaufen->setCustomName("§6Kaufen");
 										$p->getInventory()->setItem(1, $kaufen);
-									}elseif($gamecfg->get($gamecfg->get("player1") + $points) !
-									= $p->getName()){
+									}elseif($gamecfg->get($gamecfg->get("player1") + $points) != $p->getName()){
 										$pay = Item::get(371, 0, 1);
                                         $pay->setCustomName("§6Miete Bezahlen");
 										$p->getInventory()->setItem(1, $pay);

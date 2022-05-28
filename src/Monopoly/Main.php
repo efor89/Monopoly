@@ -7,7 +7,7 @@ namespace Monopoly;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
-use Monoploy\EventListener;
+use Monopoly\EventListener;
 use Monopoly\aktionen\Abbauen;
 use Monopoly\aktionen\Anmelden;
 use Monopoly\aktionen\AufgebenJa;

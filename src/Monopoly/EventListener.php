@@ -285,7 +285,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-					$gamecfg->set("bieter1" false);
+					$gamecfg->set("bieter1", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
@@ -294,7 +294,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
 					    $player3->getInventory()->setItem(0, $b1);
@@ -302,7 +302,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
 					    $player4->getInventory()->setItem(0, $b1);
@@ -310,7 +310,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player2->getInventory()->clearAll();
 				        $player2->getInventory()->setItem(0, $wuerfeln);
@@ -321,16 +321,16 @@ class EventListener implements Listener{
                         $player2->getInventory()->setItem(6, $endturn);
 			            $player2->getInventory()->setItem(7, $info);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}	    
 				}else{
 					$x1 = $config->getNested("coords1.knastx");
 			        $z1 = $config->getNested("coords1.knastz");
 			        $player1->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player2 != null and $Player3 == null and $Player4 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -342,7 +342,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
@@ -351,7 +351,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
 					    $player4->getInventory()->setItem(0, $b1);
@@ -359,7 +359,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player2->getInventory()->clearAll();
 				        $player2->getInventory()->setItem(0, $wuerfeln);
@@ -370,16 +370,16 @@ class EventListener implements Listener{
                         $player2->getInventory()->setItem(6, $endturn);
 			            $player2->getInventory()->setItem(7, $info);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x1 = $config->getNested("coords1.knastx");
 			        $z1 = $config->getNested("coords1.knastz");
 			        $player1->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player2 == null and $Player3 != null and $Player4 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -391,7 +391,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
@@ -400,7 +400,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
 					    $player4->getInventory()->setItem(0, $b1);
@@ -408,7 +408,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player3->getInventory()->clearAll();
 				        $player3->getInventory()->setItem(0, $wuerfeln);
@@ -419,16 +419,16 @@ class EventListener implements Listener{
                         $player3->getInventory()->setItem(6, $endturn);
 			            $player3->getInventory()->setItem(7, $info);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x1 = $config->getNested("coords1.knastx");
 			        $z1 = $config->getNested("coords1.knastz");
 			        $player1->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player2 !== null and $Player3 != null and $Player4 == null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -440,7 +440,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
@@ -449,7 +449,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
 					    $player3->getInventory()->setItem(0, $b1);
@@ -457,7 +457,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player2->getInventory()->clearAll();
 				        $player2->getInventory()->setItem(0, $wuerfeln);
@@ -468,16 +468,16 @@ class EventListener implements Listener{
                         $player2->getInventory()->setItem(6, $endturn);
 			            $player2->getInventory()->setItem(7, $info);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x1 = $config->getNested("coords1.knastx");
 			        $z1 = $config->getNested("coords1.knastz");
 			        $player1->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 		            $player1->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
-				    $gamecfg->set("bieter1" false);
+				    $gamecfg->set("bieter1", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}
         }elseif($p->getName() === $players->get("player2")){
@@ -493,7 +493,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
@@ -502,7 +502,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
 					    $player4->getInventory()->setItem(0, $b1);
@@ -510,7 +510,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
 					    $player1->getInventory()->setItem(0, $b1);
@@ -518,7 +518,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player3->getInventory()->clearAll();
 				        $player3->getInventory()->setItem(0, $wuerfeln);
@@ -529,16 +529,16 @@ class EventListener implements Listener{
                         $player3->getInventory()->setItem(6, $endturn);
 			            $player3->getInventory()->setItem(7, $info);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x2 = $config->getNested("coords2.knastx");
 			        $z2 = $config->getNested("coords2.knastz");
 			        $player2->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 != null and $Player3 == null and $Player4 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -550,7 +550,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-					$gamecfg->set("bieter2" false);
+					$gamecfg->set("bieter2", false);
 					$gamecfg->save();
 				    if($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
@@ -559,7 +559,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
 					    $player1->getInventory()->setItem(0, $b1);
@@ -567,7 +567,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player4->getInventory()->clearAll();
 				        $player4->getInventory()->setItem(0, $wuerfeln);
@@ -578,16 +578,16 @@ class EventListener implements Listener{
                         $player4->getInventory()->setItem(6, $endturn);
 			            $player4->getInventory()->setItem(7, $info);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x2 = $config->getNested("coords2.knastx");
 			        $z2 = $config->getNested("coords2.knastz");
 			        $player2->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 == null and $Player3 != null and $Player4 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -599,7 +599,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 					$gamecfg->save();
 				    if($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
@@ -608,7 +608,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
 					    $player4->getInventory()->setItem(0, $b1);
@@ -616,7 +616,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player3->getInventory()->clearAll();
 				        $player3->getInventory()->setItem(0, $wuerfeln);
@@ -627,16 +627,16 @@ class EventListener implements Listener{
                         $player3->getInventory()->setItem(6, $endturn);
 			            $player3->getInventory()->setItem(7, $info);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x2 = $config->getNested("coords2.knastx");
 			        $z2 = $config->getNested("coords2.knastz");
 			        $player2->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 != null and $Player3 != null and $Player4 == null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -648,7 +648,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 					$gamecfg->save();
 				    if($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
@@ -657,7 +657,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
 					    $player1->getInventory()->setItem(0, $b1);
@@ -665,7 +665,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player3->getInventory()->clearAll();
 				        $player3->getInventory()->setItem(0, $wuerfeln);
@@ -676,16 +676,16 @@ class EventListener implements Listener{
                         $player3->getInventory()->setItem(6, $endturn);
 			            $player3->getInventory()->setItem(7, $info);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x2 = $config->getNested("coords2.knastx");
 			        $z2 = $config->getNested("coords2.knastz");
 			        $player2->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 		            $player2->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
-				    $gamecfg->set("bieter2" false);
+				    $gamecfg->set("bieter2", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}
         }elseif($p->getName() === $players->get("player3")){
@@ -701,7 +701,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
@@ -710,7 +710,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
 					    $player1->getInventory()->setItem(0, $b1);
@@ -718,7 +718,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
 					    $player2->getInventory()->setItem(0, $b1);
@@ -726,7 +726,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player4->getInventory()->clearAll();
 				        $player4->getInventory()->setItem(0, $wuerfeln);
@@ -737,16 +737,16 @@ class EventListener implements Listener{
                         $player4->getInventory()->setItem(6, $endturn);
 			            $player4->getInventory()->setItem(7, $info);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x3 = $config->getNested("coords3.knastx");
 			        $z3 = $config->getNested("coords3.knastz");
 			        $player3->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 != null and $Player2 == null and $Player4 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -758,7 +758,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
@@ -767,7 +767,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
 					    $player1->getInventory()->setItem(0, $b1);
@@ -775,7 +775,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player4->getInventory()->clearAll();
 				        $player4->getInventory()->setItem(0, $wuerfeln);
@@ -786,16 +786,16 @@ class EventListener implements Listener{
                         $player4->getInventory()->setItem(6, $endturn);
 			            $player4->getInventory()->setItem(7, $info);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x3 = $config->getNested("coords3.knastx");
 			        $z3 = $config->getNested("coords3.knastz");
 			        $player3->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 != null and $Player2 != null and $Player4 == null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -807,7 +807,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
@@ -816,7 +816,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
 					    $player2->getInventory()->setItem(0, $b1);
@@ -824,7 +824,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player1->getInventory()->clearAll();
 				        $player1->getInventory()->setItem(0, $wuerfeln);
@@ -835,16 +835,16 @@ class EventListener implements Listener{
                         $player1->getInventory()->setItem(6, $endturn);
 			            $player1->getInventory()->setItem(7, $info);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x3 = $config->getNested("coords3.knastx");
 			        $z3 = $config->getNested("coords3.knastz");
 			        $player3->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 == null and $Player2 != null and $Player4 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -856,7 +856,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter4") == true){
 						$player4->getInventory()->clearAll();
@@ -865,7 +865,7 @@ class EventListener implements Listener{
 					    $player4->getInventory()->setItem(2, $b1000);
 						$player4->getInventory()->setItem(7, $exit);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
 					    $player2->getInventory()->setItem(0, $b1);
@@ -873,7 +873,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player4->getInventory()->clearAll();
 				        $player4->getInventory()->setItem(0, $wuerfeln);
@@ -884,16 +884,16 @@ class EventListener implements Listener{
                         $player4->getInventory()->setItem(6, $endturn);
 			            $player4->getInventory()->setItem(7, $info);
                         $player4->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x3 = $config->getNested("coords3.knastx");
 			        $z3 = $config->getNested("coords3.knastz");
 			        $player3->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 		            $player3->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
-				    $gamecfg->set("bieter3" false);
+				    $gamecfg->set("bieter3", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}
         }elseif($p->getName() === $players->get("player4")){
@@ -909,7 +909,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
@@ -918,7 +918,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
 					    $player2->getInventory()->setItem(0, $b1);
@@ -926,7 +926,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
 					    $player3->getInventory()->setItem(0, $b1);
@@ -934,7 +934,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player1->getInventory()->clearAll();
 				        $player1->getInventory()->setItem(0, $wuerfeln);
@@ -945,16 +945,16 @@ class EventListener implements Listener{
                         $player1->getInventory()->setItem(6, $endturn);
 			            $player1->getInventory()->setItem(7, $info);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x4 = $config->getNested("coords4.knastx");
 			        $z4 = $config->getNested("coords4.knastz");
 			        $player4->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 != null and $Player2 == null and $Player3 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -966,7 +966,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
@@ -975,7 +975,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
 					    $player3->getInventory()->setItem(0, $b1);
@@ -983,7 +983,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player1->getInventory()->clearAll();
 				        $player1->getInventory()->setItem(0, $wuerfeln);
@@ -994,16 +994,16 @@ class EventListener implements Listener{
                         $player1->getInventory()->setItem(6, $endturn);
 			            $player1->getInventory()->setItem(7, $info);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x4 = $config->getNested("coords4.knastx");
 			        $z4 = $config->getNested("coords4.knastz");
 			        $player4->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 != null and $Player2 != null and $Player3 == null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -1015,7 +1015,7 @@ class EventListener implements Listener{
 				    $gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter1") == true){
 						$player1->getInventory()->clearAll();
@@ -1024,7 +1024,7 @@ class EventListener implements Listener{
 					    $player1->getInventory()->setItem(2, $b1000);
 						$player1->getInventory()->setItem(7, $exit);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
 					    $player2->getInventory()->setItem(0, $b1);
@@ -1032,7 +1032,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player1->getInventory()->clearAll();
 				        $player1->getInventory()->setItem(0, $wuerfeln);
@@ -1043,16 +1043,16 @@ class EventListener implements Listener{
                         $player1->getInventory()->setItem(6, $endturn);
 			            $player1->getInventory()->setItem(7, $info);
                         $player1->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x4 = $config->getNested("coords4.knastx");
 			        $z4 = $config->getNested("coords4.knastz");
 			        $player4->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}elseif($Player1 == null and $Player2 != null and $Player3 != null){
 				if($p->getName() === $gamecfg->get("turn")){
@@ -1064,7 +1064,7 @@ class EventListener implements Listener{
 			    	$gamecfg->set("wurf", false);
 					$gamecfg->set("miete", false);
 				    $gamecfg->set("pasch", 0);
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
                     if($gamecfg->get("bieter2") == true){
 						$player2->getInventory()->clearAll();
@@ -1073,7 +1073,7 @@ class EventListener implements Listener{
 					    $player2->getInventory()->setItem(2, $b1000);
 						$player2->getInventory()->setItem(7, $exit);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}elseif($gamecfg->get("bieter3") == true){
 						$player3->getInventory()->clearAll();
 					    $player3->getInventory()->setItem(0, $b1);
@@ -1081,7 +1081,7 @@ class EventListener implements Listener{
 					    $player3->getInventory()->setItem(2, $b1000);
 						$player3->getInventory()->setItem(7, $exit);
                         $player3->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit da er den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cbietet nicht mehr mit da er den Server verlassen hat.");
 					}else{
 						$player2->getInventory()->clearAll();
 				        $player2->getInventory()->setItem(0, $wuerfeln);
@@ -1092,16 +1092,16 @@ class EventListener implements Listener{
                         $player2->getInventory()->setItem(6, $endturn);
 			            $player2->getInventory()->setItem(7, $info);
                         $player2->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 					}
 				}else{
 					$x4 = $config->getNested("coords4.knastx");
 			        $z4 = $config->getNested("coords4.knastz");
 			        $player4->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 		            $player4->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
-				    $gamecfg->set("bieter4" false);
+				    $gamecfg->set("bieter4", false);
 				    $gamecfg->save();
-					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat den Server verlassen hat.");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat den Server verlassen hat.");
 				}
 			}
         }
