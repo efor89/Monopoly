@@ -95,6 +95,7 @@ class EventListener implements Listener{
 		$xlast4 = $config->getNested("coords4.".$gamecfg->get("player4")."x");
         $zlast4 = $config->getNested("coords4.".$gamecfg->get("player4")."z");
 		if($p->getName() != $Player1 and $p->getName() != $Player2 and $p->getName() != $Player3 and $p->getName() != $Player4){
+			Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName." §ahat den Server verlassen, er war kein Angemeldeter Spieler.");
 			return;
 		}
         if($Player1 != null and $Player2 != null and $Player3 == null and $Player4 == null){
