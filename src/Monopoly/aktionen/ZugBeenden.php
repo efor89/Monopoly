@@ -66,8 +66,19 @@ class ZugBeenden implements Listener{
 				}
 				if($gamecfg->get($feld) !== $p->getName()){
 					if($gamecfg->get($feld) == null){
-			            $p->sendMessage("§bMono§6poly: §cDu musst die Strasse noch kaufen bevor du deinen Zug beenden kannst!");
-			            return;
+						if($p->getName() == $Player1){
+							$str = $gamecfg->get("player1");
+						}elseif($p->getName() == $Player2){
+							$str = $gamecfg->get("player2");
+						}elseif($p->getName() == $Player3){
+							$str = $gamecfg->get("player3");
+						}elseif($p->getName() == $Player4){
+							$str = $gamecfg->get("player4");
+						}
+						if($str != 1 and $str != 3 and $str != 5 and $str != 8 and $str != 11 and $str != 18 and $str != 21 and $str != 23 and $str != 31 and $str != 34 and $str != 37 and $str != 39){
+			                $p->sendMessage("§bMono§6poly: §cDu musst die Strasse noch kaufen bevor du deinen Zug beenden kannst!");
+			                return;
+						}
 					}
 		        }
                 $p->getInventory()->clearAll();

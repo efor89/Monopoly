@@ -167,7 +167,7 @@ class Wuerfeln implements Listener{
 									        $gamecfg->save();
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
-										if((($gamecfg->get("player1") + $points) - 40) == 5){
+										if((($gamecfg->get("player1") + $points) - 40) == 3){
 										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player1") + $points) - 40) == 8){
@@ -279,7 +279,7 @@ class Wuerfeln implements Listener{
 									        $gamecfg->save();
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
-										if((($gamecfg->get("player2") + $points) - 40) == 5){
+										if((($gamecfg->get("player2") + $points) - 40) == 3){
 										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player2") + $points) - 40) == 8){
@@ -390,7 +390,7 @@ class Wuerfeln implements Listener{
 									        $gamecfg->save();
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
-										if((($gamecfg->get("player3") + $points) - 40) == 5){
+										if((($gamecfg->get("player3") + $points) - 40) == 3){
 										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player3") + $points) - 40) == 8){
@@ -501,7 +501,7 @@ class Wuerfeln implements Listener{
 									        $gamecfg->save();
 										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 								    	}
-										if((($gamecfg->get("player4") + $points) - 40) == 5){
+										if((($gamecfg->get("player4") + $points) - 40) == 3){
 										    $this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									    }
 									    if((($gamecfg->get("player4") + $points) - 40) == 8){
@@ -670,7 +670,7 @@ class Wuerfeln implements Listener{
 									    $gamecfg->save();
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
-									if((($gamecfg->get("player1") + $points) - 40) == 5){
+									if((($gamecfg->get("player1") + $points) - 40) == 3){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player1") + $points) - 40) == 8){
@@ -788,7 +788,7 @@ class Wuerfeln implements Listener{
 									    $gamecfg->save();
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
-									if((($gamecfg->get("player2") + $points) - 40) == 5){
+									if((($gamecfg->get("player2") + $points) - 40) == 3){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player2") + $points) - 40) == 8){
@@ -906,7 +906,7 @@ class Wuerfeln implements Listener{
 									    $gamecfg->save();
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
-									if((($gamecfg->get("player3") + $points) - 40) == 5){
+									if((($gamecfg->get("player3") + $points) - 40) == 3){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player3") + $points) - 40) == 8){
@@ -1024,7 +1024,7 @@ class Wuerfeln implements Listener{
 									    $gamecfg->save();
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Einkommensteuer gekommen und muss §d4000§a$ bezahlen.");
 									}
-									if((($gamecfg->get("player4") + $points) - 40) == 5){
+									if((($gamecfg->get("player4") + $points) - 40) == 3){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
 									}
 									if((($gamecfg->get("player4") + $points) - 40) == 8){
