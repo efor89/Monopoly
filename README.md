@@ -7,8 +7,7 @@
 # Was fehlt noch:
 
 - Häuser und Hotels bauen und abbauen
-- Infos
-- Ereigniskarten und Gemeinschaftskarten
+- Ereigniskarten und Gemeinschaftskarten (ohne funktion)
 - Spielbrett reset beim Server Neustart und beim Start
 - Alle Bugs fixen
 
