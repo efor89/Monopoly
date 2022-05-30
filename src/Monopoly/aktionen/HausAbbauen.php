@@ -17,7 +17,7 @@ use onebone\economyapi\EconomyAPI;
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\CustomForm;
 
-class BauenMain implements Listener{
+class HausAbbauen implements Listener{
 
 	private $plugin;
 
@@ -44,19 +44,9 @@ class BauenMain implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
-		if($item->getId() === 277) {
-            if($item->getName() === "§bHaus/Hotel Bauen/Abbauen") {
-				$p->getInventory()->clearAll();
-                $haus = Item::get(236, 5, 64);
-                $haus->setCustomName("§aHaus Bauen");
-				$hotel = Item::get(236, 14, 64);
-                $hotel->setCustomName("§aHaus abbauen");
-				$exit = Item::get(331, 14, 1);
-                $exit->setCustomName("§cZurück");
-                $p->getInventory()->setItem(0, $haus);
-				$p->getInventory()->setItem(1, $hotel);
-                $p->getInventory()->setItem(4, $abbauen);
-                $p->getInventory()->setItem(8, $exit);
+		if($item->getId() === 236) {
+            if($item->getName() === "§aHaus abbauen") {
+                $p->sendMessage("§cKommt noch!");
             }
         }
 		if(!$p->isOP()){

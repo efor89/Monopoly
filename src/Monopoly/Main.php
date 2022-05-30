@@ -8,7 +8,6 @@ use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use Monopoly\EventListener;
-use Monopoly\aktionen\Abbauen;
 use Monopoly\aktionen\Anmelden;
 use Monopoly\aktionen\AufgebenJa;
 use Monopoly\aktionen\AufgebenMain;
@@ -18,7 +17,7 @@ use Monopoly\aktionen\Bieten;
 use Monopoly\aktionen\FreiKaufen;
 use Monopoly\aktionen\Handeln;
 use Monopoly\aktionen\HausBauen;
-use Monopoly\aktionen\HotelBauen;
+use Monopoly\aktionen\Hausabbauen;
 use Monopoly\aktionen\Hypothek;
 use Monopoly\aktionen\Infos;
 use Monopoly\aktionen\Kaufen;
@@ -60,7 +59,6 @@ class Main extends PluginBase{
             $this->saveResource('game.yml');
         }
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
-		$this->getServer()->getPluginManager()->registerEvents(new Abbauen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Anmelden($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new AufgebenJa($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new AufgebenMain($this), $this);
@@ -70,7 +68,7 @@ class Main extends PluginBase{
 		$this->getServer()->getPluginManager()->registerEvents(new FreiKaufen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Handeln($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new HausBauen($this), $this);
-		$this->getServer()->getPluginManager()->registerEvents(new HotelBauen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new HausAbbauen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Hypothek($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Infos($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Kaufen($this), $this);
