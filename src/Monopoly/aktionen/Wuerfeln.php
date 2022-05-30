@@ -156,8 +156,8 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player1") + $points == 8 or $gamecfg->get("player1") + $points == 23 or $gamecfg->get("player1") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
-										if($gamecfg->get($player1 + $points) != null){
-										    if($gamecfg->get($player1 + $points) != $p->getName()){
+										if($gamecfg->get($player1->getName() + $points) != null){
+										    if($gamecfg->get($player1->getName() + $points) != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -183,8 +183,8 @@ class Wuerfeln implements Listener{
 									    if((($gamecfg->get("player1") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
 									    }
-										if($gamecfg->get($player1 + $points) - 40 != null){
-										    if($gamecfg->get($player1 + $points) - 40 != $p->getName()){
+										if($gamecfg->get($player1->getName() + $points) - 40 != null){
+										    if($gamecfg->get($player1->getName() + $points) - 40 != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -280,8 +280,8 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player2") + $points == 8 or $gamecfg->get("player2") + $points == 23 or $gamecfg->get("player2") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
-										if($gamecfg->get($player2 + $points) != null){
-										    if($gamecfg->get($player2 + $points) != $p->getName()){
+										if($gamecfg->get($player2->getName() + $points) != null){
+										    if($gamecfg->get($player2->getName() + $points) != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -307,8 +307,8 @@ class Wuerfeln implements Listener{
 									    if((($gamecfg->get("player2") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
 									    }
-										if($gamecfg->get($player2 + $points) - 40 != null){
-										    if($gamecfg->get($player2 + $points) - 40 != $p->getName()){
+										if($gamecfg->get($player2->getName() + $points) - 40 != null){
+										    if($gamecfg->get($player2->getName() + $points) - 40 != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -403,8 +403,8 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player3") + $points == 8 or $gamecfg->get("player3") + $points == 23 or $gamecfg->get("player3") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
-										if($gamecfg->get($player3 + $points) != null){
-										    if($gamecfg->get($player3 + $points) != $p->getName()){
+										if($gamecfg->get($player3->getName() + $points) != null){
+										    if($gamecfg->get($player3->getName() + $points) != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -430,8 +430,8 @@ class Wuerfeln implements Listener{
 									    if((($gamecfg->get("player3") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
 									    }
-										if($gamecfg->get($player3 + $points) - 40 != null){
-										    if($gamecfg->get($player3 + $points) - 40 != $p->getName()){
+										if($gamecfg->get($player3->getName() + $points) - 40 != null){
+										    if($gamecfg->get($player3->getName() + $points) - 40 != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -526,8 +526,8 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player4") + $points == 8 or $gamecfg->get("player4") + $points == 23 or $gamecfg->get("player4") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
-										if($gamecfg->get($player4 + $points) != null){
-										    if($gamecfg->get($player4 + $points) != $p->getName()){
+										if($gamecfg->get($player4->getName() + $points) != null){
+										    if($gamecfg->get($player4->getName() + $points) != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -553,8 +553,8 @@ class Wuerfeln implements Listener{
 									    if((($gamecfg->get("player4") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
 									    }
-										if($gamecfg->get($player4 + $points) - 40 != null){
-										    if($gamecfg->get($player4 + $points) - 40 != $p->getName()){
+										if($gamecfg->get($player4->getName() + $points) - 40 != null){
+										    if($gamecfg->get($player4->getName() + $points) - 40 != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
 										    }
@@ -654,8 +654,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player1") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player1 + $points) != null){
-										if($gamecfg->get($player1 + $points) != $p->getName()){
+									if($gamecfg->get($player1->getName() + $points) != null){
+										if($gamecfg->get($player1->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -721,8 +721,8 @@ class Wuerfeln implements Listener{
 									$gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("wurf", true);
 									$gamecfg->save();
-									if($gamecfg->get($player1 + $points) != null){
-										if($gamecfg->get($player1 + $points) != $p->getName()){
+									if($gamecfg->get($player1->getName() + $points) != null){
+										if($gamecfg->get($player1->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -740,8 +740,8 @@ class Wuerfeln implements Listener{
 									if((($gamecfg->get("player1") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player1 + $points) - 40 != null){
-										if($gamecfg->get($player1 + $points) - 40 != $p->getName()){
+									if($gamecfg->get($player1->getName() + $points) - 40 != null){
+										if($gamecfg->get($player1->getName() + $points) - 40 != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -790,8 +790,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player2") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player2 + $points) != null){
-										if($gamecfg->get($player2 + $points) != $p->getName()){
+									if($gamecfg->get($player2->getName() + $points) != null){
+										if($gamecfg->get($player2->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -852,8 +852,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player2") + $points == 8 or $gamecfg->get("player2") + $points == 23 or $gamecfg->get("player2") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player2 + $points) != null){
-										if($gamecfg->get($player2 + $points) != $p->getName()){
+									if($gamecfg->get($player2->getName() + $points) != null){
+										if($gamecfg->get($player2->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -876,8 +876,8 @@ class Wuerfeln implements Listener{
 									if((($gamecfg->get("player2") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player2 + $points) - 40 != null){
-										if($gamecfg->get($player2 + $points) - 40 != $p->getName()){
+									if($gamecfg->get($player2->getName() + $points) - 40 != null){
+										if($gamecfg->get($player2->getName() + $points) - 40 != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -926,8 +926,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player3") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player3 + $points) != null){
-										if($gamecfg->get($player3 + $points) != $p->getName()){
+									if($gamecfg->get($player3->getName() + $points) != null){
+										if($gamecfg->get($player3->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -988,8 +988,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player3") + $points == 8 or $gamecfg->get("player3") + $points == 23 or $gamecfg->get("player3") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player3 + $points) != null){
-										if($gamecfg->get($player3 + $points) != $p->getName()){
+									if($gamecfg->get($player3->getName() + $points) != null){
+										if($gamecfg->get($player3->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -1012,8 +1012,8 @@ class Wuerfeln implements Listener{
 									if((($gamecfg->get("player3") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player3 + $points) - 40 != null){
-										if($gamecfg->get($player3 + $points) - 40 != $p->getName()){
+									if($gamecfg->get($player3->getName() + $points) - 40 != null){
+										if($gamecfg->get($player3->getName() + $points) - 40 != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -1062,8 +1062,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player4") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player4 + $points) != null){
-										if($gamecfg->get($player4 + $points) != $p->getName()){
+									if($gamecfg->get($player4->getName() + $points) != null){
+										if($gamecfg->get($player4->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -1124,8 +1124,8 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player4") + $points == 8 or $gamecfg->get("player4") + $points == 23 or $gamecfg->get("player4") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player4 + $points) != null){
-										if($gamecfg->get($player4 + $points) != $p->getName()){
+									if($gamecfg->get($player4->getName() + $points) != null){
+										if($gamecfg->get($player4->getName() + $points) != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
@@ -1148,8 +1148,8 @@ class Wuerfeln implements Listener{
 									if((($gamecfg->get("player4") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
-									if($gamecfg->get($player4 + $points) - 40 != null){
-										if($gamecfg->get($player4 + $points) - 40 != $p->getName()){
+									if($gamecfg->get($player4->getName() + $points) - 40 != null){
+										if($gamecfg->get($player4->getName() + $points) - 40 != $p->getName()){
 										    $gamecfg->set("miete", true);
 									        $gamecfg->save();
 										}
