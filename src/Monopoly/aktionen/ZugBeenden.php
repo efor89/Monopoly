@@ -55,6 +55,10 @@ class ZugBeenden implements Listener{
 			        $p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
 			        return;
 		        }
+				if(EconomyAPI::getInstance()->myMoney($p) < 0){
+					$p->sendMessage("§bMono§6poly: §cDu hast kein Geld mehr nimm eine Hypothek auf, baue Häuser ab oder gib auf!");
+					return;
+				}
 				if($p->getName() == $Player1){
 				    $feld = $gamecfg->get("player1");
 				}elseif($p->getName() == $Player2){

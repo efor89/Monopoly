@@ -46,6 +46,10 @@ class Handeln implements Listener{
 		}
 		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
+				if(EconomyAPI::getInstance()->myMoney($p) < 0){
+					$p->sendMessage("§bMono§6poly: §cDu hast kein Geld mehr nimm eine Hypothek auf, baue Häuser ab oder gib auf!");
+					return;
+				}
                 $this->plugin->getHandelnMain()->handelnmain($p);
             }
         }

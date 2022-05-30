@@ -53,6 +53,10 @@ class Wuerfeln implements Listener{
 				$points = $point1 + $point2;
 				$gamecfg->set("lastpoints", $points);
 				$gamecfg->save();
+				if(EconomyAPI::getInstance()->myMoney($p) < 0){
+					$p->sendMessage("§bMono§6poly: §cDu hast kein Geld mehr nimm eine Hypothek auf, baue Häuser ab, Handel mit anderen Spielern oder gib auf!");
+					return;
+				}
 				if($gamecfg->get("wurf") !== true){
 					if($p->getName() == $Player1){
 						$nummer = $gamecfg->get("player1");

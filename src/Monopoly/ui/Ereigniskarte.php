@@ -38,54 +38,98 @@ class Ereigniskarte{
 		            $players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
 					$laste = $gamecfg->get("laste");
 					$text = $config->getNested("Ereignisfeld".$laste.".text");
+					$Player1 = $players->get("player1");
+		            $Player2 = $players->get("player2");
+		            $Player3 = $players->get("player3");
+		            $Player4 = $players->get("player4");
+		            $player1 = Server::getInstance()->getPlayer($Player1);
+	   	            $player2 = Server::getInstance()->getPlayer($Player2);
+                    $player3 = Server::getInstance()->getPlayer($Player3);
+	                $player4 = Server::getInstance()->getPlayer($Player4);
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." hat eine EreignisKarte gezogen.");
 					Server::getInstance()->broadcastMessage($text);
 					if($laste == 1){
+						EconomyAPI::getInstance()->reduceMoney($player, 1000);
+						$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 2){
+						EconomyAPI::getInstance()->reduceMoney($player, 300);
+						$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 300);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 3){
+						EconomyAPI::getInstance()->reduceMoney($player, 200);
+						$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 200);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 4){
+						EconomyAPI::getInstance()->reduceMoney($player, 500);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 5){
+						EconomyAPI::getInstance()->addMoney($player, 500);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 6){
+						EconomyAPI::getInstance()->addMoney($player, 1000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 7){
+						EconomyAPI::getInstance()->reduceMoney($player, 4000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 8){
+						if($Player1 !== null){
+							EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							EconomyAPI::getInstance()->addMoney($player1, 1000);
+						}
+						if($Player2 !== null){
+							EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							EconomyAPI::getInstance()->addMoney($player2, 1000);
+						}
+						if($Player3 !== null){
+							EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							EconomyAPI::getInstance()->addMoney($player3, 1000);
+						}
+						if($Player4 !== null){
+							EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							EconomyAPI::getInstance()->addMoney($player4, 1000);
+						}
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 9){
+						EconomyAPI::getInstance()->addMoney($player, $gamecfg->get("freiparken"));
+						$gamecfg->set("freiparken", 0);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 10){
+						EconomyAPI::getInstance()->reduceMoney($player, 1500);
+						$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1500);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 11){
+						EconomyAPI::getInstance()->reduceMoney($player, 5000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 12){
+						EconomyAPI::getInstance()->addMoney($player, 1000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 13){
+						EconomyAPI::getInstance()->reduceMoney($player, 3000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 14){
+						EconomyAPI::getInstance()->addMoney($player, 3000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 15){
+						EconomyAPI::getInstance()->reduceMoney($player, 5000);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 16){
+						EconomyAPI::getInstance()->addMoney($player, 5000);
 						$gamecfg->set("laste", 1);
 						$gamecfg->save();
 					}
