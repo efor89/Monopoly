@@ -54,6 +54,21 @@ class Wuerfeln implements Listener{
 				$gamecfg->set("lastpoints", $points);
 				$gamecfg->save();
 				if($gamecfg->get("wurf") !== true){
+					if($p->getName() == $Player1){
+						$nummer = $gamecfg->get("player1");
+					}elseif($p->getName() == $Player2){
+						$nummer = $gamecfg->get("player2");
+					}elseif($p->getName() == $Player3){
+						$nummer = $gamecfg->get("player3");
+					}elseif($p->getName() == $Player4){
+						$nummer = $gamecfg->get("player4");
+					}
+					if($gamecfg->get($nummer) == null){
+						if($nummer == 2 or $nummer == 4 or $nummer == 6 or $nummer == 7 or $nummer == 9 or $nummer == 10 or $nummer == 12 or $nummer == 13 or $nummer == 14 or $nummer == 15 or $nummer == 16 or $nummer == 17 or $nummer == 19 or $nummer == 20 or $nummer == 22 or $nummer == 24 or $nummer == 25 or $nummer == 26 or $nummer == 27 or $nummer == 28 or $nummer == 29 or $nummer == 30 or $nummer == 32 or $nummer == 33 or $nummer == 35 or $nummer == 36 or $nummer == 38 or $nummer == 40){
+						    $p->sendMessage("§bMono§6poly: §cDu musst die Strasse noch kaufen!");
+						    return;
+						}
+					}
 					$y = 5;
 			        $x1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."x");
 			        $z1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."z");
@@ -156,7 +171,7 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player1") + $points == 8 or $gamecfg->get("player1") + $points == 23 or $gamecfg->get("player1") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
-										if($gamecfg->get($player1->getName()) + $points != null){
+										if($gamecfg->get($player1->getName()) + $points !== null){
 										    if($gamecfg->get($player1->getName()) + $points != $p->getName()){
 										        $gamecfg->set("miete", true);
 									            $gamecfg->save();
