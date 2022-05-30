@@ -8,10 +8,12 @@ use pocketmine\event\{
 };
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\level\Level;
 use pocketmine\utils\Config;
 use pocketmine\item\Item;
 use pocketmine\block\Block;
 use pocketmine\math\Vector3;
+use pocketmine\math\AxisAlignedBB;
 use Monopoly\Main;
 use onebone\economyapi\EconomyAPI;
 use jojoe77777\FormAPI\SimpleForm;
@@ -64,6 +66,9 @@ class Start implements Listener{
 						$z3 = $config->getNested("coords3.1z");
 						$x4 = $config->getNested("coords4.1x");
 						$z4 = $config->getNested("coords4.1z");
+						$big = new AxisAlignedBB(196, 5, 245, 256, 6, 305);
+                        $small = new AxisAlignedBB(203, 5, 252, 248, 6, 297);
+						$this->clearRectangle($p->getLevel(), $big, $small);
 						$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 						$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 					    if($Player3 != null){
@@ -263,4 +268,15 @@ class Start implements Listener{
             $ev->setCancelled(true);
 		}
 	}
+	
+	function clearRectangle(Level $level, AxisAlignedBB $big, AxisAlignedBB $small): void {
+    for ($x = $big->minX; $x < $big->maxX; $x++) {
+        for ($z = $big->minZ; $z < $big->maxZ; $z++) {
+            if ($x >= $small->minX and $x <= $small->maxX and $z >= $small->minZ and $z <= $small->maxZ) continue;
+            for ($y = $big->minY; $y < $big->maxY; $y++) {
+                $level->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+            }
+        }
+    }
+}
 }
