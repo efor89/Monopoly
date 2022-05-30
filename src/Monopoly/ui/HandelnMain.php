@@ -55,7 +55,7 @@ class HandelnMain{
 	public function Handeln(Player $player, Player $target){
 		$api = $this->plugin->getServer()->getPluginManager()->getPlugin("FormAPI");
 		$t_name = $target->getName();
-		$form = $api->createCustomForm(function (Player $player, array $data) use ($t_name){
+		$form = $api->createCustomForm(function (Player $player, $data) use ($t_name){
 			if (($target = Server::getInstance()->getPlayer($t_name)) === null) return;
 			$result = $data;
 			if ($result === null) {

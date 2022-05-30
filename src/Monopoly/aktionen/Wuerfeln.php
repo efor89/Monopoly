@@ -69,6 +69,10 @@ class Wuerfeln implements Listener{
 						    return;
 						}
 					}
+                    if($gamecfg->get("miete") !== false){
+						$p->sendMessage("§bMono§6poly: §cDu musst erst Miete bezahlen!");
+						return;
+					}
 					$y = 5;
 			        $x1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."x");
 			        $z1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."z");
@@ -88,10 +92,6 @@ class Wuerfeln implements Listener{
 			        $zlast4 = $config->getNested("coords4.".$gamecfg->get("player4")."z");
 			        if($point1 == $point2){
 						if($gamecfg->get("pasch") < 2){
-							if($gamecfg->get("miete") !== false){
-								$p->sendMessage("§bMono§6poly: §cDu musst erst Miete bezahlen!");
-								return;
-							}
 							if($p->getName() == $Player1){
 							    if($gamecfg->get("knast1") !== false){
 									if($gamecfg->get($gamecfg->get("player1") + $points) == null){
@@ -592,40 +592,36 @@ class Wuerfeln implements Listener{
 							$gamecfg->set("pasch", 0);
 							$gamecfg->save();
 							if($p->getName() == $Player1){
-							    $gamecfg->set("knast1", true);
-								$gamecfg->save();
 								$x = $config->getNested("coords1.knastx");
 								$z = $config->getNested("coords1.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
-								$gamecfg->set("player4", 11);
+								$gamecfg->set("player1", 11);
+								$gamecfg->set("knast1", true);
 							    $gamecfg->save();
 							}elseif($p->getName() == $Player2){
-							    $gamecfg->set("knast2", true);
-								$gamecfg->save();
 								$x = $config->getNested("coords2.knastx");
 								$z = $config->getNested("coords2.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
-								$gamecfg->set("player4", 11);
+								$gamecfg->set("player2", 11);
+								$gamecfg->set("knast2", true);
 							    $gamecfg->save();
 							}elseif($p->getName() == $Player3){
-							    $gamecfg->set("knast3", true);
-								$gamecfg->save();
 								$x = $config->getNested("coords3.knastx");
 								$z = $config->getNested("coords3.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
-								$gamecfg->set("player4", 11);
+								$gamecfg->set("player3", 11);
+								$gamecfg->set("knast3", true);
 							    $gamecfg->save();
 							}elseif($p->getName() == $Player4){
-							    $gamecfg->set("knast4", true);
-								$gamecfg->save();
 								$x = $config->getNested("coords4.knastx");
 								$z = $config->getNested("coords4.knastz");
 								$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
 								$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 								$gamecfg->set("player4", 11);
+								$gamecfg->set("knast4", true);
 							    $gamecfg->save();
 							}
 							$p->getInventory()->clearAll();
