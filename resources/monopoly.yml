@@ -862,7 +862,8 @@ Ereignisfeld5:
   text: Rücke vor bis zur Seestrasse. Wenn du über Los kommst, ziehe 4000$ ein.
   extra: 12 #seestrasse nummer
 Ereignisfeld6:
-  text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.
+  text: Du hast eine Wette gewonnen. Ziehe 1000$ ein.
+  extra: 1000 #1000$ bekommt der spieler von der bank
 Ereignisfeld7:
   text: Lasse alle deine Strassen Renovieren! Zahle an die Bank 4000$.
   extra: 4000 #4000$ die vom spieler abgezogen werden und zu frei parken hinzukommen
@@ -874,7 +875,7 @@ Ereignisfeld9:
   extra: 6 #südbahnhof nummer
 Ereignisfeld10:
   text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
-  extra: 11 #nur zu besuch / gefängnis nummer
+  extra: 31 #gefängnis nummer
 Ereignisfeld11:
   text: Gehe 3 Felder zurück.
   extra: 3 #felder zurück
@@ -894,7 +895,7 @@ Ereignisfeld16:
   text: Rücke vor bis zum nächsten Bahnhof. Hat noch kein Spieler den Bahnhof, kannst du ihn kaufen.
 Gemeinschaftsfeld1:
   text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
-  extra: 11 #nur zu besuch / gefängnis nummer
+  extra: 31 #gefängnis nummer
 Gemeinschaftsfeld2:
   text: Zahle an das Krankenhaus 2000$.
   extra: 2000 #2000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
@@ -926,7 +927,8 @@ Gemeinschaftsfeld11:
   text: Rücke vor bis auf Los.
   extra: 1 #los nummer 
 Gemeinschaftsfeld12:
-  text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.    
+  text: Du hast im Lotto gewonnen. Ziehe 1000$ ein.
+  extra: 1000 #1000$ bekommt der spieler von der bank
 Gemeinschaftsfeld13:
   text: Es ist dein Geburtstag. Ziehe von jedem Spieler 1000$ ein.
   extra: 1000 #der spieler bekommt von jedem anderen spieler 1000$

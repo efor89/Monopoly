@@ -33,7 +33,62 @@ class Ereigniskarte{
 			}
 			switch ($result) {
 				case 0:
-					
+					$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		            $gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+		            $players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
+					$laste = $gamecfg->get("laste");
+					$text = $config->getNested("Ereignisfeld".$laste".text");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." hat eine EreignisKarte gezogen.");
+					Server::getInstance()->broadcastMessage($text);
+					if($laste == 1){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 2){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 3){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 4){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 5){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 6){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 7){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 8){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 9){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 10){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 11){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 12){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 13){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 14){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 15){
+						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
+						$gamecfg->save();
+					}elseif($laste == 16){
+						$gamecfg->set("laste", 1);
+						$gamecfg->save();
+					}
 				break;
 			}
 			switch ($result) {

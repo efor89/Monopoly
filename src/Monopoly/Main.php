@@ -32,6 +32,7 @@ use Monopoly\ui\Ereigniskarte;
 use Monopoly\ui\Gemeinschaftskarte;
 use Monopoly\ui\HypothekUI;
 use Monopoly\ui\HandelnMain;
+use Monopoly\ui\InfoMain;
 
 class Main extends PluginBase{
 	
@@ -44,6 +45,8 @@ class Main extends PluginBase{
 	protected $hypothekui;
 	
 	protected $handelnmain;
+	
+	protected $infomain;
 
     public function onEnable(): void{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
@@ -82,6 +85,7 @@ class Main extends PluginBase{
 		$this->gemeinschaft = new Gemeinschaftskarte($this);
 		$this->hypothekui = new HypothekUI($this);
 		$this->handelnmain = new HandelnMain($this);
+		$this->infomain = new InfoMain($this);
     }
 	
 	public function onDisable(): Void{
@@ -100,6 +104,8 @@ class Main extends PluginBase{
 		$gamecfg->set("miete", false);
 		$gamecfg->set("freiparken", 0);
 		$gamecfg->set("gebot", 0);
+		$gamecfg->set("lastg", 1);
+		$gamecfg->set("laste", 1);
 		$gamecfg->set("bieter1", false);
 		$gamecfg->set("bieter2", false);
 		$gamecfg->set("bieter3", false);
@@ -213,6 +219,10 @@ class Main extends PluginBase{
 	
 	function getHandelnMain() {
         return $this->handelnmain;
+    }
+	
+	function getInfoMain() {
+        return $this->infomain;
     }
 	
 	public function getZufall1(){

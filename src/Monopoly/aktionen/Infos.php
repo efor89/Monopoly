@@ -46,7 +46,7 @@ class Infos implements Listener{
 		}
 		if($item->getId() === 340) {
             if($item->getName() === "§7Infos") {
-                $p->sendMessage("§cKommt noch!");
+                $this->plugin->getInfoMain()->infomain($p);
             }
         }
 		if(!$p->isOP()){

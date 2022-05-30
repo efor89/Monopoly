@@ -37,7 +37,62 @@ class Gemeinschaftskarte{
 			}
 			switch ($result) {
 				case 0:
-					
+					$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		            $gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+		            $players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
+					$lastg = $gamecfg->get("lastg");
+					$text = $config->getNested("Gemeinschaftsfeld".$lastg".text");
+					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." hat eine GemeinschaftsKarte gezogen.");
+					Server::getInstance()->broadcastMessage($text);
+					if($lastg == 1){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 2){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 3){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 4){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 5){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 6){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 7){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 8){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 9){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 10){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 11){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 12){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 13){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 14){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 15){
+						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
+						$gamecfg->save();
+					}elseif($lastg == 16){
+						$gamecfg->set("lastg", 1);
+						$gamecfg->save();
+					}
 				break;
 			}
 			switch ($result) {

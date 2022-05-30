@@ -7,6 +7,8 @@ freiparken: 0
 miete: false
 lastpoints: 0
 gebot: 0
+lastg: 1
+laste: 1
 bieter1: false
 bieter2: false
 bieter3: false

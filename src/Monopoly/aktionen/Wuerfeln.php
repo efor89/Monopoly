@@ -106,10 +106,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player1") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player1") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -148,10 +148,10 @@ class Wuerfeln implements Listener{
 											return;
 										}
 										if($gamecfg->get("player1") + $points == 21){
+											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										    $gamecfg->set("freiparken", 0);
 										    $gamecfg->save();
-										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    }
 										if($gamecfg->get("player1") + $points == 5){
 										    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -231,10 +231,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player2") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player2") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -272,10 +272,10 @@ class Wuerfeln implements Listener{
 											return;
 										}
 										if($gamecfg->get("player2") + $points == 21){
+											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										    $gamecfg->set("freiparken", 0);
 										    $gamecfg->save();
-										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    }
 										if($gamecfg->get("player2") + $points == 5){
 										    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -354,10 +354,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player3") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player3") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -395,10 +395,10 @@ class Wuerfeln implements Listener{
 											return;
 										}
 										if($gamecfg->get("player3") + $points == 21){
+											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										    $gamecfg->set("freiparken", 0);
 										    $gamecfg->save();
-										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    }
 										if($gamecfg->get("player3") + $points == 5){
 										    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -477,10 +477,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player4") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player4") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -518,10 +518,10 @@ class Wuerfeln implements Listener{
 											return;
 										}
 										if($gamecfg->get("player4") + $points == 21){
+											Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										    $gamecfg->set("freiparken", 0);
 										    $gamecfg->save();
-										    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    }
 										if($gamecfg->get("player4") + $points == 5){
 										    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -654,10 +654,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player1") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player1") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -704,10 +704,10 @@ class Wuerfeln implements Listener{
 										return;
 									}
 									if($gamecfg->get("player1") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										$gamecfg->set("freiparken", 0);
 										$gamecfg->save();
-										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player1") + $points == 5){
 									    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -790,10 +790,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player2") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player2") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -840,10 +840,10 @@ class Wuerfeln implements Listener{
 										return;
 									}
 									if($gamecfg->get("player2") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										$gamecfg->set("freiparken", 0);
 										$gamecfg->save();
-										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player2") + $points == 5){
 									    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -926,10 +926,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player3") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player3") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -976,10 +976,10 @@ class Wuerfeln implements Listener{
 										return;
 									}
 									if($gamecfg->get("player3") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										$gamecfg->set("freiparken", 0);
 										$gamecfg->save();
-										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player3") + $points == 5){
 									    EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -1062,10 +1062,10 @@ class Wuerfeln implements Listener{
 										$gamecfg->save();
 									}
 									if($gamecfg->get("player4") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									    EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 									    $gamecfg->set("freiparken", 0);
 									    $gamecfg->save();
-							    	    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player4") + $points == 18){
 										$this->plugin->getGemeinschaft()->GemeinschaftsKarte($p);
@@ -1112,10 +1112,10 @@ class Wuerfeln implements Listener{
 										return;
 									}
 									if($gamecfg->get("player4") + $points == 21){
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 										EconomyAPI::getInstance()->addMoney($p, $gamecfg->get("freiparken"));
 										$gamecfg->set("freiparken", 0);
 										$gamecfg->save();
-										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf Frei Parken gekommen und bekommt §d".$gamecfg->get("freiparken")."§a$.");
 									}
 									if($gamecfg->get("player4") + $points == 5){
 									    EconomyAPI::getInstance()->reduceMoney($p, 4000);
