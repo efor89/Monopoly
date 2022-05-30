@@ -73,6 +73,10 @@ class Wuerfeln implements Listener{
 			        $zlast4 = $config->getNested("coords4.".$gamecfg->get("player4")."z");
 			        if($point1 == $point2){
 						if($gamecfg->get("pasch") < 2){
+							if($gamecfg->get("miete") !== false){
+								$p->sendMessage("§bMono§6poly: §cDu musst erst Miete bezahlen!");
+								return;
+							}
 							if($p->getName() == $Player1){
 							    if($gamecfg->get("knast1") !== false){
 									if($gamecfg->get($gamecfg->get("player1") + $points) == null){
@@ -152,6 +156,12 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player1") + $points == 8 or $gamecfg->get("player1") + $points == 23 or $gamecfg->get("player1") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
+										if($gamecfg->get($player1 + $points) != null){
+										    if($gamecfg->get($player1 + $points) != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 										$xlast = $config->getNested("coords1.knastx");
@@ -172,6 +182,12 @@ class Wuerfeln implements Listener{
 									    }
 									    if((($gamecfg->get("player1") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
+									    }
+										if($gamecfg->get($player1 + $points) - 40 != null){
+										    if($gamecfg->get($player1 + $points) - 40 != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
 									    }
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 										EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -264,6 +280,12 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player2") + $points == 8 or $gamecfg->get("player2") + $points == 23 or $gamecfg->get("player2") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
+										if($gamecfg->get($player2 + $points) != null){
+										    if($gamecfg->get($player2 + $points) != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 										$xlast = $config->getNested("coords2.knastx");
@@ -284,6 +306,12 @@ class Wuerfeln implements Listener{
 									    }
 									    if((($gamecfg->get("player2") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
+									    }
+										if($gamecfg->get($player2 + $points) - 40 != null){
+										    if($gamecfg->get($player2 + $points) - 40 != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
 									    }
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 										EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -375,6 +403,12 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player3") + $points == 8 or $gamecfg->get("player3") + $points == 23 or $gamecfg->get("player3") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
+										if($gamecfg->get($player3 + $points) != null){
+										    if($gamecfg->get($player3 + $points) != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 										$xlast = $config->getNested("coords3.knastx");
@@ -395,6 +429,12 @@ class Wuerfeln implements Listener{
 									    }
 									    if((($gamecfg->get("player3") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
+									    }
+										if($gamecfg->get($player3 + $points) - 40 != null){
+										    if($gamecfg->get($player3 + $points) - 40 != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
 									    }
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 										EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -486,6 +526,12 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player4") + $points == 8 or $gamecfg->get("player4") + $points == 23 or $gamecfg->get("player4") + $points == 37){
 											$this->plugin->getEreignis()->EreignisKarte($p);
 										}
+										if($gamecfg->get($player4 + $points) != null){
+										    if($gamecfg->get($player4 + $points) != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
+									    }
 									    $p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									    $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 										$xlast = $config->getNested("coords4.knastx");
@@ -506,6 +552,12 @@ class Wuerfeln implements Listener{
 									    }
 									    if((($gamecfg->get("player4") + $points) - 40) == 8){
 										    $this->plugin->getEreignis()->EreignisKarte($p);
+									    }
+										if($gamecfg->get($player4 + $points) - 40 != null){
+										    if($gamecfg->get($player4 + $points) - 40 != $p->getName()){
+										        $gamecfg->set("miete", true);
+									            $gamecfg->save();
+										    }
 									    }
 										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 										EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -602,6 +654,12 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player1") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
+									if($gamecfg->get($player1 + $points) != null){
+										if($gamecfg->get($player1 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
+									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$xlast = $config->getNested("coords1.knastx");
@@ -662,7 +720,13 @@ class Wuerfeln implements Listener{
 									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 									$gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("wurf", true);
-							        $gamecfg->save();
+									$gamecfg->save();
+									if($gamecfg->get($player1 + $points) != null){
+										if($gamecfg->get($player1 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
+									}
 								}else{
 									if((($gamecfg->get("player1") + $points) - 40) == 5){
 										EconomyAPI::getInstance()->reduceMoney($p, 4000);
@@ -675,6 +739,12 @@ class Wuerfeln implements Listener{
 									}
 									if((($gamecfg->get("player1") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player1 + $points) - 40 != null){
+										if($gamecfg->get($player1 + $points) - 40 != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 									EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -719,6 +789,12 @@ class Wuerfeln implements Listener{
 									}
 									if($gamecfg->get("player2") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player2 + $points) != null){
+										if($gamecfg->get($player2 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
@@ -776,6 +852,12 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player2") + $points == 8 or $gamecfg->get("player2") + $points == 23 or $gamecfg->get("player2") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
+									if($gamecfg->get($player2 + $points) != null){
+										if($gamecfg->get($player2 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
+									}
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 									$gamecfg->set("player2", $gamecfg->get("player2") + $points);
@@ -793,6 +875,12 @@ class Wuerfeln implements Listener{
 									}
 									if((($gamecfg->get("player2") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player2 + $points) - 40 != null){
+										if($gamecfg->get($player2 + $points) - 40 != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 									EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -837,6 +925,12 @@ class Wuerfeln implements Listener{
 									}
 									if($gamecfg->get("player3") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player3 + $points) != null){
+										if($gamecfg->get($player3 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
@@ -894,6 +988,12 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player3") + $points == 8 or $gamecfg->get("player3") + $points == 23 or $gamecfg->get("player3") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
+									if($gamecfg->get($player3 + $points) != null){
+										if($gamecfg->get($player3 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
+									}
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 									$gamecfg->set("player3", $gamecfg->get("player3") + $points);
@@ -911,6 +1011,12 @@ class Wuerfeln implements Listener{
 									}
 									if((($gamecfg->get("player3") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player3 + $points) - 40 != null){
+										if($gamecfg->get($player3 + $points) - 40 != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 									EconomyAPI::getInstance()->addMoney($p, 4000);
@@ -955,6 +1061,12 @@ class Wuerfeln implements Listener{
 									}
 									if($gamecfg->get("player4") + $points == 23){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player4 + $points) != null){
+										if($gamecfg->get($player4 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									EconomyAPI::getInstance()->reduceMoney($p, 1000);
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
@@ -1012,6 +1124,12 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player4") + $points == 8 or $gamecfg->get("player4") + $points == 23 or $gamecfg->get("player4") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
+									if($gamecfg->get($player4 + $points) != null){
+										if($gamecfg->get($player4 + $points) != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
+									}
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 									$gamecfg->set("player4", $gamecfg->get("player4") + $points);
@@ -1029,6 +1147,12 @@ class Wuerfeln implements Listener{
 									}
 									if((($gamecfg->get("player4") + $points) - 40) == 8){
 										$this->plugin->getEreignis()->EreignisKarte($p);
+									}
+									if($gamecfg->get($player4 + $points) - 40 != null){
+										if($gamecfg->get($player4 + $points) - 40 != $p->getName()){
+										    $gamecfg->set("miete", true);
+									        $gamecfg->save();
+										}
 									}
 									Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aist auf/über Los gekommen und zieht §d4000§a$ ein.");
 									EconomyAPI::getInstance()->addMoney($p, 4000);

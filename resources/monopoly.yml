@@ -864,9 +864,8 @@ Ereignisfeld5:
 Ereignisfeld6:
   text: Du kommst aus dem Gefängnis frei! Diese Karte musst du behalten, bist du sie benötigst oder verkaufst.
 Ereignisfeld7:
-  text: Lasse alle deine Häuser Renovieren! Zahle an die Bank 500$ für jedes Haus, 2000$ für jedes Hotel
-  extra1: 500 #500$ pro haus 
-  extra2: 2000 #2000$ pro hotel
+  text: Lasse alle deine Strassen Renovieren! Zahle an die Bank 4000$.
+  extra: 4000 #4000$ die vom spieler abgezogen werden und zu frei parken hinzukommen
 Ereignisfeld8:
   text: Du bist zum Vorstand gewählt worden. Zahle jedem Spieler 1000$.
   extra: 1000 #1000$ müssen vom spieler an jeden spieler gezahlt werden
@@ -889,27 +888,25 @@ Ereignisfeld14:
   text: Miete und Anleihzinsen werden fällig. Die Bank zahlt dir 3000$.
   extra: 3000 #3000$ bekommt der spieler von der bank
 Ereignisfeld15:
-  text: Die Bank zahlt dir eine Dividende 1000$
+  text: Die Bank zahlt dir eine Dividende von 1000$.
   extra: 1000 #1000$ bekommt der spieler von der bank
 Ereignisfeld16:
-  text: Rücke vor bis zum nächsten Bahnhof. Der Eigentümer erhält das doppelte der Normalen Miete. Hat noch kein Spieler den Bahnhof, kannst du ihn kaufen.
-  extra: 2 #2 * kosten
+  text: Rücke vor bis zum nächsten Bahnhof. Hat noch kein Spieler den Bahnhof, kannst du ihn kaufen.
 Gemeinschaftsfeld1:
   text: Gehe in das Gefängnis! Begib dich direckt dorthin. Gehe nicht über Los. Ziehe nicht 4000$ ein.
   extra: 11 #nur zu besuch / gefängnis nummer
 Gemeinschaftsfeld2:
-  text: Zahle an das Krankenhaus 2000$
+  text: Zahle an das Krankenhaus 2000$.
   extra: 2000 #2000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
 Gemeinschaftsfeld3:
-  text: Aus Lagerverkäufen erhälst du 500$
+  text: Aus Lagerverkäufen erhälst du 500$.
   extra: 500 #500$ bekommt der spieler von der bank
 Gemeinschaftsfeld4:
-  text: Zahle Schulgeld 3000$
+  text: Zahle Schulgeld 3000$.
   extra: 3000 #3000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
 Gemeinschaftsfeld5:
-  text: Du wirst zu Strassenausbesserungsarbeiten herangezogen! Zahle an die Bank 800$ für jedes Haus, 2300$ für jedes Hotel
-  extra1: 800 #800$ pro haus 
-  extra2: 2300 #2300$ pro hotel
+  text: Du wirst zu Strassenausbesserungsarbeiten herangezogen! Zahle an die Bank 4000$.
+  extra: 4000 #4000$ die vom spieler abgezogen werden und zu frei parken hinzukommen
 Gemeinschaftsfeld6:
   text: Die Jahresrente wird fällig ziehe 2000$ ein.
   extra: 2000 #2000$ bekommt der spieler von der bank
@@ -917,7 +914,7 @@ Gemeinschaftsfeld7:
   text: Du hast den 2. Preis in einer Schönheitskonkurrenz gewonnen. Ziehe 200$ ein.
   extra: 200 #200$ bekommt der spieler von der bank
 Gemeinschaftsfeld8:
-  text: Du erhälst auf Vorzugs-Aktien 7 Prozent Dividende 900$  
+  text: Du erhälst auf Vorzugs-Aktien 7 Prozent Dividende von 900$.
   extra: 900 #900$ bekommt der Spieler von der bank
 Gemeinschaftsfeld9:
   text: Du hast in einem Kreutzworträtzelwettbewerb gewonnen. Ziehe 2000$ ein.
@@ -934,12 +931,12 @@ Gemeinschaftsfeld13:
   text: Es ist dein Geburtstag. Ziehe von jedem Spieler 1000$ ein.
   extra: 1000 #der spieler bekommt von jedem anderen spieler 1000$
 Gemeinschaftsfeld14:
-  text: Arzt-Kosten zahle 1000$
+  text: Arzt-Kosten zahle 1000$.
   extra: 1000 #1000$ die vom spieler abgezogen werden und zu frei parken hinzugefügt werden
 Gemeinschaftsfeld15:
   text: Bank-Irrtum zu deinen Gunsten. Ziehe 4000$ ein.
   extra: 4000 #4000$ bekommt der spieler von der bank
 Gemeinschaftsfeld16:
-  text:  Du Erbst 2000$
+  text:  Du Erbst 2000$.
   extra: 2000 #2000$ bekommt der spieler von der bank
 ...

@@ -31,6 +31,7 @@ use Monopoly\aktionen\Zurueck;
 use Monopoly\ui\Ereigniskarte;
 use Monopoly\ui\Gemeinschaftskarte;
 use Monopoly\ui\HypothekUI;
+use Monopoly\ui\HandelnMain;
 
 class Main extends PluginBase{
 	
@@ -41,6 +42,8 @@ class Main extends PluginBase{
 	protected $gemeinschaft;
 	
 	protected $hypothekui;
+	
+	protected $handelnmain;
 
     public function onEnable(): void{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
@@ -78,6 +81,7 @@ class Main extends PluginBase{
 		$this->ereignis = new Ereigniskarte($this);
 		$this->gemeinschaft = new Gemeinschaftskarte($this);
 		$this->hypothekui = new HypothekUI($this);
+		$this->handelnmain = new HandelnMain($this);
     }
 	
 	public function onDisable(): Void{
@@ -164,6 +168,34 @@ class Main extends PluginBase{
 		$gamecfg->set("36hypo", false);
 		$gamecfg->set("38hypo", false);
 		$gamecfg->set("40hypo", false);
+		$gamecfg->set("2haus", 0);
+		$gamecfg->set("4haus", 0);
+		$gamecfg->set("6haus", 0);
+		$gamecfg->set("7haus", 0);
+		$gamecfg->set("9haus", 0);
+		$gamecfg->set("10haus", 0);
+		$gamecfg->set("12haus", 0);
+		$gamecfg->set("13haus", 0);
+		$gamecfg->set("14haus", 0);
+		$gamecfg->set("15haus", 0);
+		$gamecfg->set("16haus", 0);
+		$gamecfg->set("17haus", 0);
+		$gamecfg->set("19haus", 0);
+		$gamecfg->set("20haus", 0);
+		$gamecfg->set("22haus", 0);
+		$gamecfg->set("24haus", 0);
+		$gamecfg->set("25haus", 0);
+		$gamecfg->set("26haus", 0);
+		$gamecfg->set("27haus", 0);
+		$gamecfg->set("28haus", 0);
+		$gamecfg->set("29haus", 0);
+		$gamecfg->set("30haus", 0);
+		$gamecfg->set("32haus", 0);
+		$gamecfg->set("33haus", 0);
+		$gamecfg->set("35haus", 0);
+		$gamecfg->set("36haus", 0);
+		$gamecfg->set("38haus", 0);
+		$gamecfg->set("40haus", 0);
 		$gamecfg->save();
 	}
 	
@@ -177,6 +209,10 @@ class Main extends PluginBase{
 	
 	function getHypothekUI() {
         return $this->hypothekui;
+    }
+	
+	function getHandelnMain() {
+        return $this->handelnmain;
     }
 	
 	public function getZufall1(){

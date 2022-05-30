@@ -46,7 +46,7 @@ class Handeln implements Listener{
 		}
 		if($item->getId() === 54) {
             if($item->getName() === "§dHandeln") {
-                $p->sendMessage("§cKommt noch!");
+                $this->plugin->getHandelnMain()->handelnmain($p);
             }
         }
 		if(!$p->isOP()){
