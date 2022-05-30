@@ -41,7 +41,7 @@ class Gemeinschaftskarte{
 		            $gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 		            $players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
 					$lastg = $gamecfg->get("lastg");
-					$text = $config->getNested("Gemeinschaftsfeld".$lastg".text");
+					$text = $config->getNested("Gemeinschaftsfeld".$lastg.".text");
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." hat eine GemeinschaftsKarte gezogen.");
 					Server::getInstance()->broadcastMessage($text);
 					if($lastg == 1){

@@ -37,7 +37,7 @@ class Ereigniskarte{
 		            $gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
 		            $players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
 					$laste = $gamecfg->get("laste");
-					$text = $config->getNested("Ereignisfeld".$laste".text");
+					$text = $config->getNested("Ereignisfeld".$laste.".text");
 					Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." hat eine EreignisKarte gezogen.");
 					Server::getInstance()->broadcastMessage($text);
 					if($laste == 1){

@@ -94,7 +94,7 @@ class InfoMain{
 	    }else{
 			$player3 = "";
 			$money3 = "";
-			$street3 = ;
+			$street3 = "";
 		}
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
