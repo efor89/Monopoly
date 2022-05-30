@@ -7,7 +7,6 @@
 # Was fehlt noch:
 
 - Häuser und Hotels bauen und abbauen
-- Ereigniskarten und Gemeinschaftskarten (texte kommen aber ohne funktion)
 - Alle Bugs fixen
 
 Hat jemand Vorschläge, ein Bug gefunden oder ich hab etwas vergessen öffnet gern ein issue!
