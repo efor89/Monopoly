@@ -1,6 +1,6 @@
 ---
 name: Monopoly
-version: 0.4.0
+version: 0.5.0
 main: Monopoly\Main
 api: 3.0.0
 author: efor89
