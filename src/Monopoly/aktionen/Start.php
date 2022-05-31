@@ -66,8 +66,8 @@ class Start implements Listener{
 						$z3 = $config->getNested("coords3.1z");
 						$x4 = $config->getNested("coords4.1x");
 						$z4 = $config->getNested("coords4.1z");
-						$big = new AxisAlignedBB(196, 5, 245, 256, 6, 305);
-                        $small = new AxisAlignedBB(203, 5, 252, 248, 6, 297);
+						$big = new AxisAlignedBB(196, 5, 245, 256, 7, 305);
+                        $small = new AxisAlignedBB(203, 5, 252, 248, 7, 297);
 						$this->clearRectangle($p->getLevel(), $big, $small);
 						$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 						$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));

@@ -96,7 +96,7 @@ class NichtBieten implements Listener{
 					return;
 				}
                 if($p->getName() == $Player1){
-					if($p->getName == $gamecfg->get("turn")){
+					if($p->getName() == $gamecfg->get("turn")){
 						if($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true){
 							$player2->getInventory()->clearAll();
 						    $player2->getInventory()->setItem(0, $b1);
@@ -194,7 +194,7 @@ class NichtBieten implements Listener{
 					$gamecfg->set("bieter1", false);
 					$gamecfg->save();
 				}elseif($p->getName() == $Player2){
-					if($p->getName == $gamecfg->get("turn")){
+					if($p->getName() == $gamecfg->get("turn")){
 						if($gamecfg->get("bieter3") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter1") == true){
 							$player3->getInventory()->clearAll();
 						    $player3->getInventory()->setItem(0, $b1);
@@ -292,7 +292,7 @@ class NichtBieten implements Listener{
 					$gamecfg->set("bieter2", false);
 					$gamecfg->save();
 				}elseif($p->getName() == $Player3){
-					if($p->getName == $gamecfg->get("turn")){
+					if($p->getName() == $gamecfg->get("turn")){
 						if($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true){
 							$player4->getInventory()->clearAll();
 						    $player4->getInventory()->setItem(0, $b1);
@@ -390,7 +390,7 @@ class NichtBieten implements Listener{
 					$gamecfg->set("bieter3", false);
 					$gamecfg->save();
 				}elseif($p->getName() == $Player4){
-					if($p->getName == $gamecfg->get("turn")){
+					if($p->getName() == $gamecfg->get("turn")){
 						if($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true){
 							$player1->getInventory()->clearAll();
 						    $player1->getInventory()->setItem(0, $b1);

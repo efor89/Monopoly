@@ -48,6 +48,16 @@ class AufgebenJa implements Listener{
             if($item->getName() === "§aJa Aufgeben") {
 				$this->plugin->removeCarts($p);
 				$this->plugin->removeHypo($p);
+				$b1 = Item::get(1, 0, 1);
+                $b1->setCustomName("§6Biete 1$");
+				$b100 = Item::get(266, 0, 1);
+                $b100->setCustomName("§aBiete 100$");
+				$b1000 = Item::get(264, 0, 1);
+                $b1000->setCustomName("§bBiete 1000$");
+				$giveup = Item::get(355, 14, 1);
+                $giveup->setCustomName("§cAufgeben/Bankrott");
+				$exit = Item::get(331, 14, 1);
+                $exit->setCustomName("§cNicht Bieten");
 				$y = 5;
 				$xlast1 = $config->getNested("coords1.".$gamecfg->get("player1")."x");
 			    $zlast1 = $config->getNested("coords1.".$gamecfg->get("player1")."z");

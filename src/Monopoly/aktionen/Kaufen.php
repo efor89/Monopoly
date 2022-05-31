@@ -85,10 +85,6 @@ class Kaufen implements Listener{
                             $giveup->setCustomName("§cAufgeben/Bankrott");
 							$exit = Item::get(331, 14, 1);
                             $exit->setCustomName("§cNicht Bieten");
-							$p->getInventory()->clearAll();
-							$p->getInventory()->setItem(0, $b1);
-							$p->getInventory()->setItem(1, $b100);
-							$p->getInventory()->setItem(2, $b1000);
 							if($Player1 != null){
 								$gamecfg->set("bieter1", true);
 								$gamecfg->save();
@@ -117,6 +113,9 @@ class Kaufen implements Listener{
 								$player4->getInventory()->setItem(7, $exit);
 								$player4->getInventory()->setItem(8, $giveup);
 							}
+							$p->getInventory()->setItem(0, $b1);
+							$p->getInventory()->setItem(1, $b100);
+							$p->getInventory()->setItem(2, $b1000);
 					    }
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört bereits einem anderen Spieler!");
