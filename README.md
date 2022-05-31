@@ -6,7 +6,7 @@
 
 # Was fehlt noch:
 
-- Alle Bugs fixen
+- Alle Bugs fixen (brauche Test Spieler dafür)
 
 # Benötigt wird:
 
