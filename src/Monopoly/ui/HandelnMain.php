@@ -208,8 +208,43 @@ class HandelnMain{
 				break;
 			}
 		});
+		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		if($street1 != null){
+			$str = $config->getNested($street1.".name");
+			$a = $str."\n";
+		}else{
+			$a = "";
+		}
+		if($street2 != null){
+			$str = $config->getNested($street2.".name");
+			$b = $str."\n";
+		}else{
+			$b = "";
+		}
+		if($street3 != null){
+			$str = $config->getNested($street3.".name");
+			$d = $str."\n";
+		}else{
+			$d = "";
+		}
+		if($street1 != null){
+			$str = $config->getNested($street4.".name");
+			$e = $str."\n";
+		}else{
+			$e = "";
+		}
+		if($money1 != null){
+			$c = $money1."\n";
+		}else{
+			$c = "";
+		}
+		if($money2 != null){
+			$f = $money2."\n";
+		}else{
+			$f = "";
+		}
 		$form->setTitle("§bHandel Anfrage");
-		$form->setContent("§6Das ist eine Handels Anfrage von §d".$target->getName().". \n§6Entscheide ob du sie akzeptierst oder ablehnst.");
+		$form->setContent("§6Das ist eine Handels Anfrage von §d".$target->getName().". \n§6Entscheide ob du sie akzeptierst oder ablehnst.\n\n§aDer Spieler möchte Strassen:§f\n".$a.$b."\n§aDer Spieler möchte Geld:§f\n".$c."\n§eDer Spieler bietet dir Strassen:\n§f".$d.$e."\n§eDer Spieler bietet dir Geld:\n§f".$f);
         $form->addButton("§aAkzeptieren");
 		$form->addButton("§dAblehnen");						
 		$form->addButton("§cSchließen");
