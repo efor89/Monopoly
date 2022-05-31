@@ -57,12 +57,8 @@ class Main extends PluginBase{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
         if(!file_exists($this->getDataFolder() . "monopoly.yml")){
             $this->saveResource('monopoly.yml');
-        }
-		if(!file_exists($this->getDataFolder() . "player.yml")){
+			$this->saveResource('game.yml');
 			$this->saveResource('player.yml');
-        }
-		if(!file_exists($this->getDataFolder() . "game.yml")){
-            $this->saveResource('game.yml');
         }
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Anmelden($this), $this);
@@ -249,7 +245,7 @@ class Main extends PluginBase{
 	
 	public function removeCarts(Player $player){
 		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
-		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		$config = new Config($this->getDataFolder().'monopoly.yml', Config::YAML);
 		if($gamecfg->get("2") == $player->getName()){
 			$x1 = $config->getNested("2.x1");
 			$z1 = $config->getNested("2.z1");
