@@ -97,21 +97,21 @@ class MieteBezahlen implements Listener{
 					}else{
 						$kosten = $config->getNested($feld.".miete");
 					}
-				    if($playerMoney >= $kosten){
-					    if($gamecfg->get("miete") == true){
-					        EconomyAPI::getInstance()->reduceMoney($p, $kosten);
-					        EconomyAPI::getInstance()->addMoney($player, $kosten);
-					        $gamecfg->set("miete", false);
-					        $gamecfg->save();
-						    $p->sendMessage("§bMono§6poly: §aDu hast Miete in höhe von §d".$kosten."§a$ an §d".$player->getName()." §agezahlt.");
-							$player->sendMessage("§bMono§6poly: §d".$p->getName()." §ahat Miete in höhe von §d".$kosten."§a$ an dich §agezahlt.");
-					    }else{
-						    $p->sendMessage("§bMono§6poly: §cDu hast schon Miete bezahlt oder musst hier keine Miete bezahlen!");
-					    }
-				    }else{
-					    $p->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Miete zu bezahlen nimm eine Hypotek auf oder verkauf etwas!");
-				    }
 				}
+				if($playerMoney >= $kosten){
+					if($gamecfg->get("miete") == true){
+				        EconomyAPI::getInstance()->reduceMoney($p, $kosten);
+				        EconomyAPI::getInstance()->addMoney($player, $kosten);
+				        $gamecfg->set("miete", false);
+				        $gamecfg->save();
+					    $p->sendMessage("§bMono§6poly: §aDu hast Miete in höhe von §d".$kosten."§a$ an §d".$player->getName()." §agezahlt.");
+						$player->sendMessage("§bMono§6poly: §d".$p->getName()." §ahat Miete in höhe von §d".$kosten."§a$ an dich §agezahlt.");
+				    }else{
+					    $p->sendMessage("§bMono§6poly: §cDu hast schon Miete bezahlt oder musst hier keine Miete bezahlen!");
+				    }
+			    }else{
+				    $p->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Miete zu bezahlen nimm eine Hypotek auf oder verkauf etwas!");
+			    }
             }
         }
 		if(!$p->isOP()){

@@ -41,7 +41,7 @@ class InfoMain{
 			}
 		});
 		$form->setTitle("§bInfo's Menü");
-		$form->setContent("§6ESchau dir die Spielregeln an oder sie dir infos über die Spieler an zb. Geld, Strassen!");
+		$form->setContent("§6Schau dir die Spielregeln an oder sie dir infos über die Spieler an zb. Geld, Strassen!");
         $form->addButton("§aSpielregeln");
 		$form->addButton("§eSpieler Info's");					
 		$form->addButton("§cSchließen");

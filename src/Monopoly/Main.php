@@ -7,6 +7,7 @@ namespace Monopoly;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
+use pocketmine\math\Vector3;
 use Monopoly\EventListener;
 use Monopoly\aktionen\Anmelden;
 use Monopoly\aktionen\AufgebenJa;

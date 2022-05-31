@@ -261,7 +261,7 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player2") + $points == 31){
 											$x = $config->getNested("coords2.knastx");
 											$z = $config->getNested("coords2.knastz");
-											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
+											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(19, 0));
 									        $p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
 											$gamecfg->set("player2", 11);
 											$gamecfg->set("pasch", 0);
@@ -384,7 +384,7 @@ class Wuerfeln implements Listener{
 										if($gamecfg->get("player3") + $points == 31){
 											$x = $config->getNested("coords3.knastx");
 											$z = $config->getNested("coords3.knastz");
-											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
+											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(91, 0));
 									        $p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 											$gamecfg->set("player3", 11);
 											$gamecfg->set("pasch", 0);
@@ -504,10 +504,10 @@ class Wuerfeln implements Listener{
 									return;
 								}else{
 									if($gamecfg->get("player4") + $points <= 40){
-										if($gamecfg->get("player1") + $points == 31){
+										if($gamecfg->get("player4") + $points == 31){
 											$x = $config->getNested("coords4.knastx");
 											$z = $config->getNested("coords4.knastz");
-											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(165, 0));
+											$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(170, 0));
 									        $p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 											$gamecfg->set("player4", 11);
 											$gamecfg->set("pasch", 0);
@@ -704,7 +704,7 @@ class Wuerfeln implements Listener{
 							            $endturn = Item::get(208, 0, 1);
                                         $endturn->setCustomName("§3Zug Beenden");
 							            $p->getInventory()->setItem(6, $endturn);
-										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das Gefängnis.");
 										return;
 									}
 									if($gamecfg->get("player1") + $points == 21){
@@ -731,6 +731,9 @@ class Wuerfeln implements Listener{
 									if($gamecfg->get("player1") + $points == 8 or $gamecfg->get("player1") + $points == 23 or $gamecfg->get("player1") + $points == 37){
 										$this->plugin->getEreignis()->EreignisKarte($p);
 									}
+									$x = $config->getNested("coords1.knastx");
+									$z = $config->getNested("coords1.knastz");
+									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
 									$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(165, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast1, $y, $zlast1), Block::get(0, 0));
 									$gamecfg->set("player1", $gamecfg->get("player1") + $points);
@@ -840,7 +843,7 @@ class Wuerfeln implements Listener{
 							            $endturn = Item::get(208, 0, 1);
                                         $endturn->setCustomName("§3Zug Beenden");
 							            $p->getInventory()->setItem(6, $endturn);
-										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das gefängnis.");
+										Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat eine §d".$point1 + $point2." §aGewürfelt und ist auf das Feld §dGehe in das Gefängnis §agekommen und muss deswegen in das Gefängnis.");
 										return;
 									}
 									if($gamecfg->get("player2") + $points == 21){
@@ -875,6 +878,9 @@ class Wuerfeln implements Listener{
 									}
 									$p->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(19, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast2, $y, $zlast2), Block::get(0, 0));
+									$x = $config->getNested("coords2.knastx");
+									$z = $config->getNested("coords2.knastz");
+									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
 									$gamecfg->set("player2", $gamecfg->get("player2") + $points);
 									$gamecfg->set("wurf", true);
 							        $gamecfg->save();
@@ -1009,6 +1015,9 @@ class Wuerfeln implements Listener{
 									        $gamecfg->save();
 										}
 									}
+									$x = $config->getNested("coords3.knastx");
+									$z = $config->getNested("coords3.knastz");
+									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
 									$p->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(91, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast3, $y, $zlast3), Block::get(0, 0));
 									$gamecfg->set("player3", $gamecfg->get("player3") + $points);
@@ -1145,6 +1154,9 @@ class Wuerfeln implements Listener{
 									        $gamecfg->save();
 										}
 									}
+									$x = $config->getNested("coords4.knastx");
+									$z = $config->getNested("coords4.knastz");
+									$p->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
 									$p->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(170, 0));
 									$p->getLevel()->setBlock(new Vector3($xlast4, $y, $zlast4), Block::get(0, 0));
 									$gamecfg->set("player4", $gamecfg->get("player4") + $points);

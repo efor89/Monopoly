@@ -38,10 +38,6 @@ class HypothekUI{
                 $player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an.");
                 return true;
             }
-			if($data[1] > 40 or $data[1] < 1){
-				$player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an zwischen 1-40.");
-				return true;
-			}
 			if($this->isPlayerStreet($player, $data[1]) === "no"){
 				$player->sendMessage("§bMono§6poly: §cDie Strasse gehört dir nicht oder sie existiert nicht.");
 				return true;

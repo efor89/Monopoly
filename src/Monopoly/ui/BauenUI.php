@@ -81,8 +81,8 @@ class BauenUI{
 			}else{
 				$x1 = $config->getNested($data[1].".x".$gamecfg->get($data[1]."haus") + 1);
 			    $z1 = $config->getNested($data[1].".z".$gamecfg->get($data[1]."haus") + 1);
-				$player->getLevel()->setBlock(new Vector3($x, $y1, $z), Block::get(236, 5));
-				$player->getLevel()->setBlock(new Vector3($x1, $y1, $z1), Block::get(236, 5));
+				$player->getLevel()->setBlock(new Vector3($x, $y1, $z), Block::get(236, 14));
+				$player->getLevel()->setBlock(new Vector3($x1, $y1, $z1), Block::get(236, 14));
 			}
 			Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." §ahat auf die Strasse §d".$config->getNested($data[1].".name")." §aein haus gebaut.");
 		});
