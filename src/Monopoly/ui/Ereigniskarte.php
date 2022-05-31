@@ -81,25 +81,25 @@ class Ereigniskarte{
 						$gamecfg->save();
 					}elseif($laste == 8){
 						if($Player1 !== null){
-							if($Player1 !== $p->getName()){
+							if($Player1 !== $player->getName()){
 							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
 							    EconomyAPI::getInstance()->addMoney($player1, 1000);
 							}
 						}
 						if($Player2 !== null){
-							if($Player2 !== $p->getName()){
+							if($Player2 !== $player->getName()){
 							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
 							    EconomyAPI::getInstance()->addMoney($player2, 1000);
 							}
 						}
 						if($Player3 !== null){
-							if($Player3 !== $p->getName()){
+							if($Player3 !== $player->getName()){
 							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
 							    EconomyAPI::getInstance()->addMoney($player3, 1000);
 							}
 						}
 						if($Player4 !== null){
-							if($Player4 !== $p->getName()){
+							if($Player4 !== $player->getName()){
 							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
 							    EconomyAPI::getInstance()->addMoney($player4, 1000);
 							}
