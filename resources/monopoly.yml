@@ -353,12 +353,18 @@ Badstrasse: 2
   3: 1800 #miete mit 3 häusern
   4: 3200 #miete mit 4 häusern
   5: 5000 #miete mit 1 hotel
-  coords1: 250;5;256 #haus 1 coords
-  coords2: 250;5;255 #haus 2 coords
-  coords3: 250;5;254 #haus 3 coords
-  coords4: 250;5;253 #haus 4 coords
-  coords5: 251;5;255 #hotel block 1 coords
-  coords6: 251;5;254 #hotel block 2 coords
+  x1: 250 #haus 1 x coords y = 5
+  z1: 256 #haus 1 z coords y = 5
+  x2: 250 #haus 2 x coords y = 5
+  z2: 250 #haus 2 z coords y = 5
+  x3: 250 #haus 3 x coords y = 5
+  z3: 254 #haus 3 z coords y = 5
+  x4: 250 #haus 4 x coords y = 5
+  z4: 253 #haus 4 z coords y = 5
+  x5: 250 #hotel block 1 x coords y = 6
+  z5: 250 #hotel block 1 z coords y = 6
+  x6: 250 #hotel block 2 x coords y = 6
+  z6: 254 #hotel block 2 z coords y = 6
 Gemeinschaftsfeld-1: 3
 3:
   name: Gemeinschaftsfeld
@@ -376,11 +382,18 @@ Turmstrasse: 4
   3: 3600
   4: 6400
   5: 9000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Einkommensteuer: 5
 5:
   name: Einkommensteuer
@@ -408,11 +421,18 @@ Chausseestrasse: 7
   3: 5400
   4: 8000
   5: 11000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Ereignisfeld-1: 8
 8:
   name: Ereignisfeld-1
@@ -430,11 +450,18 @@ Elisenstrasse: 9
   3: 5400
   4: 8000
   5: 11000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Poststrasse: 10
 10:
   name: Poststrasse
@@ -449,11 +476,18 @@ Poststrasse: 10
   3: 6000
   4: 9000
   5: 12000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Nur zu Besuch: 11
 Gefängnis: 11
 11:
@@ -472,11 +506,18 @@ Seestrasse: 12
   3: 9000
   4: 12500
   5: 15000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Elektrizitäts-Werk: 13
 13:
   name: Elektrizitäts-Werk
@@ -498,11 +539,18 @@ Hafenstrasse: 14
   3: 9000
   4: 12500
   5: 15000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Neue Strasse: 15
 15:
   name: Neue Strasse
@@ -517,11 +565,18 @@ Neue Strasse: 15
   3: 10000
   4: 14000
   5: 18000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Westbahnhof: 16
 16:
   name: Westbahnhof
@@ -545,11 +600,18 @@ Münchener Strasse: 17
   3: 11000
   4: 15000
   5: 19000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Gemeinschaftsfeld-2: 18
 18:
   name: Gemeinschaftsfeld
@@ -567,11 +629,18 @@ Wiener Strasse: 19
   3: 11000
   4: 15000
   5: 19000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Berliner Strasse: 20
 20:
   name: Berliner Strasse
@@ -586,11 +655,18 @@ Berliner Strasse: 20
   3: 12000
   4: 16000
   5: 20000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Frei Parken: 21
 21:
   name: Frei Parken #alle straffen die bezahlt wurden bekommt der spieler(wird wieder auf 0 gesetzt)
@@ -608,11 +684,18 @@ TheaterStrasse: 22
   3: 14000
   4: 17500
   5: 21000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Ereignisfeld-2: 23
 23:
   name: Ereignisfeld
@@ -630,11 +713,18 @@ MuseumStrasse: 24
   3: 14000
   4: 17500
   5: 21000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Opernplatz: 25
 25:
   name: Opernplatz
@@ -649,11 +739,18 @@ Opernplatz: 25
   3: 15000
   4: 18500
   5: 22000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Nordbahnhof: 26
 26:
   name: Nordbahnhof
@@ -677,11 +774,18 @@ Lessingstrasse: 27
   3: 16000
   4: 19500
   5: 23000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Schillerstrasse: 28
 28:
   name: Schillerstrasse
@@ -696,11 +800,18 @@ Schillerstrasse: 28
   3: 16000
   4: 19500
   5: 23000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Wasser-Werk: 29
 29:
   name: Wasser-Werk
@@ -722,11 +833,18 @@ Goethestrasse: 30
   3: 17000
   4: 20500
   5: 24000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Gehe direckt in das Gefängnis: 31
 31:
   name: Gehe direckt in das Gefängnis #der spieler muss in das gefängnis(feld 11)
@@ -745,11 +863,18 @@ Rathausplatz: 32
   3: 18000
   4: 22000
   5: 25500
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Hauptstrasse: 33
 33:
   name: Hauptstrasse
@@ -764,11 +889,18 @@ Hauptstrasse: 33
   3: 18000
   4: 22000
   5: 25500
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Gemeinschaftsfeld-3: 34
 34:
   name: Gemeinschaftsfeld
@@ -786,11 +918,18 @@ Bahnhofstrasse: 35
   3: 20000
   4: 24000
   5: 28000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Hauptbahnhof: 36
 36:
   name: Hauptbahnhof
@@ -817,11 +956,18 @@ Parkstrasse: 38
   3: 22000
   4: 26000
   5: 30000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Zusatzsteuer: 39
 39:
   name: Zusatzsteuer
@@ -840,11 +986,18 @@ Schlossallee: 40
   3: 28000
   4: 34000
   5: 40000
-  coords1:
-  coords2:
-  coords3:
-  coords4:
-  coords5:
+  x1: 250
+  z1: 256
+  x2: 250
+  z2: 250
+  x3: 250
+  z3: 254
+  x4: 250
+  z4: 253
+  x5: 250
+  z5: 250
+  x6: 250
+  z6: 254
 Ereignisfeld1:
   text: Zahle eine Strafe für falsches Parken von 1000$.
 Ereignisfeld2:

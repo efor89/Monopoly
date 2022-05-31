@@ -46,7 +46,7 @@ class HausBauen implements Listener{
 		}
 		if($item->getId() === 236) {
             if($item->getName() === "§aHaus Bauen") {
-                $p->sendMessage("§cKommt noch!");
+                $this->plugin->getBauenUI()->bauenui($p);
             }
         }
 		if(!$p->isOP()){

@@ -106,6 +106,24 @@ class HandelnMain{
 				$player->sendMessage("§bMono§6poly: §cDer Spieler hat nicht genug Geld.");
 				return true;
 			}
+			$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+			$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+			if($gamecfg->get($data[3]."haus") > 0){
+				$player->sendMessage("§bMono§6poly: §cDu kannst mit der Strasse §d".$config->getNested($data[3].".name")." §cnicht Handeln da mindestens 1 Haus auf der Strasse steht.");
+				return true;
+			}
+			if($gamecfg->get($data[4]."haus") > 0){
+				$player->sendMessage("§bMono§6poly: §cDu kannst mit der Strasse §d".$config->getNested($data[4].".name")." §cnicht Handeln da mindestens 1 Haus auf der Strasse steht.");
+				return true;
+			}
+			if($gamecfg->get($data[9]."haus") > 0){
+				$player->sendMessage("§bMono§6poly: §cDu kannst mit der Strasse §d".$config->getNested($data[9].".name")." §cnicht Handeln da mindestens 1 Haus auf der Strasse steht.");
+				return true;
+			}
+			if($gamecfg->get($data[10]."haus") > 0){
+				$player->sendMessage("§bMono§6poly: §cDu kannst mit der Strasse §d".$config->getNested($data[10].".name")." §cnicht Handeln da mindestens 1 Haus auf der Strasse steht.");
+				return true;
+			}
 			if(empty($data[3])){
 				$street1 = null;
 			}else{

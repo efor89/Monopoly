@@ -14,7 +14,7 @@ use onebone\economyapi\EconomyAPI;
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\CustomForm;
 
-class HypothekUI{
+class AbbauenUI{
 
 	private $plugin;
 
@@ -22,7 +22,7 @@ class HypothekUI{
 		$this->plugin = $plugin;
 	}
 	
-	public function HypothekUI($player){
+	public function AbbauenUI($player){
 		$api = $this->plugin->getServer()->getPluginManager()->getPlugin("FormAPI");
 		$form = $api->createCustomForm(function (Player $player, array $data = null) {
 			$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
@@ -42,29 +42,15 @@ class HypothekUI{
 				$player->sendMessage("§bMono§6poly: §cDie Strasse gehört dir nicht oder sie existiert nicht.");
 				return true;
 			}
-			if($gamecfg->get($data[1]."haus") > 0){
-				$player->sendMessage("§bMono§6poly: §cDu kannst für die Strasse keine Hypothek auf nehmen da mindestens 1 Haus auf der Strasse steht.");
+			if($gamecfg->get($data[1]."haus") < 1){
+				$player->sendMessage("§bMono§6poly: §cDu kannst hier kein Haus abbauen da auf der Strasse kein Haus steht.");
 				return true;
 			}
-			$playerMoney = EconomyAPI::getInstance()->myMoney($player);
-			if($this->isHypothek($data[1]) === "no"){
-				EconomyAPI::getInstance()->addMoney($player, $config->getNested($data[1].".hypo"));
-				$gamecfg->set($data[1]."hypo", true);
-				$gamecfg->save();
-				$player->sendMessage("§bMono§6poly: §aDu hast die Strasse §d".$config->getNested($data[1].".name")."§a mit einer Hypothek von §d ".$config->getNested($data[1].".hypo")."§a$ belastet. Das Geld wurde auf dein Konto überwiesen");
-			}else{
-				if($playerMoney >= $config->getNested($data[1].".hypo")){
-				    EconomyAPI::getInstance()->reduceMoney($player, $config->getNested($data[1].".hypo"));
-				    $gamecfg->set($data[1]."hypo", false);
-				    $gamecfg->save();
-					$player->sendMessage("§bMono§6poly: §aDu hast die Hypothek der Strasse §d".$config->getNested($data[1].".name")."§a von §d".$config->getNested($data[1].".hypo")."§a$ beglichen.");
-				}else{
-					$player->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Hypothek zu begleichen.");
-				}
-			}
+			$gamecfg->set($data[1]."haus", $gamecfg->get($data[1]."haus") - 1);
+			$gamecfg->save();
 		});
-		$form->setTitle("§bHypothek");
-		$form->addLabel("§6Nimm eine Hypothek auf oder bezahle eine ab.\n§6Gib dazu einfach die Strassen Nummer an.\n§6Ist auf der Strasse bereits eine Hypothek bezahlst du sie ab.\n\n§6Deine Strassen sind:\n§f".$this->getPlayerStreetNames($player));
+		$form->setTitle("§bAbbauen Menü");
+		$form->addLabel("§6Deine Strassen sind:\n§f".$this->getPlayerStreetNames($player));
         $form->addInput("§rGib eine Zahl an", "zb. 2");				
 		$form->sendToPlayer($player);
 		return true;

@@ -27,6 +27,8 @@ use Monopoly\aktionen\Start;
 use Monopoly\aktionen\Wuerfeln;
 use Monopoly\aktionen\ZugBeenden;
 use Monopoly\aktionen\Zurueck;
+use Monopoly\ui\AbbauenUI;
+use Monopoly\ui\BauenUI;
 use Monopoly\ui\Ereigniskarte;
 use Monopoly\ui\Gemeinschaftskarte;
 use Monopoly\ui\HypothekUI;
@@ -46,6 +48,10 @@ class Main extends PluginBase{
 	protected $handelnmain;
 	
 	protected $infomain;
+	
+	protected $bauenui;
+	
+	protected $abbauenui;
 
     public function onEnable(): void{
 		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
@@ -84,6 +90,8 @@ class Main extends PluginBase{
 		$this->hypothekui = new HypothekUI($this);
 		$this->handelnmain = new HandelnMain($this);
 		$this->infomain = new InfoMain($this);
+		$this->abbauenui = new AbbauenUI($this);
+		$this->bauenui = new BauenUI($this);
     }
 	
 	public function onDisable(): Void{
@@ -221,6 +229,14 @@ class Main extends PluginBase{
 	
 	function getInfoMain() {
         return $this->infomain;
+    }
+	
+	function getBauenUI() {
+        return $this->bauenui;
+    }
+	
+	function getAbbauenUI() {
+        return $this->abbauenui;
     }
 	
 	public function getZufall1(){

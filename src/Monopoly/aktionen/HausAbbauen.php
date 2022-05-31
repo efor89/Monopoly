@@ -46,7 +46,7 @@ class HausAbbauen implements Listener{
 		}
 		if($item->getId() === 236) {
             if($item->getName() === "§aHaus abbauen") {
-                $p->sendMessage("§cKommt noch!");
+                $this->plugin->getAbbauenUI()->abbauenui($p);
             }
         }
 		if(!$p->isOP()){
