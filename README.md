@@ -6,7 +6,11 @@
 
 # Was fehlt noch:
 
-- Die Coords für die Häuser in der monopoly.yml
 - Alle Bugs fixen
+
+# Benötigt wird
+
+- FormAPI
+- EconomyAPI
 
 Hat jemand Vorschläge, ein Bug gefunden oder ich hab etwas vergessen öffnet gern ein issue!
