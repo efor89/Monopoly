@@ -249,11 +249,54 @@ class Main extends PluginBase{
 	
 	public function removeCarts(Player $player){
 		$gamecfg = new Config($this->getDataFolder().'game.yml', Config::YAML);
+		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
 		if($gamecfg->get("2") == $player->getName()){
+			$x1 = $config->getNested("2.x1");
+			$z1 = $config->getNested("2.z1");
+			$x2 = $config->getNested("2.x2");
+			$z2 = $config->getNested("2.z2");
+			$x3 = $config->getNested("2.x3");
+			$z3 = $config->getNested("2.z3");
+			$x4 = $config->getNested("2.x4");
+			$z4 = $config->getNested("2.z4");
+			$x5 = $config->getNested("2.x5");
+			$z5 = $config->getNested("2.z5");
+			$x6 = $config->getNested("2.x6");
+			$z6 = $config->getNested("2.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("2haus", 0);
 			$gamecfg->set("2", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("4") == $player->getName()){
+			$x1 = $config->getNested("4.x1");
+			$z1 = $config->getNested("4.z1");
+			$x2 = $config->getNested("4.x2");
+			$z2 = $config->getNested("4.z2");
+			$x3 = $config->getNested("4.x3");
+			$z3 = $config->getNested("4.z3");
+			$x4 = $config->getNested("4.x4");
+			$z4 = $config->getNested("4.z4");
+			$x5 = $config->getNested("4.x5");
+			$z5 = $config->getNested("4.z5");
+			$x6 = $config->getNested("4.x6");
+			$z6 = $config->getNested("4.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("4haus", 0);
 			$gamecfg->set("4", null);
 			$gamecfg->save();
 		}
@@ -262,18 +305,102 @@ class Main extends PluginBase{
 			$gamecfg->save();
 		}
 		if($gamecfg->get("7") == $player->getName()){
+			$x1 = $config->getNested("7.x1");
+			$z1 = $config->getNested("7.z1");
+			$x2 = $config->getNested("7.x2");
+			$z2 = $config->getNested("7.z2");
+			$x3 = $config->getNested("7.x3");
+			$z3 = $config->getNested("7.z3");
+			$x4 = $config->getNested("7.x4");
+			$z4 = $config->getNested("7.z4");
+			$x5 = $config->getNested("7.x5");
+			$z5 = $config->getNested("7.z5");
+			$x6 = $config->getNested("7.x6");
+			$z6 = $config->getNested("7.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("7haus", 0);
 			$gamecfg->set("7", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("9") == $player->getName()){
+			$x1 = $config->getNested("9.x1");
+			$z1 = $config->getNested("9.z1");
+			$x2 = $config->getNested("9.x2");
+			$z2 = $config->getNested("9.z2");
+			$x3 = $config->getNested("9.x3");
+			$z3 = $config->getNested("9.z3");
+			$x4 = $config->getNested("9.x4");
+			$z4 = $config->getNested("9.z4");
+			$x5 = $config->getNested("9.x5");
+			$z5 = $config->getNested("9.z5");
+			$x6 = $config->getNested("9.x6");
+			$z6 = $config->getNested("9.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("9haus", 0);
 			$gamecfg->set("9", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("10") == $player->getName()){
+			$x1 = $config->getNested("10.x1");
+			$z1 = $config->getNested("10.z1");
+			$x2 = $config->getNested("10.x2");
+			$z2 = $config->getNested("10.z2");
+			$x3 = $config->getNested("10.x3");
+			$z3 = $config->getNested("10.z3");
+			$x4 = $config->getNested("10.x4");
+			$z4 = $config->getNested("10.z4");
+			$x5 = $config->getNested("10.x5");
+			$z5 = $config->getNested("10.z5");
+			$x6 = $config->getNested("10.x6");
+			$z6 = $config->getNested("10.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("10haus", 0);
 			$gamecfg->set("10", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("12") == $player->getName()){
+			$x1 = $config->getNested("12.x1");
+			$z1 = $config->getNested("12.z1");
+			$x2 = $config->getNested("12.x2");
+			$z2 = $config->getNested("12.z2");
+			$x3 = $config->getNested("12.x3");
+			$z3 = $config->getNested("12.z3");
+			$x4 = $config->getNested("12.x4");
+			$z4 = $config->getNested("12.z4");
+			$x5 = $config->getNested("12.x5");
+			$z5 = $config->getNested("12.z5");
+			$x6 = $config->getNested("12.x6");
+			$z6 = $config->getNested("12.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("12haus", 0);
 			$gamecfg->set("12", null);
 			$gamecfg->save();
 		}
@@ -282,10 +409,52 @@ class Main extends PluginBase{
 			$gamecfg->save();
 		}
 		if($gamecfg->get("14") == $player->getName()){
+			$x1 = $config->getNested("14.x1");
+			$z1 = $config->getNested("14.z1");
+			$x2 = $config->getNested("14.x2");
+			$z2 = $config->getNested("14.z2");
+			$x3 = $config->getNested("14.x3");
+			$z3 = $config->getNested("14.z3");
+			$x4 = $config->getNested("14.x4");
+			$z4 = $config->getNested("14.z4");
+			$x5 = $config->getNested("14.x5");
+			$z5 = $config->getNested("14.z5");
+			$x6 = $config->getNested("14.x6");
+			$z6 = $config->getNested("14.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("14haus", 0);
 			$gamecfg->set("14", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("15") == $player->getName()){
+			$x1 = $config->getNested("15.x1");
+			$z1 = $config->getNested("15.z1");
+			$x2 = $config->getNested("15.x2");
+			$z2 = $config->getNested("15.z2");
+			$x3 = $config->getNested("15.x3");
+			$z3 = $config->getNested("15.z3");
+			$x4 = $config->getNested("15.x4");
+			$z4 = $config->getNested("15.z4");
+			$x5 = $config->getNested("15.x5");
+			$z5 = $config->getNested("15.z5");
+			$x6 = $config->getNested("15.x6");
+			$z6 = $config->getNested("15.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("15haus", 0);
 			$gamecfg->set("15", null);
 			$gamecfg->save();
 		}
@@ -294,26 +463,152 @@ class Main extends PluginBase{
 			$gamecfg->save();
 		}
 		if($gamecfg->get("17") == $player->getName()){
+			$x1 = $config->getNested("17.x1");
+			$z1 = $config->getNested("17.z1");
+			$x2 = $config->getNested("17.x2");
+			$z2 = $config->getNested("17.z2");
+			$x3 = $config->getNested("17.x3");
+			$z3 = $config->getNested("17.z3");
+			$x4 = $config->getNested("17.x4");
+			$z4 = $config->getNested("17.z4");
+			$x5 = $config->getNested("17.x5");
+			$z5 = $config->getNested("17.z5");
+			$x6 = $config->getNested("17.x6");
+			$z6 = $config->getNested("17.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("17haus", 0);
 			$gamecfg->set("17", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("19") == $player->getName()){
+			$x1 = $config->getNested("19.x1");
+			$z1 = $config->getNested("19.z1");
+			$x2 = $config->getNested("19.x2");
+			$z2 = $config->getNested("19.z2");
+			$x3 = $config->getNested("19.x3");
+			$z3 = $config->getNested("19.z3");
+			$x4 = $config->getNested("19.x4");
+			$z4 = $config->getNested("19.z4");
+			$x5 = $config->getNested("19.x5");
+			$z5 = $config->getNested("19.z5");
+			$x6 = $config->getNested("19.x6");
+			$z6 = $config->getNested("19.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("10haus", 0);
 			$gamecfg->set("19", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("20") == $player->getName()){
+			$x1 = $config->getNested("20.x1");
+			$z1 = $config->getNested("20.z1");
+			$x2 = $config->getNested("20.x2");
+			$z2 = $config->getNested("20.z2");
+			$x3 = $config->getNested("20.x3");
+			$z3 = $config->getNested("20.z3");
+			$x4 = $config->getNested("20.x4");
+			$z4 = $config->getNested("20.z4");
+			$x5 = $config->getNested("20.x5");
+			$z5 = $config->getNested("20.z5");
+			$x6 = $config->getNested("20.x6");
+			$z6 = $config->getNested("20.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("20haus", 0);
 			$gamecfg->set("20", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("22") == $player->getName()){
+			$x1 = $config->getNested("22.x1");
+			$z1 = $config->getNested("22.z1");
+			$x2 = $config->getNested("22.x2");
+			$z2 = $config->getNested("22.z2");
+			$x3 = $config->getNested("22.x3");
+			$z3 = $config->getNested("22.z3");
+			$x4 = $config->getNested("22.x4");
+			$z4 = $config->getNested("22.z4");
+			$x5 = $config->getNested("22.x5");
+			$z5 = $config->getNested("22.z5");
+			$x6 = $config->getNested("22.x6");
+			$z6 = $config->getNested("22.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("22haus", 0);
 			$gamecfg->set("22", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("24") == $player->getName()){
+			$x1 = $config->getNested("24.x1");
+			$z1 = $config->getNested("24.z1");
+			$x2 = $config->getNested("24.x2");
+			$z2 = $config->getNested("24.z2");
+			$x3 = $config->getNested("24.x3");
+			$z3 = $config->getNested("24.z3");
+			$x4 = $config->getNested("24.x4");
+			$z4 = $config->getNested("24.z4");
+			$x5 = $config->getNested("24.x5");
+			$z5 = $config->getNested("24.z5");
+			$x6 = $config->getNested("24.x6");
+			$z6 = $config->getNested("24.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("24haus", 0);
 			$gamecfg->set("24", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("25") == $player->getName()){
+			$x1 = $config->getNested("25.x1");
+			$z1 = $config->getNested("25.z1");
+			$x2 = $config->getNested("25.x2");
+			$z2 = $config->getNested("25.z2");
+			$x3 = $config->getNested("25.x3");
+			$z3 = $config->getNested("25.z3");
+			$x4 = $config->getNested("25.x4");
+			$z4 = $config->getNested("25.z4");
+			$x5 = $config->getNested("25.x5");
+			$z5 = $config->getNested("25.z5");
+			$x6 = $config->getNested("25.x6");
+			$z6 = $config->getNested("25.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("25haus", 0);
 			$gamecfg->set("25", null);
 			$gamecfg->save();
 		}
@@ -322,10 +617,52 @@ class Main extends PluginBase{
 			$gamecfg->save();
 		}
 		if($gamecfg->get("27") == $player->getName()){
+			$x1 = $config->getNested("27.x1");
+			$z1 = $config->getNested("27.z1");
+			$x2 = $config->getNested("27.x2");
+			$z2 = $config->getNested("27.z2");
+			$x3 = $config->getNested("27.x3");
+			$z3 = $config->getNested("27.z3");
+			$x4 = $config->getNested("27.x4");
+			$z4 = $config->getNested("27.z4");
+			$x5 = $config->getNested("27.x5");
+			$z5 = $config->getNested("27.z5");
+			$x6 = $config->getNested("27.x6");
+			$z6 = $config->getNested("27.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("27haus", 0);
 			$gamecfg->set("27", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("28") == $player->getName()){
+			$x1 = $config->getNested("28.x1");
+			$z1 = $config->getNested("28.z1");
+			$x2 = $config->getNested("28.x2");
+			$z2 = $config->getNested("28.z2");
+			$x3 = $config->getNested("28.x3");
+			$z3 = $config->getNested("28.z3");
+			$x4 = $config->getNested("28.x4");
+			$z4 = $config->getNested("28.z4");
+			$x5 = $config->getNested("28.x5");
+			$z5 = $config->getNested("28.z5");
+			$x6 = $config->getNested("28.x6");
+			$z6 = $config->getNested("28.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("28haus", 0);
 			$gamecfg->set("28", null);
 			$gamecfg->save();
 		}
@@ -334,18 +671,102 @@ class Main extends PluginBase{
 			$gamecfg->save();
 		}
 		if($gamecfg->get("30") == $player->getName()){
+			$x1 = $config->getNested("30.x1");
+			$z1 = $config->getNested("30.z1");
+			$x2 = $config->getNested("30.x2");
+			$z2 = $config->getNested("30.z2");
+			$x3 = $config->getNested("30.x3");
+			$z3 = $config->getNested("30.z3");
+			$x4 = $config->getNested("30.x4");
+			$z4 = $config->getNested("30.z4");
+			$x5 = $config->getNested("30.x5");
+			$z5 = $config->getNested("30.z5");
+			$x6 = $config->getNested("30.x6");
+			$z6 = $config->getNested("30.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("30haus", 0);
 			$gamecfg->set("30", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("32") == $player->getName()){
+			$x1 = $config->getNested("32.x1");
+			$z1 = $config->getNested("32.z1");
+			$x2 = $config->getNested("32.x2");
+			$z2 = $config->getNested("32.z2");
+			$x3 = $config->getNested("32.x3");
+			$z3 = $config->getNested("32.z3");
+			$x4 = $config->getNested("32.x4");
+			$z4 = $config->getNested("32.z4");
+			$x5 = $config->getNested("32.x5");
+			$z5 = $config->getNested("32.z5");
+			$x6 = $config->getNested("32.x6");
+			$z6 = $config->getNested("32.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("32haus", 0);
 			$gamecfg->set("32", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("33") == $player->getName()){
+			$x1 = $config->getNested("33.x1");
+			$z1 = $config->getNested("33.z1");
+			$x2 = $config->getNested("33.x2");
+			$z2 = $config->getNested("33.z2");
+			$x3 = $config->getNested("33.x3");
+			$z3 = $config->getNested("33.z3");
+			$x4 = $config->getNested("33.x4");
+			$z4 = $config->getNested("33.z4");
+			$x5 = $config->getNested("33.x5");
+			$z5 = $config->getNested("33.z5");
+			$x6 = $config->getNested("33.x6");
+			$z6 = $config->getNested("33.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("33haus", 0);
 			$gamecfg->set("33", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("35") == $player->getName()){
+			$x1 = $config->getNested("35.x1");
+			$z1 = $config->getNested("35.z1");
+			$x2 = $config->getNested("35.x2");
+			$z2 = $config->getNested("35.z2");
+			$x3 = $config->getNested("35.x3");
+			$z3 = $config->getNested("35.z3");
+			$x4 = $config->getNested("35.x4");
+			$z4 = $config->getNested("35.z4");
+			$x5 = $config->getNested("35.x5");
+			$z5 = $config->getNested("35.z5");
+			$x6 = $config->getNested("35.x6");
+			$z6 = $config->getNested("35.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("35haus", 0);
 			$gamecfg->set("35", null);
 			$gamecfg->save();
 		}
@@ -354,10 +775,52 @@ class Main extends PluginBase{
 			$gamecfg->save();
 		}
 		if($gamecfg->get("38") == $player->getName()){
+			$x1 = $config->getNested("38.x1");
+			$z1 = $config->getNested("38.z1");
+			$x2 = $config->getNested("38.x2");
+			$z2 = $config->getNested("38.z2");
+			$x3 = $config->getNested("38.x3");
+			$z3 = $config->getNested("38.z3");
+			$x4 = $config->getNested("38.x4");
+			$z4 = $config->getNested("38.z4");
+			$x5 = $config->getNested("38.x5");
+			$z5 = $config->getNested("38.z5");
+			$x6 = $config->getNested("38.x6");
+			$z6 = $config->getNested("38.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("38haus", 0);
 			$gamecfg->set("38", null);
 			$gamecfg->save();
 		}
 		if($gamecfg->get("40") == $player->getName()){
+			$x1 = $config->getNested("40.x1");
+			$z1 = $config->getNested("40.z1");
+			$x2 = $config->getNested("40.x2");
+			$z2 = $config->getNested("40.z2");
+			$x3 = $config->getNested("40.x3");
+			$z3 = $config->getNested("40.z3");
+			$x4 = $config->getNested("40.x4");
+			$z4 = $config->getNested("40.z4");
+			$x5 = $config->getNested("40.x5");
+			$z5 = $config->getNested("40.z5");
+			$x6 = $config->getNested("40.x6");
+			$z6 = $config->getNested("40.z6");
+			$y = 5;
+			$y1 = 6;
+			$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x2, $y, $z2), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x3, $y, $z3), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x4, $y, $z4), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x5, $y1, $z5), Block::get(0, 0));
+			$player->getLevel()->setBlock(new Vector3($x6, $y1, $z6), Block::get(0, 0));
+			$gamecfg->set("40haus", 0);
 			$gamecfg->set("40", null);
 			$gamecfg->save();
 		}

@@ -38,6 +38,15 @@ class AbbauenUI{
                 $player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an.");
                 return true;
             }
+			if($data[1] > 40 or $data[1] < 1){
+				$player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an zwischen 1-40.");
+				return true;
+			}
+			$feld = $data[1];
+			if($feld == 6 or $feld == 16 or $feld == 26 or $feld == 36 or $feld == 13 or $feld == 29 or $feld == 1 or $feld == 3 or $feld == 5 or $feld == 8 or $feld == 11 or $feld == 18 or $feld == 21 or $feld == 23 or $feld == 31 or $feld == 34 or $feld == 37 or $feld == 39){
+				$player->sendMessage("§bMono§6poly: §cDu kannst hier nichts bauen.");
+				return true;
+			}
 			if($this->isPlayerStreet($player, $data[1]) === "no"){
 				$player->sendMessage("§bMono§6poly: §cDie Strasse gehört dir nicht oder sie existiert nicht.");
 				return true;
@@ -46,8 +55,23 @@ class AbbauenUI{
 				$player->sendMessage("§bMono§6poly: §cDu kannst hier kein Haus abbauen da auf der Strasse kein Haus steht.");
 				return true;
 			}
+			$kosten = $config->getNested($data[1].".house");
+			EconomyAPI::getInstance()->addMoney($player, $kosten / 2);
+			$x = $config->getNested($data[1].".x".$gamecfg->get($data[1]."haus"));
+			$z = $config->getNested($data[1].".z".$gamecfg->get($data[1]."haus"));
+			$y = 5;
+			$y1 = 6;
+			if($gamecfg->get($data[1]."haus") < 5){
+			    $player->getLevel()->setBlock(new Vector3($x, $y, $z), Block::get(0, 0));
+			}else{
+				$x1 = $config->getNested($data[1].".x".$gamecfg->get($data[1]."haus") + 1);
+			    $z1 = $config->getNested($data[1].".z".$gamecfg->get($data[1]."haus") + 1);
+				$player->getLevel()->setBlock(new Vector3($x, $y1, $z), Block::get(0, 0));
+				$player->getLevel()->setBlock(new Vector3($x1, $y1, $z1), Block::get(0, 0));
+			}
 			$gamecfg->set($data[1]."haus", $gamecfg->get($data[1]."haus") - 1);
 			$gamecfg->save();
+			Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player->getName()." §ahat auf der Strasse §d".$config->getNested($data[1].".name")." §aein haus abgebaut.");
 		});
 		$form->setTitle("§bAbbauen Menü");
 		$form->addLabel("§6Deine Strassen sind:\n§f".$this->getPlayerStreetNames($player));

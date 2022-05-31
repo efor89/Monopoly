@@ -49,13 +49,12 @@ class BauenMain implements Listener{
 				$p->getInventory()->clearAll();
                 $haus = Item::get(236, 5, 64);
                 $haus->setCustomName("§aHaus Bauen");
-				$hotel = Item::get(236, 14, 64);
-                $hotel->setCustomName("§aHaus abbauen");
+				$abbauen = Item::get(236, 14, 64);
+                $abbauen->setCustomName("§aHaus abbauen");
 				$exit = Item::get(331, 14, 1);
                 $exit->setCustomName("§cZurück");
                 $p->getInventory()->setItem(0, $haus);
-				$p->getInventory()->setItem(1, $hotel);
-                $p->getInventory()->setItem(4, $abbauen);
+                $p->getInventory()->setItem(1, $abbauen);
                 $p->getInventory()->setItem(8, $exit);
             }
         }

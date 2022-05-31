@@ -75,6 +75,8 @@ class MieteBezahlen implements Listener{
 				if($this->plugin->isFullStreet($player, $feld) == "yes"){
 					if($feld == 13 or $feld == 29){
 						$kosten = $points * 200;
+					}elseif($gamecfg->get($feld."haus") > 0){
+						$kosten = $config->getNested($feld.".".$gamecfg->get($feld."haus"));
 					}else{
 				        $kosten = $config->getNested($feld.".miete") * 2;
 					}
@@ -102,6 +104,7 @@ class MieteBezahlen implements Listener{
 					        $gamecfg->set("miete", false);
 					        $gamecfg->save();
 						    $p->sendMessage("§bMono§6poly: §aDu hast Miete in höhe von §d".$kosten."§a$ an §d".$player->getName()." §agezahlt.");
+							$player->sendMessage("§bMono§6poly: §d".$p->getName()." §ahat Miete in höhe von §d".$kosten."§a$ an dich §agezahlt.");
 					    }else{
 						    $p->sendMessage("§bMono§6poly: §cDu hast schon Miete bezahlt oder musst hier keine Miete bezahlen!");
 					    }

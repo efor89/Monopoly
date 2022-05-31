@@ -80,6 +80,22 @@ class HandelnMain{
                 $player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an.");
                 return true;
             }
+			if($data[3] > 40 or $data[3] < 1){
+				$player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an zwischen 1-40.");
+				return true;
+			}
+			if($data[4] > 40 or $data[4] < 1){
+				$player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an zwischen 1-40.");
+				return true;
+			}
+			if($data[9] > 40 or $data[9] < 1){
+				$player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an zwischen 1-40.");
+				return true;
+			}
+			if($data[10] > 40 or $data[10] < 1){
+				$player->sendMessage("§bMono§6poly: §cGib eine gültige Zahl an zwischen 1-40.");
+				return true;
+			}
 			if($this->isPlayerStreet($target, $data[3]) == "no" and !empty($data[3])){
 				$player->sendMessage("§bMono§6poly: §cDie Strasse ".$data[3]." gehört dem Spieler §d".$target->getName()." §cnicht oder sie existiert nicht.");
 				return true;

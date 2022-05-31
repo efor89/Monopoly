@@ -356,13 +356,13 @@ Badstrasse: 2
   x1: 250 #haus 1 x coords y = 5
   z1: 256 #haus 1 z coords y = 5
   x2: 250 #haus 2 x coords y = 5
-  z2: 250 #haus 2 z coords y = 5
+  z2: 255 #haus 2 z coords y = 5
   x3: 250 #haus 3 x coords y = 5
   z3: 254 #haus 3 z coords y = 5
   x4: 250 #haus 4 x coords y = 5
   z4: 253 #haus 4 z coords y = 5
   x5: 250 #hotel block 1 x coords y = 6
-  z5: 250 #hotel block 1 z coords y = 6
+  z5: 255 #hotel block 1 z coords y = 6
   x6: 250 #hotel block 2 x coords y = 6
   z6: 254 #hotel block 2 z coords y = 6
 Gemeinschaftsfeld-1: 3
