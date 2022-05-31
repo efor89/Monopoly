@@ -8,7 +8,7 @@
 
 - Alle Bugs fixen
 
-# Benötigt wird
+# Benötigt wird:
 
 - FormAPI
 - EconomyAPI
