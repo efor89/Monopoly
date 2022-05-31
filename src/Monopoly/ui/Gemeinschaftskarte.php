@@ -105,20 +105,28 @@ class Gemeinschaftskarte{
 						$gamecfg->save();
 					}elseif($lastg == 13){
 						if($Player1 !== null){
-							EconomyAPI::getInstance()->addMoney($player, 1000);
-							EconomyAPI::getInstance()->reduceMoney($player1, 1000);
+							if($Player1 !== $p->getName()){
+							    EconomyAPI::getInstance()->addMoney($player, 1000);
+							    EconomyAPI::getInstance()->reduceMoney($player1, 1000);
+							}
 						}
 						if($Player2 !== null){
-							EconomyAPI::getInstance()->addMoney($player, 1000);
-							EconomyAPI::getInstance()->reduce($player2, 1000);
+							if($Player2 !== $p->getName()){
+							    EconomyAPI::getInstance()->addMoney($player, 1000);
+							    EconomyAPI::getInstance()->reduceMoney($player2, 1000);
+							}
 						}
 						if($Player3 !== null){
-							EconomyAPI::getInstance()->addMoney($player, 1000);
-							EconomyAPI::getInstance()->reduce($player3, 1000);
+							if($Player3 !== $p->getName()){
+							    EconomyAPI::getInstance()->addMoney($player, 1000);
+							    EconomyAPI::getInstance()->reduceMoney($player3, 1000);
+							}
 						}
 						if($Player4 !== null){
-							EconomyAPI::getInstance()->addMoney($player, 1000);
-							EconomyAPI::getInstance()->reduce($player4, 1000);
+							if($Player4 !== $p->getName()){
+							    EconomyAPI::getInstance()->addMoney($player, 1000);
+							    EconomyAPI::getInstance()->reduceMoney($player4, 1000);
+							}
 						}
 						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
 						$gamecfg->save();

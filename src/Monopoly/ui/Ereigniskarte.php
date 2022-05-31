@@ -81,20 +81,28 @@ class Ereigniskarte{
 						$gamecfg->save();
 					}elseif($laste == 8){
 						if($Player1 !== null){
-							EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							EconomyAPI::getInstance()->addMoney($player1, 1000);
+							if($Player1 !== $p->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							    EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
 						}
 						if($Player2 !== null){
-							EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							EconomyAPI::getInstance()->addMoney($player2, 1000);
+							if($Player2 !== $p->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							    EconomyAPI::getInstance()->addMoney($player2, 1000);
+							}
 						}
 						if($Player3 !== null){
-							EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							EconomyAPI::getInstance()->addMoney($player3, 1000);
+							if($Player3 !== $p->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							    EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}
 						}
 						if($Player4 !== null){
-							EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							EconomyAPI::getInstance()->addMoney($player4, 1000);
+							if($Player4 !== $p->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+							    EconomyAPI::getInstance()->addMoney($player4, 1000);
+							}
 						}
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
