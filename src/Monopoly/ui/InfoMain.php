@@ -107,7 +107,7 @@ class InfoMain{
 		}
 		$form->setTitle("§bInfo's");
 		$freiparken = $gamecfg->get("freiparken");;
-		$form->setContent("§6Frei Parken: §f".$freiparken."$ \n\n§6Spieler Geld:\n§f".$Player1.": ".$money1."$\n§f".$Player2.": ".$money2."$\n§f".$Player3.": ".$money3."$\n§f".$Player4.": ".$money4."$\n\n§6Spieler Strassen:\n§f".$Player1.": \n§f".$street1."\n\n§f".$Player2."\n: \n§f".$street2."\n\n§f".$Player3.": \n§f".$street3."\n\n§f".$Player4.": \n§f".$street4);
+		$form->setContent("§6Frei Parken: §f".$freiparken."$ \n\n§6Spieler Geld:\n§f".$Player1.": ".$money1."$\n§f".$Player2.": ".$money2."$\n§f".$Player3.": ".$money3."$\n§f".$Player4.": ".$money4."$\n\n§6Spieler Strassen:\n§f".$Player1.": \n§f".$street1."\n\n§f".$Player2.": \n§f".$street2."\n\n§f".$Player3.": \n§f".$street3."\n\n§f".$Player4.": \n§f".$street4);
         $form->addButton("§eZurück");
 		$form->addButton("§cSchließen");
 		$form->sendToPlayer($player);
@@ -146,167 +146,167 @@ class InfoMain{
 		}
 		if($gamecfg->get("4") == $player->getName()){
 			$x = $config->getNested("4.name");
-			$b = "4 = ".$x."\n"
+			$b = "4 = ".$x."\n";
 		}else{
 			$b = "";
 		}
 		if($gamecfg->get("6") == $player->getName()){
 			$x = $config->getNested("6.name");
-			$c = "6 = ".$x."\n"
+			$c = "6 = ".$x."\n";
 		}else{
 			$c = "";
 		}
 		if($gamecfg->get("7") == $player->getName()){
 			$x = $config->getNested("7.name");
-			$d = "7 = ".$x."\n"
+			$d = "7 = ".$x."\n";
 		}else{
 			$d = "";
 		}
 		if($gamecfg->get("9") == $player->getName()){
 			$x = $config->getNested("9.name");
-			$e = "9 = ".$x."\n"
+			$e = "9 = ".$x."\n";
 		}else{
 			$e = "";
 		}
 		if($gamecfg->get("10") == $player->getName()){
 			$x = $config->getNested("10.name");
-			$f = "10 = ".$x."\n"
+			$f = "10 = ".$x."\n";
 		}else{
 			$f = "";
 		}
 		if($gamecfg->get("12") == $player->getName()){
 			$x = $config->getNested("12.name");
-			$g = "12 = ".$x."\n"
+			$g = "12 = ".$x."\n";
 		}else{
 			$g = "";
 		}
 		if($gamecfg->get("13") == $player->getName()){
 			$x = $config->getNested("13.name");
-			$h = "13 = ".$x."\n"
+			$h = "13 = ".$x."\n";
 		}else{
 			$h = "";
 		}
 		if($gamecfg->get("14") == $player->getName()){
 			$x = $config->getNested("14.name");
-			$i = "14 = ".$x."\n"
+			$i = "14 = ".$x."\n";
 		}else{
 			$i = "";
 		}
 		if($gamecfg->get("15") == $player->getName()){
 			$x = $config->getNested("15.name");
-			$j = "15 = ".$x."\n"
+			$j = "15 = ".$x."\n";
 		}else{
 			$j = "";
 		}
 		if($gamecfg->get("16") == $player->getName()){
 			$x = $config->getNested("16.name");
-			$k = "16 = ".$x."\n"
+			$k = "16 = ".$x."\n";
 		}else{
 			$k = "";
 		}
 		if($gamecfg->get("17") == $player->getName()){
 			$x = $config->getNested("17.name");
-			$l = "17 = ".$x."\n"
+			$l = "17 = ".$x."\n";
 		}else{
 			$l = "";
 		}
 		if($gamecfg->get("19") == $player->getName()){
 			$x = $config->getNested("19.name");
-			$m = "19 = ".$x."\n"
+			$m = "19 = ".$x."\n";
 		}else{
 			$m = "";
 		}
 		if($gamecfg->get("20") == $player->getName()){
 			$x = $config->getNested("20.name");
-			$n = "20 = ".$x."\n"
+			$n = "20 = ".$x."\n";
 		}else{
 			$n = "";
 		}
 		if($gamecfg->get("22") == $player->getName()){
 			$x = $config->getNested("22.name");
-			$o = "22 = ".$x."\n"
+			$o = "22 = ".$x."\n";
 		}else{
 			$o = "";
 		}
 		if($gamecfg->get("24") == $player->getName()){
 			$x = $config->getNested("24.name");
-			$p = "24 = ".$x."\n"
+			$p = "24 = ".$x."\n";
 		}else{
 			$p = "";
 		}
 		if($gamecfg->get("25") == $player->getName()){
 			$x = $config->getNested("25.name");
-			$q = "25 = ".$x."\n"
+			$q = "25 = ".$x."\n";
 		}else{
 			$q = "";
 		}
 		if($gamecfg->get("26") == $player->getName()){
 			$x = $config->getNested("26.name");
-			$v = "26 = ".$x."\n"
+			$v = "26 = ".$x."\n";
 		}else{
 			$v = "";
 		}
 		if($gamecfg->get("27") == $player->getName()){
 			$x = $config->getNested("27.name");
-			$w = "27 = ".$x."\n"
+			$w = "27 = ".$x."\n";
 		}else{
 			$w = "";
 		}
 		if($gamecfg->get("28") == $player->getName()){
-			$x1 = $config->getNested("28.name");
-			$x = "28 = ".$x1."\n"
+			$x = $config->getNested("28.name");
+			$x1 = "28 = ".$x."\n";
 		}else{
-			$x = "";
+			$x1 = "";
 		}
 		if($gamecfg->get("29") == $player->getName()){
 			$x = $config->getNested("29.name");
-			$y = "29 = ".$x."\n"
+			$y = "29 = ".$x."\n";
 		}else{
 			$y = "";
 		}
 		if($gamecfg->get("30") == $player->getName()){
 			$x = $config->getNested("30.name");
-			$z = "30 = ".$x."\n"
+			$z = "30 = ".$x."\n";
 		}else{
 			$z = "";
 		}
 		if($gamecfg->get("32") == $player->getName()){
 			$x = $config->getNested("32.name");
-			$a1 = "32 = ".$x."\n"
+			$a1 = "32 = ".$x."\n";
 		}else{
 			$a1 = "";
 		}
 		if($gamecfg->get("33") == $player->getName()){
 			$x = $config->getNested("33.name");
-			$b1 = "33 = ".$x."\n"
+			$b1 = "33 = ".$x."\n";
 		}else{
 			$b1 = "";
 		}
 		if($gamecfg->get("35") == $player->getName()){
 			$x = $config->getNested("35.name");
-			$c1 = "35 = ".$x."\n"
+			$c1 = "35 = ".$x."\n";
 		}else{
 			$c1 = "";
 		}
 		if($gamecfg->get("36") == $player->getName()){
 			$x = $config->getNested("36.name");
-			$d1 = "36 = ".$x."\n"
+			$d1 = "36 = ".$x."\n";
 		}else{
 			$d1 = "";
 		}
 		if($gamecfg->get("38") == $player->getName()){
 			$x = $config->getNested("38.name");
-			$e1 = "38 = ".$x."\n"
+			$e1 = "38 = ".$x."\n";
 		}else{
 			$e1 = "";
 		}
 		if($gamecfg->get("40") == $player->getName()){
 			$x = $config->getNested("40.name");
-			$f1 = "40 = ".$x."\n"
+			$f1 = "40 = ".$x."\n";
 		}else{
 			$f1 = "";
 		}
-		$msg = $a.$b.$c.$d.$e.$f.$g.$h.$i.$j.$k.$l.$m.$n.$o.$p.$q.$v.$w.$x.$y.$z.$a1.$b1.$c1.$d1.$e1.$f1;
+		$msg = $a.$b.$c.$d.$e.$f.$g.$h.$i.$j.$k.$l.$m.$n.$o.$p.$q.$v.$w.$x1.$y.$z.$a1.$b1.$c1.$d1.$e1.$f1;
 		return $msg;
 	}
 }
