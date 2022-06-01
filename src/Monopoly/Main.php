@@ -58,7 +58,7 @@ class Main extends PluginBase{
 	protected $abbauenui;
 
     public function onEnable(): void{
-		$this->getServer()->getLogger()->notice("§aMonopoly wurde geladen!");
+		$this->getServer()->getLogger()->notice("§aDas Monopoly Plugin V1.0.0 wurde geladen!");
         if(!file_exists($this->getDataFolder() . "monopoly.yml")){
             $this->saveResource('monopoly.yml');
 			$this->saveResource('game.yml');
