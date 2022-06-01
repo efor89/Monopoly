@@ -17,7 +17,7 @@ use onebone\economyapi\EconomyAPI;
 use jojoe77777\FormAPI\SimpleForm;
 use jojoe77777\FormAPI\CustomForm;
 
-class Kaufen implements Listener{
+class KaufenNein implements Listener{
 
 	private $plugin;
 
@@ -44,8 +44,8 @@ class Kaufen implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
-		if($item->getId() === 266) {
-            if($item->getName() === "§6Kaufen") {
+		if($item->getId() === 265) {
+            if($item->getName() === "§cKaufen Nein") {
                 $playerMoney = EconomyAPI::getInstance()->myMoney($p);
 				if($p->getName() == $Player1){
 				    $feld = $gamecfg->get("player1");
@@ -68,16 +68,50 @@ class Kaufen implements Listener{
 						return;
 					}
 					if($gamecfg->get($feld) == null){
-						$KaufenJa = Item::get(266, 0, 1);
-                        $KaufenJa->setCustomName("§aKaufen Ja");
-						$KaufenNein = Item::get(265, 0, 1);
-                        $KaufenNein->setCustomName("§cKaufen Nein");
+					    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cmöchte die Strasse nicht kaufen, deswegen startet das Bieten!");
+						$b1 = Item::get(1, 0, 1);
+                        $b1->setCustomName("§6Biete 1$");
+						$b100 = Item::get(266, 0, 1);
+                        $b100->setCustomName("§aBiete 100$");
+						$b1000 = Item::get(264, 0, 1);
+                        $b1000->setCustomName("§bBiete 1000$");
 						$exit = Item::get(331, 14, 1);
-                        $exit->setCustomName("§cZurück");
-						$p->getInventory()->clearAll();
-						$p->getInventory()->setItem(0, $KaufenJa);
-						$p->getInventory()->setItem(2, $KaufenNein);
-						$p->getInventory()->setItem(8, $exit);
+                        $exit->setCustomName("§cNicht Bieten");
+						$giveup = Item::get(355, 14, 1);
+                        $giveup->setCustomName("§cAufgeben/Bankrott");
+						if($Player1 != null){
+							$gamecfg->set("bieter1", true);
+							$gamecfg->save();
+							$player1->getInventory()->clearAll();
+							$player1->getInventory()->setItem(7, $exit);
+                            $player1->getInventory()->setItem(8, $giveup);
+						}
+						if($Player2 != null){
+							$gamecfg->set("bieter2", true);
+							$gamecfg->save();
+							$player2->getInventory()->clearAll();
+							$player3->getInventory()->setItem(7, $exit);
+							$player2->getInventory()->setItem(8, $giveup);
+						}
+						if($Player3 != null){
+							$gamecfg->set("bieter3", true);
+							$gamecfg->save();
+							$player3->getInventory()->clearAll();
+							$player3->getInventory()->setItem(7, $exit);
+							$player3->getInventory()->setItem(8, $giveup);
+						}
+						if($Player4 != null){
+							$gamecfg->set("bieter4", true);
+							$gamecfg->save();
+							$player4->getInventory()->clearAll();
+							$player4->getInventory()->setItem(7, $exit);
+							$player4->getInventory()->setItem(8, $giveup);
+						}
+						$p->getInventory()->setItem(0, $b1);
+					    $p->getInventory()->setItem(1, $b100);
+					    $p->getInventory()->setItem(2, $b1000);
+						$p->getInventory()->setItem(7, $exit);
+						$p->getInventory()->setItem(8, $giveup);
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDie Strasse gehört bereits einem anderen Spieler!");
 					}

@@ -46,13 +46,13 @@ class NichtBieten implements Listener{
 		}
 		if($item->getId() === 331) {
             if($item->getName() === "§cNicht Bieten") {
-                if($p->getName() == $Player1){
+                if($gamecfg->get("turn") == $Player1){
 				    $feld = $gamecfg->get("player1");
-				}elseif($p->getName() == $Player2){
+				}elseif($gamecfg->get("turn") == $Player2){
 				    $feld = $gamecfg->get("player2");
-				}elseif($p->getName() == $Player3){
+				}elseif($gamecfg->get("turn") == $Player3){
 				    $feld = $gamecfg->get("player3");
-				}elseif($p->getName() == $Player4){
+				}elseif($gamecfg->get("turn") == $Player4){
 				    $feld = $gamecfg->get("player4");
 				}
 				if($Player1 == $gamecfg->get("turn")){
@@ -90,403 +90,1420 @@ class NichtBieten implements Listener{
                 $giveup->setCustomName("§cAufgeben/Bankrott");
 				$pay = Item::get(371, 0, 1);
                 $pay->setCustomName("§6Miete Bezahlen");
-				if($gamecfg->get("gebot") != null){
-					$p->getInventory()->setItem(7, $info);
-                    $p->getInventory()->setItem(8, $giveup);
-					return;
-				}
+				if($p->getName() == $Player1){
+				    if($gamecfg->get("bieter1") == true){
+			            $gamecfg->set("bieter1", false);
+			            $gamecfg->save();
+						$p->getInventory()->clearAll();
+						$p->getInventory()->setItem(7, $info);
+                        $p->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
+					}
+			    }elseif($p->getName() == $Player2){
+			        if($gamecfg->get("bieter2") == true){
+			            $gamecfg->set("bieter2", false);
+			            $gamecfg->save();
+						$p->getInventory()->clearAll();
+						$p->getInventory()->setItem(7, $info);
+                        $p->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
+					}
+			    }elseif($p->getName() == $Player3){
+			        if($gamecfg->get("bieter3") == true){
+			            $gamecfg->set("bieter3", false);
+			            $gamecfg->save();
+						$p->getInventory()->clearAll();
+						$p->getInventory()->setItem(7, $info);
+                        $p->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
+					}
+			    }elseif($p->getName() == $Player4){
+			        if($gamecfg->get("bieter4") == true){
+			            $gamecfg->set("bieter4", false);
+			            $gamecfg->save();
+						$p->getInventory()->clearAll();
+						$p->getInventory()->setItem(7, $info);
+                        $p->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
+					}
+			    }
                 if($p->getName() == $Player1){
-					if($p->getName() == $gamecfg->get("turn")){
-						if($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true){
-							$player2->getInventory()->clearAll();
-						    $player2->getInventory()->setItem(0, $b1);
-						    $player2->getInventory()->setItem(1, $b100);
-						    $player2->getInventory()->setItem(2, $b1000);
-							$player2->getInventory()->setItem(7, $exit);
-                            $player2->getInventory()->setItem(8, $giveup);
+					if($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true){
+						$player2->getInventory()->clearAll();
+					    $player2->getInventory()->setItem(0, $b1);
+					    $player2->getInventory()->setItem(1, $b100);
+					    $player2->getInventory()->setItem(2, $b1000);
+						$player2->getInventory()->setItem(7, $exit);
+                        $player2->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter2") != true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true){
+						$player3->getInventory()->clearAll();
+						$player3->getInventory()->setItem(0, $b1);
+					    $player3->getInventory()->setItem(1, $b100);
+					    $player3->getInventory()->setItem(2, $b1000);
+						$player3->getInventory()->setItem(7, $exit);
+                        $player3->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") != true and $gamecfg->get("bieter4") == true){
+						$player2->getInventory()->clearAll();
+						$player2->getInventory()->setItem(0, $b1);
+					    $player2->getInventory()->setItem(1, $b100);
+					    $player2->getInventory()->setItem(2, $b1000);
+						$player2->getInventory()->setItem(7, $exit);
+                        $player2->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") != true){
+						$player2->getInventory()->clearAll();
+						$player2->getInventory()->setItem(0, $b1);
+					    $player2->getInventory()->setItem(1, $b100);
+					    $player2->getInventory()->setItem(2, $b1000);
+						$player2->getInventory()->setItem(7, $exit);
+                        $player2->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						if($gamecfg->get("bieter1") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player1->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter1", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter2") != true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true){
-							$player3->getInventory()->clearAll();
-							$player3->getInventory()->setItem(0, $b1);
-						    $player3->getInventory()->setItem(1, $b100);
-						    $player3->getInventory()->setItem(2, $b1000);
-							$player3->getInventory()->setItem(7, $exit);
-                            $player3->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->clearAll();
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter2") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player2->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter2", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") != true and $gamecfg->get("bieter4") == true){
-							$player2->getInventory()->clearAll();
-							$player2->getInventory()->setItem(0, $b1);
-						    $player2->getInventory()->setItem(1, $b100);
-						    $player2->getInventory()->setItem(2, $b1000);
-							$player2->getInventory()->setItem(7, $exit);
-                            $player2->getInventory()->setItem(8, $giveup);
+								if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter3") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player3->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter3", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") != true){
-							$player2->getInventory()->clearAll();
-							$player2->getInventory()->setItem(0, $b1);
-						    $player2->getInventory()->setItem(1, $b100);
-						    $player2->getInventory()->setItem(2, $b1000);
-							$player2->getInventory()->setItem(7, $exit);
-                            $player2->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter4") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player4->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter4", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}else{
-							if($gamecfg->get("bieter2") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player2->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter2", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter3") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player3->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter3", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter4") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player4->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter4", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
 							}
 						}
-					}else{
-						if($p->getName() == $Player1){
-						    if($gamecfg->get("bieter1") == true){
-					            $gamecfg->set("bieter1", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player2){
-					        if($gamecfg->get("bieter2") == true){
-					            $gamecfg->set("bieter2", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player3){
-					        if($gamecfg->get("bieter3") == true){
-					            $gamecfg->set("bieter3", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player4){
-					        if($gamecfg->get("bieter4") == true){
-					            $gamecfg->set("bieter4", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }
 					}
-					$gamecfg->set("bieter1", false);
-					$gamecfg->save();
 				}elseif($p->getName() == $Player2){
-					if($p->getName() == $gamecfg->get("turn")){
-						if($gamecfg->get("bieter3") == true and $gamecfg->get("bieter3") == true and $gamecfg->get("bieter1") == true){
-							$player3->getInventory()->clearAll();
-						    $player3->getInventory()->setItem(0, $b1);
-						    $player3->getInventory()->setItem(1, $b100);
-						    $player3->getInventory()->setItem(2, $b1000);
-							$player3->getInventory()->setItem(7, $exit);
-                            $player3->getInventory()->setItem(8, $giveup);
+					if($gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true){
+						$player3->getInventory()->clearAll();
+					    $player3->getInventory()->setItem(0, $b1);
+					    $player3->getInventory()->setItem(1, $b100);
+					    $player3->getInventory()->setItem(2, $b1000);
+						$player3->getInventory()->setItem(7, $exit);
+                        $player3->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter3") != true and $gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true){
+						$player4->getInventory()->clearAll();
+						$player4->getInventory()->setItem(0, $b1);
+					    $player4->getInventory()->setItem(1, $b100);
+					    $player4->getInventory()->setItem(2, $b1000);
+						$player4->getInventory()->setItem(7, $exit);
+                        $player4->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") != true and $gamecfg->get("bieter1") == true){
+						$player3->getInventory()->clearAll();
+						$player3->getInventory()->setItem(0, $b1);
+					    $player3->getInventory()->setItem(1, $b100);
+					    $player3->getInventory()->setItem(2, $b1000);
+						$player3->getInventory()->setItem(7, $exit);
+                        $player3->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") != true){
+						$player3->getInventory()->clearAll();
+						$player3->getInventory()->setItem(0, $b1);
+					    $player3->getInventory()->setItem(1, $b100);
+					    $player3->getInventory()->setItem(2, $b1000);
+						$player3->getInventory()->setItem(7, $exit);
+                        $player3->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						if($gamecfg->get("bieter1") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player1->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter1", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter3") != true and $gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true){
-							$player4->getInventory()->clearAll();
-							$player4->getInventory()->setItem(0, $b1);
-						    $player4->getInventory()->setItem(1, $b100);
-						    $player4->getInventory()->setItem(2, $b1000);
-							$player4->getInventory()->setItem(7, $exit);
-                            $player4->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter2") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player2->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter2", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") != true and $gamecfg->get("bieter1") == true){
-							$player3->getInventory()->clearAll();
-							$player3->getInventory()->setItem(0, $b1);
-						    $player3->getInventory()->setItem(1, $b100);
-						    $player3->getInventory()->setItem(2, $b1000);
-							$player3->getInventory()->setItem(7, $exit);
-                            $player3->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter3") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player3->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter3", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter3") == true and $gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") != true){
-							$player3->getInventory()->clearAll();
-							$player3->getInventory()->setItem(0, $b1);
-						    $player3->getInventory()->setItem(1, $b100);
-						    $player3->getInventory()->setItem(2, $b1000);
-							$player3->getInventory()->setItem(7, $exit);
-                            $player3->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter4") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player4->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter4", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}else{
-							if($gamecfg->get("bieter1") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player1->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter1", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter3") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player3->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter3", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter4") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player4->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter4", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
 							}
 						}
-					}else{
-						if($p->getName() == $Player1){
-						    if($gamecfg->get("bieter1") == true){
-					            $gamecfg->set("bieter1", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player2){
-					        if($gamecfg->get("bieter2") == true){
-					            $gamecfg->set("bieter2", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player3){
-					        if($gamecfg->get("bieter3") == true){
-					            $gamecfg->set("bieter3", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player4){
-					        if($gamecfg->get("bieter4") == true){
-					            $gamecfg->set("bieter4", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }
 					}
-					$gamecfg->set("bieter2", false);
-					$gamecfg->save();
 				}elseif($p->getName() == $Player3){
-					if($p->getName() == $gamecfg->get("turn")){
-						if($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true){
-							$player4->getInventory()->clearAll();
-						    $player4->getInventory()->setItem(0, $b1);
-						    $player4->getInventory()->setItem(1, $b100);
-						    $player4->getInventory()->setItem(2, $b1000);
-							$player4->getInventory()->setItem(7, $exit);
-                            $player4->getInventory()->setItem(8, $giveup);
+					if($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true){
+						$player4->getInventory()->clearAll();
+					    $player4->getInventory()->setItem(0, $b1);
+					    $player4->getInventory()->setItem(1, $b100);
+					    $player4->getInventory()->setItem(2, $b1000);
+						$player4->getInventory()->setItem(7, $exit);
+                        $player4->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter4") != true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true){
+						$player1->getInventory()->clearAll();
+						$player1->getInventory()->setItem(0, $b1);
+					    $player1->getInventory()->setItem(1, $b100);
+					    $player1->getInventory()->setItem(2, $b1000);
+						$player1->getInventory()->setItem(7, $exit);
+                        $player1->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") != true and $gamecfg->get("bieter2") == true){
+						$player4->getInventory()->clearAll();
+						$player4->getInventory()->setItem(0, $b1);
+					    $player4->getInventory()->setItem(1, $b100);
+					    $player4->getInventory()->setItem(2, $b1000);
+						$player4->getInventory()->setItem(7, $exit);
+                        $player4->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") != true){
+						$player4->getInventory()->clearAll();
+						$player4->getInventory()->setItem(0, $b1);
+					    $player4->getInventory()->setItem(1, $b100);
+					    $player4->getInventory()->setItem(2, $b1000);
+						$player4->getInventory()->setItem(7, $exit);
+                        $player4->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						if($gamecfg->get("bieter1") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player1->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter1", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter4") != true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true){
-							$player1->getInventory()->clearAll();
-							$player1->getInventory()->setItem(0, $b1);
-						    $player1->getInventory()->setItem(1, $b100);
-						    $player1->getInventory()->setItem(2, $b1000);
-							$player1->getInventory()->setItem(7, $exit);
-                            $player1->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter2") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player2->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter2", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") != true and $gamecfg->get("bieter2") == true){
-							$player4->getInventory()->clearAll();
-							$player4->getInventory()->setItem(0, $b1);
-						    $player4->getInventory()->setItem(1, $b100);
-						    $player4->getInventory()->setItem(2, $b1000);
-							$player4->getInventory()->setItem(7, $exit);
-                            $player4->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter3") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player3->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter3", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter4") == true and $gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") != true){
-							$player4->getInventory()->clearAll();
-							$player4->getInventory()->setItem(0, $b1);
-						    $player4->getInventory()->setItem(1, $b100);
-						    $player4->getInventory()->setItem(2, $b1000);
-							$player4->getInventory()->setItem(7, $exit);
-                            $player4->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter4") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player4->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter4", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}else{
-							if($gamecfg->get("bieter1") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player1->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter1", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter2") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player2->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter2", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter4") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player4->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter4", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
 							}
 						}
-					}else{
-						if($p->getName() == $Player1){
-						    if($gamecfg->get("bieter1") == true){
-					            $gamecfg->set("bieter1", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player2){
-					        if($gamecfg->get("bieter2") == true){
-					            $gamecfg->set("bieter2", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player3){
-					        if($gamecfg->get("bieter3") == true){
-					            $gamecfg->set("bieter3", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player4){
-					        if($gamecfg->get("bieter4") == true){
-					            $gamecfg->set("bieter4", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }
 					}
-					$gamecfg->set("bieter3", false);
-					$gamecfg->save();
-				}elseif($p->getName() == $Player4){
-					if($p->getName() == $gamecfg->get("turn")){
-						if($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true){
-							$player1->getInventory()->clearAll();
-						    $player1->getInventory()->setItem(0, $b1);
-						    $player1->getInventory()->setItem(1, $b100);
-						    $player1->getInventory()->setItem(2, $b1000);
-							$player1->getInventory()->setItem(7, $exit);
-                            $player1->getInventory()->setItem(8, $giveup);
+    			}elseif($p->getName() == $Player4){
+					if($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true){
+						$player1->getInventory()->clearAll();
+					    $player1->getInventory()->setItem(0, $b1);
+					    $player1->getInventory()->setItem(1, $b100);
+					    $player1->getInventory()->setItem(2, $b1000);
+						$player1->getInventory()->setItem(7, $exit);
+                        $player1->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter1") != true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true){
+						$player2->getInventory()->clearAll();
+						$player2->getInventory()->setItem(0, $b1);
+					    $player2->getInventory()->setItem(1, $b100);
+					    $player2->getInventory()->setItem(2, $b1000);
+						$player2->getInventory()->setItem(7, $exit);
+                        $player2->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") != true and $gamecfg->get("bieter3") == true){
+						$player1->getInventory()->clearAll();
+						$player1->getInventory()->setItem(0, $b1);
+					    $player1->getInventory()->setItem(1, $b100);
+					    $player1->getInventory()->setItem(2, $b1000);
+						$player1->getInventory()->setItem(7, $exit);
+                        $player1->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}elseif($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") != true){
+						$player1->getInventory()->clearAll();
+						$player1->getInventory()->setItem(0, $b1);
+					    $player1->getInventory()->setItem(1, $b100);
+					    $player1->getInventory()->setItem(2, $b1000);
+						$player1->getInventory()->setItem(7, $exit);
+                        $player1->getInventory()->setItem(8, $giveup);
+						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+					}else{
+						if($gamecfg->get("bieter1") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player1->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter1", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter1") != true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") == true){
-							$player2->getInventory()->clearAll();
-							$player2->getInventory()->setItem(0, $b1);
-						    $player2->getInventory()->setItem(1, $b100);
-						    $player2->getInventory()->setItem(2, $b1000);
-							$player2->getInventory()->setItem(7, $exit);
-                            $player2->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter2") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player2->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter2", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") != true and $gamecfg->get("bieter3") == true){
-							$player1->getInventory()->clearAll();
-							$player1->getInventory()->setItem(0, $b1);
-						    $player1->getInventory()->setItem(1, $b100);
-						    $player1->getInventory()->setItem(2, $b1000);
-							$player1->getInventory()->setItem(7, $exit);
-                            $player1->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter3") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+					    $gamecfg->set($feld, $player3->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter3", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}elseif($gamecfg->get("bieter1") == true and $gamecfg->get("bieter2") == true and $gamecfg->get("bieter3") != true){
-							$player1->getInventory()->clearAll();
-							$player1->getInventory()->setItem(0, $b1);
-						    $player1->getInventory()->setItem(1, $b100);
-						    $player1->getInventory()->setItem(2, $b1000);
-							$player1->getInventory()->setItem(7, $exit);
-                            $player1->getInventory()->setItem(8, $giveup);
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+							}
+						}elseif($gamecfg->get("bieter4") == true){
+						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player4->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
+						    $gamecfg->set($feld, $player4->getName());
+						    $gamecfg->set("gebot", 0);
+						    $gamecfg->set("bieter4", false);
+						    $gamecfg->save();
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-						}else{
-							if($gamecfg->get("bieter1") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player1->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player1->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter1", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter2") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player2->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player2->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter2", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}elseif($gamecfg->get("bieter3") == true){
-							    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$player3->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
-							    $gamecfg->set($feld, $player3->getName());
-							    $gamecfg->set("gebot", 0);
-							    $gamecfg->set("bieter3", false);
-							    $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
+							if($gamecfg->get("turn") == $Player1){
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+		    				}elseif($gamecfg->get("turn") == $Player2){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player3){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 !== null){
+									$player4->getInventory()->clearAll();
+		    					    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+							}elseif($gamecfg->get("turn") == $Player4){
+								if($Player1 !== null){
+									$player1->getInventory()->clearAll();
+		    					    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 !== null){
+									$player2->getInventory()->clearAll();
+		    					    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 !== null){
+									$player3->getInventory()->clearAll();
+		    					    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
 							}
 						}
-					}else{
-						if($p->getName() == $Player1){
-						    if($gamecfg->get("bieter1") == true){
-					            $gamecfg->set("bieter1", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player2){
-					        if($gamecfg->get("bieter2") == true){
-					            $gamecfg->set("bieter2", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player3){
-					        if($gamecfg->get("bieter3") == true){
-					            $gamecfg->set("bieter3", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }elseif($p->getName() == $Player4){
-					        if($gamecfg->get("bieter4") == true){
-					            $gamecfg->set("bieter4", false);
-					            $gamecfg->save();
-								Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
-							}else{
-								$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
-							}
-					    }
 					}
-					$gamecfg->set("bieter4", false);
-					$gamecfg->save();
+				}
+				if($Player1 == $gamecfg->get("turn")){
+					if($gamecfg->get("bieter2") != true and $gamecfg->get("bieter3") != true and $gamecfg->get("bieter4") != true){
+						$player1->getInventory()->clearAll();
+						$player1->getInventory()->setItem(0, $wuerfeln);
+                        $player1->getInventory()->setItem(1, $kaufen);
+                        $player1->getInventory()->setItem(2, $bauen);
+                        $player1->getInventory()->setItem(3, $hypo);
+                        $player1->getInventory()->setItem(4, $handeln);
+		                $player1->getInventory()->setItem(5, $pay);
+                        $player1->getInventory()->setItem(6, $endturn);
+				        $player1->getInventory()->setItem(7, $info);
+                        $player1->getInventory()->setItem(8, $giveup);
+					}
+				}
+				if($Player2 == $gamecfg->get("turn")){
+					if($gamecfg->get("bieter1") != true and $gamecfg->get("bieter3") != true and $gamecfg->get("bieter4") != true){
+						$player2->getInventory()->clearAll();
+						$player2->getInventory()->setItem(0, $wuerfeln);
+                        $player2->getInventory()->setItem(1, $kaufen);
+                        $player2->getInventory()->setItem(2, $bauen);
+                        $player2->getInventory()->setItem(3, $hypo);
+                        $player2->getInventory()->setItem(4, $handeln);
+		                $player2->getInventory()->setItem(5, $pay);
+                        $player2->getInventory()->setItem(6, $endturn);
+				        $player2->getInventory()->setItem(7, $info);
+                        $player2->getInventory()->setItem(8, $giveup);
+					}
+				}
+				if($Player3 == $gamecfg->get("turn")){
+					if($gamecfg->get("bieter1") != true and $gamecfg->get("bieter2") != true and $gamecfg->get("bieter4") != true){
+						$player3->getInventory()->clearAll();
+						$player3->getInventory()->setItem(0, $wuerfeln);
+                        $player3->getInventory()->setItem(1, $kaufen);
+                        $player3->getInventory()->setItem(2, $bauen);
+                        $player3->getInventory()->setItem(3, $hypo);
+                        $player3->getInventory()->setItem(4, $handeln);
+		                $player3->getInventory()->setItem(5, $pay);
+                        $player3->getInventory()->setItem(6, $endturn);
+				        $player3->getInventory()->setItem(7, $info);
+                        $player3->getInventory()->setItem(8, $giveup);
+					}
+				}
+				if($Player4 == $gamecfg->get("turn")){
+					if($gamecfg->get("bieter1") != true and $gamecfg->get("bieter2") != true and $gamecfg->get("bieter3") != true){
+						$player4->getInventory()->clearAll();
+						$player4->getInventory()->setItem(0, $wuerfeln);
+                        $player4->getInventory()->setItem(1, $kaufen);
+                        $player4->getInventory()->setItem(2, $bauen);
+                        $player4->getInventory()->setItem(3, $hypo);
+                        $player4->getInventory()->setItem(4, $handeln);
+		                $player4->getInventory()->setItem(5, $pay);
+                        $player4->getInventory()->setItem(6, $endturn);
+				        $player4->getInventory()->setItem(7, $info);
+                        $player4->getInventory()->setItem(8, $giveup);
+					}
 				}
             }
         }

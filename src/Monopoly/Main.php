@@ -23,6 +23,8 @@ use Monopoly\aktionen\Hausabbauen;
 use Monopoly\aktionen\Hypothek;
 use Monopoly\aktionen\Infos;
 use Monopoly\aktionen\Kaufen;
+use Monopoly\aktionen\KaufenJa;
+use Monopoly\aktionen\KaufenNein;
 use Monopoly\aktionen\MieteBezahlen;
 use Monopoly\aktionen\NichtBieten;
 use Monopoly\aktionen\Start;
@@ -76,6 +78,8 @@ class Main extends PluginBase{
 		$this->getServer()->getPluginManager()->registerEvents(new Hypothek($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Infos($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Kaufen($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new KaufenJa($this), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new KaufenNein($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new MieteBezahlen($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new NichtBieten($this), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new Start($this), $this);

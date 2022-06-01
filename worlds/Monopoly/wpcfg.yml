@@ -1,0 +1,5 @@
+---
+protect: protect
+bancmds:
+  /pay: /pay
+...

@@ -47,23 +47,23 @@ class Bieten implements Listener{
 		$playerMoney = EconomyAPI::getInstance()->myMoney($p);
 		if($item->getId() === 1) {
             if($item->getName() === "§6Biete 1$") {
-				if($p->getName() == $Player1){
+				if($gamecfg->get("turn") == $Player1){
 				    $feld = $gamecfg->get("player1");
-				}elseif($p->getName() == $Player2){
+				}elseif($gamecfg->get("turn") == $Player2){
 				    $feld = $gamecfg->get("player2");
-				}elseif($p->getName() == $Player3){
+				}elseif($gamecfg->get("turn") == $Player3){
 				    $feld = $gamecfg->get("player3");
-				}elseif($p->getName() == $Player4){
+				}elseif($gamecfg->get("turn") == $Player4){
 				    $feld = $gamecfg->get("player4");
 				}
 				if($Player1 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($gamecfg->get("player1").".name");
+					$strasse = $config->getNested($feld.".name");
 				}elseif($Player2 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($gamecfg->get("player2").".name");
+					$strasse = $config->getNested($feld.".name");
 				}elseif($Player3 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($gamecfg->get("player3").".name");
+					$strasse = $config->getNested($feld.".name");
 				}elseif($Player4 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($gamecfg->get("player4").".name");
+					$strasse = $config->getNested($feld.".name");
 				}
 				$b1 = Item::get(1, 0, 1);
                 $b1->setCustomName("§6Biete 1$");
@@ -97,7 +97,7 @@ class Bieten implements Listener{
 					$p->getInventory()->clearAll();
 					$p->getInventory()->setItem(7, $exit);
                     $p->getInventory()->setItem(8, $giveup);
-					if($p->getName() == $player1 and $Player2 != null){
+					if($p->getName() == $Player1 and $Player2 != null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 						    $player2->getInventory()->setItem(0, $b1);
@@ -105,7 +105,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -113,7 +113,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -121,7 +121,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -175,7 +175,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player1 and $Player2 == null and $Player3 != null){
+					}elseif($p->getName() == $Player1 and $Player2 == null and $Player3 != null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -183,7 +183,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -191,7 +191,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -235,7 +235,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player1 and $Player2 == null and $Player3 == null){
+				    }elseif($p->getName() == $Player1 and $Player2 == null and $Player3 == null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -243,7 +243,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -277,7 +277,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player2 and $Player3 != null){
+					if($p->getName() == $Player2 and $Player3 != null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 						    $player3->getInventory()->setItem(0, $b1);
@@ -285,7 +285,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -293,7 +293,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -301,7 +301,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -355,7 +355,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player2 and $Player3 == null and $Player4 != null){
+					}elseif($p->getName() == $Player2 and $Player3 == null and $Player4 != null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -363,7 +363,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -371,7 +371,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -414,7 +414,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player2 and $Player3 == null and $Player4 == null){
+				    }elseif($p->getName() == $Player2 and $Player3 == null and $Player4 == null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -422,7 +422,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -456,7 +456,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player3 and $Player4 != null){
+					if($p->getName() == $Player3 and $Player4 != null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 						    $player4->getInventory()->setItem(0, $b1);
@@ -464,7 +464,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -472,7 +472,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -480,7 +480,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -534,7 +534,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player3 and $Player4 == null and $Player1 != null){
+					}elseif($p->getName() == $Player3 and $Player4 == null and $Player1 != null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -542,7 +542,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -550,7 +550,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -593,7 +593,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player3 and $Player4 == null and $Player1 == null){
+				    }elseif($p->getName() == $Player3 and $Player4 == null and $Player1 == null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -601,7 +601,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -635,7 +635,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player4 and $Player1 != null){
+					if($p->getName() == $Player4 and $Player1 != null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 						    $player1->getInventory()->setItem(0, $b1);
@@ -643,7 +643,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -651,7 +651,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -659,7 +659,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -713,7 +713,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player4 and $Player1 == null and $Player2 != null){
+					}elseif($p->getName() == $Player4 and $Player1 == null and $Player2 != null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -721,7 +721,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -729,7 +729,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -772,7 +772,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player4 and $Player1 == null and $Player2 == null){
+				    }elseif($p->getName() == $Player4 and $Player1 == null and $Player2 == null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -780,7 +780,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1076,7 +1076,7 @@ class Bieten implements Listener{
 					$p->getInventory()->clearAll();
 					$p->getInventory()->setItem(7, $exit);
                     $p->getInventory()->setItem(8, $giveup);
-					if($p->getName() == $player1 and $Player2 != null){
+					if($p->getName() == $Player1 and $Player2 != null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 						    $player2->getInventory()->setItem(0, $b1);
@@ -1084,7 +1084,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -1092,7 +1092,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -1100,7 +1100,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1154,7 +1154,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player1 and $Player2 == null and $Player3 != null){
+					}elseif($p->getName() == $Player1 and $Player2 == null and $Player3 != null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -1162,7 +1162,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -1170,7 +1170,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1213,7 +1213,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player1 and $Player2 == null and $Player3 == null){
+				    }elseif($p->getName() == $Player1 and $Player2 == null and $Player3 == null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -1221,7 +1221,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1255,7 +1255,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player2 and $Player3 != null){
+					if($p->getName() == $Player2 and $Player3 != null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 						    $player3->getInventory()->setItem(0, $b1);
@@ -1263,7 +1263,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -1271,7 +1271,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -1279,7 +1279,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1333,7 +1333,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player2 and $Player3 == null and $Player4 != null){
+					}elseif($p->getName() == $Player2 and $Player3 == null and $Player4 != null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -1341,7 +1341,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -1349,7 +1349,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1392,7 +1392,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player2 and $Player3 == null and $Player4 == null){
+				    }elseif($p->getName() == $Player2 and $Player3 == null and $Player4 == null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -1400,7 +1400,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1434,7 +1434,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player3 and $Player4 != null){
+					if($p->getName() == $Player3 and $Player4 != null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 						    $player4->getInventory()->setItem(0, $b1);
@@ -1442,7 +1442,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -1450,7 +1450,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -1458,7 +1458,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1512,7 +1512,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player3 and $Player4 == null and $Player1 != null){
+					}elseif($p->getName() == $Player3 and $Player4 == null and $Player1 != null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -1520,7 +1520,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -1528,7 +1528,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1571,7 +1571,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player3 and $Player4 == null and $Player1 == null){
+				    }elseif($p->getName() == $Player3 and $Player4 == null and $Player1 == null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -1579,7 +1579,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1613,7 +1613,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player4 and $Player1 != null){
+					if($p->getName() == $Player4 and $Player1 != null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 						    $player1->getInventory()->setItem(0, $b1);
@@ -1621,7 +1621,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -1629,7 +1629,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -1637,7 +1637,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1691,7 +1691,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player4 and $Player1 == null and $Player2 != null){
+					}elseif($p->getName() == $Player4 and $Player1 == null and $Player2 != null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -1699,7 +1699,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -1707,7 +1707,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -1750,7 +1750,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player4 and $Player1 == null and $Player2 == null){
+				    }elseif($p->getName() == $Player4 and $Player1 == null and $Player2 == null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -1758,7 +1758,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2013,7 +2013,7 @@ class Bieten implements Listener{
         }
 		if($item->getId() === 264) {
             if($item->getName() === "§bBiete 1000$") {
-            if($p->getName() == $Player1){
+                if($p->getName() == $Player1){
 				    $feld = $gamecfg->get("player1");
 				}elseif($p->getName() == $Player2){
 				    $feld = $gamecfg->get("player2");
@@ -2054,7 +2054,7 @@ class Bieten implements Listener{
 					$p->getInventory()->clearAll();
 					$p->getInventory()->setItem(7, $exit);
                     $p->getInventory()->setItem(8, $giveup);
-					if($p->getName() == $player1 and $Player2 != null){
+					if($p->getName() == $Player1 and $Player2 != null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 						    $player2->getInventory()->setItem(0, $b1);
@@ -2062,7 +2062,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -2070,7 +2070,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -2078,7 +2078,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2132,7 +2132,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player1 and $Player2 == null and $Player3 != null){
+					}elseif($p->getName() == $Player1 and $Player2 == null and $Player3 != null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -2140,7 +2140,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -2148,7 +2148,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2191,7 +2191,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player1 and $Player2 == null and $Player3 == null){
+				    }elseif($p->getName() == $Player1 and $Player2 == null and $Player3 == null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -2199,7 +2199,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2233,7 +2233,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player2 and $Player3 != null){
+					if($p->getName() == $Player2 and $Player3 != null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 						    $player3->getInventory()->setItem(0, $b1);
@@ -2241,7 +2241,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -2249,7 +2249,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -2257,7 +2257,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2311,7 +2311,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player2 and $Player3 == null and $Player4 != null){
+					}elseif($p->getName() == $Player2 and $Player3 == null and $Player4 != null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 							$player4->getInventory()->setItem(0, $b1);
@@ -2319,7 +2319,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -2327,7 +2327,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2370,7 +2370,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player2 and $Player3 == null and $Player4 == null){
+				    }elseif($p->getName() == $Player2 and $Player3 == null and $Player4 == null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -2378,7 +2378,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2412,7 +2412,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player3 and $Player4 != null){
+					if($p->getName() == $Player3 and $Player4 != null){
 						if($gamecfg->get("bieter4") == true){
 							$player4->getInventory()->clearAll();
 						    $player4->getInventory()->setItem(0, $b1);
@@ -2420,7 +2420,7 @@ class Bieten implements Listener{
 						    $player4->getInventory()->setItem(2, $b1000);
 							$player4->getInventory()->setItem(7, $exit);
                             $player4->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -2428,7 +2428,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -2436,7 +2436,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2490,7 +2490,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player3 and $Player4 == null and $Player1 != null){
+					}elseif($p->getName() == $Player3 and $Player4 == null and $Player1 != null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 							$player1->getInventory()->setItem(0, $b1);
@@ -2498,7 +2498,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -2506,7 +2506,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2549,7 +2549,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player3 and $Player4 == null and $Player1 == null){
+				    }elseif($p->getName() == $Player3 and $Player4 == null and $Player1 == null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -2557,7 +2557,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2591,7 +2591,7 @@ class Bieten implements Listener{
 						}
 					}
 					
-					if($p->getName() == $player4 and $Player1 != null){
+					if($p->getName() == $Player4 and $Player1 != null){
 						if($gamecfg->get("bieter1") == true){
 							$player1->getInventory()->clearAll();
 						    $player1->getInventory()->setItem(0, $b1);
@@ -2599,7 +2599,7 @@ class Bieten implements Listener{
 						    $player1->getInventory()->setItem(2, $b1000);
 							$player1->getInventory()->setItem(7, $exit);
                             $player1->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -2607,7 +2607,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -2615,7 +2615,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2669,7 +2669,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-					}elseif($p->getName() == $player4 and $Player1 == null and $Player2 != null){
+					}elseif($p->getName() == $Player4 and $Player1 == null and $Player2 != null){
 						if($gamecfg->get("bieter2") == true){
 							$player2->getInventory()->clearAll();
 							$player2->getInventory()->setItem(0, $b1);
@@ -2677,7 +2677,7 @@ class Bieten implements Listener{
 						    $player2->getInventory()->setItem(2, $b1000);
 							$player2->getInventory()->setItem(7, $exit);
                             $player2->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}elseif($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -2685,7 +2685,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
@@ -2728,7 +2728,7 @@ class Bieten implements Listener{
                                 $player4->getInventory()->setItem(8, $giveup);
 							}
 						}
-				    }elseif($p->getName() == $player4 and $Player1 == null and $Player2 == null){
+				    }elseif($p->getName() == $Player4 and $Player1 == null and $Player2 == null){
 						if($gamecfg->get("bieter3") == true){
 							$player3->getInventory()->clearAll();
 							$player3->getInventory()->setItem(0, $b1);
@@ -2736,7 +2736,7 @@ class Bieten implements Listener{
 						    $player3->getInventory()->setItem(2, $b1000);
 							$player3->getInventory()->setItem(7, $exit);
                             $player3->getInventory()->setItem(8, $giveup);
-							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cHat ein Gebot von §d".$gamecfg->set("gebot", $gamecfg->get("gebot"))."§a$ abgegeben.");
+							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §aHat ein Gebot von §d".$gamecfg->get("gebot")."§a$ abgegeben.");
 						}else{
 							EconomyAPI::getInstance()->reduceMoney($p, $gamecfg->get("gebot"));
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat mit dem Gebot von §d".$gamecfg->get("gebot")."§a$ die Strasse §d".$strasse."§a gewonnen.");
