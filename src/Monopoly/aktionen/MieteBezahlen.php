@@ -72,6 +72,7 @@ class MieteBezahlen implements Listener{
 					$p->sendMessage("§bMono§6poly: §cDu musst hier Keine Miete bezahlen, da auf der Strasse eine Hypothek ist.");
 					return;
 				}
+				$points = $gamecfg->get("lastpoints");
 				if($this->plugin->isFullStreet($player, $feld) == "yes"){
 					if($feld == 13 or $feld == 29){
 						$kosten = $points * 200;
@@ -81,7 +82,6 @@ class MieteBezahlen implements Listener{
 				        $kosten = $config->getNested($feld.".miete") * 2;
 					}
 				}elseif($this->plugin->isFullStreet($player, $feld) == "no"){
-					$points = $gamecfg->get("lastpoints");
 					if($feld == 13 or $feld == 29){
 						$kosten = $points * 80;
 					}elseif($feld == 6 or $feld == 16 or $feld == 26 or $feld == 36){

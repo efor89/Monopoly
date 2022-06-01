@@ -841,6 +841,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player2 == null and $Player3 != null and $Player4 != null){
 							if($gamecfg->get("bieter3") == true){
@@ -858,6 +914,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player2 == null and $Player3 == null and $Player4 != null){
 							EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -866,6 +978,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player2){
@@ -895,6 +1063,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player3 == null and $Player4 != null and $Player1 != null){
 							if($gamecfg->get("bieter4") == true){
@@ -912,6 +1136,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player3 == null and $Player4 == null and $Player1 != null){
 							EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
@@ -920,6 +1200,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player3){
@@ -949,6 +1285,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 != null and $Player2 != null){
 							if($gamecfg->get("bieter1") == true){
@@ -966,6 +1358,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 == null and $Player2 != null){
 							EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -974,6 +1422,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player4){
@@ -1003,6 +1507,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player1 == null and $Player2 != null and $Player3 != null){
 							if($gamecfg->get("bieter1") == true){
@@ -1020,6 +1580,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 == null and $Player2 != null){
 							EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -1028,6 +1644,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 				}
@@ -1819,6 +2491,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player2 == null and $Player3 != null and $Player4 != null){
 							if($gamecfg->get("bieter3") == true){
@@ -1836,6 +2564,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player2 == null and $Player3 == null and $Player4 != null){
 							EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -1844,6 +2628,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player2){
@@ -1873,6 +2713,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player3 == null and $Player4 != null and $Player1 != null){
 							if($gamecfg->get("bieter4") == true){
@@ -1890,6 +2786,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player3 == null and $Player4 == null and $Player1 != null){
 							EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
@@ -1898,6 +2850,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player3){
@@ -1927,6 +2935,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 != null and $Player2 != null){
 							if($gamecfg->get("bieter1") == true){
@@ -1944,6 +3008,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 == null and $Player2 != null){
 							EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -1952,6 +3072,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player4){
@@ -1981,6 +3157,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player1 == null and $Player2 != null and $Player3 != null){
 							if($gamecfg->get("bieter1") == true){
@@ -1998,6 +3230,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 == null and $Player2 != null){
 							EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -2006,6 +3294,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 				}
@@ -2797,6 +4141,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player2 == null and $Player3 != null and $Player4 != null){
 							if($gamecfg->get("bieter3") == true){
@@ -2814,6 +4214,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player2 == null and $Player3 == null and $Player4 != null){
 							EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -2822,6 +4278,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player2){
@@ -2851,6 +4363,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player3 == null and $Player4 != null and $Player1 != null){
 							if($gamecfg->get("bieter4") == true){
@@ -2868,6 +4436,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player3 == null and $Player4 == null and $Player1 != null){
 							EconomyAPI::getInstance()->reduceMoney($player1, $gamecfg->get("gebot"));
@@ -2876,6 +4500,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player3){
@@ -2905,6 +4585,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 != null and $Player2 != null){
 							if($gamecfg->get("bieter1") == true){
@@ -2922,6 +4658,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 == null and $Player2 != null){
 							EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -2930,6 +4722,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 					if($p->getName() == $Player4){
@@ -2959,6 +4807,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player1 == null and $Player2 != null and $Player3 != null){
 							if($gamecfg->get("bieter1") == true){
@@ -2976,6 +4880,62 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								if($Player1 != null){
+								    $player1->getInventory()->clearAll();
+								    $player1->getInventory()->setItem(7, $info);
+                                    $player1->getInventory()->setItem(8, $giveup);
+								}
+								if($Player2 != null){
+								    $player2->getInventory()->clearAll();
+								    $player2->getInventory()->setItem(7, $info);
+                                    $player2->getInventory()->setItem(8, $giveup);
+								}
+								if($Player3 != null){
+								    $player3->getInventory()->clearAll();
+								    $player3->getInventory()->setItem(7, $info);
+                                    $player3->getInventory()->setItem(8, $giveup);
+								}
+								if($Player4 != null){
+								    $player4->getInventory()->clearAll();
+								    $player4->getInventory()->setItem(7, $info);
+                                    $player4->getInventory()->setItem(8, $giveup);
+								}
+								if($gamecfg->get("turn") == $Player1){
+									$player1->getInventory()->setItem(0, $wuerfeln);
+                                    $player1->getInventory()->setItem(1, $kaufen);
+                                    $player1->getInventory()->setItem(2, $bauen);
+                                    $player1->getInventory()->setItem(3, $hypo);
+                                    $player1->getInventory()->setItem(4, $handeln);
+					                $player1->getInventory()->setItem(5, $pay);
+                                    $player1->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player2){
+									$player2->getInventory()->setItem(0, $wuerfeln);
+                                    $player2->getInventory()->setItem(1, $kaufen);
+                                    $player2->getInventory()->setItem(2, $bauen);
+                                    $player2->getInventory()->setItem(3, $hypo);
+                                    $player2->getInventory()->setItem(4, $handeln);
+					                $player2->getInventory()->setItem(5, $pay);
+                                    $player2->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player3){
+									$player3->getInventory()->setItem(0, $wuerfeln);
+                                    $player3->getInventory()->setItem(1, $kaufen);
+                                    $player3->getInventory()->setItem(2, $bauen);
+                                    $player3->getInventory()->setItem(3, $hypo);
+                                    $player3->getInventory()->setItem(4, $handeln);
+					                $player3->getInventory()->setItem(5, $pay);
+                                    $player3->getInventory()->setItem(6, $endturn);
+								}
+								if($gamecfg->get("turn") == $Player4){
+									$player4->getInventory()->setItem(0, $wuerfeln);
+                                    $player4->getInventory()->setItem(1, $kaufen);
+                                    $player4->getInventory()->setItem(2, $bauen);
+                                    $player4->getInventory()->setItem(3, $hypo);
+                                    $player4->getInventory()->setItem(4, $handeln);
+					                $player4->getInventory()->setItem(5, $pay);
+                                    $player4->getInventory()->setItem(6, $endturn);
+								}
 							}
 						}elseif($Player4 == null and $Player1 == null and $Player2 != null){
 							EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -2984,6 +4944,62 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 				            $gamecfg->save();
+							if($Player1 != null){
+							    $player1->getInventory()->clearAll();
+							    $player1->getInventory()->setItem(7, $info);
+                                $player1->getInventory()->setItem(8, $giveup);
+							}
+							if($Player2 != null){
+							    $player2->getInventory()->clearAll();
+							    $player2->getInventory()->setItem(7, $info);
+                                $player2->getInventory()->setItem(8, $giveup);
+							}
+							if($Player3 != null){
+							    $player3->getInventory()->clearAll();
+							    $player3->getInventory()->setItem(7, $info);
+                                $player3->getInventory()->setItem(8, $giveup);
+							}
+							if($Player4 != null){
+							    $player4->getInventory()->clearAll();
+							    $player4->getInventory()->setItem(7, $info);
+                                $player4->getInventory()->setItem(8, $giveup);
+							}
+							if($gamecfg->get("turn") == $Player1){
+								$player1->getInventory()->setItem(0, $wuerfeln);
+                                $player1->getInventory()->setItem(1, $kaufen);
+                                $player1->getInventory()->setItem(2, $bauen);
+                                $player1->getInventory()->setItem(3, $hypo);
+                                $player1->getInventory()->setItem(4, $handeln);
+					            $player1->getInventory()->setItem(5, $pay);
+                                $player1->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player2){
+								$player2->getInventory()->setItem(0, $wuerfeln);
+                                $player2->getInventory()->setItem(1, $kaufen);
+                                $player2->getInventory()->setItem(2, $bauen);
+                                $player2->getInventory()->setItem(3, $hypo);
+                                $player2->getInventory()->setItem(4, $handeln);
+					            $player2->getInventory()->setItem(5, $pay);
+                                $player2->getInventory()->setItem(6, $endturn);
+							}
+							if($gamecfg->get("turn") == $Player3){
+								$player3->getInventory()->setItem(0, $wuerfeln);
+                                $player3->getInventory()->setItem(1, $kaufen);
+                                $player3->getInventory()->setItem(2, $bauen);
+                                $player3->getInventory()->setItem(3, $hypo);
+                                $player3->getInventory()->setItem(4, $handeln);
+					            $player3->getInventory()->setItem(5, $pay);
+                                $player3->getInventory()->setItem(6, $endturn);
+				    		}
+							if($gamecfg->get("turn") == $Player4){
+								$player4->getInventory()->setItem(0, $wuerfeln);
+                                $player4->getInventory()->setItem(1, $kaufen);
+                                $player4->getInventory()->setItem(2, $bauen);
+                                $player4->getInventory()->setItem(3, $hypo);
+                                $player4->getInventory()->setItem(4, $handeln);
+					            $player4->getInventory()->setItem(5, $pay);
+                                $player4->getInventory()->setItem(6, $endturn);
+							}
 						}
 					}
 				}
