@@ -262,10 +262,9 @@ class HandelnMain{
 			$f = "";
 		}
 		$form->setTitle("§bHandel Anfrage");
-		$form->setContent("§6Das ist eine Handels Anfrage von §d".$target->getName().". \n§6Entscheide ob du sie akzeptierst oder ablehnst.\n\n§aDer Spieler möchte Strassen:§f\n".$a.$b."\n§aDer Spieler möchte Geld:§f\n".$c."\n§eDer Spieler bietet dir Strassen:\n§f".$d.$e."\n§eDer Spieler bietet dir Geld:\n§f".$f);
+		$form->setContent("§6Das ist eine Handels Anfrage von §d".$target->getName().". \n§6Entscheide ob du sie akzeptierst oder ablehnst.\n\n§aDer Spieler möchte Strassen:§f\n".$a.$b."\n§aDer Spieler möchte Geld:§f\n".$c."\n§eDer Spieler bietet dir Strassen:\n§f".$d.$e."\n§eDer Spieler bietet dir Geld:\n§f".$f"\n\n§6Strassen auf den eine Hypothek ist:\n§f".$this->getHypoStreets());
         $form->addButton("§aAkzeptieren");
-		$form->addButton("§dAblehnen");						
-		$form->addButton("§cSchließen");
+		$form->addButton("§dAblehnen");
 		$form->sendToPlayer($player);
 		return true;
 	}
@@ -276,6 +275,181 @@ class HandelnMain{
 			return "yes";
 		}
 		return "no";
+	}
+	
+	public function getHypoStreets(){
+		$gamecfg = new Config($this->plugin->getDataFolder().'game.yml', Config::YAML);
+		$config = new Config($this->plugin->getDataFolder().'monopoly.yml', Config::YAML);
+		if($gamecfg->get("2hypo") == true){
+			$x = $config->getNested("2.name");
+			$a = "2 = ".$x."\n";
+		}else{
+			$a = "";
+		}
+		if($gamecfg->get("4hypo") == true){
+			$x = $config->getNested("4.name");
+			$b = "4 = ".$x."\n";
+		}else{
+			$b = "";
+		}
+		if($gamecfg->get("6hypo") == true){
+			$x = $config->getNested("6.name");
+			$c = "6 = ".$x."\n";
+		}else{
+			$c = "";
+		}
+		if($gamecfg->get("7hypo") == true){
+			$x = $config->getNested("7.name");
+			$d = "7 = ".$x."\n";
+		}else{
+			$d = "";
+		}
+		if($gamecfg->get("9hypo") == true){
+			$x = $config->getNested("9.name");
+			$e = "9 = ".$x."\n";
+		}else{
+			$e = "";
+		}
+		if($gamecfg->get("10hypo") == true){
+			$x = $config->getNested("10.name");
+			$f = "10 = ".$x."\n";
+		}else{
+			$f = "";
+		}
+		if($gamecfg->get("12hypo") == true){
+			$x = $config->getNested("12.name");
+			$g = "12 = ".$x."\n";
+		}else{
+			$g = "";
+		}
+		if($gamecfg->get("13hypo") == true){
+			$x = $config->getNested("13.name");
+			$h = "13 = ".$x."\n";
+		}else{
+			$h = "";
+		}
+		if($gamecfg->get("14hypo") == true){
+			$x = $config->getNested("14.name");
+			$i = "14 = ".$x."\n";
+		}else{
+			$i = "";
+		}
+		if($gamecfg->get("15hypo") == true){
+			$x = $config->getNested("15.name");
+			$j = "15 = ".$x."\n";
+		}else{
+			$j = "";
+		}
+		if($gamecfg->get("16hypo") == true){
+			$x = $config->getNested("16.name");
+			$k = "16 = ".$x."\n";
+		}else{
+			$k = "";
+		}
+		if($gamecfg->get("17hypo") == true){
+			$x = $config->getNested("17.name");
+			$l = "17 = ".$x."\n";
+		}else{
+			$l = "";
+		}
+		if($gamecfg->get("19hypo") == true){
+			$x = $config->getNested("19.name");
+			$m = "19 = ".$x."\n";
+		}else{
+			$m = "";
+		}
+		if($gamecfg->get("20hypo") == true){
+			$x = $config->getNested("20.name");
+			$n = "20 = ".$x."\n";
+		}else{
+			$n = "";
+		}
+		if($gamecfg->get("22hypo") == true){
+			$x = $config->getNested("22.name");
+			$o = "22 = ".$x."\n";
+		}else{
+			$o = "";
+		}
+		if($gamecfg->get("24hypo") == true){
+			$x = $config->getNested("24.name");
+			$p = "24 = ".$x."\n";
+		}else{
+			$p = "";
+		}
+		if($gamecfg->get("25hypo") == true){
+			$x = $config->getNested("25.name");
+			$q = "25 = ".$x."\n";
+		}else{
+			$q = "";
+		}
+		if($gamecfg->get("26hypo") == true){
+			$x = $config->getNested("26.name");
+			$v = "26 = ".$x."\n";
+		}else{
+			$v = "";
+		}
+		if($gamecfg->get("27hypo") == true){
+			$x = $config->getNested("27.name");
+			$w = "27 = ".$x."\n";
+		}else{
+			$w = "";
+		}
+		if($gamecfg->get("28hypo") == true){
+			$x = $config->getNested("28.name");
+			$x1 = "28 = ".$x."\n";
+		}else{
+			$x1 = "";
+		}
+		if($gamecfg->get("29hypo") == true){
+			$x = $config->getNested("29.name");
+			$y = "29 = ".$x."\n";
+		}else{
+			$y = "";
+		}
+		if($gamecfg->get("30hypo") == true){
+			$x = $config->getNested("30.name");
+			$z = "30 = ".$x."\n";
+		}else{
+			$z = "";
+		}
+		if($gamecfg->get("32hypo") == true){
+			$x = $config->getNested("32.name");
+			$a1 = "32 = ".$x."\n";
+		}else{
+			$a1 = "";
+		}
+		if($gamecfg->get("33hypo") == true){
+			$x = $config->getNested("33.name");
+			$b1 = "33 = ".$x."\n";
+		}else{
+			$b1 = "";
+		}
+		if($gamecfg->get("35hypo") == true){
+			$x = $config->getNested("35.name");
+			$c1 = "35 = ".$x."\n";
+		}else{
+			$c1 = "";
+		}
+		if($gamecfg->get("36hypo") == true){
+			$x = $config->getNested("36.name");
+			$d1 = "36 = ".$x."\n";
+		}else{
+			$d1 = "";
+		}
+		if($gamecfg->get("38hypo") == true){
+			$x = $config->getNested("38.name");
+			$e1 = "38 = ".$x."\n";
+		}else{
+			$e1 = "";
+		}
+		if($gamecfg->get("40hypo") == true){
+			$x = $config->getNested("40.name");
+			$f1 = "40 = ".$x."\n";
+		}else{
+			$f1 = "";
+		}
+		$msg = $a.$b.$c.$d.$e.$f.$g.$h.$i.$j.$k.$l.$m.$n.$o.$p.$q.$v.$w.$x1.$y.$z.$a1.$b1.$c1.$d1.$e1.$f1;
+		return $msg;
 	}
 	
 	public function getPlayerStreetNames(Player $player){

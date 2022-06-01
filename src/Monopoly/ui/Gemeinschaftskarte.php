@@ -87,7 +87,7 @@ class Gemeinschaftskarte{
 						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
 						$gamecfg->save();
 					}elseif($lastg == 9){
-						EconomyAPI::getInstance()->reduceMoney($player, 2000);
+						EconomyAPI::getInstance()->addMoney($player, 2000);
 						$gamecfg->set("lastg", $gamecfg->get("lastg") + 1);
 						$gamecfg->save();
 					}elseif($lastg == 10){

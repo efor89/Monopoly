@@ -108,6 +108,7 @@ class Ereigniskarte{
 						$gamecfg->save();
 					}elseif($laste == 9){
 						EconomyAPI::getInstance()->addMoney($player, $gamecfg->get("freiparken"));
+						Server::getInstance()->broadcastMessage("Geld: ".$gamecfg->get("freiparken")."$");
 						$gamecfg->set("freiparken", 0);
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
