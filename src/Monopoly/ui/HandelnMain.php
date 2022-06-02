@@ -262,7 +262,7 @@ class HandelnMain{
 			$f = "";
 		}
 		$form->setTitle("§bHandel Anfrage");
-		$form->setContent("§6Das ist eine Handels Anfrage von §d".$target->getName().". \n§6Entscheide ob du sie akzeptierst oder ablehnst.\n\n§aDer Spieler möchte Strassen:§f\n".$a.$b."\n§aDer Spieler möchte Geld:§f\n".$c."\n§eDer Spieler bietet dir Strassen:\n§f".$d.$e."\n§eDer Spieler bietet dir Geld:\n§f".$f"\n\n§6Strassen auf den eine Hypothek ist:\n§f".$this->getHypoStreets());
+		$form->setContent("§6Das ist eine Handels Anfrage von §d".$target->getName().". \n§6Entscheide ob du sie akzeptierst oder ablehnst.\n\n§aDer Spieler möchte Strassen:§f\n".$a.$b."\n§aDer Spieler möchte Geld:§f\n".$c."\n§eDer Spieler bietet dir Strassen:\n§f".$d.$e."\n§eDer Spieler bietet dir Geld:\n§f".$f."\n\n§6Strassen auf den eine Hypothek ist:\n§f".$this->getHypoStreets());
         $form->addButton("§aAkzeptieren");
 		$form->addButton("§dAblehnen");
 		$form->sendToPlayer($player);

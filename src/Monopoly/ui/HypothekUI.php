@@ -64,7 +64,7 @@ class HypothekUI{
 			}
 		});
 		$form->setTitle("§bHypothek");
-		$form->addLabel("§6Nimm eine Hypothek auf oder bezahle eine ab.\n§6Gib dazu einfach die Strassen Nummer an.\n§6Ist auf der Strasse bereits eine Hypothek bezahlst du sie ab.\n\n§6Deine Strassen sind:\n§f".$this->getPlayerStreetNames($player)"\n\n§6Strassen auf den eine Hypothek ist:\n§f".$this->getHypoStreets());
+		$form->addLabel("§6Nimm eine Hypothek auf oder bezahle eine ab.\n§6Gib dazu einfach die Strassen Nummer an.\n§6Ist auf der Strasse bereits eine Hypothek bezahlst du sie ab.\n\n§6Deine Strassen sind:\n§f".$this->getPlayerStreetNames($player)."\n\n§6Strassen auf den eine Hypothek ist:\n§f".$this->getHypoStreets());
         $form->addInput("§rGib eine Zahl an", "zb. 2");				
 		$form->sendToPlayer($player);
 		return true;
