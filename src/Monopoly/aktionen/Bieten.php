@@ -44,27 +44,27 @@ class Bieten implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
+		if($gamecfg->get("turn") == $Player1){
+    		$feld = $gamecfg->get("player1");
+		}elseif($gamecfg->get("turn") == $Player2){
+		    $feld = $gamecfg->get("player2");
+		}elseif($gamecfg->get("turn") == $Player3){
+		    $feld = $gamecfg->get("player3");
+		}elseif($gamecfg->get("turn") == $Player4){
+		    $feld = $gamecfg->get("player4");
+		}
+		if($Player1 == $gamecfg->get("turn")){
+			$strasse = $config->getNested($feld.".name");
+		}elseif($Player2 == $gamecfg->get("turn")){
+			$strasse = $config->getNested($feld.".name");
+		}elseif($Player3 == $gamecfg->get("turn")){
+			$strasse = $config->getNested($feld.".name");
+		}elseif($Player4 == $gamecfg->get("turn")){
+			$strasse = $config->getNested($feld.".name");
+		}
 		$playerMoney = EconomyAPI::getInstance()->myMoney($p);
 		if($item->getId() === 1) {
             if($item->getName() === "§6Biete 1$") {
-				if($gamecfg->get("turn") == $Player1){
-				    $feld = $gamecfg->get("player1");
-				}elseif($gamecfg->get("turn") == $Player2){
-				    $feld = $gamecfg->get("player2");
-				}elseif($gamecfg->get("turn") == $Player3){
-				    $feld = $gamecfg->get("player3");
-				}elseif($gamecfg->get("turn") == $Player4){
-				    $feld = $gamecfg->get("player4");
-				}
-				if($Player1 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($feld.".name");
-				}elseif($Player2 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($feld.".name");
-				}elseif($Player3 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($feld.".name");
-				}elseif($Player4 == $gamecfg->get("turn")){
-					$strasse = $config->getNested($feld.".name");
-				}
 				$b1 = Item::get(1, 0, 1);
                 $b1->setCustomName("§6Biete 1$");
 				$b100 = Item::get(266, 0, 1);
