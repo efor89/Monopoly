@@ -1035,7 +1035,7 @@ class Main extends PluginBase{
 		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
 			    $zahl = 2;
 		    }
-		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
+		    if($gamecfg->get("6") != $player->getName() and $gamecfg->get("16") == $player->getName() and $gamecfg->get("26") == $player->getName() and $gamecfg->get("36") != $player->getName()){
 			    $zahl = 2;
 		    }
 		    if($gamecfg->get("6") == $player->getName() and $gamecfg->get("16") != $player->getName() and $gamecfg->get("26") != $player->getName() and $gamecfg->get("36") == $player->getName()){
