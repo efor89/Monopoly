@@ -56,8 +56,6 @@ class Wuerfeln implements Listener{
 					return;
 				}
 				if($gamecfg->get("wurf") !== true){
-					$gamecfg->set("lastpoints", $points);
-				    $gamecfg->save();
 					if($p->getName() == $Player1){
 						$nummer = $gamecfg->get("player1");
 					}elseif($p->getName() == $Player2){
@@ -69,7 +67,7 @@ class Wuerfeln implements Listener{
 					}
 					if($gamecfg->get($nummer) == null){
 						if($nummer == 2 or $nummer == 4 or $nummer == 6 or $nummer == 7 or $nummer == 9 or $nummer == 10 or $nummer == 12 or $nummer == 13 or $nummer == 14 or $nummer == 15 or $nummer == 16 or $nummer == 17 or $nummer == 19 or $nummer == 20 or $nummer == 22 or $nummer == 24 or $nummer == 25 or $nummer == 26 or $nummer == 27 or $nummer == 28 or $nummer == 29 or $nummer == 30 or $nummer == 32 or $nummer == 33 or $nummer == 35 or $nummer == 36 or $nummer == 38 or $nummer == 40){
-						    $p->sendMessage("§bMono§6poly: §cDu musst die Strasse noch kaufen!");
+						    $p->sendMessage("§bMono§6poly: §cDu musst noch wählen ob du die Strasse kaufst oder nicht kaufst!");
 						    return;
 						}
 					}
@@ -77,6 +75,8 @@ class Wuerfeln implements Listener{
 						$p->sendMessage("§bMono§6poly: §cDu musst erst Miete bezahlen!");
 						return;
 					}
+					$gamecfg->set("lastpoints", $points);
+				    $gamecfg->save();
 					$y = 5;
 			        $x1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."x");
 			        $z1 = $config->getNested("coords1.".$gamecfg->get("player1") + $points."z");
@@ -681,6 +681,7 @@ class Wuerfeln implements Listener{
 								    $zlast = $config->getNested("coords1.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("player1", $gamecfg->get("player1") + $points);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn1", 0);
 									$gamecfg->set("wurf", true);
@@ -820,6 +821,7 @@ class Wuerfeln implements Listener{
 								    $zlast = $config->getNested("coords2.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("player2", $gamecfg->get("player2") + $points);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn2", 0);
 									$gamecfg->set("wurf", true);
@@ -959,6 +961,7 @@ class Wuerfeln implements Listener{
 								    $zlast = $config->getNested("coords3.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("player3", $gamecfg->get("player3") + $points);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn3", 0);
 									$gamecfg->set("wurf", true);
@@ -1098,6 +1101,7 @@ class Wuerfeln implements Listener{
 								    $zlast = $config->getNested("coords4.knastz");
 									$p->getLevel()->setBlock(new Vector3($xlast, $y, $zlast), Block::get(0, 0));
 									$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
+									$gamecfg->set("player4", $gamecfg->get("player4") + $points);
 									$gamecfg->set("knast1", false);
 									$gamecfg->set("knast-turn4", 0);
 									$gamecfg->set("wurf", true);

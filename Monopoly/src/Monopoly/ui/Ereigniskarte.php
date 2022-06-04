@@ -80,28 +80,131 @@ class Ereigniskarte{
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
 						$gamecfg->save();
 					}elseif($laste == 8){
-						if($Player1 !== null){
-							if($Player1 !== $player->getName()){
-							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							    EconomyAPI::getInstance()->addMoney($player1, 1000);
-							}
-						}
-						if($Player2 !== null){
-							if($Player2 !== $player->getName()){
-							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							    EconomyAPI::getInstance()->addMoney($player2, 1000);
-							}
-						}
-						if($Player3 !== null){
-							if($Player3 !== $player->getName()){
-							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
-							    EconomyAPI::getInstance()->addMoney($player3, 1000);
-							}
-						}
-						if($Player4 !== null){
-							if($Player4 !== $player->getName()){
-							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+						if($Player1 !== null and $Player2 !== null and $Player3 !== null and $Player4 !== null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 3000);
 							    EconomyAPI::getInstance()->addMoney($player4, 1000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player2 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 3000);
+							    EconomyAPI::getInstance()->addMoney($player4, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 3000);
+							    EconomyAPI::getInstance()->addMoney($player4, 1000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}elseif($Player4 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 3000);
+							    EconomyAPI::getInstance()->addMoney($player1, 1000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}
+						}elseif($Player1 !== null and $Player2 !== null and $Player3 !== null and $Player4 == null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player2 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
+						}elseif($Player1 !== null and $Player2 !== null and $Player3 == null and $Player4 !== null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+							}elseif($Player2 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+							}elseif($Player4 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
+						}elseif($Player1 !== null and $Player2 == null and $Player3 !== null and $Player4 !== null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player4 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
+						}elseif($Player1 == null and $Player2 !== null and $Player3 !== null and $Player4 !== null){
+							if($Player4 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player2 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 2000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+							}
+						}elseif($Player1 !== null and $Player2 !== null and $Player3 == null and $Player4 == null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+							}elseif($Player2 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
+						}elseif($Player1 !== null and $Player2 == null and $Player3 !== null and $Player4 == null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
+						}elseif($Player1 !== null and $Player2 == null and $Player3 == null and $Player4 !== null){
+							if($Player1 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+							}elseif($Player4 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player1, 1000);
+							}
+						}elseif($Player1 == null and $Player2 !== null and $Player3 !== null and $Player4 == null){
+							if($Player2 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+							}
+						}elseif($Player1 == null and $Player2 !== null and $Player3 == null and $Player4 !== null){
+							if($Player2 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
+							}elseif($Player4 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player2, 1000);
+							}
+						}elseif($Player1 == null and $Player2 == null and $Player3 !== null and $Player4 !== null){
+							if($Player4 == $player->getName()){
+							    EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player3, 1000);
+							}elseif($Player3 == $player->getName()){
+								EconomyAPI::getInstance()->reduceMoney($player, 1000);
+								EconomyAPI::getInstance()->addMoney($player4, 1000);
 							}
 						}
 						$gamecfg->set("laste", $gamecfg->get("laste") + 1);
