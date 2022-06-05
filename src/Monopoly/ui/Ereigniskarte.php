@@ -258,7 +258,6 @@ class Ereigniskarte{
 		$form->setContent("§6Entscheide ob du eine Karte ziehst oder eine Strafe zahlst!");
         $form->addButton("§aKarte ziehen!");
 		$form->addButton("§d2000$ Strafe zahlen!");						
-		$form->addButton("§cSchließen");
 		$form->sendToPlayer($player);
 		return true;
 	}

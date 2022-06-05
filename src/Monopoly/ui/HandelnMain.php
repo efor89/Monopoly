@@ -159,6 +159,7 @@ class HandelnMain{
 		$playerMoney = EconomyAPI::getInstance()->myMoney($player);
 		$targetMoney = EconomyAPI::getInstance()->myMoney($target);
 		$form->setTitle("§bHandeln Hauptmenü");
+		$form->addLabel("§6Strassen auf den eine Hypothek ist:\n§f".$this->getHypoStreets());
 		$form->addLabel("§6Was du vom Spieler möchtest:");
 		$form->addLabel("§6Sein Geld: §f".$targetMoney."$");
 		$form->addLabel("§6Seine Strassen: \n§f".$this->getPlayerStreetNames($target));
