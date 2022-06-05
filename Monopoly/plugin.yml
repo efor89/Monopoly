@@ -1,7 +1,0 @@
----
-name: Monopoly
-version: 1.0.1
-main: Monopoly\Main
-api: 3.0.0
-author: efor89
-...
