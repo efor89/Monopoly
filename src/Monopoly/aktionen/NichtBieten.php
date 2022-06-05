@@ -64,6 +64,11 @@ class NichtBieten implements Listener{
 				}elseif($Player4 == $gamecfg->get("turn")){
 					$strasse = $config->getNested($gamecfg->get("player4").".name");
 				}
+				$x1 = $config->getNested($feld.".bx1");
+		        $z1 = $config->getNested($feld.".bz1");
+		        $x2 = $config->getNested($feld.".bx2");
+		        $z2 = $config->getNested($feld.".bz2");
+				$y = 9;
 				$b1 = Item::get(1, 0, 1);
                 $b1->setCustomName("§6Biete 1$");
 				$b100 = Item::get(266, 0, 1);
@@ -97,7 +102,6 @@ class NichtBieten implements Listener{
 						$p->getInventory()->clearAll();
 						$p->getInventory()->setItem(7, $info);
                         $p->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
 					}
@@ -108,7 +112,6 @@ class NichtBieten implements Listener{
 						$p->getInventory()->clearAll();
 						$p->getInventory()->setItem(7, $info);
                         $p->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
 					}
@@ -119,7 +122,6 @@ class NichtBieten implements Listener{
 						$p->getInventory()->clearAll();
 						$p->getInventory()->setItem(7, $info);
                         $p->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
 					}
@@ -130,7 +132,6 @@ class NichtBieten implements Listener{
 						$p->getInventory()->clearAll();
 						$p->getInventory()->setItem(7, $info);
                         $p->getInventory()->setItem(8, $giveup);
-						Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 					}else{
 						$p->sendMessage("§bMono§6poly: §cDu kannst nicht mehr mit bieten.");
 					}
@@ -176,6 +177,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter1", false);
 						    $gamecfg->save();
+							$block = Block::get(165, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter2") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -184,6 +188,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter2", false);
 						    $gamecfg->save();
+							$block = Block::get(19, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter3") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -192,6 +199,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter3", false);
 						    $gamecfg->save();
+							$block = Block::get(91, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter4") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -200,6 +210,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter4", false);
 						    $gamecfg->save();
+							$block = Block::get(170, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}
 					}
@@ -244,6 +257,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter1", false);
 						    $gamecfg->save();
+							$block = Block::get(165, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter2") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -252,6 +268,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter2", false);
 						    $gamecfg->save();
+							$block = Block::get(19, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter3") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -260,6 +279,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter3", false);
 						    $gamecfg->save();
+							$block = Block::get(91, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter4") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -268,6 +290,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter4", false);
 						    $gamecfg->save();
+							$block = Block::get(170, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}
 					}
@@ -312,6 +337,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter1", false);
 						    $gamecfg->save();
+							$block = Block::get(165, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter2") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -320,6 +348,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter2", false);
 						    $gamecfg->save();
+							$block = Block::get(19, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter3") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -328,6 +359,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter3", false);
 						    $gamecfg->save();
+							$block = Block::get(91, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter4") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -336,6 +370,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter4", false);
 						    $gamecfg->save();
+							$block = Block::get(170, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}
 					}
@@ -380,6 +417,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter1", false);
 						    $gamecfg->save();
+							$block = Block::get(165, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter2") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player2, $gamecfg->get("gebot"));
@@ -388,6 +428,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter2", false);
 						    $gamecfg->save();
+							$block = Block::get(19, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter3") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player3, $gamecfg->get("gebot"));
@@ -396,6 +439,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter3", false);
 						    $gamecfg->save();
+							$block = Block::get(91, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}elseif($gamecfg->get("bieter4") == true){
 						    EconomyAPI::getInstance()->reduceMoney($player4, $gamecfg->get("gebot"));
@@ -404,6 +450,9 @@ class NichtBieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 						    $gamecfg->set("bieter4", false);
 						    $gamecfg->save();
+							$block = Block::get(170, 0);
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §cBietet nicht mehr mit.");
 						}
 					}

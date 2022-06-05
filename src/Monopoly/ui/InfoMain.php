@@ -152,7 +152,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("6hypo") == true){
 			$x = $config->getNested("6.name");
-			$c = "6 = §0".$x."§r\n";
+			$c = "6 = §7".$x."§r\n";
 		}else{
 			$c = "";
 		}
@@ -200,7 +200,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("16hypo") == true){
 			$x = $config->getNested("16.name");
-			$k = "16 = §0".$x."§r\n";
+			$k = "16 = §7".$x."§r\n";
 		}else{
 			$k = "";
 		}
@@ -242,7 +242,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("26hypo") == true){
 			$x = $config->getNested("26.name");
-			$v = "26 = §0".$x."§r\n";
+			$v = "26 = §7".$x."§r\n";
 		}else{
 			$v = "";
 		}
@@ -290,7 +290,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("36hypo") == true){
 			$x = $config->getNested("36.name");
-			$d1 = "36 = §0".$x."§r\n";
+			$d1 = "36 = §7".$x."§r\n";
 		}else{
 			$d1 = "";
 		}
@@ -327,7 +327,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("6") == $player->getName()){
 			$x = $config->getNested("6.name");
-			$c = "6 = §b".$x."§r\n";
+			$c = "6 = §7".$x."§r\n";
 		}else{
 			$c = "";
 		}
@@ -375,7 +375,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("16") == $player->getName()){
 			$x = $config->getNested("16.name");
-			$k = "16 = §0".$x."§r\n";
+			$k = "16 = §7".$x."§r\n";
 		}else{
 			$k = "";
 		}
@@ -417,7 +417,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("26") == $player->getName()){
 			$x = $config->getNested("26.name");
-			$v = "26 = §0".$x."§r\n";
+			$v = "26 = §7".$x."§r\n";
 		}else{
 			$v = "";
 		}
@@ -465,7 +465,7 @@ class InfoMain{
 		}
 		if($gamecfg->get("36") == $player->getName()){
 			$x = $config->getNested("36.name");
-			$d1 = "36 = §0".$x."§r\n";
+			$d1 = "36 = §7".$x."§r\n";
 		}else{
 			$d1 = "";
 		}
