@@ -44,6 +44,7 @@ class KaufenJa implements Listener{
 	    if($Player4 !== null){
 	        $player4 = Server::getInstance()->getPlayer($Player4);
 		}
+		
 		if($item->getId() === 266) {
             if($item->getName() === "§aKaufen Ja") {
                 $playerMoney = EconomyAPI::getInstance()->myMoney($p);
@@ -73,6 +74,22 @@ class KaufenJa implements Listener{
 						    Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §ahat die Strasse §d".$strassenName." §agekauft für §d".$kosten."§a$.");
 						    $gamecfg->set($feld, $p->getName());
 						    $gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+					        $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 				        }else{
 					        Server::getInstance()->broadcastMessage("§bMono§6poly: §d".$p->getName()." §chat nicht genug Geld um die Strasse zu kaufen, deswegen startet das Bieten!");
 							$b1 = Item::get(1, 0, 1);

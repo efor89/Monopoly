@@ -129,6 +129,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -199,7 +215,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
-							
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -251,6 +282,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -309,6 +356,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -379,6 +442,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -430,6 +509,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -488,6 +583,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -558,6 +669,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -609,6 +736,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -667,6 +810,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -737,6 +896,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -788,6 +963,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -841,6 +1032,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								$block = Block::get(170, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -914,6 +1113,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								$block = Block::get(170, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -978,6 +1185,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 				            $gamecfg->save();
+							$block = Block::get(170, 0);
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+			   				$y = 10;
+			    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -1063,6 +1278,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								$block = Block::get(165, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			   				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -1136,6 +1359,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								$block = Block::get(165, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			   				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -1200,6 +1431,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 				            $gamecfg->save();
+							$block = Block::get(165, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		   				    $y = 10;
+		    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -1285,6 +1524,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								$block = Block::get(19, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			   				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -1358,6 +1605,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								$block = Block::get(19, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			   				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -1422,6 +1677,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 				            $gamecfg->save();
+							$block = Block::get(19, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		   				    $y = 10;
+		    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -1507,6 +1770,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								$block = Block::get(91, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			   				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -1580,6 +1851,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								$block = Block::get(91, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			   				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -1644,6 +1923,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 				            $gamecfg->save();
+							$block = Block::get(91, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		   				    $y = 10;
+		    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -1780,6 +2067,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -1850,6 +2153,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -1901,6 +2220,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -1959,6 +2294,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2029,6 +2380,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2080,6 +2447,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2138,6 +2521,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2208,6 +2607,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2259,6 +2674,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2317,6 +2748,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2387,6 +2834,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2438,6 +2901,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -2491,6 +2970,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								$block = Block::get(170, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -2564,6 +3051,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								$block = Block::get(170, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -2628,6 +3123,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 				            $gamecfg->save();
+							$block = Block::get(170, 0);
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+			   				$y = 10;
+			    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -2713,6 +3216,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								$block = Block::get(165, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -2786,6 +3297,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								$block = Block::get(165, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -2850,6 +3369,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 				            $gamecfg->save();
+							$block = Block::get(165, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		    				$y = 10;
+			    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -2935,6 +3462,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								$block = Block::get(19, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -3008,6 +3543,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								$block = Block::get(19, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -3072,6 +3615,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 				            $gamecfg->save();
+							$block = Block::get(19, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		    				$y = 10;
+			    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -3157,6 +3708,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								$block = Block::get(91, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -3230,6 +3789,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								$block = Block::get(91, 0);
+							    $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+					            $x2 = $config->getNested($feld.".bx2");
+					            $z2 = $config->getNested($feld.".bz2");
+			    				$y = 10;
+				    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+					    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -3294,6 +3861,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 				            $gamecfg->save();
+							$block = Block::get(91, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		    				$y = 10;
+			    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -3430,6 +4005,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3500,6 +4091,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3551,6 +4158,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3609,6 +4232,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3679,6 +4318,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3730,6 +4385,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3788,6 +4459,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3858,6 +4545,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3909,6 +4612,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -3967,6 +4686,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -4037,6 +4772,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -4088,6 +4839,22 @@ class Bieten implements Listener{
 							$gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 							$gamecfg->save();
+							if($Player1 == $p->getName()){
+								$block = Block::get(165, 0);
+							}elseif($Player2 == $p->getName()){
+								$block = Block::get(19, 0);
+							}elseif($Player3 == $p->getName()){
+								$block = Block::get(91, 0);
+							}elseif($Player4 == $p->getName()){
+								$block = Block::get(170, 0);
+							}
+							$x1 = $config->getNested($feld.".bx1");
+					        $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+							$y = 10;
+							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($gamecfg->get("turn") == $Player1){
 								$player1->getInventory()->clearAll();
 								$player1->getInventory()->setItem(0, $wuerfeln);
@@ -4141,6 +4908,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								$block = Block::get(170, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    			        $y = 10;
+		    			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4214,6 +4989,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter4", false);
 					            $gamecfg->save();
+								$block = Block::get(170, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    			        $y = 10;
+		    			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4278,6 +5061,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter4", false);
 				            $gamecfg->save();
+							$block = Block::get(170, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+					        $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+						    $z2 = $config->getNested($feld.".bz2");
+		   			        $y = 10;
+		   			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+		    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -4363,6 +5154,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								$block = Block::get(165, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    			        $y = 10;
+		    			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4436,6 +5235,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter1", false);
 					            $gamecfg->save();
+								$block = Block::get(165, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    			        $y = 10;
+		    			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4500,6 +5307,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter1", false);
 				            $gamecfg->save();
+							$block = Block::get(165, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+						    $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		   			        $y = 10;
+		   			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+		    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -4585,6 +5400,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								$block = Block::get(19, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    			        $y = 10;
+		    			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4658,6 +5481,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter2", false);
 					            $gamecfg->save();
+								$block = Block::get(19, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    			        $y = 10;
+		    			        $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	            $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4722,6 +5553,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter2", false);
 				            $gamecfg->save();
+							$block = Block::get(19, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+					        $x2 = $config->getNested($feld.".bx2");
+					        $z2 = $config->getNested($feld.".bz2");
+		    			    $y = 10;
+		    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+			    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);
@@ -4807,6 +5646,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								$block = Block::get(91, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4880,6 +5727,14 @@ class Bieten implements Listener{
 							    $gamecfg->set("gebot", 0);
 								$gamecfg->set("bieter3", false);
 					            $gamecfg->save();
+								$block = Block::get(91, 0);
+						        $x1 = $config->getNested($feld.".bx1");
+						        $z1 = $config->getNested($feld.".bz1");
+						        $x2 = $config->getNested($feld.".bx2");
+						        $z2 = $config->getNested($feld.".bz2");
+		    				    $y = 10;
+			    			    $p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	        $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 								if($Player1 != null){
 								    $player1->getInventory()->clearAll();
 								    $player1->getInventory()->setItem(7, $info);
@@ -4944,6 +5799,14 @@ class Bieten implements Listener{
 						    $gamecfg->set("gebot", 0);
 							$gamecfg->set("bieter3", false);
 				            $gamecfg->save();
+							$block = Block::get(91, 0);
+						    $x1 = $config->getNested($feld.".bx1");
+						    $z1 = $config->getNested($feld.".bz1");
+						    $x2 = $config->getNested($feld.".bx2");
+						    $z2 = $config->getNested($feld.".bz2");
+		    				$y = 10;
+			    			$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
+				    	    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 							if($Player1 != null){
 							    $player1->getInventory()->clearAll();
 							    $player1->getInventory()->setItem(7, $info);

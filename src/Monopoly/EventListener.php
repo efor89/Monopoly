@@ -45,6 +45,7 @@ class EventListener implements Listener{
         $anmelden = Item::get(421, 0, 1);
         $anmelden->setCustomName("§aAls Spieler Anmelden");
         $p->getInventory()->setItem(4, $anmelden);
+		$p->setAllowFlight(true);
     }
 	
 	public function onPlayerQuit(PlayerQuitEvent $ev){

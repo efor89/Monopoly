@@ -49,17 +49,21 @@ class FreiKaufen implements Listener{
 				EconomyAPI::getInstance()->reduceMoney($p, 1000);
 				$gamecfg->set("freiparken", $gamecfg->get("freiparken") + 1000);
 				$gamecfg->save();
-				if($p->getName() === $Player1){
+				if($p->getName() == $Player1){
 				    $gamecfg->set("knast1", false);
+					$gamecfg->set("knast-turn1", 0);
 					$gamecfg->save();
-				}elseif($p->getName() === $Player2){
+				}elseif($p->getName() == $Player2){
+					$gamecfg->set("knast-turn2", 0);
 				    $gamecfg->set("knast2", false);
 					$gamecfg->save();
-				}elseif($p->getName() === $Player3){
+				}elseif($p->getName() == $Player3){
 				    $gamecfg->set("knast3", false);
+					$gamecfg->set("knast-turn3", 0);
 					$gamecfg->save();
-				}elseif($p->getName() === $Player4){
+				}elseif($p->getName() == $Player4){
 				    $gamecfg->set("knast4", false);
+					$gamecfg->set("knast-turn4", 0);
 					$gamecfg->save();
 				}
 				$p->getInventory()->clearAll();

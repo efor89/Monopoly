@@ -1,0 +1,12 @@
+---
+protect: protect
+bancmds:
+  /pay: /pay
+  /mymoney: /mymoney
+  /money: /money
+  /seemoney: /seemoney
+  /givemoney: /givemoney
+  /takemoney: /takemoney
+  /topmoney: /topmoney
+  /setmoney: /setmoney
+...
