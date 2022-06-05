@@ -87,7 +87,7 @@ class KaufenJa implements Listener{
 					        $z1 = $config->getNested($feld.".bz1");
 					        $x2 = $config->getNested($feld.".bx2");
 					        $z2 = $config->getNested($feld.".bz2");
-							$y = 10;
+							$y = 9;
 							$p->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
 						    $p->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 				        }else{

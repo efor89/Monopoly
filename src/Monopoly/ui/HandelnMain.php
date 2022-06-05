@@ -207,7 +207,7 @@ class HandelnMain{
 						$z1 = $config->getNested($street1.".bz1");
 						$x2 = $config->getNested($street1.".bx2");
 						$z2 = $config->getNested($street1.".bz2");
-						$y = 10;
+						$y = 9;
 						$target->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
 					    $target->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 					}
@@ -227,7 +227,7 @@ class HandelnMain{
 						$z1 = $config->getNested($street2.".bz1");
 						$x2 = $config->getNested($street2.".bx2");
 						$z2 = $config->getNested($street2.".bz2");
-						$y = 10;
+						$y = 9;
 						$target->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
 					    $target->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 					}
@@ -251,7 +251,7 @@ class HandelnMain{
 						$z1 = $config->getNested($street3.".bz1");
 						$x2 = $config->getNested($street3.".bx2");
 						$z2 = $config->getNested($street3.".bz2");
-						$y = 10;
+						$y = 9;
 						$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
 					    $player->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 					}
@@ -271,7 +271,7 @@ class HandelnMain{
 						$z1 = $config->getNested($street4.".bz1");
 						$x2 = $config->getNested($street4.".bx2");
 						$z2 = $config->getNested($street4.".bz2");
-						$y = 10;
+						$y = 9;
 						$player->getLevel()->setBlock(new Vector3($x1, $y, $z1), $block);
 					    $player->getLevel()->setBlock(new Vector3($x2, $y, $z2), $block);
 					}
