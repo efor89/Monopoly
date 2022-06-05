@@ -365,6 +365,11 @@ Badstrasse: 2
   z5: 255 #hotel block 1 z coords y = 6
   x6: 250 #hotel block 2 x coords y = 6
   z6: 254 #hotel block 2 z coords y = 6
+  bx1: 257
+  bz1: 254
+  bx2: 257
+  bz2: 255
+  by: 10
 Gemeinschaftsfeld-1: 3
 3:
   name: Gemeinschaftsfeld
@@ -394,6 +399,11 @@ Turmstrasse: 4
   z5: 265
   x6: 250
   z6: 264
+  bx1: 257
+  bz1: 264
+  bx2: 257
+  bz2: 265
+  by: 10
 Einkommensteuer: 5
 5:
   name: Einkommensteuer
@@ -407,6 +417,11 @@ Südbahnhof: 6
   2: 1000
   3: 2000
   4: 4000
+  bx1: 257
+  bz1: 274
+  bx2: 257
+  bz2: 275
+  by: 10
 Chausseestrasse: 7
 7:
   name: Chausseestrasse
@@ -433,6 +448,11 @@ Chausseestrasse: 7
   z5: 280
   x6: 250
   z6: 279
+  bx1: 257
+  bz1: 279
+  bx2: 257
+  bz2: 280
+  by: 10
 Ereignisfeld-1: 8
 8:
   name: Ereignisfeld-1
@@ -462,6 +482,11 @@ Elisenstrasse: 9
   z5: 290
   x6: 250
   z6: 289
+  bx1: 257
+  bz1: 289
+  bx2: 257
+  bz2: 290
+  by: 10
 Poststrasse: 10
 10:
   name: Poststrasse
@@ -488,6 +513,11 @@ Poststrasse: 10
   z5: 295
   x6: 250
   z6: 294
+  bx1: 257
+  bz1: 294
+  bx2: 257
+  bz2: 295
+  by: 10
 Nur zu Besuch: 11
 Gefängnis: 11
 11:
@@ -518,6 +548,11 @@ Seestrasse: 12
   z5: 299
   x6: 246
   z6: 299
+  bx1: 246
+  bz1: 306
+  bx2: 245
+  bz2: 306
+  by: 10
 Elektrizitäts-Werk: 13
 13:
   name: Elektrizitäts-Werk
@@ -525,6 +560,11 @@ Elektrizitäts-Werk: 13
   hypo: 1500
   1: 80 #80 * würfelaugen
   2: 200 #200 * würfelaugen
+  bx1: 241
+  bz1: 306
+  bx2: 240
+  bz2: 306
+  by:
 Hafenstrasse: 14
 14:
   name: Hafenstrasse
@@ -551,6 +591,11 @@ Hafenstrasse: 14
   z5: 299
   x6: 236
   z6: 299
+  bx1: 236
+  bz1: 306
+  bx2: 235
+  bz2: 306
+  by: 10
 Neue Strasse: 15
 15:
   name: Neue Strasse
@@ -577,6 +622,11 @@ Neue Strasse: 15
   z5: 299
   x6: 231
   z6: 299
+  bx1: 231
+  bz1: 306
+  bx2: 230
+  bz2: 306
+  by: 10
 Westbahnhof: 16
 16:
   name: Westbahnhof
@@ -586,6 +636,11 @@ Westbahnhof: 16
   2: 1000
   3: 2000
   4: 4000
+  bx1: 226
+  bz1: 306
+  bx2: 225
+  bz2: 306
+  by: 10
 Münchener Strasse: 17
 17:
   name: Münchener Strasse
@@ -612,6 +667,11 @@ Münchener Strasse: 17
   z5: 299
   x6: 221
   z6: 299
+  bx1: 221
+  bz1: 306
+  bx2: 220
+  bz2: 306
+  by: 10
 Gemeinschaftsfeld-2: 18
 18:
   name: Gemeinschaftsfeld
@@ -641,6 +701,11 @@ Wiener Strasse: 19
   z5: 299
   x6: 211
   z6: 299
+  bx1: 211
+  bz1: 306
+  bx2: 210
+  bz2: 306
+  by: 10
 Berliner Strasse: 20
 20:
   name: Berliner Strasse
@@ -667,6 +732,11 @@ Berliner Strasse: 20
   z5: 299
   x6: 206
   z6: 299
+  bx1: 206
+  bz1: 306
+  bx2: 205
+  bz2: 306
+  by: 10
 Frei Parken: 21
 21:
   name: Frei Parken #alle straffen die bezahlt wurden bekommt der spieler(wird wieder auf 0 gesetzt)
@@ -696,6 +766,11 @@ TheaterStrasse: 22
   z5: 294
   x6: 201
   z6: 295
+  bx1: 194
+  bz1: 295
+  bx2: 194
+  bz2: 294
+  by: 10
 Ereignisfeld-2: 23
 23:
   name: Ereignisfeld
@@ -725,6 +800,11 @@ MuseumStrasse: 24
   z5: 284
   x6: 201
   z6: 285
+  bx1: 194
+  bz1: 285
+  bx2: 194
+  bz2: 284
+  by: 10
 Opernplatz: 25
 25:
   name: Opernplatz
@@ -751,6 +831,11 @@ Opernplatz: 25
   z5: 279
   x6: 201
   z6: 280
+  bx1: 194
+  bz1: 280
+  bx2: 194
+  bz2: 279
+  by: 10
 Nordbahnhof: 26
 26:
   name: Nordbahnhof
@@ -760,6 +845,11 @@ Nordbahnhof: 26
   2: 1000
   3: 2000
   4: 4000
+  bx1: 194
+  bz1: 275
+  bx2: 194
+  bz2: 274
+  by: 10
 Lessingstrasse: 27
 27:
   name: Lessingstrasse
@@ -786,6 +876,11 @@ Lessingstrasse: 27
   z5: 269
   x6: 201
   z6: 270
+  bx1: 194
+  bz1: 270
+  bx2: 194
+  bz2: 269
+  by: 10
 Schillerstrasse: 28
 28:
   name: Schillerstrasse
@@ -812,6 +907,11 @@ Schillerstrasse: 28
   z5: 264
   x6: 201
   z6: 265
+  bx1: 194
+  bz1: 265
+  bx2: 194
+  bz2: 264
+  by: 10
 Wasser-Werk: 29
 29:
   name: Wasser-Werk
@@ -819,6 +919,11 @@ Wasser-Werk: 29
   hypo: 1500
   1: 80
   2: 200
+  bx1: 194
+  bz1: 260
+  bx2: 194
+  bz2: 259
+  by: 10
 Goethestrasse: 30
 30:
   name: Goethestrasse
@@ -845,6 +950,11 @@ Goethestrasse: 30
   z5: 254
   x6: 201
   z6: 255
+  bx1: 194
+  bz1: 255
+  bx2: 194
+  bz2: 254
+  by: 10
 Gehe direckt in das Gefängnis: 31
 31:
   name: Gehe direckt in das Gefängnis #der spieler muss in das gefängnis(feld 11)
@@ -875,6 +985,11 @@ Rathausplatz: 32
   z5: 250
   x6: 205
   z6: 250
+  bx1: 205
+  bz1: 243
+  bx2: 206
+  bz2: 243
+  by: 10
 Hauptstrasse: 33
 33:
   name: Hauptstrasse
@@ -901,6 +1016,11 @@ Hauptstrasse: 33
   z5: 250
   x6: 210
   z6: 250
+  bx1: 210
+  bz1: 243
+  bx2: 211
+  bz2: 243
+  by: 10
 Gemeinschaftsfeld-3: 34
 34:
   name: Gemeinschaftsfeld
@@ -930,6 +1050,11 @@ Bahnhofstrasse: 35
   z5: 250
   x6: 220
   z6: 250
+  bx1: 220
+  bz1: 243
+  bx2: 221
+  bz2: 243
+  by: 10
 Hauptbahnhof: 36
 36:
   name: Hauptbahnhof
@@ -939,6 +1064,11 @@ Hauptbahnhof: 36
   2: 1000
   3: 2000
   4: 4000
+  bx1: 225
+  bz1: 243
+  bx2: 226
+  bz2: 243
+  by: 10
 Ereignisfeld-3: 37
 37:
   name: Ereignisfeld
@@ -968,6 +1098,11 @@ Parkstrasse: 38
   z5: 250
   x6: 235
   z6: 250
+  bx1: 235
+  bz1: 243
+  bx2: 236
+  bz2: 243
+  by: 10
 Zusatzsteuer: 39
 39:
   name: Zusatzsteuer
@@ -998,6 +1133,11 @@ Schlossallee: 40
   z5: 250
   x6: 245
   z6: 250
+  bx1: 245
+  bz1: 243
+  bx2: 246
+  bz2: 243
+  by: 10
 Ereignisfeld1:
   text: Zahle eine Strafe für falsches Parken von 1000$.
 Ereignisfeld2:
