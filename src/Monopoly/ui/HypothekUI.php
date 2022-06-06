@@ -47,17 +47,40 @@ class HypothekUI{
 				return true;
 			}
 			$playerMoney = EconomyAPI::getInstance()->myMoney($player);
+			$players = new Config($this->plugin->getDataFolder().'player.yml', Config::YAML);
+		    $Player1 = $players->get("player1");
+		    $Player2 = $players->get("player2");
+		    $Player3 = $players->get("player3");
+		    $Player4 = $players->get("player4");
 			if($this->isHypothek($data[1]) === "no"){
 				EconomyAPI::getInstance()->addMoney($player, $config->getNested($data[1].".hypo"));
 				$gamecfg->set($data[1]."hypo", true);
 				$gamecfg->save();
 				$player->sendMessage("§bMono§6poly: §aDu hast die Strasse §d".$config->getNested($data[1].".name")."§a mit einer Hypothek von §d ".$config->getNested($data[1].".hypo")."§a$ belastet. Das Geld wurde auf dein Konto überwiesen");
+				$block = Block::get(236, 14);
+			    $x = $config->getNested($data[1].".bx1");
+			    $z = $config->getNested($data[1].".bz1");
+				$y = 9;
+		        $player->getLevel()->setBlock(new Vector3($x, $y, $z), $block);
 			}else{
 				if($playerMoney >= $config->getNested($data[1].".hypo")){
 				    EconomyAPI::getInstance()->reduceMoney($player, $config->getNested($data[1].".hypo"));
 				    $gamecfg->set($data[1]."hypo", false);
 				    $gamecfg->save();
 					$player->sendMessage("§bMono§6poly: §aDu hast die Hypothek der Strasse §d".$config->getNested($data[1].".name")."§a von §d".$config->getNested($data[1].".hypo")."§a$ beglichen.");
+					if($Player1 == $player->getName()){
+					    $block = Block::get(165, 0);
+					}elseif($Player2 == $player->getName()){
+					    $block = Block::get(19, 0);
+					}elseif($Player3 == $player->getName()){
+					    $block = Block::get(91, 0);
+					}elseif($Player4 == $player->getName()){
+					    $block = Block::get(170, 0);
+					}
+			        $x = $config->getNested($data[1].".bx1");
+			        $z = $config->getNested($data[1].".bz1");
+					$y = 9;
+			        $player->getLevel()->setBlock(new Vector3($x, $y, $z), $block);
 				}else{
 					$player->sendMessage("§bMono§6poly: §cDu hast nicht genug Geld um die Hypothek zu begleichen.");
 				}
