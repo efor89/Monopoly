@@ -51,14 +51,6 @@ class ZugBeenden implements Listener{
 			        $p->sendMessage("§bMono§6poly: §cDu musst noch würfeln bevor du deinen Zug beenden kannst!");
 			        return;
 		        }
-		        if($gamecfg->get("miete") == true){
-			        $p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
-			        return;
-		        }
-				if(EconomyAPI::getInstance()->myMoney($p) < 0){
-					$p->sendMessage("§bMono§6poly: §cDu hast kein Geld mehr nimm eine Hypothek auf, baue Häuser ab oder gib auf!");
-					return;
-				}
 				if($p->getName() == $Player1){
 				    $feld = $gamecfg->get("player1");
 				}elseif($p->getName() == $Player2){
@@ -67,6 +59,19 @@ class ZugBeenden implements Listener{
 				    $feld = $gamecfg->get("player3");
 				}elseif($p->getName() == $Player4){
 				    $feld = $gamecfg->get("player4");
+				}
+		        if($gamecfg->get("miete") == true){
+					if($gamecfg->get($feld."hypo") == false){
+			            $p->sendMessage("§bMono§6poly: §cDu musst noch Miete Bezahlen bevor du dein Zug beenden kannst!");
+			            return;
+					}else{
+					    $gamecfg->set("miete", false);
+						$gamecfg->save();
+					}
+		        }
+				if(EconomyAPI::getInstance()->myMoney($p) < 0){
+					$p->sendMessage("§bMono§6poly: §cDu hast kein Geld mehr nimm eine Hypothek auf, baue Häuser ab oder gib auf!");
+					return;
 				}
 				if($gamecfg->get($feld) !== $p->getName()){
 					if($gamecfg->get($feld) == null){
